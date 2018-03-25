@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63D3070FE12BA44A925BFB6E /* Pods_hotmoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */; };
 		E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A472067382C007C4D1F /* AppDelegate.swift */; };
 		E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A492067382C007C4D1F /* ViewController.swift */; };
 		E5DE3A4D2067382C007C4D1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5DE3A4B2067382C007C4D1F /* Main.storyboard */; };
 		E5DE3A4F2067382C007C4D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5DE3A4E2067382C007C4D1F /* Assets.xcassets */; };
 		E5DE3A522067382C007C4D1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5DE3A502067382C007C4D1F /* LaunchScreen.storyboard */; };
+		E5DE3A5D20673AF4007C4D1F /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A5A20673AF4007C4D1F /* Services.swift */; };
+		E5DE3A5E20673AF4007C4D1F /* ServicesConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A5B20673AF4007C4D1F /* ServicesConfig.swift */; };
+		E5DE3A5F20673AF4007C4D1F /* ServicesFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A5C20673AF4007C4D1F /* ServicesFunction.swift */; };
+		E5DE3A6020673B08007C4D1F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5DE3A6120673B08007C4D1F /* Alamofire.framework */; };
+		E5DE3A6420673B76007C4D1F /* Mi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A6320673B76007C4D1F /* Mi.swift */; };
+		E5DE3A692067439E007C4D1F /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A682067439E007C4D1F /* constant.swift */; };
+		E5DE3A6B206746CE007C4D1F /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A6A206746CE007C4D1F /* GuestViewController.swift */; };
+		E5DE3A6D2067473A007C4D1F /* ParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A6C2067473A007C4D1F /* ParkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hotmoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.debug.xcconfig"; sourceTree = "<group>"; };
+		D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.release.xcconfig"; sourceTree = "<group>"; };
 		E5DE3A442067382C007C4D1F /* hotmoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotmoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5DE3A472067382C007C4D1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5DE3A492067382C007C4D1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +34,14 @@
 		E5DE3A4E2067382C007C4D1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5DE3A512067382C007C4D1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5DE3A532067382C007C4D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5DE3A5A20673AF4007C4D1F /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		E5DE3A5B20673AF4007C4D1F /* ServicesConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesConfig.swift; sourceTree = "<group>"; };
+		E5DE3A5C20673AF4007C4D1F /* ServicesFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesFunction.swift; sourceTree = "<group>"; };
+		E5DE3A6120673B08007C4D1F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5DE3A6320673B76007C4D1F /* Mi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mi.swift; sourceTree = "<group>"; };
+		E5DE3A682067439E007C4D1F /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
+		E5DE3A6A206746CE007C4D1F /* GuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
+		E5DE3A6C2067473A007C4D1F /* ParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +49,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5DE3A6020673B08007C4D1F /* Alamofire.framework in Frameworks */,
+				63D3070FE12BA44A925BFB6E /* Pods_hotmoto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		129A165F9D9A0146A8C78D4F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */,
+				D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		87E58EDCBBDA892AEBB2909F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5DE3A6120673B08007C4D1F /* Alamofire.framework */,
+				449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E5DE3A3B2067382C007C4D1F = {
 			isa = PBXGroup;
 			children = (
+				E5DE3A6720674197007C4D1F /* common */,
+				E5DE3A6220673B6B007C4D1F /* models */,
+				E5DE3A5920673AF4007C4D1F /* Sevices */,
 				E5DE3A462067382C007C4D1F /* hotmoto */,
 				E5DE3A452067382C007C4D1F /* Products */,
+				129A165F9D9A0146A8C78D4F /* Pods */,
+				87E58EDCBBDA892AEBB2909F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +99,8 @@
 		E5DE3A462067382C007C4D1F /* hotmoto */ = {
 			isa = PBXGroup;
 			children = (
+				E5DE3A6520673E0C007C4D1F /* Guest */,
+				E5DE3A6620673E0C007C4D1F /* Parking */,
 				E5DE3A472067382C007C4D1F /* AppDelegate.swift */,
 				E5DE3A492067382C007C4D1F /* ViewController.swift */,
 				E5DE3A4B2067382C007C4D1F /* Main.storyboard */,
@@ -64,6 +111,49 @@
 			path = hotmoto;
 			sourceTree = "<group>";
 		};
+		E5DE3A5920673AF4007C4D1F /* Sevices */ = {
+			isa = PBXGroup;
+			children = (
+				E5DE3A5A20673AF4007C4D1F /* Services.swift */,
+				E5DE3A5B20673AF4007C4D1F /* ServicesConfig.swift */,
+				E5DE3A5C20673AF4007C4D1F /* ServicesFunction.swift */,
+			);
+			name = Sevices;
+			path = hotmoto/Sevices;
+			sourceTree = "<group>";
+		};
+		E5DE3A6220673B6B007C4D1F /* models */ = {
+			isa = PBXGroup;
+			children = (
+				E5DE3A6320673B76007C4D1F /* Mi.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		E5DE3A6520673E0C007C4D1F /* Guest */ = {
+			isa = PBXGroup;
+			children = (
+				E5DE3A6A206746CE007C4D1F /* GuestViewController.swift */,
+			);
+			path = Guest;
+			sourceTree = "<group>";
+		};
+		E5DE3A6620673E0C007C4D1F /* Parking */ = {
+			isa = PBXGroup;
+			children = (
+				E5DE3A6C2067473A007C4D1F /* ParkViewController.swift */,
+			);
+			path = Parking;
+			sourceTree = "<group>";
+		};
+		E5DE3A6720674197007C4D1F /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E5DE3A682067439E007C4D1F /* constant.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +161,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5DE3A562067382C007C4D1F /* Build configuration list for PBXNativeTarget "hotmoto" */;
 			buildPhases = (
+				455C4A4BF197908E27BBD933 /* [CP] Check Pods Manifest.lock */,
 				E5DE3A402067382C007C4D1F /* Sources */,
 				E5DE3A412067382C007C4D1F /* Frameworks */,
 				E5DE3A422067382C007C4D1F /* Resources */,
+				D111D0ECE8A031139F914F2C /* [CP] Embed Pods Frameworks */,
+				1FA0CEAEF75E3D9985353B4E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +224,78 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1FA0CEAEF75E3D9985353B4E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		455C4A4BF197908E27BBD933 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hotmoto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D111D0ECE8A031139F914F2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E5DE3A402067382C007C4D1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5DE3A6D2067473A007C4D1F /* ParkViewController.swift in Sources */,
 				E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */,
+				E5DE3A692067439E007C4D1F /* constant.swift in Sources */,
+				E5DE3A5E20673AF4007C4D1F /* ServicesConfig.swift in Sources */,
+				E5DE3A6B206746CE007C4D1F /* GuestViewController.swift in Sources */,
+				E5DE3A5F20673AF4007C4D1F /* ServicesFunction.swift in Sources */,
+				E5DE3A5D20673AF4007C4D1F /* Services.swift in Sources */,
 				E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */,
+				E5DE3A6420673B76007C4D1F /* Mi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +430,7 @@
 		};
 		E5DE3A572067382C007C4D1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +445,7 @@
 		};
 		E5DE3A582067382C007C4D1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
