@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		63D3070FE12BA44A925BFB6E /* Pods_hotmoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */; };
+		E5212E87207460A600202CC9 /* GreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5212E86207460A600202CC9 /* GreenView.swift */; };
+		E5212E8A2074717300202CC9 /* ListParksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5212E882074717300202CC9 /* ListParksViewController.swift */; };
+		E525D19A20727CEC009315A8 /* InfoParkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525D19920727CEC009315A8 /* InfoParkView.swift */; };
+		E525D19D20727D13009315A8 /* DetailParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525D19B20727D13009315A8 /* DetailParkViewController.swift */; };
+		E525D19E20727D13009315A8 /* DetailParkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E525D19C20727D13009315A8 /* DetailParkViewController.xib */; };
+		E525D1A020727D23009315A8 /* InfoParkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E525D19F20727D23009315A8 /* InfoParkView.xib */; };
 		E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A472067382C007C4D1F /* AppDelegate.swift */; };
 		E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A492067382C007C4D1F /* ViewController.swift */; };
 		E5DE3A4D2067382C007C4D1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5DE3A4B2067382C007C4D1F /* Main.storyboard */; };
@@ -27,6 +33,12 @@
 		449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hotmoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.release.xcconfig"; sourceTree = "<group>"; };
+		E5212E86207460A600202CC9 /* GreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenView.swift; sourceTree = "<group>"; };
+		E5212E882074717300202CC9 /* ListParksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListParksViewController.swift; sourceTree = "<group>"; };
+		E525D19920727CEC009315A8 /* InfoParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoParkView.swift; sourceTree = "<group>"; };
+		E525D19B20727D13009315A8 /* DetailParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailParkViewController.swift; sourceTree = "<group>"; };
+		E525D19C20727D13009315A8 /* DetailParkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailParkViewController.xib; sourceTree = "<group>"; };
+		E525D19F20727D23009315A8 /* InfoParkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoParkView.xib; sourceTree = "<group>"; };
 		E5DE3A442067382C007C4D1F /* hotmoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotmoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5DE3A472067382C007C4D1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5DE3A492067382C007C4D1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +87,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E525D19320727A8F009315A8 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				E525D19420727C7A009315A8 /* DetailPark */,
+				E525D19620727C7A009315A8 /* InfoPark */,
+				E525D19520727C7A009315A8 /* ListParks */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		E525D19420727C7A009315A8 /* DetailPark */ = {
+			isa = PBXGroup;
+			children = (
+				E525D19B20727D13009315A8 /* DetailParkViewController.swift */,
+				E525D19C20727D13009315A8 /* DetailParkViewController.xib */,
+			);
+			path = DetailPark;
+			sourceTree = "<group>";
+		};
+		E525D19520727C7A009315A8 /* ListParks */ = {
+			isa = PBXGroup;
+			children = (
+				E5212E882074717300202CC9 /* ListParksViewController.swift */,
+			);
+			path = ListParks;
+			sourceTree = "<group>";
+		};
+		E525D19620727C7A009315A8 /* InfoPark */ = {
+			isa = PBXGroup;
+			children = (
+				E525D19920727CEC009315A8 /* InfoParkView.swift */,
+				E525D19F20727D23009315A8 /* InfoParkView.xib */,
+			);
+			path = InfoPark;
+			sourceTree = "<group>";
+		};
 		E5DE3A3B2067382C007C4D1F = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +147,7 @@
 		E5DE3A462067382C007C4D1F /* hotmoto */ = {
 			isa = PBXGroup;
 			children = (
+				E525D19320727A8F009315A8 /* Custom */,
 				E5DE3A6520673E0C007C4D1F /* Guest */,
 				E5DE3A6620673E0C007C4D1F /* Parking */,
 				E5DE3A472067382C007C4D1F /* AppDelegate.swift */,
@@ -149,6 +198,7 @@
 		E5DE3A6720674197007C4D1F /* common */ = {
 			isa = PBXGroup;
 			children = (
+				E5212E86207460A600202CC9 /* GreenView.swift */,
 				E5DE3A682067439E007C4D1F /* constant.swift */,
 			);
 			path = common;
@@ -189,7 +239,7 @@
 				TargetAttributes = {
 					E5DE3A432067382C007C4D1F = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -217,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5DE3A522067382C007C4D1F /* LaunchScreen.storyboard in Resources */,
+				E525D19E20727D13009315A8 /* DetailParkViewController.xib in Resources */,
+				E525D1A020727D23009315A8 /* InfoParkView.xib in Resources */,
 				E5DE3A4F2067382C007C4D1F /* Assets.xcassets in Resources */,
 				E5DE3A4D2067382C007C4D1F /* Main.storyboard in Resources */,
 			);
@@ -290,9 +342,13 @@
 				E5DE3A6D2067473A007C4D1F /* ParkViewController.swift in Sources */,
 				E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */,
 				E5DE3A692067439E007C4D1F /* constant.swift in Sources */,
+				E525D19D20727D13009315A8 /* DetailParkViewController.swift in Sources */,
 				E5DE3A5E20673AF4007C4D1F /* ServicesConfig.swift in Sources */,
 				E5DE3A6B206746CE007C4D1F /* GuestViewController.swift in Sources */,
+				E5212E87207460A600202CC9 /* GreenView.swift in Sources */,
 				E5DE3A5F20673AF4007C4D1F /* ServicesFunction.swift in Sources */,
+				E525D19A20727CEC009315A8 /* InfoParkView.swift in Sources */,
+				E5212E8A2074717300202CC9 /* ListParksViewController.swift in Sources */,
 				E5DE3A5D20673AF4007C4D1F /* Services.swift in Sources */,
 				E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */,
 				E5DE3A6420673B76007C4D1F /* Mi.swift in Sources */,
@@ -369,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -420,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -433,11 +489,16 @@
 			baseConfigurationReference = 730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5779D9JCS3;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = hotmoto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = home.hotmoto;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nhatcuongpublic.hotmoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ceac3eff-449b-41b3-987b-220cc75be608";
+				PROVISIONING_PROFILE_SPECIFIER = NHATCUONG_PUBLIC_PROVISIONING;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,11 +509,16 @@
 			baseConfigurationReference = D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5779D9JCS3;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = hotmoto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = home.hotmoto;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nhatcuongpublic.hotmoto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3f4dbf0b-8827-46fe-820e-0f0a7f092510";
+				PROVISIONING_PROFILE_SPECIFIER = NHATCUONG_PUBLIC_PROVISIONING;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
