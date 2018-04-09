@@ -17,3 +17,9 @@ Delete: (DELETE): http://hotmoto.mr47.net/parkings
 	{
       		"id": "5aa0b92b00ae4f5e4c326d2d"
 	}
+Get locations gần vị trí truyên vô:(POST) http://hotmoto.mr47.net/parkings/getNearCurrents 
+{
+	"long": (float),
+	"lat": (float),
+	"scope":(float)
+}
