@@ -20,7 +20,8 @@ Delete: (DELETE): http://hotmoto.mr47.net/parkings
 	
 Get locations gần vị trí truyên vô:(POST) http://hotmoto.mr47.net/parkings/getNearCurrents 
 {
-	"long": (float),
-	"lat": (float),
+	"position": [float,float]  
 	"scope":(float)
 }
+Trong đó : Position:  (long,lat) 
+Scope: 
