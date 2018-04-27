@@ -2,11 +2,15 @@
 Parkings : http://hotmoto.mr47.net/parkings
 Insert: (POST):http://hotmoto.mr47.net/parkings
 	example:
-    {
-        "position": [10.2, 10.3],
+   {
+        "location": {
+    		"type": "Point",
+    		"coordinates": [73.5, 40.4]
+		},
         "name": "Hoang duong",
         "address": "75 Dong khoi ",
-        "phone": "0904393114"
+        "phone": "0904393114",
+        "total":4
     }
 
 Get: (GET) : http://hotmoto.mr47.net/parkings
