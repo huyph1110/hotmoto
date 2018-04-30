@@ -17,6 +17,17 @@ class InfoParkView: GreenView {
         // Drawing code
     }
     */
+    override func initStyle() {
+        self.backgroundColor = UIColor.white
+    }
+    @IBOutlet weak var btnDetail: UIButton!
+    @IBOutlet weak var lblStatus: UILabel!
+    @IBOutlet weak var lblSlot: UILabel!
+    @IBOutlet weak var lblTimeActive: UILabel!
+    @IBOutlet weak var lblCost: UILabel!
+    @IBOutlet weak var btnCall: UIButton!
+    @IBOutlet weak var btnBook: UIButton!
+    
     func showInfo(inView: UIView) {
 
         var startRect = self.frame
@@ -26,11 +37,18 @@ class InfoParkView: GreenView {
         
         var endRect = self.frame
         endRect.origin.y = inView.frame.size.height - self.frame.size.height
+        self.alpha = 0
 
         self.layoutIfNeeded()
         self.frame = startRect
         UIView.animate(withDuration: 0.33) {
             self.frame = endRect
+            self.alpha = 1
         }
+    }
+    
+    func loadPark(park: Park) {
+        lblCost.text = park.cost
+        lblSlot.text = "\(park.total)"
     }
 }

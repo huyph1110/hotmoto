@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		63D3070FE12BA44A925BFB6E /* Pods_hotmoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */; };
+		E507F59C20889C8A00503089 /* ParkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507F59A20889C8A00503089 /* ParkCell.swift */; };
+		E507F59D20889C8A00503089 /* ParkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E507F59B20889C8A00503089 /* ParkCell.xib */; };
 		E5212E87207460A600202CC9 /* GreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5212E86207460A600202CC9 /* GreenView.swift */; };
 		E5212E8A2074717300202CC9 /* ListParksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5212E882074717300202CC9 /* ListParksViewController.swift */; };
 		E525D19A20727CEC009315A8 /* InfoParkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525D19920727CEC009315A8 /* InfoParkView.swift */; };
 		E525D19D20727D13009315A8 /* DetailParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525D19B20727D13009315A8 /* DetailParkViewController.swift */; };
 		E525D19E20727D13009315A8 /* DetailParkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E525D19C20727D13009315A8 /* DetailParkViewController.xib */; };
 		E525D1A020727D23009315A8 /* InfoParkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E525D19F20727D23009315A8 /* InfoParkView.xib */; };
+		E530A8B6207760C3006D1454 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B5207760C3006D1454 /* Park.swift */; };
+		E530A8B8207766D2006D1454 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B7207766D2006D1454 /* Guest.swift */; };
+		E542A8D6207A194F009DF90E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E542A8D5207A194F009DF90E /* README.md */; };
+		E5A4918720844AD800399F5A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4918620844AD800399F5A /* Common.swift */; };
+		E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */; };
+		E5D301C42096F7F200CBCFA5 /* MapSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */; };
 		E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A472067382C007C4D1F /* AppDelegate.swift */; };
 		E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A492067382C007C4D1F /* ViewController.swift */; };
 		E5DE3A4D2067382C007C4D1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5DE3A4B2067382C007C4D1F /* Main.storyboard */; };
@@ -33,12 +41,20 @@
 		449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hotmoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.release.xcconfig"; sourceTree = "<group>"; };
+		E507F59A20889C8A00503089 /* ParkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkCell.swift; sourceTree = "<group>"; };
+		E507F59B20889C8A00503089 /* ParkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkCell.xib; sourceTree = "<group>"; };
 		E5212E86207460A600202CC9 /* GreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenView.swift; sourceTree = "<group>"; };
 		E5212E882074717300202CC9 /* ListParksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListParksViewController.swift; sourceTree = "<group>"; };
 		E525D19920727CEC009315A8 /* InfoParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoParkView.swift; sourceTree = "<group>"; };
 		E525D19B20727D13009315A8 /* DetailParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailParkViewController.swift; sourceTree = "<group>"; };
 		E525D19C20727D13009315A8 /* DetailParkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailParkViewController.xib; sourceTree = "<group>"; };
 		E525D19F20727D23009315A8 /* InfoParkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoParkView.xib; sourceTree = "<group>"; };
+		E530A8B5207760C3006D1454 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+		E530A8B7207766D2006D1454 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
+		E542A8D5207A194F009DF90E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E5A4918620844AD800399F5A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkManagerViewController.swift; sourceTree = "<group>"; };
+		E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectionViewController.swift; sourceTree = "<group>"; };
 		E5DE3A442067382C007C4D1F /* hotmoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotmoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5DE3A472067382C007C4D1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5DE3A492067382C007C4D1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				E5212E882074717300202CC9 /* ListParksViewController.swift */,
+				E507F59A20889C8A00503089 /* ParkCell.swift */,
+				E507F59B20889C8A00503089 /* ParkCell.xib */,
 			);
 			path = ListParks;
 			sourceTree = "<group>";
@@ -126,6 +144,7 @@
 		E5DE3A3B2067382C007C4D1F = {
 			isa = PBXGroup;
 			children = (
+				E542A8D5207A194F009DF90E /* README.md */,
 				E5DE3A6720674197007C4D1F /* common */,
 				E5DE3A6220673B6B007C4D1F /* models */,
 				E5DE3A5920673AF4007C4D1F /* Sevices */,
@@ -175,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				E5DE3A6320673B76007C4D1F /* Mi.swift */,
+				E530A8B5207760C3006D1454 /* Park.swift */,
+				E530A8B7207766D2006D1454 /* Guest.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -191,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				E5DE3A6C2067473A007C4D1F /* ParkViewController.swift */,
+				E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */,
+				E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */,
 			);
 			path = Parking;
 			sourceTree = "<group>";
@@ -199,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				E5212E86207460A600202CC9 /* GreenView.swift */,
+				E5A4918620844AD800399F5A /* Common.swift */,
 				E5DE3A682067439E007C4D1F /* constant.swift */,
 			);
 			path = common;
@@ -266,11 +290,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E542A8D6207A194F009DF90E /* README.md in Resources */,
 				E5DE3A522067382C007C4D1F /* LaunchScreen.storyboard in Resources */,
 				E525D19E20727D13009315A8 /* DetailParkViewController.xib in Resources */,
 				E525D1A020727D23009315A8 /* InfoParkView.xib in Resources */,
 				E5DE3A4F2067382C007C4D1F /* Assets.xcassets in Resources */,
 				E5DE3A4D2067382C007C4D1F /* Main.storyboard in Resources */,
+				E507F59D20889C8A00503089 /* ParkCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,18 +365,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A4918720844AD800399F5A /* Common.swift in Sources */,
 				E5DE3A6D2067473A007C4D1F /* ParkViewController.swift in Sources */,
+				E530A8B6207760C3006D1454 /* Park.swift in Sources */,
 				E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */,
 				E5DE3A692067439E007C4D1F /* constant.swift in Sources */,
 				E525D19D20727D13009315A8 /* DetailParkViewController.swift in Sources */,
+				E530A8B8207766D2006D1454 /* Guest.swift in Sources */,
 				E5DE3A5E20673AF4007C4D1F /* ServicesConfig.swift in Sources */,
 				E5DE3A6B206746CE007C4D1F /* GuestViewController.swift in Sources */,
 				E5212E87207460A600202CC9 /* GreenView.swift in Sources */,
+				E507F59C20889C8A00503089 /* ParkCell.swift in Sources */,
 				E5DE3A5F20673AF4007C4D1F /* ServicesFunction.swift in Sources */,
+				E5D301C42096F7F200CBCFA5 /* MapSelectionViewController.swift in Sources */,
 				E525D19A20727CEC009315A8 /* InfoParkView.swift in Sources */,
 				E5212E8A2074717300202CC9 /* ListParksViewController.swift in Sources */,
 				E5DE3A5D20673AF4007C4D1F /* Services.swift in Sources */,
 				E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */,
+				E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */,
 				E5DE3A6420673B76007C4D1F /* Mi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

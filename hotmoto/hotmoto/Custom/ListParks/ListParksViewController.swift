@@ -10,14 +10,15 @@ import UIKit
 
 class ListParksViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return arrayPark.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
     
-
+    var arrayPark = [Park]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +30,9 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
