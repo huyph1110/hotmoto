@@ -28,4 +28,16 @@ Get locations gần vị trí truyên vô:(POST) http://hotmoto.mr47.net/parking
 	"scope":(float)
 }
 Trong đó : Position:  (long,lat) 
-Scope: 
+Scope: Pham vi
+// DANG NHAP
+
+Login:(POST)   http://hotmoto.mr47.net//users/login 
+	{
+		"username":"lean",
+		"password":"123"
+	}
+Register:(POST)   http://hotmoto.mr47.net//users/register
+	{
+		"username":"lean",
+		"password":"123"
+	}
