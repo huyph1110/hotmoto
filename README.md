@@ -31,12 +31,14 @@ Trong đó : Position:  (long,lat)
 Scope: Pham vi
 // DANG NHAP
 
-Login:(POST)   http://hotmoto.mr47.net//users/login 
+Login:(POST)   http://hotmoto.mr47.net/users/login 
 	{
 		"username":"lean",
 		"password":"123"
 	}
-Register:(POST)   http://hotmoto.mr47.net//users/register
+	
+	
+Register:(POST)   http://hotmoto.mr47.net/users/register
 	{
 		"username":"lean",
 		"password":"123"
