@@ -46,8 +46,10 @@ class InfoParkView: GreenView {
             self.alpha = 1
         }
     }
+    var myPark: Park?
     
     func loadPark(park: Park) {
+        myPark = park
         lblCost.text = park.cost
         lblSlot.text = "\(park.total)"
     }

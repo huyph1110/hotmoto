@@ -44,5 +44,10 @@ class DetailParkViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func loadPark(park: Park!)  {
+        
+    }
+    @IBAction func selectBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

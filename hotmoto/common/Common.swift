@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import PXGoogleDirections
 import UIKit
+
 let App = UIApplication.shared.delegate as! AppDelegate
+let mapTasks = MapTasks()
 
 extension AppDelegate {
     func showAlert(title: String, vc: UIViewController, completion:@escaping (Bool) -> Void)  {
@@ -27,6 +30,8 @@ extension AppDelegate {
         DispatchQueue.main.async {
             let indicator = UIActivityIndicatorView.init()
             indicator.center = CGPoint.init(x: view.frame.width/2, y: view.frame.height/2)
+            indicator.color = UIColor.blue
+            indicator.activityIndicatorViewStyle  = .whiteLarge
             indicator.startAnimating()
             view.addSubview(indicator)
         }

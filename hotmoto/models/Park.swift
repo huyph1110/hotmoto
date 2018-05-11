@@ -28,6 +28,10 @@ class Park: Mi {
         var out = [Park]()
         for dic in arr {
             let item = Park.init(dictionary: dic)
+            let locat = dic.value(forKey: "location") as! NSDictionary
+            let coordinate = locat.value(forKey: "coordinates") as! [CGFloat]
+
+            item.position = CLLocationCoordinate2DMake(CLLocationDegrees(coordinate[1]),CLLocationDegrees(coordinate[0]))
             out.append(item)
         }
         

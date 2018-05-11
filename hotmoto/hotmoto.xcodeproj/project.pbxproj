@@ -35,6 +35,7 @@
 		E5DE3A692067439E007C4D1F /* constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A682067439E007C4D1F /* constant.swift */; };
 		E5DE3A6B206746CE007C4D1F /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A6A206746CE007C4D1F /* GuestViewController.swift */; };
 		E5DE3A6D2067473A007C4D1F /* ParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A6C2067473A007C4D1F /* ParkViewController.swift */; };
+		E5EFB32E20A1527D00F4AEB9 /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EFB32D20A1527D00F4AEB9 /* MapTasks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		E5DE3A682067439E007C4D1F /* constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constant.swift; sourceTree = "<group>"; };
 		E5DE3A6A206746CE007C4D1F /* GuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
 		E5DE3A6C2067473A007C4D1F /* ParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkViewController.swift; sourceTree = "<group>"; };
+		E5EFB32D20A1527D00F4AEB9 /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 		E5DE3A6720674197007C4D1F /* common */ = {
 			isa = PBXGroup;
 			children = (
+				E5EFB32D20A1527D00F4AEB9 /* MapTasks.swift */,
 				E5212E86207460A600202CC9 /* GreenView.swift */,
 				E5A4918620844AD800399F5A /* Common.swift */,
 				E5DE3A682067439E007C4D1F /* constant.swift */,
@@ -348,10 +351,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PXGoogleDirections/PXGoogleDirections.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PXGoogleDirections.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -366,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5A4918720844AD800399F5A /* Common.swift in Sources */,
+				E5EFB32E20A1527D00F4AEB9 /* MapTasks.swift in Sources */,
 				E5DE3A6D2067473A007C4D1F /* ParkViewController.swift in Sources */,
 				E530A8B6207760C3006D1454 /* Park.swift in Sources */,
 				E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */,
@@ -524,6 +530,10 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 5779D9JCS3;
 				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = hotmoto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -544,6 +554,10 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 5779D9JCS3;
 				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = hotmoto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

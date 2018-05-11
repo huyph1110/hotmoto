@@ -32,7 +32,7 @@
                     <rect key="frame" x="16" y="20" width="34" height="30"/>
                     <state key="normal" title="back"/>
                     <connections>
-                        <action selector="back:" destination="-1" eventType="touchUpInside" id="pqh-np-WCm"/>
+                        <action selector="selectBack:" destination="-1" eventType="touchUpInside" id="amj-ng-Tuz"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chi tiết" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3m-Ad-1H6">
@@ -141,9 +141,11 @@
             <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EmX-P7-sCa" secondAttribute="bottom" id="0sh-mc-BFA"/>
-                <constraint firstItem="F3m-Ad-1H6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="CTa-Zb-Y20"/>
+                <constraint firstItem="F3m-Ad-1H6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="28" id="8Rf-Av-ahe"/>
+                <constraint firstItem="F3m-Ad-1H6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="750" constant="8" id="CTa-Zb-Y20"/>
                 <constraint firstItem="EmX-P7-sCa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Krb-4H-Jhm"/>
-                <constraint firstItem="K8u-ed-f4i" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QAw-nc-E46"/>
+                <constraint firstItem="K8u-ed-f4i" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" priority="750" id="QAw-nc-E46"/>
+                <constraint firstItem="K8u-ed-f4i" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="W6N-5b-7in"/>
                 <constraint firstItem="M89-1x-SDz" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-33" id="aLJ-aB-4PV"/>
                 <constraint firstItem="EmX-P7-sCa" firstAttribute="top" secondItem="F3m-Ad-1H6" secondAttribute="bottom" constant="8" id="c0j-gO-n0q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EmX-P7-sCa" secondAttribute="trailing" id="hVG-w0-P8t"/>
