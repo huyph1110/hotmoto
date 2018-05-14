@@ -45,8 +45,13 @@ class DetailParkViewController: UIViewController {
     }
     */
     func loadPark(park: Park!)  {
-        
+        lblName.text = park.name
+        lblTotal.text = ""
+        lblPhone.text = park.phone
+        lblAddress.text = park.address
+        lblCost.text = ""
     }
+    
     @IBAction func selectBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

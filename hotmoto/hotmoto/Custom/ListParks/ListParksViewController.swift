@@ -16,6 +16,10 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    @IBOutlet weak var tbvData: UITableView!
     
     var arrayPark = [Park]()
     
@@ -33,7 +37,11 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
     @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    func loadParks(parks: [Park]) {
+        arrayPark = parks
+        tbvData.reloadData()
+        
+    }
     /*
     // MARK: - Navigation
 

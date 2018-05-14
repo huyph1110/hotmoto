@@ -18,7 +18,8 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     var mapView: GMSMapView!
     var locationManager = CLLocationManager()
     var arrayParks = [Park]()
-
+    var selectedMarker: GMSMarker!
+    
     var results: [PXGoogleDirectionsRoute]!
 
     @IBAction func selectLogout(_ sender: Any) {
@@ -55,6 +56,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         self.view.bringSubview(toFront: btnRefresh)
         self.view.bringSubview(toFront: btnLogout)
         infoView.btnDetail.addTarget(self, action: #selector(GuestViewController.selectDetail), for: .touchUpInside)
+        btnList.addTarget(self, action: #selector(GuestViewController.loadParkList), for: .touchUpInside)
        // infoView.removeFromSuperview()
     }
     
@@ -63,6 +65,16 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         detailVC.loadPark(park: infoView.myPark!)
         self.present(detailVC, animated: true, completion: nil)
         
+    }
+    var listParkVC: ListParksViewController?
+    
+    @objc func loadParkList()  {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        listParkVC = storyboard.instantiateViewController(withIdentifier: "ListParksViewController") as? ListParksViewController
+        self.present(listParkVC!, animated: true) {
+            self.listParkVC?.loadParks(parks: self.arrayParks)
+
+        }
     }
     
     var myLocation : CLLocation?
@@ -103,13 +115,23 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     }
     */
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        if selectedMarker != marker {
+            infoView.dismiss()
+            selectedMarker = marker
+            self.showDirectsRoad(from:myLocation!.coordinate , to: marker.position)
+        }
+        return false
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         infoView.showInfo(inView: self.view)
         let park = arrayParks.filter({$0.marker == marker}).last
         infoView.loadPark(park: park!)
         self.mapviewFocusToMarker(marker: marker)
-        self.showDirectsRoad(from:myLocation!.coordinate , to: marker.position)
-        return true
+
     }
+
     func mapviewBoundAllMarker()  {
         var bounds = GMSCoordinateBounds()
         bounds = bounds.includingCoordinate(myLocation!.coordinate)
@@ -238,17 +260,26 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
             })
         }
     }
+    
+    var polylinesOnDrawing = [GMSPolyline]()
+    
     func updateResults()  {
-        mapView.clear()
+
+        for poliline in polylinesOnDrawing {
+            poliline.map = nil
+        }
+        polylinesOnDrawing.removeAll()
+        
         //remark
         for park in arrayParks {
             park.marker?.map = mapView
         }
         
         var bounds = GMSCoordinateBounds()
+        
         bounds = bounds.includingCoordinate(myLocation!.coordinate)
         for i in 0 ..< results.count {
-            results[i].drawOnMap(mapView, approximate: false, strokeColor: UIColor.lightGray, strokeWidth: 3.0)
+            polylinesOnDrawing.append ( results[i].drawOnMap(mapView, approximate: false, strokeColor: UIColor.black, strokeWidth: 3.0))
             bounds = bounds.includingBounds(results[i].bounds!)
 
         }
