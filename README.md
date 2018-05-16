@@ -2,6 +2,8 @@
 Parkings : http://hotmoto.mr47.net/parkings
 Insert: (POST):http://hotmoto.mr47.net/parkings
 	example:
+	
+	
   {
 	"location":{
 		"type":"Point",
