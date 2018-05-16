@@ -2,16 +2,22 @@
 Parkings : http://hotmoto.mr47.net/parkings
 Insert: (POST):http://hotmoto.mr47.net/parkings
 	example:
-   {
-        "location": {
-    		"type": "Point",
-    		"coordinates": [73.5, 40.4]
-		},
-        "name": "Hoang duong",
-        "address": "75 Dong khoi ",
-        "phone": "0904393114",
-        "total":4
-    }
+  {
+	"location":{
+		"type":"Point",
+		"coordinates":[106.65500421077,10.8401665597548]},
+		"name":"test name",
+		"address":"test address",
+		"phone":"012345",
+		"total":0,
+		"AvailableSlot":0,
+		"openTime":"",
+		"closeTime":"",
+		"status":1,
+		"fullname":"Le An",
+		"username":"lean",
+		"email":"xuanquang48@gmail.com"
+  }
 
 Get: (GET) : http://hotmoto.mr47.net/parkings
 
