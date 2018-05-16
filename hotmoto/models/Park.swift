@@ -17,12 +17,14 @@ class Park: Mi {
     @objc dynamic var id =  ""
     @objc dynamic var cost =  ""
     @objc dynamic var total =  0
+    @objc dynamic var AvailableSlot =  0
+    @objc dynamic var openTime =  0
+    @objc dynamic var closeTime =  0
+    @objc dynamic var status =  0
+
     var marker: GMSMarker?
     /*
-     "position": [10.2, 10.3],
-     "name": "Hoang duong",
-     "address": "75 Dong khoi ",
-     "phone": "0904393114"
+     {"id":"5af90325a0ccf74aec2269f1","location":{"type":"Point","coordinates":[106.65500421077,10.8401665597548]},"name":"test name","address":"test address","phone":"012345","total":0,"AvailableSlot":0,"openTime":"","closeTime":"","status":1}
      */
     class func parseData(arr: [NSDictionary]) -> [Park] {
         var out = [Park]()

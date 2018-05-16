@@ -12,7 +12,9 @@ class DetailParkViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if park != nil {
+            self.loadPark(park: park)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -20,9 +22,7 @@ class DetailParkViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func back(_ sender: Any) {
-    }
+
     
     @IBOutlet weak var imvAvatar: UIImageView!
     @IBOutlet weak var imvState: UIImageView!
@@ -44,6 +44,7 @@ class DetailParkViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    var park : Park!
     func loadPark(park: Park!)  {
         lblName.text = park.name
         lblTotal.text = ""

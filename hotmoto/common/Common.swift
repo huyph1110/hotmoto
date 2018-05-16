@@ -30,8 +30,9 @@ extension AppDelegate {
         DispatchQueue.main.async {
             let indicator = UIActivityIndicatorView.init()
             indicator.center = CGPoint.init(x: view.frame.width/2, y: view.frame.height/2)
-            indicator.color = UIColor.blue
             indicator.activityIndicatorViewStyle  = .whiteLarge
+            indicator.color = UIColor.blue
+
             indicator.startAnimating()
             view.addSubview(indicator)
         }
@@ -39,6 +40,7 @@ extension AppDelegate {
     
     func removeLoadingOnView(view: UIView){
         DispatchQueue.main.async {
+
             for subview in view.subviews {
                 if subview is UIActivityIndicatorView {
                     subview.removeFromSuperview()

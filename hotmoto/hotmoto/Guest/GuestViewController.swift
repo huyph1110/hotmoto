@@ -19,7 +19,8 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     var locationManager = CLLocationManager()
     var arrayParks = [Park]()
     var selectedMarker: GMSMarker!
-    
+    var detailVC = DetailParkViewController.init(nibName: "DetailParkViewController", bundle: nil)
+
     var results: [PXGoogleDirectionsRoute]!
 
     @IBAction func selectLogout(_ sender: Any) {
@@ -59,13 +60,14 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         btnList.addTarget(self, action: #selector(GuestViewController.loadParkList), for: .touchUpInside)
        // infoView.removeFromSuperview()
     }
-    
+
     @objc func selectDetail()  {
-        let detailVC = DetailParkViewController()
-        detailVC.loadPark(park: infoView.myPark!)
-        self.present(detailVC, animated: true, completion: nil)
-        
+        detailVC.park = self.infoView.myPark
+
+        self.present(detailVC, animated: true, completion: {
+        })
     }
+    
     var listParkVC: ListParksViewController?
     
     @objc func loadParkList()  {

@@ -17,9 +17,10 @@ enum LOGIN_TYPE {
 }
 
 enum segue_type : String {
-    case park = "park"
+    case managepark = "managepark"
+    case editpark = "editpark"
+    case newpark = "newpark"
     case guest = "guest"
-    case managePark = "managePark"
 }
 let GoogleMap_API = "AIzaSyBxsfr_Ymwg4FByyh1S6K7Xrczj6WQ4kwA"
 

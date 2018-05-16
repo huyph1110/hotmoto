@@ -19,6 +19,8 @@
 		E530A8B6207760C3006D1454 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B5207760C3006D1454 /* Park.swift */; };
 		E530A8B8207766D2006D1454 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B7207766D2006D1454 /* Guest.swift */; };
 		E542A8D6207A194F009DF90E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E542A8D5207A194F009DF90E /* README.md */; };
+		E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C454020AC160500C493DA /* MyParkListViewController.swift */; };
+		E59F063E20AA9FC9008E0DCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F063D20AA9FC9008E0DCC /* User.swift */; };
 		E5A4918720844AD800399F5A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4918620844AD800399F5A /* Common.swift */; };
 		E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */; };
 		E5D301C42096F7F200CBCFA5 /* MapSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */; };
@@ -53,6 +55,8 @@
 		E530A8B5207760C3006D1454 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		E530A8B7207766D2006D1454 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		E542A8D5207A194F009DF90E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E58C454020AC160500C493DA /* MyParkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyParkListViewController.swift; sourceTree = "<group>"; };
+		E59F063D20AA9FC9008E0DCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E5A4918620844AD800399F5A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkManagerViewController.swift; sourceTree = "<group>"; };
 		E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectionViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 				E5DE3A6320673B76007C4D1F /* Mi.swift */,
 				E530A8B5207760C3006D1454 /* Park.swift */,
 				E530A8B7207766D2006D1454 /* Guest.swift */,
+				E59F063D20AA9FC9008E0DCC /* User.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				E5DE3A6C2067473A007C4D1F /* ParkViewController.swift */,
 				E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */,
 				E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */,
+				E58C454020AC160500C493DA /* MyParkListViewController.swift */,
 			);
 			path = Parking;
 			sourceTree = "<group>";
@@ -351,12 +357,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
 				"${BUILT_PRODUCTS_DIR}/PXGoogleDirections/PXGoogleDirections.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoidingSwift/TPKeyboardAvoidingSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PXGoogleDirections.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoidingSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -376,6 +386,7 @@
 				E530A8B6207760C3006D1454 /* Park.swift in Sources */,
 				E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */,
 				E5DE3A692067439E007C4D1F /* constant.swift in Sources */,
+				E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */,
 				E525D19D20727D13009315A8 /* DetailParkViewController.swift in Sources */,
 				E530A8B8207766D2006D1454 /* Guest.swift in Sources */,
 				E5DE3A5E20673AF4007C4D1F /* ServicesConfig.swift in Sources */,
@@ -390,6 +401,7 @@
 				E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */,
 				E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */,
 				E5DE3A6420673B76007C4D1F /* Mi.swift in Sources */,
+				E59F063E20AA9FC9008E0DCC /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

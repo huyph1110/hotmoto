@@ -28,24 +28,76 @@ class ViewController: UIViewController {
     @IBAction func selectLoginType(_ sender: UIButton) {
         if type == LOGIN_TYPE.GUEST {
             type = LOGIN_TYPE.PARK
-            
-            sender.setTitle("as park", for: .normal)
+
+            sender.setTitle("Quản lý", for: .normal)
         }else {
             type = LOGIN_TYPE.GUEST
-            sender.setTitle("as guest", for: .normal)
+            sender.setTitle("Tìm bãi", for: .normal)
 
-        }
-        
+        }        
     }
     
     @IBAction func login(_ sender: UIButton) {
         if type == LOGIN_TYPE.GUEST {
+            
             self.performSegue(withIdentifier: segue_type.guest.rawValue, sender: self)
         }else {
-            self.performSegue(withIdentifier: segue_type.park.rawValue, sender: self)
+            
+            if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {
+                App.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", vc: self, completion: {_ in })
+            }
+            else if (txfPasswords.text?.contains(" "))! || (txfUserName.text?.contains(" "))! {
+                App.showAlert(title: "Tài khoản và mật khẩu không được có khoảng trắng", vc: self, completion: {_ in })
+                
+            }
+            else {
+                App.showLoadingOnView(view: self.view)
+                let req = loginReq()
+                req.username = txfUserName.text!
+                req.password = txfPasswords.text!
+                services.userLogin(request: req, success: {
+                    App.removeLoadingOnView(view: self.view)
+
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: segue_type.managepark.rawValue, sender: self)
+
+                    }
+
+                }, failure: { (error) in
+                    App.showAlert(title: error, vc: self, completion: {_ in })
+                    App.removeLoadingOnView(view: self.view)
+
+                })
+            }
 
         }
         
+    }
+    @IBAction func register(_ sender: Any) {
+        
+        if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {
+            App.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", vc: self, completion: {_ in })
+        }
+        else if (txfPasswords.text?.contains(" "))! || (txfUserName.text?.contains(" "))! {
+            App.showAlert(title: "Tài khoản và mật khẩu không được có khoảng trắng", vc: self, completion: {_ in })
+            
+        }
+        else {
+            App.showLoadingOnView(view: self.view)
+
+            let req = registerReq()
+            req.username = txfUserName.text!
+            req.password = txfPasswords.text!
+            services.userRegister(request: req, success: {
+                App.showAlert(title: "Đăng ký thành công", vc: self, completion: {_ in })
+                App.removeLoadingOnView(view: self.view)
+
+            }, failure: { (error) in
+                App.showAlert(title: error, vc: self, completion: {_ in })
+                App.removeLoadingOnView(view: self.view)
+
+            })
+        }
     }
     
 }

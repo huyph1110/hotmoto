@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 
 class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate {
+    @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnSelect: UIButton!
     var mapView: GMSMapView!
     var locationManager = CLLocationManager()
@@ -37,14 +38,18 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func selectLocation(_ sender: Any) {
-        
+    @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
+    
+    @IBAction func selectLocation(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     func setupSubViews()  {
         self.view.bringSubview(toFront: btnSelect)
-        
+        self.view.bringSubview(toFront: btnCancel)
+
         // infoView.removeFromSuperview()
     }
     var myLocation : CLLocation?
