@@ -18,6 +18,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let user = UserDefaults.standard.value(forKey: LOGIN_ACCOUNT.USER.rawValue) {
+            txfUserName.text = user as? String
+
+        }
+        if let pass = UserDefaults.standard.value(forKey: LOGIN_ACCOUNT.PASS.rawValue) {
+            txfPasswords.text = pass as? String
+
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +66,8 @@ class ViewController: UIViewController {
                 req.password = txfPasswords.text!
                 services.userLogin(request: req, success: {
                     App.removeLoadingOnView(view: self.view)
+                    UserDefaults.standard.setValue(req.username, forKey: LOGIN_ACCOUNT.USER.rawValue)
+                    UserDefaults.standard.setValue(req.password, forKey: LOGIN_ACCOUNT.PASS.rawValue)
 
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: segue_type.managepark.rawValue, sender: self)
@@ -64,6 +75,7 @@ class ViewController: UIViewController {
                     }
 
                 }, failure: { (error) in
+                    
                     App.showAlert(title: error, vc: self, completion: {_ in })
                     App.removeLoadingOnView(view: self.view)
 

@@ -1,0 +1,3 @@
+[submodule "hotmoto/Frameworks/External/PXGoogleDirections"]
+	path = hotmoto/Frameworks/External/PXGoogleDirections
+	url = https://github.com/poulpix/PXGoogleDirections.git

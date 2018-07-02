@@ -7,6 +7,7 @@
 //
 
 import UIKit
+let userLogin = User()
 
 class User: Mi {
     @objc dynamic var username = ""

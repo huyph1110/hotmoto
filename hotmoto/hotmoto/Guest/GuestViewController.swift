@@ -44,7 +44,6 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         locationManager.startUpdatingLocation()
         // Do any additional setup after loading the view.
         setupSubViews()
-
     }
 
     override func didReceiveMemoryWarning() {

@@ -21,6 +21,10 @@ class Park: Mi {
     @objc dynamic var openTime =  0
     @objc dynamic var closeTime =  0
     @objc dynamic var status =  0
+    @objc dynamic var email =  ""
+    @objc dynamic var username =  ""
+    @objc dynamic var fullname =  ""
+
 
     var marker: GMSMarker?
     /*
@@ -62,10 +66,16 @@ class insertParkReq: Mi {
     //    "scope":(float)
     @objc dynamic var location = NSDictionary()
     @objc dynamic var name =  ""
-    @objc dynamic var address = ""
-    @objc dynamic var phone = ""
-    @objc dynamic var total = 0
-
+    @objc dynamic var address =  ""
+    @objc dynamic var phone =  ""
+    @objc dynamic var id =  ""
+    @objc dynamic var cost =  ""
+    @objc dynamic var total =  0
+    @objc dynamic var AvailableSlot =  0
+    @objc dynamic var openTime =  0
+    @objc dynamic var closeTime =  0
+    @objc dynamic var status =  0
+    @objc dynamic var email =  ""
 }
 
 

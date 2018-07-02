@@ -8,13 +8,18 @@
 
 import UIKit
 
-class constant: NSObject {
+class Constant: NSObject {
 
 }
 enum LOGIN_TYPE {
     case GUEST
     case PARK
 }
+enum LOGIN_ACCOUNT : String {
+    case USER = "LOGINUSER"
+    case PASS = "LOGINPASS"
+}
+
 
 enum segue_type : String {
     case managepark = "managepark"
