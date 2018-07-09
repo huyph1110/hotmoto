@@ -26,6 +26,12 @@ Insert: (POST):http://hotmoto.mr47.net/parkings
 
 Get: (GET) : http://hotmoto.mr47.net/parkings
 
+Get Parking theo Username: (POST) : http://hotmoto.mr47.net/parkings/users 
+
+	{
+		"username":"lean"
+	}
+
 Update: (PUT): http://hotmoto.mr47.net/parkings
 
 Delete: (DELETE): http://hotmoto.mr47.net/parkings
