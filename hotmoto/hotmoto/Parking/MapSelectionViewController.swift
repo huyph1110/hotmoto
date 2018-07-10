@@ -8,31 +8,65 @@
 
 import UIKit
 import GoogleMaps
-var delegate: MapSelectionViewControllerDelegate?
+import MapKit
+
 
 protocol MapSelectionViewControllerDelegate {
     func mapSelectionDidSelect(location : CLLocationCoordinate2D, suggest : String? )
     
 }
-class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate {
+class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return itemsNearby.count + 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell  = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if indexPath.row == 0 {
+            let cell  = tableView.dequeueReusableCell(withIdentifier: "text")
+            return cell!
+        }
+        
+        cell?.textLabel?.text = itemsNearby[indexPath.row - 1].name
+        return cell!
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 0 {
+            let cell = tableView.cellForRow(at: indexPath) as! InputTextCell
+            delegate?.mapSelectionDidSelect(location: coordinate, suggest: cell.txfText.text)
+            
+        }
+        else {
+            let text = itemsNearby[indexPath.row - 1].name
+            delegate?.mapSelectionDidSelect(location: coordinate, suggest: text)
+
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnSelect: UIButton!
-    @IBOutlet weak var txvSuggest: UITextView!
-
+    @IBOutlet weak var tbvLocate: UITableView!
+    
+    var delegate: MapSelectionViewControllerDelegate?
+    
     var mapView: GMSMapView!
     var locationManager = CLLocationManager()
     var myMarker: GMSMarker!
     var coordinate = CLLocationCoordinate2D()
+    var itemsNearby = [MKMapItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        txvSuggest.text = nil
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
         mapView = GMSMapView.map(withFrame: self.view.bounds, camera: camera)
         mapView?.isMyLocationEnabled = true
         mapView?.settings.myLocationButton = true
         mapView?.delegate = self
         self.view.addSubview(mapView)
-        
+        self.tbvLocate.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tbvLocate.register(UINib.init(nibName: "InputTextCell", bundle: nil), forCellReuseIdentifier: "text")
+
         //Location Manager code to fetch current location
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
@@ -51,15 +85,15 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
     }
     
     @IBAction func selectLocation(_ sender: Any) {
-        delegate?.mapSelectionDidSelect(location: coordinate, suggest: txvSuggest.text)
-        self.dismiss(animated: false, completion: nil)
+        tbvLocate.isHidden = true
+
     }
     
     func setupSubViews()  {
         self.view.bringSubview(toFront: btnSelect)
         self.view.bringSubview(toFront: btnCancel)
-        self.view.bringSubview(toFront: txvSuggest)
-
+        self.view.bringSubview(toFront: tbvLocate)
+        tbvLocate.isHidden = true
         // infoView.removeFromSuperview()
     }
     var myLocation : CLLocation?
@@ -73,34 +107,34 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
       
         myLocation = locations.last
         
-        
-        
         //Finally stop updating location otherwise it will come again and again in this delegate
         self.locationManager.stopUpdatingLocation()
     }
+    
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
         self.mapView.clear()
         myMarker =  insertMarkerAtPos(coordinate: coordinate, title: nil, detail: nil)
-        pickPlace(locat: coordinate)
         GooglePlaces().search(location: coordinate, radius: 50, query: "") { (list, error) in
             DispatchQueue.main.async {
-                if list == nil {
-                    self.txvSuggest.text = nil
-                }
-                else if list!.count > 0{
-                    self.txvSuggest.text = list?.first?.name
-                }
+                self.itemsNearby = list!
+                self.tbvLocate.reloadData()
+                self.tbvLocate.isHidden = false
             }
         }
     }
+    
     func insertMarkerAtPos(coordinate: CLLocationCoordinate2D, title: String?, detail: String?) -> GMSMarker {
         let marker = GMSMarker(position: coordinate)
-        marker.title = title
-        marker.tracksViewChanges = true
-        marker.map = mapView
-        marker.snippet = detail
+
+        DispatchQueue.main.async {
+            marker.title = title
+            marker.tracksViewChanges = true
+            marker.map = self.mapView
+            marker.snippet = detail
+        }
         return marker
+
     }
     
     
@@ -113,9 +147,7 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
         // Pass the selected object to the new view controller.
     }
     */
-    func pickPlace(locat: CLLocationCoordinate2D) {
    
-    }
     
 
 }

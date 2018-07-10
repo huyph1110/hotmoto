@@ -131,7 +131,7 @@ class GooglePlaces {
                         
                         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
                         let mapItem = MKMapItem(placemark: placemark)
-                        mapItem.name = name + vicinity
+                        mapItem.name = name + " " + vicinity
                         mapItems.append(mapItem)
                     }
                 }

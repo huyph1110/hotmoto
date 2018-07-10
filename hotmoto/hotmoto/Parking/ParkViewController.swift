@@ -9,13 +9,14 @@
 import UIKit
 import Cloudinary
 import GoogleMaps
+import Alamofire
 
 var apiKey = "751342836181944"
 var apiSecret = "tvuVpl7UHhIuzWu83G1UYPo5ZyQ"
 
 class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     func mapSelectionDidSelect(location: CLLocationCoordinate2D, suggest: String?) {
-        
+        txvAddress.text = suggest
     }
     
     
@@ -33,7 +34,16 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     @IBOutlet weak var txfPhone: UILabel!
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let vc = segue.destination
+        if vc is MapSelectionViewController {
+            (vc as! MapSelectionViewController).delegate = self
+        }
+        
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad() //tvuVpl7UHhIuzWu83G1UYPo5ZyQ
         config = CLDConfiguration(cloudName: "huyph00", apiKey: apiKey, apiSecret: apiSecret)
@@ -56,6 +66,10 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         self.photoCamera()
     }
     
+    @IBAction func createPark(_ sender: Any) {
+        addNewPark()
+    }
+    
     func uploadImage(data: Data, name: String) {
         
         
@@ -65,6 +79,7 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
             print(progress.fractionCompleted)
             if progress.isFinished {
                 self.urlImage = url
+                self.imvAvatar.image = UIImage.init(data: data)
             }
         }) { (resul, error) in
             print(error?.description ?? "")
@@ -80,15 +95,18 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         //let url = info[UIImagePickerControllerReferenceURL] as! String
         //let type = info[UIImagePickerControllerMediaType] as! String
         let data = UIImagePNGRepresentation(image)
-        uploadImage(data: data!, name: generateImageName(type: "png"))
+        uploadImage(data: data!, name: generateImageName(type: "png")!)
         picker.dismiss(animated: true, completion: nil)
         
     }
-    func generateImageName(type: String) -> String {
-        let username = UserDefaults.value(forKey: LOGIN_ACCOUNT.USER.rawValue) as! String
-        let time = Date().description
-        
-        return username + time + type
+    func generateImageName(type: String) -> String? {
+        if let username = UserDefaults.standard.value(forKey: LOGIN_ACCOUNT.USER.rawValue) {
+            let time = Date().description
+            
+            return (username as! String) + time + type
+
+        }
+        return nil
     }
     var urlImage: String?
     let coordinate: CLLocationCoordinate2D? = nil

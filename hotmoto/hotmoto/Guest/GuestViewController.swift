@@ -27,7 +27,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func selectRefresh(_ sender: Any) {
-        loadParkingWithDistance(distance: 1000)
+        loadParking(atlocation: (selectedLocat?.coordinate)!, distance: 1000)
     }
     
     override func viewDidLoad() {
@@ -78,18 +78,18 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         }
     }
     
-    var myLocation : CLLocation?
+    var selectedLocat : CLLocation?
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if myLocation == nil {
-            myLocation = locations.last
-            loadParkingWithDistance(distance: 1000)
-            
+        if selectedLocat == nil {
+            selectedLocat = locations.last
+            loadParking(atlocation: (selectedLocat?.coordinate)!, distance: 1000)
+
         }else {
-            myLocation = locations.last
+            selectedLocat = locations.last
 
         }
-        let camera = GMSCameraPosition.camera(withLatitude: myLocation!.coordinate.latitude, longitude: myLocation!.coordinate.longitude, zoom: 17.0)
+        let camera = GMSCameraPosition.camera(withLatitude: selectedLocat!.coordinate.latitude, longitude: selectedLocat!.coordinate.longitude, zoom: 17.0)
         
         self.mapView?.animate(to: camera)
         
@@ -120,7 +120,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         if selectedMarker != marker {
             infoView.dismiss()
             selectedMarker = marker
-            self.showDirectsRoad(from:myLocation!.coordinate , to: marker.position)
+            self.showDirectsRoad(from:selectedLocat!.coordinate , to: marker.position)
         }
         return false
     }
@@ -135,7 +135,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
 
     func mapviewBoundAllMarker()  {
         var bounds = GMSCoordinateBounds()
-        bounds = bounds.includingCoordinate(myLocation!.coordinate)
+        bounds = bounds.includingCoordinate(selectedLocat!.coordinate)
 
         for park  in arrayParks {
             bounds = bounds.includingCoordinate((park.marker?.position)!)
@@ -151,16 +151,23 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     }
     
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
-        insertPark(coordinate: coordinate)
+        let marker = GMSMarker(position: coordinate)
+        marker.title = nil
+        marker.tracksViewChanges = true
+        marker.map = mapView
+        
+        selectedLocat = CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        loadParking(atlocation: coordinate, distance: 1000)
+
     }
     
     // MARK: - Services +
 
-    func loadParkingWithDistance(distance: Float) {
+    func loadParking(atlocation locat:CLLocationCoordinate2D, distance: Float) {
         App.showLoadingOnView(view: self.view)
         let request = getParksReq()
-        let lat = myLocation!.coordinate.latitude
-        let long =  myLocation!.coordinate.longitude
+        let lat = locat.latitude
+        let long =  locat.longitude
         
         request.position = [Float( long ),Float( lat)]
         request.scope = distance
@@ -183,7 +190,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         }
 
     }
-    
+    /*
     func insertPark(coordinate: CLLocationCoordinate2D) {
         App.showLoadingOnView(view: self.view)
         let request = insertParkReq()
@@ -204,7 +211,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
             })
         }
     }
-
+     */
 
     func loadArrayPark(parks: [Park]) {
         arrayParks = parks
@@ -278,7 +285,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         
         var bounds = GMSCoordinateBounds()
         
-        bounds = bounds.includingCoordinate(myLocation!.coordinate)
+        bounds = bounds.includingCoordinate(selectedLocat!.coordinate)
         for i in 0 ..< results.count {
             polylinesOnDrawing.append ( results[i].drawOnMap(mapView, approximate: false, strokeColor: UIColor.black, strokeWidth: 3.0))
             bounds = bounds.includingBounds(results[i].bounds!)
