@@ -28,9 +28,9 @@ class DetailParkViewController: UIViewController {
     @IBOutlet weak var imvState: UIImageView!
 
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
-
+    @IBOutlet weak var btnPhone: UIButton!
+    
     @IBOutlet weak var lblCost: UILabel!
     @IBOutlet weak var lblTotal: UILabel!
     @IBOutlet weak var lblAvail: UILabel!
@@ -47,13 +47,25 @@ class DetailParkViewController: UIViewController {
     var park : Park!
     func loadPark(park: Park!)  {
         lblName.text = park.name
-        lblTotal.text = ""
-        lblPhone.text = park.phone
+        lblTotal.text = "\(park.total)"
+        btnPhone.setTitle(park.phone, for: .normal)
         lblAddress.text = park.address
-        lblCost.text = ""
+        lblCost.text = park.cost
+        lblTotal.text = "\(park.total)"
+        lblAvail.text = "\(park.AvailableSlot)"
+
     }
     
     @IBAction func selectBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func callPhone(_ sender: Any) {
+        if let url = URL(string: "tel://\(btnPhone.titleLabel?.text ?? "")"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+            
+        }
+        
+    }
+
 }

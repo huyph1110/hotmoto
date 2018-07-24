@@ -14,35 +14,7 @@ let App = UIApplication.shared.delegate as! AppDelegate
 let mapTasks = MapTasks()
 
 extension AppDelegate {
-    func showAlert(title: String, vc: UIViewController, completion:@escaping (Bool) -> Void)  {
-        DispatchQueue.main.async {
-            let alertView = UIAlertController(title: "Thông báo", message: title, preferredStyle: .alert)
-            let action = UIAlertAction(title: "Đồng ý", style: .default, handler: { (alert) in
-                completion(true)
-            })
-            alertView.addAction(action)
-            vc.present(alertView, animated: true, completion: nil)
-        }
-        
-    }
-    func showConfirm(title: String, detail: String, vc: UIViewController, completion:@escaping (Bool) -> Void)  {
-        DispatchQueue.main.async {
-            let alertView = UIAlertController(title: title, message: detail, preferredStyle: .alert)
-            let accept = UIAlertAction(title: "Đồng ý", style: .default, handler: { (alert) in
-                completion(true)
-            })
-            let deni = UIAlertAction(title: "Hủy bỏ", style: .cancel, handler: { (alert) in
-                completion(true)
-            })
-
-            alertView.addAction(accept)
-            alertView.addAction(deni)
-
-            vc.present(alertView, animated: true, completion: nil)
-        }
-        
-    }
-
+  
     func showLoadingOnView(view: UIView){
         DispatchQueue.main.async {
             let indicator = UIActivityIndicatorView.init()
@@ -66,4 +38,35 @@ extension AppDelegate {
         }
     }
     
+}
+extension UIViewController {
+    func showAlert(title: String, completion:@escaping (Bool) -> Void)  {
+        DispatchQueue.main.async {
+            let alertView = UIAlertController(title: "Thông báo", message: title, preferredStyle: .alert)
+            let action = UIAlertAction(title: "Đồng ý", style: .default, handler: { (alert) in
+                completion(true)
+            })
+            alertView.addAction(action)
+            self.present(alertView, animated: true, completion: nil)
+        }
+        
+    }
+    func showConfirm(title: String, detail: String, completion:@escaping (Bool) -> Void)  {
+        DispatchQueue.main.async {
+            let alertView = UIAlertController(title: title, message: detail, preferredStyle: .alert)
+            let accept = UIAlertAction(title: "Đồng ý", style: .default, handler: { (alert) in
+                completion(true)
+            })
+            let deni = UIAlertAction(title: "Hủy bỏ", style: .cancel, handler: { (alert) in
+                completion(true)
+            })
+            
+            alertView.addAction(accept)
+            alertView.addAction(deni)
+            
+            self.present(alertView, animated: true, completion: nil)
+        }
+        
+    }
+
 }

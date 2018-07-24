@@ -11,11 +11,10 @@ import Cloudinary
 import GoogleMaps
 import Alamofire
 
-var apiKey = "751342836181944"
-var apiSecret = "tvuVpl7UHhIuzWu83G1UYPo5ZyQ"
 
 class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     func mapSelectionDidSelect(location: CLLocationCoordinate2D, suggest: String?) {
+        coordinate = location
         txvAddress.text = suggest
     }
     
@@ -24,7 +23,6 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     var cloudinary: CLDCloudinary!
     //properties
     @IBOutlet weak var imvAvatar: UIImageView!
-    @IBOutlet weak var txvUsername: UITextView!
     @IBOutlet weak var txvAddress: UITextView!
     @IBOutlet weak var txvParkName: UITextView!
     @IBOutlet weak var txfCost: UITextField!
@@ -46,7 +44,7 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad() //tvuVpl7UHhIuzWu83G1UYPo5ZyQ
-        config = CLDConfiguration(cloudName: "huyph00", apiKey: apiKey, apiSecret: apiSecret)
+        config = CLDConfiguration(cloudName: cloudName, apiKey: apiKey, apiSecret: apiSecret)
         cloudinary = CLDCloudinary(configuration: self.config)
         
     }
@@ -109,7 +107,7 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         return nil
     }
     var urlImage: String?
-    let coordinate: CLLocationCoordinate2D? = nil
+    var coordinate: CLLocationCoordinate2D? = nil
     func addNewPark()  {
         if validateData() == false {
             return
@@ -118,16 +116,14 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         App.showLoadingOnView(view: self.view)
         let request = insertParkReq()
         request.location = ["coordinates" : [coordinate?.longitude,coordinate?.latitude] , "type" : "Point"]
-        request.name = "test name"
-        request.address = "test address"
-        request.phone = "012345"
+        request.name = txvParkName.text
+        request.address = txvAddress.text
+        request.phone = txfPhone.text!
         request.total = 4
-        request.id =  ""
-        request.cost =  ""
-        request.AvailableSlot =  0
-        request.openTime =  0
-        request.closeTime =  0
-        request.status =  0
+        request.username =  userLogin.username
+        //request.cost =  (txfCost.text ?? "0")
+        //request.openTime =  0
+        //request.closeTime =  24
         request.email =  ""
         services.insertPark(request: request, success: {
             App.removeLoadingOnView(view: self.view)
@@ -135,20 +131,20 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         }) { (error) in
             App.removeLoadingOnView(view: self.view)
             
-            App.showAlert(title: error, vc: self, completion: { (_) in
+            self.showAlert(title: error, completion: { (_) in
                 
             })
         }
     }
     func validateData() -> Bool {
         if coordinate == nil {
-            App.showAlert(title: "Hãy chọn vị trí bãi đỗ", vc: self, completion: { (complete) in
+            self.showAlert(title: "Hãy chọn vị trí bãi đỗ", completion: { (complete) in
                 
             })
             return false
         }
         if txfPhone.text?.count == 0 {
-            App.showAlert(title: "Hãy nhập số dt", vc: self, completion: { (complete) in
+            self.showAlert(title: "Hãy nhập số dt", completion: { (complete) in
                 
             })
             return false

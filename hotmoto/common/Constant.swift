@@ -7,6 +7,10 @@
 //
 
 import UIKit
+var cloudName = "huyph00"
+var apiKey = "751342836181944"
+var apiSecret = "tvuVpl7UHhIuzWu83G1UYPo5ZyQ"
+let GoogleMap_API = "AIzaSyBxsfr_Ymwg4FByyh1S6K7Xrczj6WQ4kwA"
 
 class Constant: NSObject {
 
@@ -27,5 +31,15 @@ enum segue_type : String {
     case newpark = "newpark"
     case guest = "guest"
 }
-let GoogleMap_API = "AIzaSyBxsfr_Ymwg4FByyh1S6K7Xrczj6WQ4kwA"
 
+struct ColorsConfig {
+    static let selectedText = UIColor.white
+    static let text = UIColor.black
+    static let textDisabled = UIColor.gray
+    static let selectionBackground = UIColor("#FE2C7B")
+    static let sundayText = UIColor("#9B9B9B")
+    static let sundayTextDisabled = UIColor(red: 1.0, green: 0.6, blue: 0.6, alpha: 1.0)
+    static let sundaySelectionBackground = selectionBackground
+    static let markColor = UIColor("#4CD964")
+    
+}

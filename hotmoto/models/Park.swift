@@ -35,9 +35,9 @@ class Park: Mi {
         for dic in arr {
             let item = Park.init(dictionary: dic)
             let locat = dic.value(forKey: "location") as! NSDictionary
-            let coordinate = locat.value(forKey: "coordinates") as! [CGFloat]
+            let coordinate = locat.value(forKey: "coordinates") as! [NSNumber]
 
-            item.position = CLLocationCoordinate2DMake(CLLocationDegrees(coordinate[1]),CLLocationDegrees(coordinate[0]))
+            item.position = CLLocationCoordinate2DMake(CLLocationDegrees(coordinate[1].floatValue),CLLocationDegrees(coordinate[0].floatValue))
             out.append(item)
         }
         
@@ -64,18 +64,16 @@ class insertParkReq: Mi {
     //    "long": (float),
     //    "lat": (float),
     //    "scope":(float)
-    @objc dynamic var location = NSDictionary()
-    @objc dynamic var name =  ""
-    @objc dynamic var address =  ""
-    @objc dynamic var phone =  ""
-    @objc dynamic var id =  ""
-    @objc dynamic var cost =  ""
-    @objc dynamic var total =  0
-    @objc dynamic var AvailableSlot =  0
-    @objc dynamic var openTime =  0
-    @objc dynamic var closeTime =  0
-    @objc dynamic var status =  0
-    @objc dynamic var email =  ""
+    @objc dynamic  var location = NSDictionary()
+    @objc dynamic  var name: String?
+    @objc dynamic  var address: String?
+    @objc dynamic  var phone: String?
+    @objc dynamic  var username: String?
+    //@objc dynamic var cost =  ""
+    @objc dynamic  var total = 0
+    @objc dynamic  var openTime: String?
+    @objc dynamic  var closeTime: String?
+    @objc dynamic  var email: String?
 }
 
 
@@ -88,6 +86,24 @@ extension Services {
             failure(error)
         }
     }
+    func getParksByUser(user : String, success: @escaping (([Park]?) -> Void), failure:@escaping ((String) -> Void)){
+        let request = ["username" : user]
+        services.request(api: .getlistParkByUser, method: .post, param: request as Dictionary<String, AnyObject>, success: { (response) in
+            success(Park.parseData(arr: response.arrayResponse as! [NSDictionary]))
+            
+        }) { (error) in
+            failure(error)
+        }
+    }
+    func updatePark(request : insertParkReq, success: @escaping (() -> Void), failure:@escaping ((String) -> Void)){
+        services.request(api: .parkings, method: .put, param: request.dictionary() as Dictionary<String, AnyObject>, success: { (response) in
+            success()
+            
+        }) { (error) in
+            failure(error)
+        }
+    }
+
     func insertPark(request : insertParkReq, success: @escaping (() -> Void), failure:@escaping ((String) -> Void)){
         services.request(api: .parkings, method: .post, param: request.dictionary() as Dictionary<String, AnyObject>, success: { (response) in
             success()

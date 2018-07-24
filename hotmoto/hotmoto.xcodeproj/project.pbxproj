@@ -23,6 +23,9 @@
 		E542A8D6207A194F009DF90E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E542A8D5207A194F009DF90E /* README.md */; };
 		E5547BFE20E07E3A0062E83E /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5547BFC20E07E3A0062E83E /* GooglePlaces.swift */; };
 		E5621BBD20B33578001750B2 /* sample1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5621BBC20B33578001750B2 /* sample1.jpg */; };
+		E570172D21045D1B00A29D4B /* GreenExtension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570172C21045D1B00A29D4B /* GreenExtension+UIColor.swift */; };
+		E5701730210477DB00A29D4B /* InfoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570172E210477DB00A29D4B /* InfoItemCell.swift */; };
+		E5701731210477DB00A29D4B /* InfoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E570172F210477DB00A29D4B /* InfoItemCell.xib */; };
 		E578B0F220BAFEB100D8F0A9 /* DSCameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E578B0F120BAFEB100D8F0A9 /* DSCameraHandler.swift */; };
 		E578B0F420BB002900D8F0A9 /* UIViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E578B0F320BB002900D8F0A9 /* UIViewController+ImagePicker.swift */; };
 		E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C454020AC160500C493DA /* MyParkListViewController.swift */; };
@@ -79,6 +82,9 @@
 		E544A17920D944A40029B93E /* libPods-PXGoogleDirections.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-PXGoogleDirections.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5547BFC20E07E3A0062E83E /* GooglePlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlaces.swift; sourceTree = "<group>"; };
 		E5621BBC20B33578001750B2 /* sample1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample1.jpg; sourceTree = "<group>"; };
+		E570172C21045D1B00A29D4B /* GreenExtension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+UIColor.swift"; sourceTree = "<group>"; };
+		E570172E210477DB00A29D4B /* InfoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoItemCell.swift; sourceTree = "<group>"; };
+		E570172F210477DB00A29D4B /* InfoItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoItemCell.xib; sourceTree = "<group>"; };
 		E578B0F120BAFEB100D8F0A9 /* DSCameraHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSCameraHandler.swift; sourceTree = "<group>"; };
 		E578B0F320BB002900D8F0A9 /* UIViewController+ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		E58C454020AC160500C493DA /* MyParkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyParkListViewController.swift; sourceTree = "<group>"; };
@@ -170,8 +176,18 @@
 			children = (
 				E525D19920727CEC009315A8 /* InfoParkView.swift */,
 				E525D19F20727D23009315A8 /* InfoParkView.xib */,
+				E570172E210477DB00A29D4B /* InfoItemCell.swift */,
+				E570172F210477DB00A29D4B /* InfoItemCell.xib */,
 			);
 			path = InfoPark;
+			sourceTree = "<group>";
+		};
+		E570172B21045D0300A29D4B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E570172C21045D1B00A29D4B /* GreenExtension+UIColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E578B0F020BAFEB100D8F0A9 /* libs */ = {
@@ -188,6 +204,7 @@
 			children = (
 				E542A8D5207A194F009DF90E /* README.md */,
 				E5621BBC20B33578001750B2 /* sample1.jpg */,
+				E570172B21045D0300A29D4B /* Extension */,
 				E578B0F020BAFEB100D8F0A9 /* libs */,
 				E5DE3A6720674197007C4D1F /* common */,
 				E5DE3A6220673B6B007C4D1F /* models */,
@@ -345,6 +362,7 @@
 				E542A8D6207A194F009DF90E /* README.md in Resources */,
 				E5DE3A522067382C007C4D1F /* LaunchScreen.storyboard in Resources */,
 				E525D19E20727D13009315A8 /* DetailParkViewController.xib in Resources */,
+				E5701731210477DB00A29D4B /* InfoItemCell.xib in Resources */,
 				E525D1A020727D23009315A8 /* InfoParkView.xib in Resources */,
 				E5621BBD20B33578001750B2 /* sample1.jpg in Resources */,
 				E5DE3A4F2067382C007C4D1F /* Assets.xcassets in Resources */,
@@ -432,6 +450,8 @@
 				E525D19D20727D13009315A8 /* DetailParkViewController.swift in Sources */,
 				E530A8B8207766D2006D1454 /* Guest.swift in Sources */,
 				E5DE3A5E20673AF4007C4D1F /* ServicesConfig.swift in Sources */,
+				E570172D21045D1B00A29D4B /* GreenExtension+UIColor.swift in Sources */,
+				E5701730210477DB00A29D4B /* InfoItemCell.swift in Sources */,
 				E5547BFE20E07E3A0062E83E /* GooglePlaces.swift in Sources */,
 				E5DE3A6B206746CE007C4D1F /* GuestViewController.swift in Sources */,
 				E5212E87207460A600202CC9 /* GreenView.swift in Sources */,

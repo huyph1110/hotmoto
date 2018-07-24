@@ -7,8 +7,24 @@
 //
 
 import UIKit
-
-class InfoParkView: GreenView {
+class InfoItem: NSObject {
+    var infoTitle = ""
+    var icon: UIImage?
+    
+}
+class InfoParkView: GreenView, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrayInfo.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InfoItemCell
+        let item = arrayInfo[indexPath.row]
+        cell.imvIcon.image = item.icon
+        cell.lblTitle.text = item.infoTitle
+        return cell
+    }
+    
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -18,15 +34,17 @@ class InfoParkView: GreenView {
     }
     */
     override func initStyle() {
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = UIColor("#2A2E43")
+        clvInfo.register(UINib.init(nibName: "InfoItemCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
+    var arrayInfo = [InfoItem]()
+    
     @IBOutlet weak var btnDetail: UIButton!
     @IBOutlet weak var lblStatus: UILabel!
-    @IBOutlet weak var lblSlot: UILabel!
-    @IBOutlet weak var lblTimeActive: UILabel!
     @IBOutlet weak var lblCost: UILabel!
     @IBOutlet weak var btnCall: UIButton!
     @IBOutlet weak var btnBook: UIButton!
+    @IBOutlet weak var clvInfo: UICollectionView!
     
     func showInfo(inView: UIView) {
 
@@ -45,14 +63,37 @@ class InfoParkView: GreenView {
             self.frame = endRect
             self.alpha = 1
         }
+        
     }
     var myPark: Park?
 
     func loadPark(park: Park) {
         myPark = park
-        lblCost.text = park.cost
-        lblSlot.text = "\(park.total)"
-    
+        lblStatus.text = park.status == 0 ? "Mở cửa" : "Đã đóng"
+
+        let itemTot = InfoItem()
+        itemTot.infoTitle = "\(park.AvailableSlot)/ \(park.total)"
+        itemTot.icon = #imageLiteral(resourceName: "total")
+        arrayInfo.append(itemTot)
         
+        let itemTime = InfoItem()
+        itemTime.infoTitle = "Từ \(park.openTime) đến \(park.closeTime)"
+        itemTime.icon = #imageLiteral(resourceName: "time")
+        arrayInfo.append(itemTime)
+
+
+        lblCost.text = park.cost
+    
+        btnCall.setTitle(park.phone, for: .normal)
+        clvInfo.reloadData()
+
+        
+    }
+    @IBAction func callPhone(_ sender: Any) {
+        if let url = URL(string: "tel://\(btnCall.titleLabel?.text ?? "")"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+            
+        }
+
     }
 }

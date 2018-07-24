@@ -184,7 +184,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         }) { (error) in
             App.removeLoadingOnView(view: self.view)
 
-            App.showAlert(title: error, vc: self, completion: { (_) in
+            self.showAlert(title: error, completion: { (_) in
                 
             })
         }
@@ -247,7 +247,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
                 switch response {
                 case let .error(_, error):
         
-                    App.showAlert(title: "Error: \(error.localizedDescription)", vc: self, completion: { (_) in
+                    self.showAlert(title: "Error: \(error.localizedDescription)", completion: { (_) in
                         
                     })
                    

@@ -26,6 +26,16 @@ class ViewController: UIViewController {
             txfPasswords.text = pass as? String
 
         }
+        
+        txfUserName.attributedPlaceholder = NSAttributedString(string: "Tên đăng nhập", attributes: [NSAttributedStringKey.foregroundColor : UIColor("#959DAD")])
+        txfPasswords.attributedPlaceholder = NSAttributedString(string: "Mật khẩu", attributes: [NSAttributedStringKey.foregroundColor : UIColor("#959DAD")])
+        let paddingView = UIView(frame: CGRect(x:0,y: 0,width: 8,height: txfUserName.frame.height))
+        let paddingView2 = UIView(frame: CGRect(x:0,y: 0,width: 8,height: txfPasswords.frame.height))
+
+        txfUserName.leftView = paddingView
+        txfUserName.leftViewMode = UITextFieldViewMode.always
+        txfPasswords.leftView = paddingView2
+        txfPasswords.leftViewMode = UITextFieldViewMode.always
 
     }
 
@@ -53,10 +63,10 @@ class ViewController: UIViewController {
         }else {
             
             if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {
-                App.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", vc: self, completion: {_ in })
+                self.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", completion: {_ in })
             }
             else if (txfPasswords.text?.contains(" "))! || (txfUserName.text?.contains(" "))! {
-                App.showAlert(title: "Tài khoản và mật khẩu không được có khoảng trắng", vc: self, completion: {_ in })
+                self.showAlert(title: "Tài khoản và mật khẩu không được có khoảng trắng", completion: {_ in })
                 
             }
             else {
@@ -64,11 +74,14 @@ class ViewController: UIViewController {
                 let req = loginReq()
                 req.username = txfUserName.text!
                 req.password = txfPasswords.text!
+
                 services.userLogin(request: req, success: {
+                    userLogin.password = req.password
+                    userLogin.username = req.username
+
                     App.removeLoadingOnView(view: self.view)
                     UserDefaults.standard.setValue(req.username, forKey: LOGIN_ACCOUNT.USER.rawValue)
                     UserDefaults.standard.setValue(req.password, forKey: LOGIN_ACCOUNT.PASS.rawValue)
-
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: segue_type.managepark.rawValue, sender: self)
 
@@ -76,7 +89,7 @@ class ViewController: UIViewController {
 
                 }, failure: { (error) in
                     
-                    App.showAlert(title: error, vc: self, completion: {_ in })
+                    self.showAlert(title: error, completion: {_ in })
                     App.removeLoadingOnView(view: self.view)
 
                 })
@@ -88,10 +101,10 @@ class ViewController: UIViewController {
     @IBAction func register(_ sender: Any) {
         
         if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {
-            App.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", vc: self, completion: {_ in })
+            self.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", completion: {_ in })
         }
         else if (txfPasswords.text?.contains(" "))! || (txfUserName.text?.contains(" "))! {
-            App.showAlert(title: "Tài khoản và mật khẩu không được có khoảng trắng", vc: self, completion: {_ in })
+            self.showAlert(title: "Tài khoản và mật khẩu không được có khoảng trắng", completion: {_ in })
             
         }
         else {
@@ -101,11 +114,11 @@ class ViewController: UIViewController {
             req.username = txfUserName.text!
             req.password = txfPasswords.text!
             services.userRegister(request: req, success: {
-                App.showAlert(title: "Đăng ký thành công", vc: self, completion: {_ in })
+                self.showAlert(title: "Đăng ký thành công", completion: {_ in })
                 App.removeLoadingOnView(view: self.view)
 
             }, failure: { (error) in
-                App.showAlert(title: error, vc: self, completion: {_ in })
+                self.showAlert(title: error, completion: {_ in })
                 App.removeLoadingOnView(view: self.view)
 
             })

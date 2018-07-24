@@ -54,6 +54,11 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
     var locationManager = CLLocationManager()
     var myMarker: GMSMarker!
     var coordinate = CLLocationCoordinate2D()
+    var parkCoordinate: CLLocationCoordinate2D?{
+        didSet{
+            needCenterMylocation = false
+        }
+    }
     var itemsNearby = [MKMapItem]()
     
     override func viewDidLoad() {
@@ -72,6 +77,9 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
         locationManager.startUpdatingLocation()
         // Do any additional setup after loading the view.
         setupSubViews()
+        if parkCoordinate != nil {
+            loadLocation(location: parkCoordinate!)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -97,9 +105,10 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
         // infoView.removeFromSuperview()
     }
     var myLocation : CLLocation?
-
+    var needCenterMylocation = true
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if myLocation == nil {
+        if needCenterMylocation{
             let camera = GMSCameraPosition.camera(withLatitude: locations.last!.coordinate.latitude, longitude: locations.last!.coordinate.longitude, zoom: 17.0)
             self.mapView?.animate(to: camera)
 
@@ -147,7 +156,12 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
         // Pass the selected object to the new view controller.
     }
     */
-   
+    func loadLocation(location :CLLocationCoordinate2D) {
+        let camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 17.0)
+        self.mapView?.animate(to: camera)
+        myMarker =  insertMarkerAtPos(coordinate: location, title: nil, detail: nil)
+
+    }
     
 
 }

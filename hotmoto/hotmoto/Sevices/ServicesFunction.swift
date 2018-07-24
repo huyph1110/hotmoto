@@ -5,6 +5,7 @@ enum APIFunction : String
     case parkings = "/parkings" //POST
     case login = "/users/login" //POST
     case register = "/users/register" //POST
+    case getlistParkByUser = "/parkings/users" //POST
 
     case test2 = "123"
 }

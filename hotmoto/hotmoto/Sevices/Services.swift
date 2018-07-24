@@ -126,6 +126,12 @@ class Services: NSObject {
                 res.message = response.result.value as! String
 
             }
+            if response.result.value is Dictionary<String, Any> {
+                let dic = response.result.value as! Dictionary <String, Any>
+                res.error = dic.keys.first == "error"
+                res.message = dic[dic.keys.first!] as! String
+            }
+
             return res
 
         }
