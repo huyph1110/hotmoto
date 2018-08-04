@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MyParkListViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     var arrayPark = [Park](){
@@ -26,7 +27,10 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         let park = arrayPark[indexPath.row]
         cell.lblName.text = park.name
         cell.lblAddress.text = park.address
-    
+        cell.lblState.text = park.status == 0 ? "Mở cửa" : "Đóng cửa"    //0: san sang ; 1: da dong
+        cell.lblCost.text = park.cost
+        cell.imvAvatar?.setImage(url: park.imageUrl)
+
         return cell
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -42,15 +46,18 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         super.viewDidLoad()
         tbvData.register(UINib.init(nibName: "ParkCell", bundle: nil), forCellReuseIdentifier: "ParkCell")
         // Do any additional setup after loading the view.
-        loadMyParks()
-        
+        tbvData.rowHeight = UITableViewAutomaticDimension
+        tbvData.estimatedRowHeight = 44
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        loadMyParks()
+
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let vc = segue.destination

@@ -80,17 +80,13 @@ class InfoParkView: GreenView, UICollectionViewDelegate, UICollectionViewDataSou
         itemTime.infoTitle = "Từ \(park.openTime) đến \(park.closeTime)"
         itemTime.icon = #imageLiteral(resourceName: "time")
         arrayInfo.append(itemTime)
-
-
         lblCost.text = park.cost
-    
-        btnCall.setTitle(park.phone, for: .normal)
         clvInfo.reloadData()
 
         
     }
     @IBAction func callPhone(_ sender: Any) {
-        if let url = URL(string: "tel://\(btnCall.titleLabel?.text ?? "")"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "tel://\(myPark?.phone ?? "")"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
             
         }

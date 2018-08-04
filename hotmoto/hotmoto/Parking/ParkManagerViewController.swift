@@ -70,22 +70,19 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
             txfTotal.text = "\(park?.total ?? 0)"
             txfPhone.text  = park?.phone
             coordinate = park?.position
-            
+            imvAvatar.setImage(url: park?.imageUrl)
         }
     }
     func uploadImage(data: Data, name: String) {
-        
-        
-        let url =  cloudinary.createUrl().generate(name)
-        
+        _ =  cloudinary.createUrl().generate(name)
         cloudinary.createUploader().signedUpload(data: data, params: nil, progress: { (progress) in
             print(progress.fractionCompleted)
-            if progress.isFinished {
-                self.urlImage = url
-                self.imvAvatar.image = UIImage.init(data: data)
-            }
         }) { (resul, error) in
             print(error?.description ?? "")
+            if error == nil {
+                self.urlImage = resul?.url
+                self.imvAvatar.image = UIImage.init(data: data)
+            }
             
         }
         
@@ -120,7 +117,7 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         
         App.showLoadingOnView(view: self.view)
         let request = insertParkReq()
-        request.location = ["coordinates" : [coordinate?.longitude,coordinate?.latitude] , "type" : "Point"]
+        request.location = location(coordinate: coordinate!)
         request.name = txvName.text
         request.address = txvAddress.text
         request.phone = txfPhone.text!
@@ -133,7 +130,8 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         services.updatePark(request: request, success: {
             App.removeLoadingOnView(view: self.view)
             self.showAlert(title: "Cập nhật thành công", completion: { (_) in
-                
+                self.dismiss(animated: true, completion: nil)
+
             })
 
         }) { (error) in
@@ -159,6 +157,8 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
     }
 
     @IBAction func save(_ sender: Any) {
+        updatePark()
+        
     }
     
     @IBAction func selectEdit(_ sender: Any) {

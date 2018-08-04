@@ -21,6 +21,9 @@ class ParkCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBOutlet weak var lblCost: UILabel!
+    @IBOutlet weak var lblState: UILabel!
+    @IBOutlet weak var imvAvatar: UIImageView!
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblName: UILabel!
 }

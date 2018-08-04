@@ -9,6 +9,7 @@
 import Foundation
 import PXGoogleDirections
 import UIKit
+import AlamofireImage
 
 let App = UIApplication.shared.delegate as! AppDelegate
 let mapTasks = MapTasks()
@@ -69,4 +70,30 @@ extension UIViewController {
         
     }
 
+}
+extension UIImageView {
+    func setImage(url: String?) {
+        if let aurl = URL.init(string: url!) {
+            let urlcv = URLRequest.init(url: aurl)
+            let filter = AspectScaledToFillSizeFilter(size: self.frame.size)
+            
+            self.af_setImage(withURLRequest: urlcv, placeholderImage: nil, filter: filter, progress: { (progress) in
+                
+            }, progressQueue: DispatchQueue.global(qos: .background), imageTransition: .crossDissolve(0.5), runImageTransitionIfCached: true, completion: { (data) in
+                
+            })
+            
+        }
+        else {
+            
+            self.image = nil
+        }
+    }
+}
+ func callPhone(_ phone: String) {
+    if let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url) {
+        UIApplication.shared.open(url)
+        
+    }
+    
 }

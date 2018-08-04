@@ -122,11 +122,11 @@ class Services: NSObject {
             if response.result.value is Array<Any> {
                 res.arrayResponse = response.result.value as! Array<Any>
             }
-            if response.result.value is String {
+            else if response.result.value is String {
                 res.message = response.result.value as! String
 
             }
-            if response.result.value is Dictionary<String, Any> {
+            else if response.result.value is Dictionary<String, Any> {
                 let dic = response.result.value as! Dictionary <String, Any>
                 res.error = dic.keys.first == "error"
                 res.message = dic[dic.keys.first!] as! String

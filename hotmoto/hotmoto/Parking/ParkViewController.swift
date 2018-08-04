@@ -71,17 +71,16 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     func uploadImage(data: Data, name: String) {
         
         
-        let url =  cloudinary.createUrl().generate(name)
-        
+        _ =  cloudinary.createUrl().generate(name)
         cloudinary.createUploader().signedUpload(data: data, params: nil, progress: { (progress) in
             print(progress.fractionCompleted)
-            if progress.isFinished {
-                self.urlImage = url
-                self.imvAvatar.image = UIImage.init(data: data)
-            }
         }) { (resul, error) in
             print(error?.description ?? "")
-            
+            if error == nil {
+                self.urlImage = resul?.url
+                self.imvAvatar.image = UIImage.init(data: data)
+            }
+
         }
 
     }
@@ -115,7 +114,7 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         
         App.showLoadingOnView(view: self.view)
         let request = insertParkReq()
-        request.location = ["coordinates" : [coordinate?.longitude,coordinate?.latitude] , "type" : "Point"]
+        request.location = location(coordinate: coordinate!)
         request.name = txvParkName.text
         request.address = txvAddress.text
         request.phone = txfPhone.text!
@@ -125,6 +124,7 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         //request.openTime =  0
         //request.closeTime =  24
         request.email =  ""
+        request.imageUrl = urlImage
         services.insertPark(request: request, success: {
             App.removeLoadingOnView(view: self.view)
             

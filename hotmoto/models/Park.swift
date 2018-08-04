@@ -20,10 +20,11 @@ class Park: Mi {
     @objc dynamic var AvailableSlot =  0
     @objc dynamic var openTime =  0
     @objc dynamic var closeTime =  0
-    @objc dynamic var status =  0
+    @objc dynamic var status =  0 //0: san sang ; 1: da dong
     @objc dynamic var email =  ""
     @objc dynamic var username =  ""
     @objc dynamic var fullname =  ""
+    @objc dynamic var imageUrl =  ""
 
 
     var marker: GMSMarker?
@@ -74,8 +75,13 @@ class insertParkReq: Mi {
     @objc dynamic  var openTime: String?
     @objc dynamic  var closeTime: String?
     @objc dynamic  var email: String?
-}
+    @objc dynamic  var imageUrl: String?
 
+
+}
+func location(coordinate: CLLocationCoordinate2D) -> NSDictionary {
+   return ["coordinates" : [coordinate.longitude,coordinate.latitude] , "type" : "Point"]
+}
 
 extension Services {
     func getParks(request : getParksReq, success: @escaping (([Park]?) -> Void), failure:@escaping ((String) -> Void)){
