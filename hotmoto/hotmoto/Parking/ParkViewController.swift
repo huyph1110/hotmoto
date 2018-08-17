@@ -25,11 +25,14 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     @IBOutlet weak var imvAvatar: UIImageView!
     @IBOutlet weak var txvAddress: UITextView!
     @IBOutlet weak var txvParkName: UITextView!
-    @IBOutlet weak var txfCost: UITextField!
-    @IBOutlet weak var txfType: UITextField!
-    @IBOutlet weak var txfTime: UITextField!
-    @IBOutlet weak var txfTotal: UITextField!
-    @IBOutlet weak var txfPhone: UILabel!
+    
+    @IBOutlet weak var barCost: SlectionBarView!
+    @IBOutlet weak var barType: SlectionBarView!
+    @IBOutlet weak var barTime: SlectionBarView!
+    @IBOutlet weak var barSize: SlectionBarView!
+    @IBOutlet weak var barPhone: SlectionBarView!
+    
+
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,6 +50,27 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         config = CLDConfiguration(cloudName: cloudName, apiKey: apiKey, apiSecret: apiSecret)
         cloudinary = CLDCloudinary(configuration: self.config)
         
+        
+        barCost.setPlaceHolder("Chọn giá")
+        barCost.setIcon(#imageLiteral(resourceName: "money_black"))
+        barCost.btnSelect.addTarget(self, action: #selector(ParkManagerViewController.selectCost), for: .touchUpInside)
+        
+        barType.setPlaceHolder("Loại xe")
+        barType.setIcon(#imageLiteral(resourceName: "menu"))
+        barType.btnSelect.addTarget(self, action: #selector(ParkManagerViewController.selectType), for: .touchUpInside)
+        
+        barTime.setPlaceHolder("Thời gian gửi")
+        barTime.setIcon(#imageLiteral(resourceName: "time_light"))
+        barTime.btnSelect.addTarget(self, action: #selector(ParkManagerViewController.selectTime), for: .touchUpInside)
+        
+        barSize.setPlaceHolder("Sức chứa")
+        barSize.setIcon(#imageLiteral(resourceName: "Park"))
+        barSize.btnSelect.addTarget(self, action: #selector(ParkManagerViewController.selectSize), for: .touchUpInside)
+        
+        barPhone.setPlaceHolder("SDT liên lạc")
+        barPhone.setIcon(#imageLiteral(resourceName: "call"))
+        barPhone.btnSelect.addTarget(self, action: #selector(ParkManagerViewController.selectPhone), for: .touchUpInside)
+
     }
 
     
@@ -117,7 +141,7 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         request.location = location(coordinate: coordinate!)
         request.name = txvParkName.text
         request.address = txvAddress.text
-        request.phone = txfPhone.text!
+        request.phone = barPhone.text.text!
         request.total = 4
         request.username =  userLogin.username
         //request.cost =  (txfCost.text ?? "0")
@@ -143,7 +167,7 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
             })
             return false
         }
-        if txfPhone.text?.count == 0 {
+        if barPhone.text.text?.count == 0 {
             self.showAlert(title: "Hãy nhập số dt", completion: { (complete) in
                 
             })
@@ -155,5 +179,81 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         
         
     }
+    
+    
+    
+    @objc func selectCost() {
+        let rect = barCost.convert(barCost.bounds, to: self.view)
+        let vc = DataPickerViewController()
+        vc.type = .cost
+        vc.values = costValue
+        showPopover(contentSize: CGSize(width: 400, height: 400), sourceRect: rect, contentVC: vc, direction: .any)
+        vc.completeHandler = {
+            (value) -> Void in
+            //[value, costtime.1]
+            self.costValue = value
+            self.barCost.setText(stringForCost(value[0], value[1]))
+            vc.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @objc func selectType() {
+        let rect = barType.convert(barType.bounds, to: self.view)
+        let vc = DataPickerViewController()
+        vc.type = .type
+        vc.values = typeValue
+        showPopover(contentSize: CGSize(width: 400, height: 400), sourceRect: rect, contentVC: vc, direction: .any)
+        vc.completeHandler = {
+            (value) -> Void in
+            //[value, costtime.1]
+            self.typeValue = value
+            self.barType.setText(stringMobileType(value[0]))
+            vc.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @objc func selectTime() {
+        let rect = barTime.convert(barTime.bounds, to: self.view)
+        let vc = DataPickerViewController()
+        vc.type = .time
+        vc.values = timeValue
+        showPopover(contentSize: CGSize(width: 400, height: 400), sourceRect: rect, contentVC: vc, direction: .any)
+        vc.completeHandler = {
+            (value) -> Void in
+            //[value, costtime.1]
+            self.timeValue = value
+            self.barTime.setText(stringForTime(value[0], value[1]))
+            vc.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @objc func selectSize() {
+        let rect = barSize.convert(barSize.bounds, to: self.view)
+        let vc = DataPickerViewController()
+        vc.type = .size
+        vc.values = sizeValue
+        showPopover(contentSize: CGSize(width: 400, height: 400), sourceRect: rect, contentVC: vc, direction: .any)
+        vc.completeHandler = {
+            (value) -> Void in
+            //[value, costtime.1]
+            self.sizeValue = value
+            self.barSize.setText(stringForSize(value[0]))
+            vc.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @objc func selectPhone() {
+        barPhone.text.isEnabled  = true
+        barPhone.text.keyboardType = .numberPad
+        barPhone.text.becomeFirstResponder()
+    }
+    
+    var costValue = [0,0]
+    var typeValue = [0]
+    var timeValue = [0,0]
+    var sizeValue = [0]
+    
+
+    
 }
 

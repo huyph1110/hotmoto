@@ -40,7 +40,7 @@ extension AppDelegate {
     }
     
 }
-extension UIViewController {
+extension UIViewController: UIPopoverPresentationControllerDelegate {
     func showAlert(title: String, completion:@escaping (Bool) -> Void)  {
         DispatchQueue.main.async {
             let alertView = UIAlertController(title: "Thông báo", message: title, preferredStyle: .alert)
@@ -69,7 +69,25 @@ extension UIViewController {
         }
         
     }
-
+    func showPopover(contentSize: CGSize, sourceRect: CGRect, contentVC: UIViewController, direction: UIPopoverArrowDirection ) {
+        DispatchQueue.main.async {
+            
+            let nav = UINavigationController(rootViewController: contentVC)
+            nav.isNavigationBarHidden = true
+            nav.modalPresentationStyle = UIModalPresentationStyle.popover
+            let popover = nav.popoverPresentationController
+            contentVC.preferredContentSize = contentSize
+            popover?.sourceView = self.view
+            popover?.sourceRect = sourceRect
+            popover?.delegate = self
+            popover?.permittedArrowDirections = direction
+            popover?.backgroundColor = contentVC.view.backgroundColor
+            self.present(nav, animated: true, completion: nil)
+        }
+    }
+    public func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
 }
 extension UIImageView {
     func setImage(url: String?) {
@@ -95,5 +113,53 @@ extension UIImageView {
         UIApplication.shared.open(url)
         
     }
+    
+}
+func money(_ value: Int) -> String {
+    let formatter = NumberFormatter()
+    formatter.groupingSeparator = "."
+    formatter.decimalSeparator = ","
+    formatter.numberStyle = .decimal
+    if let formattedAmount = formatter.string(for: value){
+        return formattedAmount
+    }
+    return ""
+}
+
+func stringMobileType(_ value: Int) -> String {
+    if value == 1 {
+        return mobileType.moto.0
+    }
+    if value == 2 {
+        return mobileType.oto.0
+    }
+    return mobileType.all.0
+}
+
+func stringForCost(_ value: Int,_ hour: Int) -> String {
+    if  value == 0 {
+        return "miễn phí"
+    }
+    if hour == 24 {
+        
+        return  "\(money(value)) đ / ngày"
+    }
+    
+    return "\(money(value)) đ / \(hour) giờ"
+}
+func stringForTime(_ begin: Int,_ end: Int) -> String {
+    let beginHour = begin/60
+    let beginMin = begin % 60
+    let endHour = end/60
+    let endMin = begin % 60
+    
+    return String(format: "%d:%02d đến %d:%02d",beginHour,beginMin,endHour,endMin )
+    
+}
+func stringForSize(_ size: Int) -> String {
+    if size == 101 {
+        return "trên 100"
+    }
+    return "\(size)"
     
 }

@@ -51,7 +51,7 @@ class DetailParkViewController: UIViewController {
         lblTotal.text = "\(park.total)"
         btnPhone.setTitle(park.phone, for: .normal)
         txvAddress.text = park.address
-        lblCost.text = park.cost
+        lblCost.text = stringForCost(park?.cost ?? 0, park?.numberHours ?? 0)
         lblTotal.text = "\(park.total)"
         lblAvail.text = "\(park.AvailableSlot)"
 

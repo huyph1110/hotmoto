@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimePicker" customModule="hotmoto" customModuleProvider="target">
+            <connections>
+                <outlet property="endPicker" destination="YEG-Kc-laQ" id="TAO-wS-xxC"/>
+                <outlet property="startPicker" destination="pVq-IB-Q4K" id="EuR-Kc-Nur"/>
+                <outlet property="view" destination="iN0-l3-epB" id="aPf-ZL-c1C"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="313"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="pVq-IB-Q4K">
+                    <rect key="frame" x="0.0" y="0.0" width="186" height="313"/>
+                    <date key="date" timeIntervalSinceReferenceDate="555864586.396384">
+                        <!--2018-08-13 14:49:46 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="vi"/>
+                </datePicker>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="YEG-Kc-laQ">
+                    <rect key="frame" x="189" y="0.0" width="186" height="313"/>
+                    <date key="date" timeIntervalSinceReferenceDate="555864586.396384">
+                        <!--2018-08-13 14:49:46 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="vi"/>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="pVq-IB-Q4K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="UJn-6j-mgx"/>
+                <constraint firstItem="pVq-IB-Q4K" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Uiu-7n-Nrn"/>
+                <constraint firstItem="YEG-Kc-laQ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="aLq-tB-aS6"/>
+                <constraint firstItem="pVq-IB-Q4K" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="cGA-N1-8px"/>
+                <constraint firstItem="YEG-Kc-laQ" firstAttribute="leading" secondItem="pVq-IB-Q4K" secondAttribute="trailing" constant="3" id="ls2-3G-Ke2"/>
+                <constraint firstItem="YEG-Kc-laQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="oVI-1w-NT8"/>
+                <constraint firstItem="YEG-Kc-laQ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="wV1-Ix-Oll"/>
+                <constraint firstItem="YEG-Kc-laQ" firstAttribute="width" secondItem="pVq-IB-Q4K" secondAttribute="width" id="xsF-VP-KL1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="214" y="254"/>
+        </view>
+    </objects>
+</document>
