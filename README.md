@@ -20,7 +20,7 @@ Insert: (POST):http://hotmoto.mr47.net/parkings
 	"closeTime":"",
 	"status":1,
 	"fullname":"Le An",
-	"costPerHour":0,
+	"cost":0,
 	"numberHours":0,
 	"username":"lean",
 	"email":"leantompro@gmail.com",
