@@ -2,7 +2,7 @@
 Parkings : http://hotmoto.mr47.net/parkings
 Insert: (POST):http://hotmoto.mr47.net/parkings
 	example:
-	costPerHour va numberHours gía theo số lượng giờ ví dụ : 5$ / 4hour
+	cost va numberHours gía theo số lượng giờ ví dụ : 5$ / 4hour
   {
   
 	"id":"5af90325a0ccf74aec2269f1",
