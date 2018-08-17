@@ -2,26 +2,29 @@
 Parkings : http://hotmoto.mr47.net/parkings
 Insert: (POST):http://hotmoto.mr47.net/parkings
 	example:
-	
-	
+	costPerHour va numberHours gía theo số lượng giờ ví dụ : 5$ / 4hour
   {
   
-	"location":{
+	"id":"5af90325a0ccf74aec2269f1",
+	"location":
+	{
 		"type":"Point",
 		"coordinates":[106.65500421077,10.8401665597548]
 		},
-		
 	"name":"test name",
 	"address":"test address",
 	"phone":"012345",
-	"total":0,
+	"total":14,
 	"AvailableSlot":0,
 	"openTime":"",
 	"closeTime":"",
 	"status":1,
 	"fullname":"Le An",
+	"costPerHour":0,
+	"numberHours":0,
 	"username":"lean",
-	"email":"xuanquang48@gmail.com"		
+	"email":"leantompro@gmail.com",
+	"imageUrl":""	
   }
 
 Get: (GET) : http://hotmoto.mr47.net/parkings
