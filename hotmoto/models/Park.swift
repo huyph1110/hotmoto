@@ -14,7 +14,7 @@ class Park: Mi {
     @objc dynamic var name =  ""
     @objc dynamic var address =  ""
     @objc dynamic var phone =  ""
-    @objc dynamic var id =  ""
+    @objc dynamic var id: String?
     @objc dynamic var total =  0
     @objc dynamic var AvailableSlot =  0
     @objc dynamic var openTime =  0
@@ -79,7 +79,8 @@ class insertParkReq: Mi {
     @objc dynamic  var email: String?
     @objc dynamic  var imageUrl: String?
     @objc dynamic  var cost =  0
-    @objc dynamic var numberHours =  0
+    @objc dynamic  var numberHours =  0
+    @objc dynamic  var id: String?
 
 }
 func location(coordinate: CLLocationCoordinate2D) -> NSDictionary {

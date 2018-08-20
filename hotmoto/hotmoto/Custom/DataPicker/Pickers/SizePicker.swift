@@ -33,7 +33,9 @@ class SizePicker: GreenView, UIPickerViewDelegate,UIPickerViewDataSource {
     */
     @IBOutlet weak var picker: UIPickerView!
     override func initStyle() {
-        
+        picker.dataSource = self
+        picker.delegate = self
+
     }
     func rollToValue(_ value: Int)  {
         picker.selectRow(value - 1, inComponent: 0, animated: true)

@@ -21,7 +21,7 @@ extension AppDelegate {
             let indicator = UIActivityIndicatorView.init()
             indicator.center = CGPoint.init(x: view.frame.width/2, y: view.frame.height/2)
             indicator.activityIndicatorViewStyle  = .whiteLarge
-            indicator.color = UIColor.blue
+            indicator.color = UIColor.gray
 
             indicator.startAnimating()
             view.addSubview(indicator)

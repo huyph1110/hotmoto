@@ -8,26 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		63D3070FE12BA44A925BFB6E /* Pods_hotmoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */; };
-		E507F59C20889C8A00503089 /* ParkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507F59A20889C8A00503089 /* ParkCell.swift */; };
-		E507F59D20889C8A00503089 /* ParkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E507F59B20889C8A00503089 /* ParkCell.xib */; };
 		E5212E87207460A600202CC9 /* GreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5212E86207460A600202CC9 /* GreenView.swift */; };
-		E5212E8A2074717300202CC9 /* ListParksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5212E882074717300202CC9 /* ListParksViewController.swift */; };
-		E525D19A20727CEC009315A8 /* InfoParkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525D19920727CEC009315A8 /* InfoParkView.swift */; };
-		E525D19D20727D13009315A8 /* DetailParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525D19B20727D13009315A8 /* DetailParkViewController.swift */; };
-		E525D19E20727D13009315A8 /* DetailParkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E525D19C20727D13009315A8 /* DetailParkViewController.xib */; };
-		E525D1A020727D23009315A8 /* InfoParkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E525D19F20727D23009315A8 /* InfoParkView.xib */; };
 		E530A8B6207760C3006D1454 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B5207760C3006D1454 /* Park.swift */; };
 		E530A8B8207766D2006D1454 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B7207766D2006D1454 /* Guest.swift */; };
 		E542786C20F0BDF300C302CE /* InputTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542786A20F0BDF300C302CE /* InputTextCell.swift */; };
 		E542786D20F0BDF300C302CE /* InputTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E542786B20F0BDF300C302CE /* InputTextCell.xib */; };
 		E542A8D6207A194F009DF90E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E542A8D5207A194F009DF90E /* README.md */; };
+		E54C7E2D2126CDCF00EC5278 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E54C7E2C2126CDCF00EC5278 /* GoogleMaps.bundle */; };
 		E5547BFE20E07E3A0062E83E /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5547BFC20E07E3A0062E83E /* GooglePlaces.swift */; };
-		E5621BBD20B33578001750B2 /* sample1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5621BBC20B33578001750B2 /* sample1.jpg */; };
 		E570172D21045D1B00A29D4B /* GreenExtension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570172C21045D1B00A29D4B /* GreenExtension+UIColor.swift */; };
-		E5701730210477DB00A29D4B /* InfoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570172E210477DB00A29D4B /* InfoItemCell.swift */; };
-		E5701731210477DB00A29D4B /* InfoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E570172F210477DB00A29D4B /* InfoItemCell.xib */; };
 		E578B0F220BAFEB100D8F0A9 /* DSCameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E578B0F120BAFEB100D8F0A9 /* DSCameraHandler.swift */; };
 		E578B0F420BB002900D8F0A9 /* UIViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E578B0F320BB002900D8F0A9 /* UIViewController+ImagePicker.swift */; };
+		E580F3C22126C73F001EF05B /* InfoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3A82126C73F001EF05B /* InfoItemCell.swift */; };
+		E580F3C32126C73F001EF05B /* InfoParkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3A92126C73F001EF05B /* InfoParkView.xib */; };
+		E580F3C42126C73F001EF05B /* InfoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3AA2126C73F001EF05B /* InfoItemCell.xib */; };
+		E580F3C52126C740001EF05B /* InfoParkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3AB2126C73F001EF05B /* InfoParkView.swift */; };
+		E580F3C62126C740001EF05B /* SlectionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3AD2126C73F001EF05B /* SlectionBarView.xib */; };
+		E580F3C72126C740001EF05B /* SlectionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3AE2126C73F001EF05B /* SlectionBarView.swift */; };
+		E580F3C82126C740001EF05B /* DataPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3B02126C73F001EF05B /* DataPickerViewController.xib */; };
+		E580F3C92126C740001EF05B /* MobileType.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3B22126C73F001EF05B /* MobileType.xib */; };
+		E580F3CA2126C740001EF05B /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3B32126C73F001EF05B /* TimePicker.swift */; };
+		E580F3CB2126C740001EF05B /* TimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3B42126C73F001EF05B /* TimePicker.xib */; };
+		E580F3CC2126C740001EF05B /* CostPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3B52126C73F001EF05B /* CostPicker.xib */; };
+		E580F3CD2126C740001EF05B /* SizePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3B62126C73F001EF05B /* SizePicker.swift */; };
+		E580F3CE2126C740001EF05B /* MobileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3B72126C73F001EF05B /* MobileType.swift */; };
+		E580F3CF2126C740001EF05B /* SizePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3B82126C73F001EF05B /* SizePicker.xib */; };
+		E580F3D02126C740001EF05B /* CostPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3B92126C73F001EF05B /* CostPicker.swift */; };
+		E580F3D12126C740001EF05B /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3BA2126C73F001EF05B /* DataPickerViewController.swift */; };
+		E580F3D22126C740001EF05B /* ParkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3BC2126C73F001EF05B /* ParkCell.xib */; };
+		E580F3D32126C740001EF05B /* ParkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3BD2126C73F001EF05B /* ParkCell.swift */; };
+		E580F3D42126C740001EF05B /* ListParksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3BE2126C73F001EF05B /* ListParksViewController.swift */; };
+		E580F3D52126C740001EF05B /* DetailParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3C02126C73F001EF05B /* DetailParkViewController.swift */; };
+		E580F3D62126C740001EF05B /* DetailParkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3C12126C73F001EF05B /* DetailParkViewController.xib */; };
+		E580F3D82126C75D001EF05B /* GreenExtension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3D72126C75D001EF05B /* GreenExtension+Date.swift */; };
 		E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C454020AC160500C493DA /* MyParkListViewController.swift */; };
 		E59F063E20AA9FC9008E0DCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F063D20AA9FC9008E0DCC /* User.swift */; };
 		E5A4918720844AD800399F5A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4918620844AD800399F5A /* Common.swift */; };
@@ -66,27 +79,40 @@
 		449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hotmoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.release.xcconfig"; sourceTree = "<group>"; };
-		E507F59A20889C8A00503089 /* ParkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkCell.swift; sourceTree = "<group>"; };
-		E507F59B20889C8A00503089 /* ParkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkCell.xib; sourceTree = "<group>"; };
 		E5212E86207460A600202CC9 /* GreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenView.swift; sourceTree = "<group>"; };
-		E5212E882074717300202CC9 /* ListParksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListParksViewController.swift; sourceTree = "<group>"; };
-		E525D19920727CEC009315A8 /* InfoParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoParkView.swift; sourceTree = "<group>"; };
-		E525D19B20727D13009315A8 /* DetailParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailParkViewController.swift; sourceTree = "<group>"; };
-		E525D19C20727D13009315A8 /* DetailParkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailParkViewController.xib; sourceTree = "<group>"; };
-		E525D19F20727D23009315A8 /* InfoParkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoParkView.xib; sourceTree = "<group>"; };
 		E530A8B5207760C3006D1454 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		E530A8B7207766D2006D1454 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		E542786A20F0BDF300C302CE /* InputTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextCell.swift; sourceTree = "<group>"; };
 		E542786B20F0BDF300C302CE /* InputTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputTextCell.xib; sourceTree = "<group>"; };
 		E542A8D5207A194F009DF90E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E544A17920D944A40029B93E /* libPods-PXGoogleDirections.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-PXGoogleDirections.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E54C7E2C2126CDCF00EC5278 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		E5547BFC20E07E3A0062E83E /* GooglePlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlaces.swift; sourceTree = "<group>"; };
-		E5621BBC20B33578001750B2 /* sample1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample1.jpg; sourceTree = "<group>"; };
 		E570172C21045D1B00A29D4B /* GreenExtension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+UIColor.swift"; sourceTree = "<group>"; };
-		E570172E210477DB00A29D4B /* InfoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoItemCell.swift; sourceTree = "<group>"; };
-		E570172F210477DB00A29D4B /* InfoItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoItemCell.xib; sourceTree = "<group>"; };
 		E578B0F120BAFEB100D8F0A9 /* DSCameraHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSCameraHandler.swift; sourceTree = "<group>"; };
 		E578B0F320BB002900D8F0A9 /* UIViewController+ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		E580F3A82126C73F001EF05B /* InfoItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoItemCell.swift; sourceTree = "<group>"; };
+		E580F3A92126C73F001EF05B /* InfoParkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoParkView.xib; sourceTree = "<group>"; };
+		E580F3AA2126C73F001EF05B /* InfoItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoItemCell.xib; sourceTree = "<group>"; };
+		E580F3AB2126C73F001EF05B /* InfoParkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoParkView.swift; sourceTree = "<group>"; };
+		E580F3AD2126C73F001EF05B /* SlectionBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlectionBarView.xib; sourceTree = "<group>"; };
+		E580F3AE2126C73F001EF05B /* SlectionBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlectionBarView.swift; sourceTree = "<group>"; };
+		E580F3B02126C73F001EF05B /* DataPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPickerViewController.xib; sourceTree = "<group>"; };
+		E580F3B22126C73F001EF05B /* MobileType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MobileType.xib; sourceTree = "<group>"; };
+		E580F3B32126C73F001EF05B /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		E580F3B42126C73F001EF05B /* TimePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePicker.xib; sourceTree = "<group>"; };
+		E580F3B52126C73F001EF05B /* CostPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CostPicker.xib; sourceTree = "<group>"; };
+		E580F3B62126C73F001EF05B /* SizePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizePicker.swift; sourceTree = "<group>"; };
+		E580F3B72126C73F001EF05B /* MobileType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileType.swift; sourceTree = "<group>"; };
+		E580F3B82126C73F001EF05B /* SizePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SizePicker.xib; sourceTree = "<group>"; };
+		E580F3B92126C73F001EF05B /* CostPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostPicker.swift; sourceTree = "<group>"; };
+		E580F3BA2126C73F001EF05B /* DataPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerViewController.swift; sourceTree = "<group>"; };
+		E580F3BC2126C73F001EF05B /* ParkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParkCell.xib; sourceTree = "<group>"; };
+		E580F3BD2126C73F001EF05B /* ParkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkCell.swift; sourceTree = "<group>"; };
+		E580F3BE2126C73F001EF05B /* ListParksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListParksViewController.swift; sourceTree = "<group>"; };
+		E580F3C02126C73F001EF05B /* DetailParkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailParkViewController.swift; sourceTree = "<group>"; };
+		E580F3C12126C73F001EF05B /* DetailParkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailParkViewController.xib; sourceTree = "<group>"; };
+		E580F3D72126C75D001EF05B /* GreenExtension+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+Date.swift"; sourceTree = "<group>"; };
 		E58C454020AC160500C493DA /* MyParkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyParkListViewController.swift; sourceTree = "<group>"; };
 		E59F063D20AA9FC9008E0DCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E5A4918620844AD800399F5A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -135,6 +161,7 @@
 		87E58EDCBBDA892AEBB2909F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E54C7E2B2126CDCF00EC5278 /* Resources */,
 				E544A17920D944A40029B93E /* libPods-PXGoogleDirections.a */,
 				E5DE3A6120673B08007C4D1F /* Alamofire.framework */,
 				449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */,
@@ -142,49 +169,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E525D19320727A8F009315A8 /* Custom */ = {
+		E54C7E2B2126CDCF00EC5278 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E525D19420727C7A009315A8 /* DetailPark */,
-				E525D19620727C7A009315A8 /* InfoPark */,
-				E525D19520727C7A009315A8 /* ListParks */,
+				E54C7E2C2126CDCF00EC5278 /* GoogleMaps.bundle */,
 			);
-			path = Custom;
-			sourceTree = "<group>";
-		};
-		E525D19420727C7A009315A8 /* DetailPark */ = {
-			isa = PBXGroup;
-			children = (
-				E525D19B20727D13009315A8 /* DetailParkViewController.swift */,
-				E525D19C20727D13009315A8 /* DetailParkViewController.xib */,
-			);
-			path = DetailPark;
-			sourceTree = "<group>";
-		};
-		E525D19520727C7A009315A8 /* ListParks */ = {
-			isa = PBXGroup;
-			children = (
-				E5212E882074717300202CC9 /* ListParksViewController.swift */,
-				E507F59A20889C8A00503089 /* ParkCell.swift */,
-				E507F59B20889C8A00503089 /* ParkCell.xib */,
-			);
-			path = ListParks;
-			sourceTree = "<group>";
-		};
-		E525D19620727C7A009315A8 /* InfoPark */ = {
-			isa = PBXGroup;
-			children = (
-				E525D19920727CEC009315A8 /* InfoParkView.swift */,
-				E525D19F20727D23009315A8 /* InfoParkView.xib */,
-				E570172E210477DB00A29D4B /* InfoItemCell.swift */,
-				E570172F210477DB00A29D4B /* InfoItemCell.xib */,
-			);
-			path = InfoPark;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E570172B21045D0300A29D4B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E580F3D72126C75D001EF05B /* GreenExtension+Date.swift */,
 				E570172C21045D1B00A29D4B /* GreenExtension+UIColor.swift */,
 			);
 			path = Extension;
@@ -199,11 +195,86 @@
 			path = libs;
 			sourceTree = "<group>";
 		};
+		E580F3A62126C73F001EF05B /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				E580F3A72126C73F001EF05B /* InfoPark */,
+				E580F3AC2126C73F001EF05B /* SlectionBar */,
+				E580F3AF2126C73F001EF05B /* DataPicker */,
+				E580F3BB2126C73F001EF05B /* ListParks */,
+				E580F3BF2126C73F001EF05B /* DetailPark */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		E580F3A72126C73F001EF05B /* InfoPark */ = {
+			isa = PBXGroup;
+			children = (
+				E580F3A82126C73F001EF05B /* InfoItemCell.swift */,
+				E580F3A92126C73F001EF05B /* InfoParkView.xib */,
+				E580F3AA2126C73F001EF05B /* InfoItemCell.xib */,
+				E580F3AB2126C73F001EF05B /* InfoParkView.swift */,
+			);
+			path = InfoPark;
+			sourceTree = "<group>";
+		};
+		E580F3AC2126C73F001EF05B /* SlectionBar */ = {
+			isa = PBXGroup;
+			children = (
+				E580F3AD2126C73F001EF05B /* SlectionBarView.xib */,
+				E580F3AE2126C73F001EF05B /* SlectionBarView.swift */,
+			);
+			path = SlectionBar;
+			sourceTree = "<group>";
+		};
+		E580F3AF2126C73F001EF05B /* DataPicker */ = {
+			isa = PBXGroup;
+			children = (
+				E580F3B02126C73F001EF05B /* DataPickerViewController.xib */,
+				E580F3B12126C73F001EF05B /* Pickers */,
+				E580F3BA2126C73F001EF05B /* DataPickerViewController.swift */,
+			);
+			path = DataPicker;
+			sourceTree = "<group>";
+		};
+		E580F3B12126C73F001EF05B /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				E580F3B22126C73F001EF05B /* MobileType.xib */,
+				E580F3B32126C73F001EF05B /* TimePicker.swift */,
+				E580F3B42126C73F001EF05B /* TimePicker.xib */,
+				E580F3B52126C73F001EF05B /* CostPicker.xib */,
+				E580F3B62126C73F001EF05B /* SizePicker.swift */,
+				E580F3B72126C73F001EF05B /* MobileType.swift */,
+				E580F3B82126C73F001EF05B /* SizePicker.xib */,
+				E580F3B92126C73F001EF05B /* CostPicker.swift */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
+		E580F3BB2126C73F001EF05B /* ListParks */ = {
+			isa = PBXGroup;
+			children = (
+				E580F3BC2126C73F001EF05B /* ParkCell.xib */,
+				E580F3BD2126C73F001EF05B /* ParkCell.swift */,
+				E580F3BE2126C73F001EF05B /* ListParksViewController.swift */,
+			);
+			path = ListParks;
+			sourceTree = "<group>";
+		};
+		E580F3BF2126C73F001EF05B /* DetailPark */ = {
+			isa = PBXGroup;
+			children = (
+				E580F3C02126C73F001EF05B /* DetailParkViewController.swift */,
+				E580F3C12126C73F001EF05B /* DetailParkViewController.xib */,
+			);
+			path = DetailPark;
+			sourceTree = "<group>";
+		};
 		E5DE3A3B2067382C007C4D1F = {
 			isa = PBXGroup;
 			children = (
 				E542A8D5207A194F009DF90E /* README.md */,
-				E5621BBC20B33578001750B2 /* sample1.jpg */,
 				E570172B21045D0300A29D4B /* Extension */,
 				E578B0F020BAFEB100D8F0A9 /* libs */,
 				E5DE3A6720674197007C4D1F /* common */,
@@ -227,7 +298,7 @@
 		E5DE3A462067382C007C4D1F /* hotmoto */ = {
 			isa = PBXGroup;
 			children = (
-				E525D19320727A8F009315A8 /* Custom */,
+				E580F3A62126C73F001EF05B /* Custom */,
 				E5DE3A6520673E0C007C4D1F /* Guest */,
 				E5DE3A6620673E0C007C4D1F /* Parking */,
 				E5DE3A472067382C007C4D1F /* AppDelegate.swift */,
@@ -307,7 +378,6 @@
 				E5DE3A412067382C007C4D1F /* Frameworks */,
 				E5DE3A422067382C007C4D1F /* Resources */,
 				D111D0ECE8A031139F914F2C /* [CP] Embed Pods Frameworks */,
-				1FA0CEAEF75E3D9985353B4E /* [CP] Copy Pods Resources */,
 				E5ADB93920E803E1005DE111 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -358,40 +428,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E580F3CB2126C740001EF05B /* TimePicker.xib in Resources */,
+				E580F3C42126C73F001EF05B /* InfoItemCell.xib in Resources */,
 				E542786D20F0BDF300C302CE /* InputTextCell.xib in Resources */,
 				E542A8D6207A194F009DF90E /* README.md in Resources */,
+				E580F3C32126C73F001EF05B /* InfoParkView.xib in Resources */,
 				E5DE3A522067382C007C4D1F /* LaunchScreen.storyboard in Resources */,
-				E525D19E20727D13009315A8 /* DetailParkViewController.xib in Resources */,
-				E5701731210477DB00A29D4B /* InfoItemCell.xib in Resources */,
-				E525D1A020727D23009315A8 /* InfoParkView.xib in Resources */,
-				E5621BBD20B33578001750B2 /* sample1.jpg in Resources */,
+				E580F3CC2126C740001EF05B /* CostPicker.xib in Resources */,
+				E54C7E2D2126CDCF00EC5278 /* GoogleMaps.bundle in Resources */,
+				E580F3C92126C740001EF05B /* MobileType.xib in Resources */,
+				E580F3CF2126C740001EF05B /* SizePicker.xib in Resources */,
+				E580F3C82126C740001EF05B /* DataPickerViewController.xib in Resources */,
 				E5DE3A4F2067382C007C4D1F /* Assets.xcassets in Resources */,
+				E580F3C62126C740001EF05B /* SlectionBarView.xib in Resources */,
+				E580F3D22126C740001EF05B /* ParkCell.xib in Resources */,
 				E5DE3A4D2067382C007C4D1F /* Main.storyboard in Resources */,
-				E507F59D20889C8A00503089 /* ParkCell.xib in Resources */,
+				E580F3D62126C740001EF05B /* DetailParkViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1FA0CEAEF75E3D9985353B4E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto-resources.sh",
-				"${PODS_ROOT}/PXGoogleDirections/Dependencies/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		455C4A4BF197908E27BBD933 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -443,31 +501,38 @@
 			files = (
 				E5A4918720844AD800399F5A /* Common.swift in Sources */,
 				E5EFB32E20A1527D00F4AEB9 /* MapTasks.swift in Sources */,
+				E580F3D42126C740001EF05B /* ListParksViewController.swift in Sources */,
 				E5DE3A6D2067473A007C4D1F /* ParkViewController.swift in Sources */,
+				E580F3D02126C740001EF05B /* CostPicker.swift in Sources */,
 				E530A8B6207760C3006D1454 /* Park.swift in Sources */,
 				E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */,
+				E580F3D52126C740001EF05B /* DetailParkViewController.swift in Sources */,
 				E5DE3A692067439E007C4D1F /* Constant.swift in Sources */,
 				E578B0F420BB002900D8F0A9 /* UIViewController+ImagePicker.swift in Sources */,
+				E580F3D12126C740001EF05B /* DataPickerViewController.swift in Sources */,
+				E580F3D82126C75D001EF05B /* GreenExtension+Date.swift in Sources */,
 				E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */,
-				E525D19D20727D13009315A8 /* DetailParkViewController.swift in Sources */,
+				E580F3C22126C73F001EF05B /* InfoItemCell.swift in Sources */,
 				E530A8B8207766D2006D1454 /* Guest.swift in Sources */,
+				E580F3C72126C740001EF05B /* SlectionBarView.swift in Sources */,
 				E5DE3A5E20673AF4007C4D1F /* ServicesConfig.swift in Sources */,
 				E570172D21045D1B00A29D4B /* GreenExtension+UIColor.swift in Sources */,
-				E5701730210477DB00A29D4B /* InfoItemCell.swift in Sources */,
 				E5547BFE20E07E3A0062E83E /* GooglePlaces.swift in Sources */,
 				E5DE3A6B206746CE007C4D1F /* GuestViewController.swift in Sources */,
 				E5212E87207460A600202CC9 /* GreenView.swift in Sources */,
-				E507F59C20889C8A00503089 /* ParkCell.swift in Sources */,
+				E580F3CE2126C740001EF05B /* MobileType.swift in Sources */,
 				E542786C20F0BDF300C302CE /* InputTextCell.swift in Sources */,
 				E5DE3A5F20673AF4007C4D1F /* ServicesFunction.swift in Sources */,
+				E580F3D32126C740001EF05B /* ParkCell.swift in Sources */,
 				E5D301C42096F7F200CBCFA5 /* MapSelectionViewController.swift in Sources */,
-				E525D19A20727CEC009315A8 /* InfoParkView.swift in Sources */,
 				E578B0F220BAFEB100D8F0A9 /* DSCameraHandler.swift in Sources */,
-				E5212E8A2074717300202CC9 /* ListParksViewController.swift in Sources */,
+				E580F3CA2126C740001EF05B /* TimePicker.swift in Sources */,
 				E5DE3A5D20673AF4007C4D1F /* Services.swift in Sources */,
 				E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */,
 				E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */,
+				E580F3CD2126C740001EF05B /* SizePicker.swift in Sources */,
 				E5DE3A6420673B76007C4D1F /* Mi.swift in Sources */,
+				E580F3C52126C740001EF05B /* InfoParkView.swift in Sources */,
 				E59F063E20AA9FC9008E0DCC /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +677,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Pods/PXGoogleDirections/Dependencies",
 				);
 				INFOPLIST_FILE = hotmoto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -636,6 +702,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Pods/PXGoogleDirections/Dependencies",
 				);
 				INFOPLIST_FILE = hotmoto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

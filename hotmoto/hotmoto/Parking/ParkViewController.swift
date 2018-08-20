@@ -141,14 +141,16 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         request.location = location(coordinate: coordinate!)
         request.name = txvParkName.text
         request.address = txvAddress.text
-        request.phone = barPhone.text.text!
-        request.total = 4
+        request.phone = barPhone.text.text
+        request.total = sizeValue[0]
         request.username =  userLogin.username
-        //request.cost =  (txfCost.text ?? "0")
+        request.cost =  costValue[0]
+        request.numberHours = costValue[1]
+        request.imageUrl = urlImage
+
         //request.openTime =  0
         //request.closeTime =  24
-        request.email =  ""
-        request.imageUrl = urlImage
+        //request.email =  ""
         services.insertPark(request: request, success: {
             App.removeLoadingOnView(view: self.view)
             

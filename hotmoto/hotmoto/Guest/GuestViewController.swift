@@ -251,7 +251,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
                         
                     })
                    
-                case let .success(request, routes):
+                case let .success(_, routes):
                     
                     self.results = routes
                     self.updateResults()
@@ -284,15 +284,16 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         }
         
         var bounds = GMSCoordinateBounds()
-        
+    
         bounds = bounds.includingCoordinate(selectedLocat!.coordinate)
         for i in 0 ..< results.count {
-            polylinesOnDrawing.append ( results[i].drawOnMap(mapView, approximate: false, strokeColor: UIColor.black, strokeWidth: 3.0))
+            polylinesOnDrawing.append ( results[i].drawOnMap(mapView, approximate: false, strokeColor: UIColor.black.withAlphaComponent(0.7), strokeWidth: 5.0))
             bounds = bounds.includingBounds(results[i].bounds!)
 
         }
+        let padding = 100
         
-        mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 50.0))
+        mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: CGFloat(padding)))
         //results[routeIndex].drawOnMap(mapView, approximate: false, strokeColor: UIColor.purple, strokeWidth: 4.0)
         //results[routeIndex].drawOriginMarkerOnMap(mapView, title: "Origin", color: UIColor.green, opacity: 1.0, flat: true)
         //results[routeIndex].drawDestinationMarkerOnMap(mapView, title: "Destination", color: UIColor.red, opacity: 1.0, flat: true)

@@ -3,6 +3,9 @@ Parkings : http://hotmoto.mr47.net/parkings
 Insert: (POST):http://hotmoto.mr47.net/parkings
 	example:
 	cost va numberHours gía theo số lượng giờ ví dụ : 5$ / 4hour
+    
+    them loai xe vao: param: type(Int) 
+    openTime va closeTime chuyen sang Int
   {
   
 	"id":"5af90325a0ccf74aec2269f1",

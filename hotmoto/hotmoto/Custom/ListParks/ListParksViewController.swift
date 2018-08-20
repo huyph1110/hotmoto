@@ -18,10 +18,19 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "ParkCell") as! ParkCell
         cell.lblName.text = park.name
         cell.lblAddress.text = park.address
+        cell.lblCost.text = stringForCost(park.cost, park.numberHours)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailParkViewController()
+        vc.park = arrayPark[indexPath.row]
+        
+        self.present(vc, animated: true, completion: {
+        })
+
     }
     @IBOutlet weak var tbvData: UITableView!
     

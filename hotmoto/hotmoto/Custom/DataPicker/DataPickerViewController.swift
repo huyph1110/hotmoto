@@ -29,6 +29,8 @@ class DataPickerViewController: UIViewController {
         if type == pickerType.cost {
             let view = CostPicker()
             view.frame = viewPicker.bounds
+            view.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+
             view.value = values[0]
             view.costtime = costTimeFromValue(value: values[1])
             view.rollToValue()
@@ -39,6 +41,8 @@ class DataPickerViewController: UIViewController {
         if type == pickerType.type {
             let view = MobileType()
             view.frame = viewPicker.bounds
+            view.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+
             view.rollToValue(values[0])
             viewPicker.addSubview(view)
             lblGuild.text = "Giới hạn loại xe được gửi"
@@ -46,6 +50,8 @@ class DataPickerViewController: UIViewController {
         if type == pickerType.time {
             let view = TimePicker()
             view.frame = viewPicker.bounds
+            view.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+
             view.rollToValue(values[0],values[1])
             viewPicker.addSubview(view)
             lblGuild.text = "Giờ bắt đầu và kết thúc giữ xe trong ngày"
@@ -53,6 +59,7 @@ class DataPickerViewController: UIViewController {
         if type == pickerType.size {
             let view = SizePicker()
             view.frame = viewPicker.bounds
+            view.autoresizingMask = [.flexibleWidth,.flexibleHeight]
             view.rollToValue(values[0])
             viewPicker.addSubview(view)
             lblGuild.text = "Số lượng xe có thể chứa"
@@ -79,7 +86,7 @@ class DataPickerViewController: UIViewController {
 
             completeHandler?([beginValue,endValue])
         }
-        if type == pickerType.time {
+        if type == pickerType.size {
             let view = viewPicker.subviews[0] as!  SizePicker
             completeHandler?([view.picker.selectedRow(inComponent: 0) + 1])
 

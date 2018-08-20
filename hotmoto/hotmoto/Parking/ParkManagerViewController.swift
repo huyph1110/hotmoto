@@ -152,13 +152,17 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         request.location = location(coordinate: coordinate!)
         request.name = txvName.text
         request.address = txvAddress.text
-        //request.phone = txfPhone.text!
-        request.total = 4
+        request.phone = barPhone.text.text
+        request.total = sizeValue[0]
         request.username =  userLogin.username
-        //request.cost =  (txfCost.text ?? "0")
-        //request.openTime =  0
-        //request.closeTime =  24
-        request.email =  ""
+        request.cost =  costValue[0]
+        request.numberHours = costValue[1]
+        request.id = park?.id
+        request.imageUrl = urlImage
+
+        //request.openTime =  timeValue[0]
+        //request.closeTime =  timeValue[1]
+        //request.email =  ""
         services.updatePark(request: request, success: {
             App.removeLoadingOnView(view: self.view)
             self.showAlert(title: "Cập nhật thành công", completion: { (_) in
