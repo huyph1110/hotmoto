@@ -26,8 +26,7 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailParkViewController()
-        vc.park = arrayPark[indexPath.row]
-        
+        vc.myPark = self.arrayPark[indexPath.row]
         self.present(vc, animated: true, completion: {
         })
 

@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 import MapKit
-
+import TPKeyboardAvoidingSwift
 
 protocol MapSelectionViewControllerDelegate {
     func mapSelectionDidSelect(location : CLLocationCoordinate2D, suggest : String? )
@@ -17,36 +17,24 @@ protocol MapSelectionViewControllerDelegate {
 }
 class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemsNearby.count + 1
+        return itemsNearby.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "cell")
-        if indexPath.row == 0 {
-            let cell  = tableView.dequeueReusableCell(withIdentifier: "text")
-            return cell!
-        }
-        
-        cell?.textLabel?.text = itemsNearby[indexPath.row - 1].name
+        cell?.textLabel?.text = itemsNearby[indexPath.row].name
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 0 {
-            let cell = tableView.cellForRow(at: indexPath) as! InputTextCell
-            delegate?.mapSelectionDidSelect(location: coordinate, suggest: cell.txfText.text)
-            
-        }
-        else {
-            let text = itemsNearby[indexPath.row - 1].name
-            delegate?.mapSelectionDidSelect(location: coordinate, suggest: text)
-
-        }
+        let text = itemsNearby[indexPath.row].name
+        delegate?.mapSelectionDidSelect(location: coordinate, suggest: text)
         self.dismiss(animated: true, completion: nil)
     }
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnSelect: UIButton!
     @IBOutlet weak var tbvLocate: UITableView!
+    @IBOutlet weak var scrollSuggestView: UIScrollView!
     
     var delegate: MapSelectionViewControllerDelegate?
     
@@ -70,8 +58,6 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
         mapView?.delegate = self
         self.view.addSubview(mapView)
         self.tbvLocate.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tbvLocate.register(UINib.init(nibName: "InputTextCell", bundle: nil), forCellReuseIdentifier: "text")
-
         //Location Manager code to fetch current location
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
@@ -93,15 +79,21 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
     }
     
     @IBAction func selectLocation(_ sender: Any) {
-        tbvLocate.isHidden = true
-
+        scrollSuggestView.isHidden  = true
     }
     
+    @IBAction func skip(_ sender: Any) {
+        
+        delegate?.mapSelectionDidSelect(location: coordinate, suggest: nil)
+        self.dismiss(animated: false, completion: nil)
+    }
     func setupSubViews()  {
         self.view.bringSubview(toFront: btnSelect)
         self.view.bringSubview(toFront: btnCancel)
         self.view.bringSubview(toFront: tbvLocate)
-        tbvLocate.isHidden = true
+        self.view.bringSubview(toFront: scrollSuggestView)
+        scrollSuggestView.isHidden = true
+
         // infoView.removeFromSuperview()
     }
     var myLocation : CLLocation?
@@ -128,7 +120,8 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
             DispatchQueue.main.async {
                 self.itemsNearby = list!
                 self.tbvLocate.reloadData()
-                self.tbvLocate.isHidden = false
+                self.scrollSuggestView.isHidden = false
+
             }
         }
     }
@@ -156,6 +149,9 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
         // Pass the selected object to the new view controller.
     }
     */
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        self.scrollSuggestView.isHidden = true
+    }
     func loadLocation(location :CLLocationCoordinate2D) {
         let camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 17.0)
         self.mapView?.animate(to: camera)

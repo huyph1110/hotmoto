@@ -12,10 +12,10 @@ class DetailParkViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if park != nil {
-            self.loadPark(park: park)
-        }
         // Do any additional setup after loading the view.
+        if myPark != nil {
+            loadPark(park: myPark)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +26,8 @@ class DetailParkViewController: UIViewController {
     
     @IBOutlet weak var imvAvatar: UIImageView!
     @IBOutlet weak var imvState: UIImageView!
-
+    @IBOutlet weak var imvMobiType: UIImageView!
+    
     @IBOutlet weak var txvName: UITextView!
     @IBOutlet weak var txvAddress: UITextView!
     @IBOutlet weak var btnPhone: UIButton!
@@ -44,9 +45,8 @@ class DetailParkViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    var park : Park!
+    var myPark: Park?
     func loadPark(park: Park!)  {
-        self.park = park
         txvName.text = park.name
         lblTotal.text = "\(park.total)"
         btnPhone.setTitle(park.phone, for: .normal)
@@ -62,7 +62,7 @@ class DetailParkViewController: UIViewController {
     }
     
     @IBAction func callPhone(_ sender: Any) {
-        if let url = URL(string: "tel://\(self.park.phone)"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "tel://\(btnPhone.titleLabel?.text ?? "")"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
             
         }

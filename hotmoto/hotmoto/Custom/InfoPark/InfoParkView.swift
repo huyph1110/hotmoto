@@ -68,6 +68,7 @@ class InfoParkView: GreenView, UICollectionViewDelegate, UICollectionViewDataSou
     var myPark: Park?
 
     func loadPark(park: Park) {
+        arrayInfo.removeAll()
         myPark = park
         lblStatus.text = park.status == 0 ? "Mở cửa" : "Đã đóng"
 

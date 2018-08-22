@@ -118,8 +118,8 @@ class GooglePlaces {
             
             for result in results! {
                 
-                let name = result["name"] as! String
-                let vicinity = result["vicinity"] as! String
+                let name = result["name"] as? String
+                let vicinity = result["vicinity"] as? String
 
                 var coordinate : CLLocationCoordinate2D!
                 
@@ -131,7 +131,7 @@ class GooglePlaces {
                         
                         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
                         let mapItem = MKMapItem(placemark: placemark)
-                        mapItem.name = name + " " + vicinity
+                        mapItem.name = (name ?? "") + " " + (vicinity ?? "")
                         mapItems.append(mapItem)
                     }
                 }

@@ -43,6 +43,7 @@
 		E580F3D82126C75D001EF05B /* GreenExtension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3D72126C75D001EF05B /* GreenExtension+Date.swift */; };
 		E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C454020AC160500C493DA /* MyParkListViewController.swift */; };
 		E59F063E20AA9FC9008E0DCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F063D20AA9FC9008E0DCC /* User.swift */; };
+		E59F83CD212C7217004BD65C /* TPKeyboardAvoidingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */; };
 		E5A4918720844AD800399F5A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4918620844AD800399F5A /* Common.swift */; };
 		E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */; };
 		E5D301C42096F7F200CBCFA5 /* MapSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */; };
@@ -115,6 +116,7 @@
 		E580F3D72126C75D001EF05B /* GreenExtension+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+Date.swift"; sourceTree = "<group>"; };
 		E58C454020AC160500C493DA /* MyParkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyParkListViewController.swift; sourceTree = "<group>"; };
 		E59F063D20AA9FC9008E0DCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TPKeyboardAvoidingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5A4918620844AD800399F5A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkManagerViewController.swift; sourceTree = "<group>"; };
 		E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectionViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E59F83CD212C7217004BD65C /* TPKeyboardAvoidingSwift.framework in Frameworks */,
 				E5DE3A6020673B08007C4D1F /* Alamofire.framework in Frameworks */,
 				63D3070FE12BA44A925BFB6E /* Pods_hotmoto.framework in Frameworks */,
 			);
@@ -161,6 +164,7 @@
 		87E58EDCBBDA892AEBB2909F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */,
 				E54C7E2B2126CDCF00EC5278 /* Resources */,
 				E544A17920D944A40029B93E /* libPods-PXGoogleDirections.a */,
 				E5DE3A6120673B08007C4D1F /* Alamofire.framework */,

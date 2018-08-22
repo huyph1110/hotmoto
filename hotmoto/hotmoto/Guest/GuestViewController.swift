@@ -61,7 +61,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     }
 
     @objc func selectDetail()  {
-        detailVC.park = self.infoView.myPark
+        detailVC.myPark = self.infoView.myPark
 
         self.present(detailVC, animated: true, completion: {
         })
@@ -151,16 +151,17 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     }
     
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
-        let marker = GMSMarker(position: coordinate)
-        marker.title = nil
-        marker.tracksViewChanges = true
-        marker.map = mapView
+        startMarker = GMSMarker(position: coordinate)
+        startMarker!.title = nil
+        startMarker!.tracksViewChanges = true
+        startMarker!.map = mapView
+        startMarker!.icon = #imageLiteral(resourceName: "pin")
         
         selectedLocat = CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
         loadParking(atlocation: coordinate, distance: 1000)
 
     }
-    
+    var startMarker: GMSMarker?
     // MARK: - Services +
 
     func loadParking(atlocation locat:CLLocationCoordinate2D, distance: Float) {
@@ -175,7 +176,9 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         services.getParks(request: request, success: { (lstPark) in
             
             DispatchQueue.main.async {
+                
                 self.mapView.clear()
+                self.startMarker?.map = self.mapView
                 self.loadArrayPark(parks: lstPark!)
                 App.removeLoadingOnView(view: self.view)
                 self.mapviewBoundAllMarker()
@@ -282,16 +285,18 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         for park in arrayParks {
             park.marker?.map = mapView
         }
-        
+        startMarker?.map = mapView
         var bounds = GMSCoordinateBounds()
     
         bounds = bounds.includingCoordinate(selectedLocat!.coordinate)
+        
         for i in 0 ..< results.count {
-            polylinesOnDrawing.append ( results[i].drawOnMap(mapView, approximate: false, strokeColor: UIColor.black.withAlphaComponent(0.7), strokeWidth: 5.0))
+            polylinesOnDrawing.append ( results[i].drawOnMap(mapView, approximate: true, strokeColor: UIColor.black.withAlphaComponent(0.7), strokeWidth: 5.0))
             bounds = bounds.includingBounds(results[i].bounds!)
 
         }
-        let padding = 100
+        
+        let padding = 0
         
         mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: CGFloat(padding)))
         //results[routeIndex].drawOnMap(mapView, approximate: false, strokeColor: UIColor.purple, strokeWidth: 4.0)
