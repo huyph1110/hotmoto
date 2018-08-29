@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol ListParksViewControllerDelegate {
+    func ListParksViewControllerDidSelectPark(_ park: Park)
+}
 class ListParksViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayPark.count
@@ -25,15 +27,17 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
         return 0.1
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailParkViewController()
-        vc.myPark = self.arrayPark[indexPath.row]
-        self.present(vc, animated: true, completion: {
-        })
-
+        //let vc = DetailParkViewController()
+        //vc.myPark = self.arrayPark[indexPath.row]
+        //self.present(vc, animated: true, completion: {
+        //})
+        self.dismiss(animated: true, completion: nil)
+        delegate?.ListParksViewControllerDidSelectPark(self.arrayPark[indexPath.row])
     }
     @IBOutlet weak var tbvData: UITableView!
     
     var arrayPark = [Park]()
+    var delegate: ListParksViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()

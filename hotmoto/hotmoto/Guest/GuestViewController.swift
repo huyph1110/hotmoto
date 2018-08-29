@@ -10,7 +10,13 @@ import UIKit
 import GoogleMaps
 import PXGoogleDirections
 
-class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate, PXGoogleDirectionsDelegate {
+class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate, PXGoogleDirectionsDelegate, ListParksViewControllerDelegate {
+    func ListParksViewControllerDidSelectPark(_ park: Park) {
+        selectedMarker = park.marker
+        self.showDirectsRoad(from:selectedLocat!.coordinate , to: selectedMarker.position)
+
+    }
+    
     @IBOutlet weak var btnRefresh: UIButton!
     @IBOutlet weak var btnList: UIButton!
     @IBOutlet weak var btnLogout: UIButton!
@@ -72,6 +78,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     @objc func loadParkList()  {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         listParkVC = storyboard.instantiateViewController(withIdentifier: "ListParksViewController") as? ListParksViewController
+        listParkVC?.delegate = self
         self.present(listParkVC!, animated: true) {
             self.listParkVC?.loadParks(parks: self.arrayParks)
 
@@ -296,7 +303,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
 
         }
         
-        let padding = 0
+        let padding = 50
         
         mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: CGFloat(padding)))
         //results[routeIndex].drawOnMap(mapView, approximate: false, strokeColor: UIColor.purple, strokeWidth: 4.0)

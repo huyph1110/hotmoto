@@ -235,8 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				E580F3B02126C73F001EF05B /* DataPickerViewController.xib */,
-				E580F3B12126C73F001EF05B /* Pickers */,
 				E580F3BA2126C73F001EF05B /* DataPickerViewController.swift */,
+				E580F3B12126C73F001EF05B /* Pickers */,
 			);
 			path = DataPicker;
 			sourceTree = "<group>";
@@ -245,12 +245,12 @@
 			isa = PBXGroup;
 			children = (
 				E580F3B22126C73F001EF05B /* MobileType.xib */,
-				E580F3B32126C73F001EF05B /* TimePicker.swift */,
 				E580F3B42126C73F001EF05B /* TimePicker.xib */,
 				E580F3B52126C73F001EF05B /* CostPicker.xib */,
+				E580F3B82126C73F001EF05B /* SizePicker.xib */,
+				E580F3B32126C73F001EF05B /* TimePicker.swift */,
 				E580F3B62126C73F001EF05B /* SizePicker.swift */,
 				E580F3B72126C73F001EF05B /* MobileType.swift */,
-				E580F3B82126C73F001EF05B /* SizePicker.xib */,
 				E580F3B92126C73F001EF05B /* CostPicker.swift */,
 			);
 			path = Pickers;
