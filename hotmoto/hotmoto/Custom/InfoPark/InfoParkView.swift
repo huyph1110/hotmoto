@@ -73,12 +73,13 @@ class InfoParkView: GreenView, UICollectionViewDelegate, UICollectionViewDataSou
         lblStatus.text = park.status == 0 ? "Mở cửa" : "Đã đóng"
 
         let itemTot = InfoItem()
-        itemTot.infoTitle = "\(park.AvailableSlot)/ \(park.total)"
+        let current = park.total - park.AvailableSlot
+        itemTot.infoTitle = "\(current)/ \(park.total)"
         itemTot.icon = #imageLiteral(resourceName: "total")
         arrayInfo.append(itemTot)
         
         let itemTime = InfoItem()
-        itemTime.infoTitle = "Từ \(park.openTime) đến \(park.closeTime)"
+        itemTime.infoTitle = stringForTime(park.openTime, park.closeTime)
         itemTime.icon = #imageLiteral(resourceName: "time")
         arrayInfo.append(itemTime)
         

@@ -18,13 +18,17 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let park = arrayPark[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ParkCell") as! ParkCell
+        cell.lblState.text = park.status == 0 ? "Mở cửa" : "Đóng cửa"    //0: san sang ; 1: da dong
+
         cell.imvType.image = iconForType(park.type)
         cell.lblName.text = park.name
         cell.lblAddress.text = park.address
         cell.lblCost.text = stringForCost(park.cost, park.numberHours)
         cell.imvAvatar?.setImage(url: park.imageUrl)
-        cell.btnCount.tag = indexPath.row
-        cell.btnCount.addTarget(self, action: #selector(ListParksViewController.updateCount), for: .touchUpInside)
+        let current = park.total - park.AvailableSlot
+        cell.btnCount.setAttributedTitle(attributeStringForCount(current, park.total), for: .normal)
+
+        cell.btnCount.isEnabled  = false
         return cell
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -63,11 +67,7 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
         tbvData.reloadData()
         
     }
-    @objc func updateCount(_ btn: UIButton) {
-        let park  = arrayPark[btn.tag]
-        
-        
-    }
+   
     /*
     // MARK: - Navigation
 

@@ -172,6 +172,21 @@ func stringForSize(_ size: Int) -> String {
     return "\(size)"
     
 }
+
+func attributeStringForCount(_ current: Int, _ total: Int) -> NSAttributedString {
+    let returnStr = NSMutableAttributedString(string: "")
+    if current < total {
+        let currentstr = NSAttributedString(string: "\(current)/", attributes: [NSAttributedStringKey.foregroundColor  : UIColor.blue])
+        returnStr.append(currentstr)
+    }
+    else {
+        let currentstr = NSAttributedString(string: "\(current)/", attributes: [NSAttributedStringKey.foregroundColor  : UIColor.red])
+        returnStr.append(currentstr)
+    }
+    let totalStr = NSAttributedString(string: "\(total)", attributes: [NSAttributedStringKey.foregroundColor  : UIColor.red])
+    returnStr.append(totalStr)
+    return returnStr
+}
 func iconForType(_ type: Int) -> UIImage? {
     switch type {
     case 0:

@@ -155,7 +155,6 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         request.type = typeValue[0]
         request.openTime =  timeValue[0]
         request.closeTime =  timeValue[1]
-
         //request.email =  ""
         services.insertPark(request: request, success: {
             App.removeLoadingOnView(view: self.view)

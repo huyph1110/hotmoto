@@ -8,7 +8,21 @@
 
 import Foundation
 
+extension UIColor {
+    func isLight() -> Bool {
+        guard let components = cgColor.components else { return false }
+        let redBrightness = components[0] * 299
+        let greenBrightness = components[1] * 587
+        let blueBrightness = components[2] * 114
+        let brightness = (redBrightness + greenBrightness + blueBrightness) / 1000
+        return brightness > 0.5
+    }
+}
+
 public extension  UIColor {
+    
+    
+    
     convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")
         assert(green >= 0 && green <= 255, "Invalid green component")

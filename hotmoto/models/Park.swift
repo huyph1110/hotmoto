@@ -68,19 +68,20 @@ class insertParkReq: Mi {
     //    "long": (float),
     //    "lat": (float),
     //    "scope":(float)
-    @objc dynamic  var location = NSDictionary()
+    var location: NSDictionary?
     @objc dynamic  var name: String?
     @objc dynamic  var address: String?
     @objc dynamic  var phone: String?
     @objc dynamic  var username: String?
-    @objc dynamic  var total = 0
-    @objc dynamic  var openTime = 0
-    @objc dynamic  var closeTime = 0
-    @objc dynamic  var type = 0
+      var total: Int?
+      var AvailableSlot:  Int?
+      var openTime:  Int?
+      var closeTime:  Int?
+      var type:  Int?
     @objc dynamic  var email: String?
     @objc dynamic  var imageUrl: String?
-    @objc dynamic  var cost =  0
-    @objc dynamic  var numberHours =  0
+      var cost:  Int?
+      var numberHours:  Int?
     @objc dynamic  var id: String?
 
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountUpdateViewController" customModule="hotmoto" customModuleProvider="target">
+            <connections>
+                <outlet property="stepCount" destination="iSk-C5-wFJ" id="iVr-VQ-gcw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="182" height="117"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iSk-C5-wFJ" customClass="GreenStepField" customModule="hotmoto" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="182" height="72"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFW-iS-srI">
+                    <rect key="frame" x="0.0" y="72" width="182" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="TlU-rX-tX1"/>
+                    </constraints>
+                    <state key="normal" title="Xong"/>
+                    <connections>
+                        <action selector="done:" destination="-1" eventType="touchUpInside" id="3bT-kO-as4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dFW-iS-srI" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="5IQ-uc-vXh"/>
+                <constraint firstItem="iSk-C5-wFJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9O2-wA-mMR"/>
+                <constraint firstItem="dFW-iS-srI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ViC-O4-2nY"/>
+                <constraint firstItem="iSk-C5-wFJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZP0-kr-biR"/>
+                <constraint firstItem="dFW-iS-srI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bT2-dV-q9q"/>
+                <constraint firstItem="iSk-C5-wFJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="o0v-vM-g68"/>
+                <constraint firstItem="dFW-iS-srI" firstAttribute="top" secondItem="iSk-C5-wFJ" secondAttribute="bottom" id="xtD-VJ-22i"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-408" y="-60"/>
+        </view>
+    </objects>
+</document>

@@ -173,6 +173,8 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         request.type = typeValue[0]
         request.openTime =  timeValue[0]
         request.closeTime =  timeValue[1]
+        request.AvailableSlot = park?.AvailableSlot
+        
         //request.email =  ""
         services.updatePark(request: request, success: {
             App.removeLoadingOnView(view: self.view)

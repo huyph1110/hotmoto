@@ -31,6 +31,10 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         cell.lblCost.text = stringForCost(park.cost, park.numberHours)
         cell.imvAvatar?.setImage(url: park.imageUrl)
         cell.imvType.image = iconForType(park.type)
+        let current = park.total - park.AvailableSlot
+        cell.btnCount.setAttributedTitle(attributeStringForCount(current, park.total), for: .normal)
+        cell.btnCount.tag = indexPath.row
+        cell.btnCount.addTarget(self, action: #selector(MyParkListViewController.updateCount), for: .touchUpInside)
 
         return cell
     }
@@ -87,4 +91,61 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
             })
         }
     }
+    @objc func updateCount(_ btn: UIButton) {
+        let park  = arrayPark[btn.tag]
+        let vc = CountUpdateViewController()
+        vc.value = park.total - park.AvailableSlot
+        vc.max = park.total
+        vc.min = 0
+        
+        let rect = btn.superview?.convert(btn.frame, to: self.view)
+        showPopover(contentSize: CGSize(width: 120, height: 80), sourceRect: rect!, contentVC: vc, direction: .any)
+        vc.completeHandler = {
+            (value) -> Void in
+            let slot = park.total - value
+            self.updateSlotForPark(park, slot, success: {(success) in
+                if success {
+                    park.AvailableSlot = slot
+                    DispatchQueue.main.async {
+                        self.tbvData.reloadRows(at: [IndexPath(row: btn.tag, section: 0)], with: .fade)
+                    }
+                }
+                
+                vc.dismiss(animated: true, completion: nil)
+
+            })
+        }
+        
+    }
+    
+    func updateSlotForPark(_ park: Park,_ slot: Int, success: @escaping ((Bool) -> Void)) {
+        let request = insertParkReq()
+        request.id = park.id
+        request.AvailableSlot =  slot
+        //request.email =  ""
+        
+        request.location = location(coordinate: park.position)
+        request.name = park.name
+        request.address = park.address
+        request.phone = park.phone
+        request.total = park.total
+        request.username =  park.username
+        request.cost =  park.cost
+        request.numberHours = park.numberHours
+        request.imageUrl = park.imageUrl
+        request.type = park.type
+        request.openTime =  park.openTime
+        request.closeTime =  park.closeTime
+        
+        services.updatePark(request: request, success: {
+            success(true)
+        }) { (error) in
+            success(false)
+            self.showAlert(title: error, completion: { (_) in
+                
+            })
+        }
+        
+    }
+    
 }

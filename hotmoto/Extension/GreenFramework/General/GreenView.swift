@@ -26,12 +26,12 @@ open  class GreenView: UIView
         self.backgroundColor = UIColor.clear
         view.frame = bounds
         addSubview(view)
-        //self.setLayout(view)
+        self.setLayout(view)
     }
     
     override open func awakeFromNib() {
         super.awakeFromNib()
-    initStyle()
+        initStyle()
 
     }
     
@@ -43,7 +43,8 @@ open  class GreenView: UIView
     {
         let bundle = Bundle(for: type(of: self))
         var nibName = self.classNameAsString(self)
-     
+
+        
         if Bundle.main.path(forResource: nibName, ofType: "nib") == nil {
             nibName = self.classNameAsString(self)
         }
@@ -88,6 +89,7 @@ open  class GreenView: UIView
     
     func present(inView: UIView)  {
         self.frame = inView.bounds
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         inView.addSubview(self)
         self.layoutIfNeeded()
         self.alpha = 0
@@ -113,4 +115,23 @@ open  class GreenView: UIView
     open func didDismiss()  {
         
     }
+    
 }
+
+func heightConstraint(ofView view: UIView) -> NSLayoutConstraint? {
+    return view.constraints.filter {
+        if $0.firstAttribute == .height, $0.relation == .equal {
+            return true
+        }
+        return false
+        }.first
+}
+func widthConstraint(ofView view: UIView) -> NSLayoutConstraint? {
+    return view.constraints.filter {
+        if $0.firstAttribute == .width, $0.relation == .equal {
+            return true
+        }
+        return false
+        }.first
+}
+

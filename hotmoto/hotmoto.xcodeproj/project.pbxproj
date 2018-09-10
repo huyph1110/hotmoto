@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		63D3070FE12BA44A925BFB6E /* Pods_hotmoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */; };
-		E5212E87207460A600202CC9 /* GreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5212E86207460A600202CC9 /* GreenView.swift */; };
 		E530A8B6207760C3006D1454 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B5207760C3006D1454 /* Park.swift */; };
 		E530A8B8207766D2006D1454 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B7207766D2006D1454 /* Guest.swift */; };
 		E542786C20F0BDF300C302CE /* InputTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542786A20F0BDF300C302CE /* InputTextCell.swift */; };
@@ -16,7 +15,92 @@
 		E542A8D6207A194F009DF90E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E542A8D5207A194F009DF90E /* README.md */; };
 		E54C7E2D2126CDCF00EC5278 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E54C7E2C2126CDCF00EC5278 /* GoogleMaps.bundle */; };
 		E5547BFE20E07E3A0062E83E /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5547BFC20E07E3A0062E83E /* GooglePlaces.swift */; };
-		E570172D21045D1B00A29D4B /* GreenExtension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E570172C21045D1B00A29D4B /* GreenExtension+UIColor.swift */; };
+		E56AFEAC2146574800247658 /* CountUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEAA2146574800247658 /* CountUpdateViewController.swift */; };
+		E56AFEAD2146574800247658 /* CountUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEAB2146574800247658 /* CountUpdateViewController.xib */; };
+		E56AFF0E214658FE00247658 /* GreenDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEB4214658FE00247658 /* GreenDialog.swift */; };
+		E56AFF0F214658FE00247658 /* DialogInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEB5214658FE00247658 /* DialogInfoView.xib */; };
+		E56AFF10214658FE00247658 /* DialogInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEB6214658FE00247658 /* DialogInfoView.swift */; };
+		E56AFF11214658FE00247658 /* GreenExtension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEB8214658FE00247658 /* GreenExtension+UIColor.swift */; };
+		E56AFF12214658FE00247658 /* GreenExtention+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEB9214658FE00247658 /* GreenExtention+UILabel.swift */; };
+		E56AFF13214658FE00247658 /* GreenExtention+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEBA214658FE00247658 /* GreenExtention+UITextView.swift */; };
+		E56AFF14214658FE00247658 /* GreenExtension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEBB214658FE00247658 /* GreenExtension+String.swift */; };
+		E56AFF15214658FE00247658 /* GreenExtension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEBC214658FE00247658 /* GreenExtension+UIViewController.swift */; };
+		E56AFF16214658FE00247658 /* GreenExtension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEBD214658FE00247658 /* GreenExtension+Date.swift */; };
+		E56AFF17214658FE00247658 /* GreenExtension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEBE214658FE00247658 /* GreenExtension+UIImage.swift */; };
+		E56AFF18214658FE00247658 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEBF214658FE00247658 /* UIDeviceExtension.swift */; };
+		E56AFF19214658FE00247658 /* GreenExtention+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEC0214658FE00247658 /* GreenExtention+UIView.swift */; };
+		E56AFF1A214658FE00247658 /* GreenExtention+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEC1214658FE00247658 /* GreenExtention+UIButton.swift */; };
+		E56AFF1B214658FE00247658 /* GreenExtention+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEC2214658FE00247658 /* GreenExtention+UITextField.swift */; };
+		E56AFF1C214658FE00247658 /* GreenExtention+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEC3214658FE00247658 /* GreenExtention+UITableView.swift */; };
+		E56AFF1D214658FE00247658 /* GreenExtension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEC4214658FE00247658 /* GreenExtension+Array.swift */; };
+		E56AFF1E214658FE00247658 /* GreenExtension+UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEC5214658FE00247658 /* GreenExtension+UITableViewCell.swift */; };
+		E56AFF1F214658FE00247658 /* GreenDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEC6214658FE00247658 /* GreenDefine.swift */; };
+		E56AFF20214658FE00247658 /* GreenLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEC8214658FE00247658 /* GreenLabel.swift */; };
+		E56AFF21214658FE00247658 /* GreenTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEC9214658FE00247658 /* GreenTextView.swift */; };
+		E56AFF22214658FE00247658 /* GreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFECA214658FE00247658 /* GreenView.swift */; };
+		E56AFF23214658FE00247658 /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFECB214658FE00247658 /* GreenButton.swift */; };
+		E56AFF24214658FE00247658 /* GCleanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFECC214658FE00247658 /* GCleanView.swift */; };
+		E56AFF25214658FE00247658 /* GreenTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFECD214658FE00247658 /* GreenTextField.swift */; };
+		E56AFF26214658FE00247658 /* GreenTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFECE214658FE00247658 /* GreenTableView.swift */; };
+		E56AFF27214658FE00247658 /* GSelect.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFED0214658FE00247658 /* GSelect.png */; };
+		E56AFF28214658FE00247658 /* GRight.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFED1214658FE00247658 /* GRight.png */; };
+		E56AFF29214658FE00247658 /* GStart.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFED2214658FE00247658 /* GStart.png */; };
+		E56AFF2A214658FE00247658 /* GDown.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFED3214658FE00247658 /* GDown.png */; };
+		E56AFF2B214658FE00247658 /* GHome.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFED4214658FE00247658 /* GHome.png */; };
+		E56AFF2C214658FE00247658 /* GShop.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFED5214658FE00247658 /* GShop.png */; };
+		E56AFF2D214658FE00247658 /* GUser.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFED6214658FE00247658 /* GUser.png */; };
+		E56AFF2E214658FE00247658 /* GGrid.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFED7214658FE00247658 /* GGrid.png */; };
+		E56AFF2F214658FE00247658 /* GGuita.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFED8214658FE00247658 /* GGuita.png */; };
+		E56AFF30214658FE00247658 /* GPlus.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFED9214658FE00247658 /* GPlus.png */; };
+		E56AFF31214658FE00247658 /* GUser_1.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEDA214658FE00247658 /* GUser_1.png */; };
+		E56AFF32214658FE00247658 /* Pause-100 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEDB214658FE00247658 /* Pause-100 (1).png */; };
+		E56AFF33214658FE00247658 /* GSetting.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEDC214658FE00247658 /* GSetting.png */; };
+		E56AFF34214658FE00247658 /* Library.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEDD214658FE00247658 /* Library.png */; };
+		E56AFF35214658FE00247658 /* GMinus.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEDE214658FE00247658 /* GMinus.png */; };
+		E56AFF36214658FE00247658 /* GDelete.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEDF214658FE00247658 /* GDelete.png */; };
+		E56AFF37214658FE00247658 /* GCancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEE0214658FE00247658 /* GCancel.png */; };
+		E56AFF38214658FE00247658 /* GNext.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEE1214658FE00247658 /* GNext.png */; };
+		E56AFF39214658FE00247658 /* GLogout.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEE2214658FE00247658 /* GLogout.png */; };
+		E56AFF3A214658FE00247658 /* InfoWarning.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEE3214658FE00247658 /* InfoWarning.png */; };
+		E56AFF3B214658FE00247658 /* Help.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEE4214658FE00247658 /* Help.png */; };
+		E56AFF3C214658FE00247658 /* GPassword.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEE5214658FE00247658 /* GPassword.png */; };
+		E56AFF3D214658FE00247658 /* GLeaf.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEE6214658FE00247658 /* GLeaf.png */; };
+		E56AFF3E214658FE00247658 /* Panel.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEE7214658FE00247658 /* Panel.png */; };
+		E56AFF3F214658FE00247658 /* GLeftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEE8214658FE00247658 /* GLeftArrow.png */; };
+		E56AFF40214658FE00247658 /* GBack.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEE9214658FE00247658 /* GBack.png */; };
+		E56AFF41214658FE00247658 /* GSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEEA214658FE00247658 /* GSearch.png */; };
+		E56AFF42214658FE00247658 /* GDashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEEB214658FE00247658 /* GDashboard.png */; };
+		E56AFF43214658FE00247658 /* Trash.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEEC214658FE00247658 /* Trash.png */; };
+		E56AFF44214658FE00247658 /* GMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEED214658FE00247658 /* GMenu.png */; };
+		E56AFF45214658FE00247658 /* GCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEEE214658FE00247658 /* GCheck.png */; };
+		E56AFF46214658FE00247658 /* GClover.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEEF214658FE00247658 /* GClover.png */; };
+		E56AFF47214658FE00247658 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEF0214658FE00247658 /* Camera.png */; };
+		E56AFF48214658FE00247658 /* GEmail.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEF1214658FE00247658 /* GEmail.png */; };
+		E56AFF49214658FE00247658 /* Start.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEF2214658FE00247658 /* Start.png */; };
+		E56AFF4A214658FE00247658 /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEF3214658FE00247658 /* Refresh.png */; };
+		E56AFF4B214658FE00247658 /* WifiDisconnect.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEF4214658FE00247658 /* WifiDisconnect.png */; };
+		E56AFF4C214658FE00247658 /* GQRCode.png in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEF5214658FE00247658 /* GQRCode.png */; };
+		E56AFF4D214658FE00247658 /* GreenStepField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEF7214658FE00247658 /* GreenStepField.swift */; };
+		E56AFF4E214658FE00247658 /* GreenInfoFieldHorizontal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEF8214658FE00247658 /* GreenInfoFieldHorizontal.swift */; };
+		E56AFF4F214658FE00247658 /* GreenCheckbox.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEF9214658FE00247658 /* GreenCheckbox.xib */; };
+		E56AFF50214658FE00247658 /* GreenInfoFieldHorizontal.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEFA214658FE00247658 /* GreenInfoFieldHorizontal.xib */; };
+		E56AFF51214658FE00247658 /* GreenStepField.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEFB214658FE00247658 /* GreenStepField.xib */; };
+		E56AFF52214658FE00247658 /* ABView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEFC214658FE00247658 /* ABView.swift */; };
+		E56AFF53214658FE00247658 /* GreenCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEFD214658FE00247658 /* GreenCheckbox.swift */; };
+		E56AFF54214658FE00247658 /* GreenEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEFE214658FE00247658 /* GreenEmptyView.swift */; };
+		E56AFF55214658FE00247658 /* MIDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFF00214658FE00247658 /* MIDateView.swift */; };
+		E56AFF56214658FE00247658 /* MIDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFF01214658FE00247658 /* MIDateView.xib */; };
+		E56AFF57214658FE00247658 /* GreenButtonCenter.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFF02214658FE00247658 /* GreenButtonCenter.xib */; };
+		E56AFF58214658FE00247658 /* GreenSwipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFF03214658FE00247658 /* GreenSwipeView.xib */; };
+		E56AFF59214658FE00247658 /* LandingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFF05214658FE00247658 /* LandingView.xib */; };
+		E56AFF5A214658FE00247658 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFF06214658FE00247658 /* LandingView.swift */; };
+		E56AFF5B214658FE00247658 /* GreenInfoField.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFF07214658FE00247658 /* GreenInfoField.xib */; };
+		E56AFF5C214658FE00247658 /* GreenInfoFieldSymbol.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFF08214658FE00247658 /* GreenInfoFieldSymbol.xib */; };
+		E56AFF5D214658FE00247658 /* GreenButtonCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFF09214658FE00247658 /* GreenButtonCenter.swift */; };
+		E56AFF5E214658FE00247658 /* GreenInfoField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFF0A214658FE00247658 /* GreenInfoField.swift */; };
+		E56AFF5F214658FE00247658 /* GreenSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFF0B214658FE00247658 /* GreenSwipeView.swift */; };
+		E56AFF60214658FE00247658 /* GreenInfoFieldSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFF0C214658FE00247658 /* GreenInfoFieldSymbol.swift */; };
+		E56AFF61214658FE00247658 /* ABView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFF0D214658FE00247658 /* ABView.xib */; };
 		E578B0F220BAFEB100D8F0A9 /* DSCameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E578B0F120BAFEB100D8F0A9 /* DSCameraHandler.swift */; };
 		E578B0F420BB002900D8F0A9 /* UIViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E578B0F320BB002900D8F0A9 /* UIViewController+ImagePicker.swift */; };
 		E580F3C22126C73F001EF05B /* InfoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3A82126C73F001EF05B /* InfoItemCell.swift */; };
@@ -40,7 +124,6 @@
 		E580F3D42126C740001EF05B /* ListParksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3BE2126C73F001EF05B /* ListParksViewController.swift */; };
 		E580F3D52126C740001EF05B /* DetailParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3C02126C73F001EF05B /* DetailParkViewController.swift */; };
 		E580F3D62126C740001EF05B /* DetailParkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3C12126C73F001EF05B /* DetailParkViewController.xib */; };
-		E580F3D82126C75D001EF05B /* GreenExtension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3D72126C75D001EF05B /* GreenExtension+Date.swift */; };
 		E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C454020AC160500C493DA /* MyParkListViewController.swift */; };
 		E59F063E20AA9FC9008E0DCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F063D20AA9FC9008E0DCC /* User.swift */; };
 		E59F83CD212C7217004BD65C /* TPKeyboardAvoidingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */; };
@@ -80,7 +163,6 @@
 		449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hotmoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.release.xcconfig"; sourceTree = "<group>"; };
-		E5212E86207460A600202CC9 /* GreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenView.swift; sourceTree = "<group>"; };
 		E530A8B5207760C3006D1454 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		E530A8B7207766D2006D1454 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		E542786A20F0BDF300C302CE /* InputTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextCell.swift; sourceTree = "<group>"; };
@@ -89,7 +171,92 @@
 		E544A17920D944A40029B93E /* libPods-PXGoogleDirections.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-PXGoogleDirections.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54C7E2C2126CDCF00EC5278 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		E5547BFC20E07E3A0062E83E /* GooglePlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlaces.swift; sourceTree = "<group>"; };
-		E570172C21045D1B00A29D4B /* GreenExtension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+UIColor.swift"; sourceTree = "<group>"; };
+		E56AFEAA2146574800247658 /* CountUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountUpdateViewController.swift; sourceTree = "<group>"; };
+		E56AFEAB2146574800247658 /* CountUpdateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountUpdateViewController.xib; sourceTree = "<group>"; };
+		E56AFEB4214658FE00247658 /* GreenDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenDialog.swift; sourceTree = "<group>"; };
+		E56AFEB5214658FE00247658 /* DialogInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DialogInfoView.xib; sourceTree = "<group>"; };
+		E56AFEB6214658FE00247658 /* DialogInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogInfoView.swift; sourceTree = "<group>"; };
+		E56AFEB8214658FE00247658 /* GreenExtension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+UIColor.swift"; sourceTree = "<group>"; };
+		E56AFEB9214658FE00247658 /* GreenExtention+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtention+UILabel.swift"; sourceTree = "<group>"; };
+		E56AFEBA214658FE00247658 /* GreenExtention+UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtention+UITextView.swift"; sourceTree = "<group>"; };
+		E56AFEBB214658FE00247658 /* GreenExtension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+String.swift"; sourceTree = "<group>"; };
+		E56AFEBC214658FE00247658 /* GreenExtension+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+UIViewController.swift"; sourceTree = "<group>"; };
+		E56AFEBD214658FE00247658 /* GreenExtension+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+Date.swift"; sourceTree = "<group>"; };
+		E56AFEBE214658FE00247658 /* GreenExtension+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+UIImage.swift"; sourceTree = "<group>"; };
+		E56AFEBF214658FE00247658 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		E56AFEC0214658FE00247658 /* GreenExtention+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtention+UIView.swift"; sourceTree = "<group>"; };
+		E56AFEC1214658FE00247658 /* GreenExtention+UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtention+UIButton.swift"; sourceTree = "<group>"; };
+		E56AFEC2214658FE00247658 /* GreenExtention+UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtention+UITextField.swift"; sourceTree = "<group>"; };
+		E56AFEC3214658FE00247658 /* GreenExtention+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtention+UITableView.swift"; sourceTree = "<group>"; };
+		E56AFEC4214658FE00247658 /* GreenExtension+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+Array.swift"; sourceTree = "<group>"; };
+		E56AFEC5214658FE00247658 /* GreenExtension+UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+UITableViewCell.swift"; sourceTree = "<group>"; };
+		E56AFEC6214658FE00247658 /* GreenDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenDefine.swift; sourceTree = "<group>"; };
+		E56AFEC8214658FE00247658 /* GreenLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenLabel.swift; sourceTree = "<group>"; };
+		E56AFEC9214658FE00247658 /* GreenTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenTextView.swift; sourceTree = "<group>"; };
+		E56AFECA214658FE00247658 /* GreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenView.swift; sourceTree = "<group>"; };
+		E56AFECB214658FE00247658 /* GreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenButton.swift; sourceTree = "<group>"; };
+		E56AFECC214658FE00247658 /* GCleanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCleanView.swift; sourceTree = "<group>"; };
+		E56AFECD214658FE00247658 /* GreenTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenTextField.swift; sourceTree = "<group>"; };
+		E56AFECE214658FE00247658 /* GreenTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenTableView.swift; sourceTree = "<group>"; };
+		E56AFED0214658FE00247658 /* GSelect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GSelect.png; sourceTree = "<group>"; };
+		E56AFED1214658FE00247658 /* GRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GRight.png; sourceTree = "<group>"; };
+		E56AFED2214658FE00247658 /* GStart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GStart.png; sourceTree = "<group>"; };
+		E56AFED3214658FE00247658 /* GDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GDown.png; sourceTree = "<group>"; };
+		E56AFED4214658FE00247658 /* GHome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GHome.png; sourceTree = "<group>"; };
+		E56AFED5214658FE00247658 /* GShop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GShop.png; sourceTree = "<group>"; };
+		E56AFED6214658FE00247658 /* GUser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GUser.png; sourceTree = "<group>"; };
+		E56AFED7214658FE00247658 /* GGrid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GGrid.png; sourceTree = "<group>"; };
+		E56AFED8214658FE00247658 /* GGuita.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GGuita.png; sourceTree = "<group>"; };
+		E56AFED9214658FE00247658 /* GPlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPlus.png; sourceTree = "<group>"; };
+		E56AFEDA214658FE00247658 /* GUser_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GUser_1.png; sourceTree = "<group>"; };
+		E56AFEDB214658FE00247658 /* Pause-100 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause-100 (1).png"; sourceTree = "<group>"; };
+		E56AFEDC214658FE00247658 /* GSetting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GSetting.png; sourceTree = "<group>"; };
+		E56AFEDD214658FE00247658 /* Library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Library.png; sourceTree = "<group>"; };
+		E56AFEDE214658FE00247658 /* GMinus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GMinus.png; sourceTree = "<group>"; };
+		E56AFEDF214658FE00247658 /* GDelete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GDelete.png; sourceTree = "<group>"; };
+		E56AFEE0214658FE00247658 /* GCancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GCancel.png; sourceTree = "<group>"; };
+		E56AFEE1214658FE00247658 /* GNext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GNext.png; sourceTree = "<group>"; };
+		E56AFEE2214658FE00247658 /* GLogout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GLogout.png; sourceTree = "<group>"; };
+		E56AFEE3214658FE00247658 /* InfoWarning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InfoWarning.png; sourceTree = "<group>"; };
+		E56AFEE4214658FE00247658 /* Help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Help.png; sourceTree = "<group>"; };
+		E56AFEE5214658FE00247658 /* GPassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GPassword.png; sourceTree = "<group>"; };
+		E56AFEE6214658FE00247658 /* GLeaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GLeaf.png; sourceTree = "<group>"; };
+		E56AFEE7214658FE00247658 /* Panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Panel.png; sourceTree = "<group>"; };
+		E56AFEE8214658FE00247658 /* GLeftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GLeftArrow.png; sourceTree = "<group>"; };
+		E56AFEE9214658FE00247658 /* GBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GBack.png; sourceTree = "<group>"; };
+		E56AFEEA214658FE00247658 /* GSearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GSearch.png; sourceTree = "<group>"; };
+		E56AFEEB214658FE00247658 /* GDashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GDashboard.png; sourceTree = "<group>"; };
+		E56AFEEC214658FE00247658 /* Trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Trash.png; sourceTree = "<group>"; };
+		E56AFEED214658FE00247658 /* GMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GMenu.png; sourceTree = "<group>"; };
+		E56AFEEE214658FE00247658 /* GCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GCheck.png; sourceTree = "<group>"; };
+		E56AFEEF214658FE00247658 /* GClover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GClover.png; sourceTree = "<group>"; };
+		E56AFEF0214658FE00247658 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
+		E56AFEF1214658FE00247658 /* GEmail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GEmail.png; sourceTree = "<group>"; };
+		E56AFEF2214658FE00247658 /* Start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Start.png; sourceTree = "<group>"; };
+		E56AFEF3214658FE00247658 /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
+		E56AFEF4214658FE00247658 /* WifiDisconnect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WifiDisconnect.png; sourceTree = "<group>"; };
+		E56AFEF5214658FE00247658 /* GQRCode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GQRCode.png; sourceTree = "<group>"; };
+		E56AFEF7214658FE00247658 /* GreenStepField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenStepField.swift; sourceTree = "<group>"; };
+		E56AFEF8214658FE00247658 /* GreenInfoFieldHorizontal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenInfoFieldHorizontal.swift; sourceTree = "<group>"; };
+		E56AFEF9214658FE00247658 /* GreenCheckbox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GreenCheckbox.xib; sourceTree = "<group>"; };
+		E56AFEFA214658FE00247658 /* GreenInfoFieldHorizontal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GreenInfoFieldHorizontal.xib; sourceTree = "<group>"; };
+		E56AFEFB214658FE00247658 /* GreenStepField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GreenStepField.xib; sourceTree = "<group>"; };
+		E56AFEFC214658FE00247658 /* ABView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABView.swift; sourceTree = "<group>"; };
+		E56AFEFD214658FE00247658 /* GreenCheckbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenCheckbox.swift; sourceTree = "<group>"; };
+		E56AFEFE214658FE00247658 /* GreenEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenEmptyView.swift; sourceTree = "<group>"; };
+		E56AFF00214658FE00247658 /* MIDateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDateView.swift; sourceTree = "<group>"; };
+		E56AFF01214658FE00247658 /* MIDateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MIDateView.xib; sourceTree = "<group>"; };
+		E56AFF02214658FE00247658 /* GreenButtonCenter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GreenButtonCenter.xib; sourceTree = "<group>"; };
+		E56AFF03214658FE00247658 /* GreenSwipeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GreenSwipeView.xib; sourceTree = "<group>"; };
+		E56AFF05214658FE00247658 /* LandingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LandingView.xib; sourceTree = "<group>"; };
+		E56AFF06214658FE00247658 /* LandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		E56AFF07214658FE00247658 /* GreenInfoField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GreenInfoField.xib; sourceTree = "<group>"; };
+		E56AFF08214658FE00247658 /* GreenInfoFieldSymbol.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GreenInfoFieldSymbol.xib; sourceTree = "<group>"; };
+		E56AFF09214658FE00247658 /* GreenButtonCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenButtonCenter.swift; sourceTree = "<group>"; };
+		E56AFF0A214658FE00247658 /* GreenInfoField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenInfoField.swift; sourceTree = "<group>"; };
+		E56AFF0B214658FE00247658 /* GreenSwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenSwipeView.swift; sourceTree = "<group>"; };
+		E56AFF0C214658FE00247658 /* GreenInfoFieldSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenInfoFieldSymbol.swift; sourceTree = "<group>"; };
+		E56AFF0D214658FE00247658 /* ABView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABView.xib; sourceTree = "<group>"; };
 		E578B0F120BAFEB100D8F0A9 /* DSCameraHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSCameraHandler.swift; sourceTree = "<group>"; };
 		E578B0F320BB002900D8F0A9 /* UIViewController+ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		E580F3A82126C73F001EF05B /* InfoItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoItemCell.swift; sourceTree = "<group>"; };
@@ -113,7 +280,6 @@
 		E580F3BE2126C73F001EF05B /* ListParksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListParksViewController.swift; sourceTree = "<group>"; };
 		E580F3C02126C73F001EF05B /* DetailParkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailParkViewController.swift; sourceTree = "<group>"; };
 		E580F3C12126C73F001EF05B /* DetailParkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailParkViewController.xib; sourceTree = "<group>"; };
-		E580F3D72126C75D001EF05B /* GreenExtension+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GreenExtension+Date.swift"; sourceTree = "<group>"; };
 		E58C454020AC160500C493DA /* MyParkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyParkListViewController.swift; sourceTree = "<group>"; };
 		E59F063D20AA9FC9008E0DCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TPKeyboardAvoidingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,11 +347,157 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E56AFEB2214658FD00247658 /* GreenFramework */ = {
+			isa = PBXGroup;
+			children = (
+				E56AFEB3214658FE00247658 /* GreenDialog */,
+				E56AFEB7214658FE00247658 /* Extension */,
+				E56AFEC6214658FE00247658 /* GreenDefine.swift */,
+				E56AFEC7214658FE00247658 /* General */,
+				E56AFECF214658FE00247658 /* Icons */,
+				E56AFEF6214658FE00247658 /* View */,
+			);
+			path = GreenFramework;
+			sourceTree = "<group>";
+		};
+		E56AFEB3214658FE00247658 /* GreenDialog */ = {
+			isa = PBXGroup;
+			children = (
+				E56AFEB4214658FE00247658 /* GreenDialog.swift */,
+				E56AFEB5214658FE00247658 /* DialogInfoView.xib */,
+				E56AFEB6214658FE00247658 /* DialogInfoView.swift */,
+			);
+			path = GreenDialog;
+			sourceTree = "<group>";
+		};
+		E56AFEB7214658FE00247658 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E56AFEB8214658FE00247658 /* GreenExtension+UIColor.swift */,
+				E56AFEB9214658FE00247658 /* GreenExtention+UILabel.swift */,
+				E56AFEBA214658FE00247658 /* GreenExtention+UITextView.swift */,
+				E56AFEBB214658FE00247658 /* GreenExtension+String.swift */,
+				E56AFEBC214658FE00247658 /* GreenExtension+UIViewController.swift */,
+				E56AFEBD214658FE00247658 /* GreenExtension+Date.swift */,
+				E56AFEBE214658FE00247658 /* GreenExtension+UIImage.swift */,
+				E56AFEBF214658FE00247658 /* UIDeviceExtension.swift */,
+				E56AFEC0214658FE00247658 /* GreenExtention+UIView.swift */,
+				E56AFEC1214658FE00247658 /* GreenExtention+UIButton.swift */,
+				E56AFEC2214658FE00247658 /* GreenExtention+UITextField.swift */,
+				E56AFEC3214658FE00247658 /* GreenExtention+UITableView.swift */,
+				E56AFEC4214658FE00247658 /* GreenExtension+Array.swift */,
+				E56AFEC5214658FE00247658 /* GreenExtension+UITableViewCell.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E56AFEC7214658FE00247658 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				E56AFEC8214658FE00247658 /* GreenLabel.swift */,
+				E56AFEC9214658FE00247658 /* GreenTextView.swift */,
+				E56AFECA214658FE00247658 /* GreenView.swift */,
+				E56AFECB214658FE00247658 /* GreenButton.swift */,
+				E56AFECC214658FE00247658 /* GCleanView.swift */,
+				E56AFECD214658FE00247658 /* GreenTextField.swift */,
+				E56AFECE214658FE00247658 /* GreenTableView.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		E56AFECF214658FE00247658 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E56AFED0214658FE00247658 /* GSelect.png */,
+				E56AFED1214658FE00247658 /* GRight.png */,
+				E56AFED2214658FE00247658 /* GStart.png */,
+				E56AFED3214658FE00247658 /* GDown.png */,
+				E56AFED4214658FE00247658 /* GHome.png */,
+				E56AFED5214658FE00247658 /* GShop.png */,
+				E56AFED6214658FE00247658 /* GUser.png */,
+				E56AFED7214658FE00247658 /* GGrid.png */,
+				E56AFED8214658FE00247658 /* GGuita.png */,
+				E56AFED9214658FE00247658 /* GPlus.png */,
+				E56AFEDA214658FE00247658 /* GUser_1.png */,
+				E56AFEDB214658FE00247658 /* Pause-100 (1).png */,
+				E56AFEDC214658FE00247658 /* GSetting.png */,
+				E56AFEDD214658FE00247658 /* Library.png */,
+				E56AFEDE214658FE00247658 /* GMinus.png */,
+				E56AFEDF214658FE00247658 /* GDelete.png */,
+				E56AFEE0214658FE00247658 /* GCancel.png */,
+				E56AFEE1214658FE00247658 /* GNext.png */,
+				E56AFEE2214658FE00247658 /* GLogout.png */,
+				E56AFEE3214658FE00247658 /* InfoWarning.png */,
+				E56AFEE4214658FE00247658 /* Help.png */,
+				E56AFEE5214658FE00247658 /* GPassword.png */,
+				E56AFEE6214658FE00247658 /* GLeaf.png */,
+				E56AFEE7214658FE00247658 /* Panel.png */,
+				E56AFEE8214658FE00247658 /* GLeftArrow.png */,
+				E56AFEE9214658FE00247658 /* GBack.png */,
+				E56AFEEA214658FE00247658 /* GSearch.png */,
+				E56AFEEB214658FE00247658 /* GDashboard.png */,
+				E56AFEEC214658FE00247658 /* Trash.png */,
+				E56AFEED214658FE00247658 /* GMenu.png */,
+				E56AFEEE214658FE00247658 /* GCheck.png */,
+				E56AFEEF214658FE00247658 /* GClover.png */,
+				E56AFEF0214658FE00247658 /* Camera.png */,
+				E56AFEF1214658FE00247658 /* GEmail.png */,
+				E56AFEF2214658FE00247658 /* Start.png */,
+				E56AFEF3214658FE00247658 /* Refresh.png */,
+				E56AFEF4214658FE00247658 /* WifiDisconnect.png */,
+				E56AFEF5214658FE00247658 /* GQRCode.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		E56AFEF6214658FE00247658 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E56AFEF7214658FE00247658 /* GreenStepField.swift */,
+				E56AFEF8214658FE00247658 /* GreenInfoFieldHorizontal.swift */,
+				E56AFEF9214658FE00247658 /* GreenCheckbox.xib */,
+				E56AFEFA214658FE00247658 /* GreenInfoFieldHorizontal.xib */,
+				E56AFEFB214658FE00247658 /* GreenStepField.xib */,
+				E56AFEFC214658FE00247658 /* ABView.swift */,
+				E56AFEFD214658FE00247658 /* GreenCheckbox.swift */,
+				E56AFEFE214658FE00247658 /* GreenEmptyView.swift */,
+				E56AFEFF214658FE00247658 /* DateView */,
+				E56AFF02214658FE00247658 /* GreenButtonCenter.xib */,
+				E56AFF03214658FE00247658 /* GreenSwipeView.xib */,
+				E56AFF04214658FE00247658 /* LandingView */,
+				E56AFF07214658FE00247658 /* GreenInfoField.xib */,
+				E56AFF08214658FE00247658 /* GreenInfoFieldSymbol.xib */,
+				E56AFF09214658FE00247658 /* GreenButtonCenter.swift */,
+				E56AFF0A214658FE00247658 /* GreenInfoField.swift */,
+				E56AFF0B214658FE00247658 /* GreenSwipeView.swift */,
+				E56AFF0C214658FE00247658 /* GreenInfoFieldSymbol.swift */,
+				E56AFF0D214658FE00247658 /* ABView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E56AFEFF214658FE00247658 /* DateView */ = {
+			isa = PBXGroup;
+			children = (
+				E56AFF00214658FE00247658 /* MIDateView.swift */,
+				E56AFF01214658FE00247658 /* MIDateView.xib */,
+			);
+			path = DateView;
+			sourceTree = "<group>";
+		};
+		E56AFF04214658FE00247658 /* LandingView */ = {
+			isa = PBXGroup;
+			children = (
+				E56AFF05214658FE00247658 /* LandingView.xib */,
+				E56AFF06214658FE00247658 /* LandingView.swift */,
+			);
+			path = LandingView;
+			sourceTree = "<group>";
+		};
 		E570172B21045D0300A29D4B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E580F3D72126C75D001EF05B /* GreenExtension+Date.swift */,
-				E570172C21045D1B00A29D4B /* GreenExtension+UIColor.swift */,
+				E56AFEB2214658FD00247658 /* GreenFramework */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -262,6 +574,8 @@
 				E580F3BC2126C73F001EF05B /* ParkCell.xib */,
 				E580F3BD2126C73F001EF05B /* ParkCell.swift */,
 				E580F3BE2126C73F001EF05B /* ListParksViewController.swift */,
+				E56AFEAA2146574800247658 /* CountUpdateViewController.swift */,
+				E56AFEAB2146574800247658 /* CountUpdateViewController.xib */,
 			);
 			path = ListParks;
 			sourceTree = "<group>";
@@ -363,7 +677,6 @@
 			children = (
 				E5547BFC20E07E3A0062E83E /* GooglePlaces.swift */,
 				E5EFB32D20A1527D00F4AEB9 /* MapTasks.swift */,
-				E5212E86207460A600202CC9 /* GreenView.swift */,
 				E5A4918620844AD800399F5A /* Common.swift */,
 				E5DE3A682067439E007C4D1F /* Constant.swift */,
 			);
@@ -432,22 +745,72 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E56AFF32214658FE00247658 /* Pause-100 (1).png in Resources */,
 				E580F3CB2126C740001EF05B /* TimePicker.xib in Resources */,
+				E56AFF46214658FE00247658 /* GClover.png in Resources */,
+				E56AFF5B214658FE00247658 /* GreenInfoField.xib in Resources */,
+				E56AFF4C214658FE00247658 /* GQRCode.png in Resources */,
+				E56AFF51214658FE00247658 /* GreenStepField.xib in Resources */,
+				E56AFF2C214658FE00247658 /* GShop.png in Resources */,
+				E56AFF27214658FE00247658 /* GSelect.png in Resources */,
+				E56AFF33214658FE00247658 /* GSetting.png in Resources */,
+				E56AFF4B214658FE00247658 /* WifiDisconnect.png in Resources */,
+				E56AFF47214658FE00247658 /* Camera.png in Resources */,
+				E56AFF28214658FE00247658 /* GRight.png in Resources */,
+				E56AFF49214658FE00247658 /* Start.png in Resources */,
+				E56AFF3F214658FE00247658 /* GLeftArrow.png in Resources */,
+				E56AFF31214658FE00247658 /* GUser_1.png in Resources */,
+				E56AFF61214658FE00247658 /* ABView.xib in Resources */,
 				E580F3C42126C73F001EF05B /* InfoItemCell.xib in Resources */,
+				E56AFF0F214658FE00247658 /* DialogInfoView.xib in Resources */,
+				E56AFF2F214658FE00247658 /* GGuita.png in Resources */,
+				E56AFF5C214658FE00247658 /* GreenInfoFieldSymbol.xib in Resources */,
 				E542786D20F0BDF300C302CE /* InputTextCell.xib in Resources */,
 				E542A8D6207A194F009DF90E /* README.md in Resources */,
+				E56AFF3B214658FE00247658 /* Help.png in Resources */,
+				E56AFF34214658FE00247658 /* Library.png in Resources */,
+				E56AFF3D214658FE00247658 /* GLeaf.png in Resources */,
+				E56AFF36214658FE00247658 /* GDelete.png in Resources */,
+				E56AFF59214658FE00247658 /* LandingView.xib in Resources */,
+				E56AFF39214658FE00247658 /* GLogout.png in Resources */,
+				E56AFF37214658FE00247658 /* GCancel.png in Resources */,
+				E56AFF57214658FE00247658 /* GreenButtonCenter.xib in Resources */,
+				E56AFF29214658FE00247658 /* GStart.png in Resources */,
+				E56AFF2A214658FE00247658 /* GDown.png in Resources */,
+				E56AFF45214658FE00247658 /* GCheck.png in Resources */,
+				E56AFF56214658FE00247658 /* MIDateView.xib in Resources */,
+				E56AFF3E214658FE00247658 /* Panel.png in Resources */,
 				E580F3C32126C73F001EF05B /* InfoParkView.xib in Resources */,
 				E5DE3A522067382C007C4D1F /* LaunchScreen.storyboard in Resources */,
+				E56AFF2B214658FE00247658 /* GHome.png in Resources */,
 				E580F3CC2126C740001EF05B /* CostPicker.xib in Resources */,
 				E54C7E2D2126CDCF00EC5278 /* GoogleMaps.bundle in Resources */,
+				E56AFF48214658FE00247658 /* GEmail.png in Resources */,
+				E56AFF58214658FE00247658 /* GreenSwipeView.xib in Resources */,
+				E56AFF38214658FE00247658 /* GNext.png in Resources */,
 				E580F3C92126C740001EF05B /* MobileType.xib in Resources */,
+				E56AFF43214658FE00247658 /* Trash.png in Resources */,
+				E56AFF50214658FE00247658 /* GreenInfoFieldHorizontal.xib in Resources */,
+				E56AFF42214658FE00247658 /* GDashboard.png in Resources */,
+				E56AFF30214658FE00247658 /* GPlus.png in Resources */,
 				E580F3CF2126C740001EF05B /* SizePicker.xib in Resources */,
+				E56AFF4A214658FE00247658 /* Refresh.png in Resources */,
 				E580F3C82126C740001EF05B /* DataPickerViewController.xib in Resources */,
 				E5DE3A4F2067382C007C4D1F /* Assets.xcassets in Resources */,
+				E56AFF35214658FE00247658 /* GMinus.png in Resources */,
+				E56AFF41214658FE00247658 /* GSearch.png in Resources */,
+				E56AFF2D214658FE00247658 /* GUser.png in Resources */,
 				E580F3C62126C740001EF05B /* SlectionBarView.xib in Resources */,
+				E56AFF4F214658FE00247658 /* GreenCheckbox.xib in Resources */,
 				E580F3D22126C740001EF05B /* ParkCell.xib in Resources */,
 				E5DE3A4D2067382C007C4D1F /* Main.storyboard in Resources */,
+				E56AFF3C214658FE00247658 /* GPassword.png in Resources */,
+				E56AFF2E214658FE00247658 /* GGrid.png in Resources */,
+				E56AFEAD2146574800247658 /* CountUpdateViewController.xib in Resources */,
+				E56AFF40214658FE00247658 /* GBack.png in Resources */,
+				E56AFF3A214658FE00247658 /* InfoWarning.png in Resources */,
 				E580F3D62126C740001EF05B /* DetailParkViewController.xib in Resources */,
+				E56AFF44214658FE00247658 /* GMenu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +846,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoidingSwift/TPKeyboardAvoidingSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -491,6 +855,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoidingSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,40 +870,73 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E56AFF4D214658FE00247658 /* GreenStepField.swift in Sources */,
 				E5A4918720844AD800399F5A /* Common.swift in Sources */,
 				E5EFB32E20A1527D00F4AEB9 /* MapTasks.swift in Sources */,
+				E56AFF5D214658FE00247658 /* GreenButtonCenter.swift in Sources */,
 				E580F3D42126C740001EF05B /* ListParksViewController.swift in Sources */,
+				E56AFF0E214658FE00247658 /* GreenDialog.swift in Sources */,
+				E56AFF52214658FE00247658 /* ABView.swift in Sources */,
 				E5DE3A6D2067473A007C4D1F /* ParkViewController.swift in Sources */,
+				E56AFF1D214658FE00247658 /* GreenExtension+Array.swift in Sources */,
+				E56AFF17214658FE00247658 /* GreenExtension+UIImage.swift in Sources */,
+				E56AFF10214658FE00247658 /* DialogInfoView.swift in Sources */,
+				E56AFF14214658FE00247658 /* GreenExtension+String.swift in Sources */,
 				E580F3D02126C740001EF05B /* CostPicker.swift in Sources */,
+				E56AFF19214658FE00247658 /* GreenExtention+UIView.swift in Sources */,
 				E530A8B6207760C3006D1454 /* Park.swift in Sources */,
+				E56AFF55214658FE00247658 /* MIDateView.swift in Sources */,
+				E56AFF1F214658FE00247658 /* GreenDefine.swift in Sources */,
+				E56AFF13214658FE00247658 /* GreenExtention+UITextView.swift in Sources */,
+				E56AFF54214658FE00247658 /* GreenEmptyView.swift in Sources */,
 				E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */,
 				E580F3D52126C740001EF05B /* DetailParkViewController.swift in Sources */,
 				E5DE3A692067439E007C4D1F /* Constant.swift in Sources */,
 				E578B0F420BB002900D8F0A9 /* UIViewController+ImagePicker.swift in Sources */,
 				E580F3D12126C740001EF05B /* DataPickerViewController.swift in Sources */,
-				E580F3D82126C75D001EF05B /* GreenExtension+Date.swift in Sources */,
 				E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */,
+				E56AFF4E214658FE00247658 /* GreenInfoFieldHorizontal.swift in Sources */,
 				E580F3C22126C73F001EF05B /* InfoItemCell.swift in Sources */,
+				E56AFF15214658FE00247658 /* GreenExtension+UIViewController.swift in Sources */,
 				E530A8B8207766D2006D1454 /* Guest.swift in Sources */,
 				E580F3C72126C740001EF05B /* SlectionBarView.swift in Sources */,
 				E5DE3A5E20673AF4007C4D1F /* ServicesConfig.swift in Sources */,
-				E570172D21045D1B00A29D4B /* GreenExtension+UIColor.swift in Sources */,
+				E56AFF1C214658FE00247658 /* GreenExtention+UITableView.swift in Sources */,
 				E5547BFE20E07E3A0062E83E /* GooglePlaces.swift in Sources */,
 				E5DE3A6B206746CE007C4D1F /* GuestViewController.swift in Sources */,
-				E5212E87207460A600202CC9 /* GreenView.swift in Sources */,
+				E56AFF60214658FE00247658 /* GreenInfoFieldSymbol.swift in Sources */,
+				E56AFF24214658FE00247658 /* GCleanView.swift in Sources */,
 				E580F3CE2126C740001EF05B /* MobileType.swift in Sources */,
+				E56AFF25214658FE00247658 /* GreenTextField.swift in Sources */,
+				E56AFF5E214658FE00247658 /* GreenInfoField.swift in Sources */,
 				E542786C20F0BDF300C302CE /* InputTextCell.swift in Sources */,
+				E56AFF5A214658FE00247658 /* LandingView.swift in Sources */,
 				E5DE3A5F20673AF4007C4D1F /* ServicesFunction.swift in Sources */,
 				E580F3D32126C740001EF05B /* ParkCell.swift in Sources */,
+				E56AFEAC2146574800247658 /* CountUpdateViewController.swift in Sources */,
+				E56AFF53214658FE00247658 /* GreenCheckbox.swift in Sources */,
+				E56AFF1A214658FE00247658 /* GreenExtention+UIButton.swift in Sources */,
 				E5D301C42096F7F200CBCFA5 /* MapSelectionViewController.swift in Sources */,
+				E56AFF11214658FE00247658 /* GreenExtension+UIColor.swift in Sources */,
+				E56AFF20214658FE00247658 /* GreenLabel.swift in Sources */,
+				E56AFF1B214658FE00247658 /* GreenExtention+UITextField.swift in Sources */,
 				E578B0F220BAFEB100D8F0A9 /* DSCameraHandler.swift in Sources */,
+				E56AFF1E214658FE00247658 /* GreenExtension+UITableViewCell.swift in Sources */,
 				E580F3CA2126C740001EF05B /* TimePicker.swift in Sources */,
+				E56AFF22214658FE00247658 /* GreenView.swift in Sources */,
+				E56AFF18214658FE00247658 /* UIDeviceExtension.swift in Sources */,
 				E5DE3A5D20673AF4007C4D1F /* Services.swift in Sources */,
+				E56AFF21214658FE00247658 /* GreenTextView.swift in Sources */,
 				E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */,
 				E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */,
+				E56AFF23214658FE00247658 /* GreenButton.swift in Sources */,
 				E580F3CD2126C740001EF05B /* SizePicker.swift in Sources */,
 				E5DE3A6420673B76007C4D1F /* Mi.swift in Sources */,
+				E56AFF16214658FE00247658 /* GreenExtension+Date.swift in Sources */,
+				E56AFF26214658FE00247658 /* GreenTableView.swift in Sources */,
+				E56AFF5F214658FE00247658 /* GreenSwipeView.swift in Sources */,
 				E580F3C52126C740001EF05B /* InfoParkView.swift in Sources */,
+				E56AFF12214658FE00247658 /* GreenExtention+UILabel.swift in Sources */,
 				E59F063E20AA9FC9008E0DCC /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

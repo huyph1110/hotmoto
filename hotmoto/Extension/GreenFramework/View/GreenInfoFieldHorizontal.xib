@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GreenInfoFieldHorizontal" customModule="eOffice" customModuleProvider="target">
+            <connections>
+                <outlet property="btRight" destination="QH6-gT-PDC" id="hu5-xF-JXd"/>
+                <outlet property="indicator" destination="i2D-Sm-mWE" id="SRy-MU-E4U"/>
+                <outlet property="indicatorView" destination="0Jf-gS-QnS" id="Kdq-LB-QjG"/>
+                <outlet property="leftView" destination="hXd-CX-H18" id="YOZ-yl-zc1"/>
+                <outlet property="leftWidth" destination="1YG-dI-4Xz" id="o3F-cF-elk"/>
+                <outlet property="rightView" destination="3tl-Ai-w4G" id="egk-tL-usS"/>
+                <outlet property="tvLeft" destination="9LM-k2-35V" id="Mr8-p2-q3u"/>
+                <outlet property="tvRight" destination="EwM-cV-VvG" id="yIh-Rr-VA8"/>
+                <outlet property="view" destination="iN0-l3-epB" id="TNx-fr-12L"/>
+                <outlet property="widthRightButton" destination="uZS-9h-lM9" id="w1l-CT-eoA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tl-Ai-w4G" customClass="GCleanView" customModule="eOffice" customModuleProvider="target">
+                    <rect key="frame" x="120" y="0.0" width="255" height="167"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3I-yx-CWG">
+                            <rect key="frame" x="215" y="0.0" width="40" height="167"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QH6-gT-PDC">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="167"/>
+                                    <connections>
+                                        <action selector="rightTouch:" destination="-1" eventType="touchUpInside" id="sa0-nE-8TN"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="QH6-gT-PDC" secondAttribute="trailing" id="0zT-bV-ztF"/>
+                                <constraint firstItem="QH6-gT-PDC" firstAttribute="top" secondItem="j3I-yx-CWG" secondAttribute="top" id="C4e-2P-fBx"/>
+                                <constraint firstAttribute="bottom" secondItem="QH6-gT-PDC" secondAttribute="bottom" id="lPm-vi-LLQ"/>
+                                <constraint firstItem="QH6-gT-PDC" firstAttribute="leading" secondItem="j3I-yx-CWG" secondAttribute="leading" id="oFP-FD-nCS"/>
+                                <constraint firstAttribute="width" constant="40" id="uZS-9h-lM9"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EnJ-D8-gub">
+                            <rect key="frame" x="0.0" y="0.0" width="215" height="167"/>
+                            <subviews>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et " translatesAutoresizingMaskIntoConstraints="NO" id="EwM-cV-VvG" customClass="GreenTextView" customModule="eOffice" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="215" height="167"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jf-gS-QnS">
+                                    <rect key="frame" x="0.0" y="0.0" width="215" height="167"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="i2D-Sm-mWE">
+                                            <rect key="frame" x="97" y="73" width="20" height="20"/>
+                                            <color key="color" red="0.13516198030000001" green="0.33958410680000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </activityIndicatorView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="i2D-Sm-mWE" firstAttribute="centerX" secondItem="0Jf-gS-QnS" secondAttribute="centerX" id="uZ0-Rb-vys"/>
+                                        <constraint firstItem="i2D-Sm-mWE" firstAttribute="centerY" secondItem="0Jf-gS-QnS" secondAttribute="centerY" id="xww-Vr-9tj"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="EwM-cV-VvG" firstAttribute="leading" secondItem="EnJ-D8-gub" secondAttribute="leading" id="9JD-Lu-1Lr"/>
+                                <constraint firstItem="0Jf-gS-QnS" firstAttribute="leading" secondItem="EnJ-D8-gub" secondAttribute="leading" id="Crp-Hv-CYw"/>
+                                <constraint firstAttribute="bottom" secondItem="0Jf-gS-QnS" secondAttribute="bottom" id="Nfq-Ha-MW8"/>
+                                <constraint firstAttribute="bottom" secondItem="EwM-cV-VvG" secondAttribute="bottom" id="Oum-Bh-7hH"/>
+                                <constraint firstAttribute="trailing" secondItem="0Jf-gS-QnS" secondAttribute="trailing" id="ULe-F3-sVd"/>
+                                <constraint firstItem="EwM-cV-VvG" firstAttribute="top" secondItem="EnJ-D8-gub" secondAttribute="top" id="Uls-5E-PBQ"/>
+                                <constraint firstAttribute="trailing" secondItem="EwM-cV-VvG" secondAttribute="trailing" id="oEM-jA-nL5"/>
+                                <constraint firstItem="0Jf-gS-QnS" firstAttribute="top" secondItem="EnJ-D8-gub" secondAttribute="top" id="teX-gG-YFn"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="j3I-yx-CWG" firstAttribute="top" secondItem="3tl-Ai-w4G" secondAttribute="top" id="13M-Iw-L2x"/>
+                        <constraint firstAttribute="bottom" secondItem="j3I-yx-CWG" secondAttribute="bottom" id="AM6-Mw-ZoY"/>
+                        <constraint firstItem="j3I-yx-CWG" firstAttribute="leading" secondItem="EnJ-D8-gub" secondAttribute="trailing" id="IXc-z2-39r"/>
+                        <constraint firstAttribute="bottom" secondItem="EnJ-D8-gub" secondAttribute="bottom" id="PCD-NM-5h0"/>
+                        <constraint firstItem="EnJ-D8-gub" firstAttribute="top" secondItem="3tl-Ai-w4G" secondAttribute="top" id="WO7-KT-TVz"/>
+                        <constraint firstAttribute="trailing" secondItem="j3I-yx-CWG" secondAttribute="trailing" id="lpF-kY-pqn"/>
+                        <constraint firstItem="EnJ-D8-gub" firstAttribute="leading" secondItem="3tl-Ai-w4G" secondAttribute="leading" id="p2e-Rb-2c8"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXd-CX-H18" customClass="GCleanView" customModule="eOffice" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="167"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Title" translatesAutoresizingMaskIntoConstraints="NO" id="9LM-k2-35V" customClass="GreenTextView" customModule="eOffice" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="167"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="1YG-dI-4Xz"/>
+                        <constraint firstAttribute="trailing" secondItem="9LM-k2-35V" secondAttribute="trailing" id="NRv-MJ-ulP"/>
+                        <constraint firstItem="9LM-k2-35V" firstAttribute="top" secondItem="hXd-CX-H18" secondAttribute="top" id="OlT-z4-rbD"/>
+                        <constraint firstItem="9LM-k2-35V" firstAttribute="leading" secondItem="hXd-CX-H18" secondAttribute="leading" id="dJU-OF-WiY"/>
+                        <constraint firstAttribute="bottom" secondItem="9LM-k2-35V" secondAttribute="bottom" priority="250" id="r4S-id-2u5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3tl-Ai-w4G" secondAttribute="trailing" id="D8H-4m-os6"/>
+                <constraint firstItem="3tl-Ai-w4G" firstAttribute="leading" secondItem="hXd-CX-H18" secondAttribute="trailing" id="Jdt-5a-EMY"/>
+                <constraint firstItem="hXd-CX-H18" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NOx-Hi-Tqo"/>
+                <constraint firstAttribute="bottom" secondItem="3tl-Ai-w4G" secondAttribute="bottom" id="OAa-Lu-5VO"/>
+                <constraint firstAttribute="bottom" secondItem="hXd-CX-H18" secondAttribute="bottom" id="TmR-5q-teI"/>
+                <constraint firstItem="3tl-Ai-w4G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aZg-3b-I3q"/>
+                <constraint firstItem="hXd-CX-H18" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pwl-Vc-G3d"/>
+                <constraint firstItem="3tl-Ai-w4G" firstAttribute="leading" secondItem="hXd-CX-H18" secondAttribute="trailing" id="tEY-iJ-Iua"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-89.5" y="-168.5"/>
+        </view>
+    </objects>
+</document>

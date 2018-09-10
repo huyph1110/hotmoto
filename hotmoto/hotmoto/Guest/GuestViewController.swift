@@ -126,8 +126,6 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         
         if selectedMarker != marker {
             selectedPark = arrayParks.filter({$0.marker == marker}).last
-            
-
             infoView.dismiss()
             selectedMarker = marker
             self.showDirectsRoad(from:selectedLocat!.coordinate , to: marker.position)
