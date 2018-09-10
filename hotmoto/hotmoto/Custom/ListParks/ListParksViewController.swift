@@ -18,9 +18,13 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let park = arrayPark[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ParkCell") as! ParkCell
+        cell.imvType.image = iconForType(park.type)
         cell.lblName.text = park.name
         cell.lblAddress.text = park.address
         cell.lblCost.text = stringForCost(park.cost, park.numberHours)
+        cell.imvAvatar?.setImage(url: park.imageUrl)
+        cell.btnCount.tag = indexPath.row
+        cell.btnCount.addTarget(self, action: #selector(ListParksViewController.updateCount), for: .touchUpInside)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -57,6 +61,11 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
     func loadParks(parks: [Park]) {
         arrayPark = parks
         tbvData.reloadData()
+        
+    }
+    @objc func updateCount(_ btn: UIButton) {
+        let park  = arrayPark[btn.tag]
+        
         
     }
     /*

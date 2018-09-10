@@ -54,7 +54,7 @@ class DetailParkViewController: UIViewController {
         lblCost.text = stringForCost(park?.cost ?? 0, park?.numberHours ?? 0)
         lblTotal.text = "\(park.total)"
         lblAvail.text = "\(park.AvailableSlot)"
-
+        imvMobiType.image = iconForType(park.type)
     }
     
     @IBAction func selectBack(_ sender: Any) {

@@ -27,8 +27,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5m-gz-b8u">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEI-TE-ell">
-                                                <rect key="frame" x="67" y="252" width="240" height="163"/>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEI-TE-ell">
+                                                <rect key="frame" x="67" y="268.5" width="240" height="130"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="user name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hSK-FI-OhY">
                                                         <rect key="frame" x="8" y="8" width="224" height="30"/>
@@ -56,9 +56,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfS-ph-6ca">
-                                                        <rect key="frame" x="152" y="125" width="80" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfS-ph-6ca">
+                                                        <rect key="frame" x="176" y="92" width="56" height="30"/>
                                                         <state key="normal" title="Đăng ký">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -66,20 +65,9 @@
                                                             <action selector="register:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Xl-zm-U0O"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL4-8S-W5Y">
-                                                        <rect key="frame" x="80" y="87" width="78" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Tìm bãi">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="selectLoginType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ysa-H8-Zby"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbX-TN-ocY">
-                                                        <rect key="frame" x="8" y="125" width="80" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Đăng nhập">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbX-TN-ocY">
+                                                        <rect key="frame" x="8" y="92" width="52" height="30"/>
+                                                        <state key="normal" title="Quản lý">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -89,8 +77,12 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.16470588235294117" green="0.1803921568627451" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="UbX-TN-ocY" firstAttribute="leading" secondItem="LEI-TE-ell" secondAttribute="leading" constant="8" id="9AE-8m-Nta"/>
+                                                    <constraint firstAttribute="trailing" secondItem="KfS-ph-6ca" secondAttribute="trailing" constant="8" id="Rks-dl-tVb"/>
                                                     <constraint firstAttribute="width" constant="240" id="Tw4-sE-ksc"/>
-                                                    <constraint firstAttribute="height" constant="163" id="g7A-zp-627"/>
+                                                    <constraint firstAttribute="height" constant="130" id="g7A-zp-627"/>
+                                                    <constraint firstAttribute="bottom" secondItem="UbX-TN-ocY" secondAttribute="bottom" constant="8" id="uZi-S3-u00"/>
+                                                    <constraint firstAttribute="bottom" secondItem="KfS-ph-6ca" secondAttribute="bottom" constant="8" id="ueY-O6-vmk"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -98,9 +90,20 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL4-8S-W5Y">
+                                                <rect key="frame" x="248" y="406.5" width="51" height="30"/>
+                                                <state key="normal" title="Tìm bãi">
+                                                    <color key="titleColor" red="0.08235294118" green="0.4941176471" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="selectLoginType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ysa-H8-Zby"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="dL4-8S-W5Y" firstAttribute="top" secondItem="LEI-TE-ell" secondAttribute="bottom" constant="8" id="4zU-RW-VMr"/>
+                                            <constraint firstItem="dL4-8S-W5Y" firstAttribute="trailing" secondItem="LEI-TE-ell" secondAttribute="trailing" constant="-8" id="QVf-zA-st4"/>
                                             <constraint firstItem="LEI-TE-ell" firstAttribute="centerX" secondItem="g5m-gz-b8u" secondAttribute="centerX" id="ktL-xq-2Hh"/>
                                             <constraint firstItem="LEI-TE-ell" firstAttribute="centerY" secondItem="g5m-gz-b8u" secondAttribute="centerY" id="uOr-Sv-WVp"/>
                                         </constraints>
@@ -125,6 +128,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginHeigh" destination="g7A-zp-627" id="4vF-ca-QOQ"/>
                         <outlet property="txfPasswords" destination="WM0-Ds-CFz" id="axU-1W-p0v"/>
                         <outlet property="txfUserName" destination="hSK-FI-OhY" id="ZMS-e1-Ubi"/>
                         <segue destination="ZGm-Cg-vJJ" kind="presentation" identifier="guest" id="8NN-v4-kMp"/>
@@ -263,7 +267,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="park name" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dkh-GH-2pf">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Dkh-GH-2pf" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
                                                         <rect key="frame" x="8" y="90" width="327" height="36.5"/>
                                                         <color key="backgroundColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -273,9 +277,13 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                                <color key="value" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Tên bãi"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Address" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7n0-yi-Epz">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7n0-yi-Epz" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
                                                         <rect key="frame" x="8" y="135" width="327" height="35.5"/>
                                                         <color key="backgroundColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -285,6 +293,10 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                                <color key="value" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Địa chỉ"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                 </subviews>
@@ -633,7 +645,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="park name" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tbk-qD-WEu">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="park name" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tbk-qD-WEu" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
                                                         <rect key="frame" x="8" y="90" width="327" height="36.5"/>
                                                         <color key="backgroundColor" red="0.27058823529411763" green="0.30980392156862746" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -643,9 +655,10 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Tên bãi"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Address" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bjw-FV-Dc6">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bjw-FV-Dc6" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
                                                         <rect key="frame" x="8" y="135" width="327" height="35.5"/>
                                                         <color key="backgroundColor" red="0.27058823529411763" green="0.30980392156862746" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -655,6 +668,7 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="8"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Địa chỉ"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                 </subviews>
@@ -915,6 +929,6 @@
         <image name="pin" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lOA-rH-KUq"/>
+        <segue reference="KYO-Sj-4QB"/>
     </inferredMetricsTieBreakers>
 </document>

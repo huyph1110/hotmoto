@@ -30,6 +30,7 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         cell.lblState.text = park.status == 0 ? "Mở cửa" : "Đóng cửa"    //0: san sang ; 1: da dong
         cell.lblCost.text = stringForCost(park.cost, park.numberHours)
         cell.imvAvatar?.setImage(url: park.imageUrl)
+        cell.imvType.image = iconForType(park.type)
 
         return cell
     }

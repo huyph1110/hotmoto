@@ -81,6 +81,12 @@ class InfoParkView: GreenView, UICollectionViewDelegate, UICollectionViewDataSou
         itemTime.infoTitle = "Từ \(park.openTime) đến \(park.closeTime)"
         itemTime.icon = #imageLiteral(resourceName: "time")
         arrayInfo.append(itemTime)
+        
+        let itemType = InfoItem()
+        itemType.infoTitle = stringMobileType(park.type)
+        itemType.icon = iconForTypeWhite(park.type)
+        arrayInfo.append(itemType)
+        
         lblCost.text = stringForCost(park.cost , park.numberHours )
         clvInfo.reloadData()
 

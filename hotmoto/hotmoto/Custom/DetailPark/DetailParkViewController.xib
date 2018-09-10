@@ -50,7 +50,7 @@
                     <rect key="frame" x="0.0" y="57" width="375" height="610"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M89-1x-SDz">
-                            <rect key="frame" x="5" y="0.0" width="365" height="398"/>
+                            <rect key="frame" x="5" y="0.0" width="365" height="387"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PR3-z0-6pj">
                                     <rect key="frame" x="24" y="237" width="29" height="24"/>
@@ -59,13 +59,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgx-co-f2h">
-                                    <rect key="frame" x="143" y="280" width="22.5" height="24"/>
+                                    <rect key="frame" x="143" y="269" width="22.5" height="24"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                     <color key="textColor" red="0.12941176469999999" green="0.51764705879999995" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2P-2W-Sis">
-                                    <rect key="frame" x="143" y="312" width="11" height="24"/>
+                                    <rect key="frame" x="143" y="301" width="11" height="24"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                     <color key="textColor" red="0.12941176469999999" green="0.51764705879999995" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -77,13 +77,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số lượng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qo8-yu-YgQ">
-                                    <rect key="frame" x="24" y="280" width="81.5" height="24"/>
+                                    <rect key="frame" x="24" y="269" width="81.5" height="24"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Còn trống" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4J-qo-0jb">
-                                    <rect key="frame" x="24" y="312" width="87" height="24"/>
+                                    <rect key="frame" x="24" y="301" width="87" height="24"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -184,13 +184,13 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loại xe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osC-76-d6s">
-                                    <rect key="frame" x="24" y="344" width="62" height="24"/>
+                                    <rect key="frame" x="24" y="333" width="62" height="24"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PvL-2U-z9a">
-                                    <rect key="frame" x="142.5" y="345" width="40" height="25"/>
+                                <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PvL-2U-z9a">
+                                    <rect key="frame" x="142.5" y="334" width="40" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="eN0-Hi-fM2"/>
                                         <constraint firstAttribute="height" constant="25" id="nUS-F4-A0R"/>
@@ -201,11 +201,11 @@
                             <constraints>
                                 <constraint firstItem="qo8-yu-YgQ" firstAttribute="leading" secondItem="PR3-z0-6pj" secondAttribute="leading" id="2mY-Fo-Emj"/>
                                 <constraint firstItem="Dxo-nU-87j" firstAttribute="top" secondItem="M89-1x-SDz" secondAttribute="top" constant="8" id="3X9-Zz-xs5"/>
+                                <constraint firstItem="Sgx-co-f2h" firstAttribute="centerY" secondItem="qo8-yu-YgQ" secondAttribute="centerY" id="6XN-4r-lVa"/>
                                 <constraint firstAttribute="bottom" secondItem="osC-76-d6s" secondAttribute="bottom" constant="30" id="AQ0-9T-AQK"/>
-                                <constraint firstItem="qo8-yu-YgQ" firstAttribute="top" secondItem="PR3-z0-6pj" secondAttribute="bottom" constant="19" id="B0p-Yy-TPt"/>
+                                <constraint firstItem="qo8-yu-YgQ" firstAttribute="top" secondItem="PR3-z0-6pj" secondAttribute="bottom" constant="8" id="B0p-Yy-TPt"/>
                                 <constraint firstItem="L2P-2W-Sis" firstAttribute="leading" secondItem="Sgx-co-f2h" secondAttribute="leading" id="CVo-HC-cGs"/>
                                 <constraint firstItem="PvL-2U-z9a" firstAttribute="top" secondItem="L2P-2W-Sis" secondAttribute="bottom" constant="9" id="G8f-sW-F3h"/>
-                                <constraint firstItem="Sgx-co-f2h" firstAttribute="top" secondItem="PR3-z0-6pj" secondAttribute="bottom" constant="19" id="He0-R8-ZhA"/>
                                 <constraint firstItem="PR3-z0-6pj" firstAttribute="top" secondItem="4Xu-FD-HUf" secondAttribute="bottom" constant="8" id="JrH-8F-kVC"/>
                                 <constraint firstItem="L2P-2W-Sis" firstAttribute="top" secondItem="Sgx-co-f2h" secondAttribute="bottom" constant="8" id="Kjq-H3-wSE"/>
                                 <constraint firstItem="CeC-Yg-ov1" firstAttribute="top" secondItem="PR3-z0-6pj" secondAttribute="top" id="Kuh-nG-Rlt"/>

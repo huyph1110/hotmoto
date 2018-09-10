@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var txfPasswords: UITextField!
     @IBOutlet weak var txfUserName: UITextField!
+    @IBOutlet weak var loginHeigh: NSLayoutConstraint!
     
     var type = LOGIN_TYPE.GUEST
     
@@ -26,7 +27,6 @@ class ViewController: UIViewController {
             txfPasswords.text = pass as? String
 
         }
-        
         txfUserName.attributedPlaceholder = NSAttributedString(string: "Tên đăng nhập", attributes: [NSAttributedStringKey.foregroundColor : UIColor("#959DAD")])
         txfPasswords.attributedPlaceholder = NSAttributedString(string: "Mật khẩu", attributes: [NSAttributedStringKey.foregroundColor : UIColor("#959DAD")])
         let paddingView = UIView(frame: CGRect(x:0,y: 0,width: 8,height: txfUserName.frame.height))
@@ -45,57 +45,46 @@ class ViewController: UIViewController {
     }
 
     @IBAction func selectLoginType(_ sender: UIButton) {
-        if type == LOGIN_TYPE.GUEST {
-            type = LOGIN_TYPE.PARK
+        self.performSegue(withIdentifier: segue_type.guest.rawValue, sender: self)
 
-            sender.setTitle("Quản lý", for: .normal)
-        }else {
-            type = LOGIN_TYPE.GUEST
-            sender.setTitle("Tìm bãi", for: .normal)
-
-        }        
     }
     
     @IBAction func login(_ sender: UIButton) {
-        if type == LOGIN_TYPE.GUEST {
-            
-            self.performSegue(withIdentifier: segue_type.guest.rawValue, sender: self)
-        }else {
-            
-            if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {
-                self.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", completion: {_ in })
-            }
-            else if (txfPasswords.text?.contains(" "))! || (txfUserName.text?.contains(" "))! {
-                self.showAlert(title: "Tài khoản và mật khẩu không được có khoảng trắng", completion: {_ in })
-                
-            }
-            else {
-                App.showLoadingOnView(view: self.view)
-                let req = loginReq()
-                req.username = txfUserName.text!
-                req.password = txfPasswords.text!
-
-                services.userLogin(request: req, success: {
-                    userLogin.password = req.password
-                    userLogin.username = req.username
-
-                    App.removeLoadingOnView(view: self.view)
-                    UserDefaults.standard.setValue(req.username, forKey: LOGIN_ACCOUNT.USER.rawValue)
-                    UserDefaults.standard.setValue(req.password, forKey: LOGIN_ACCOUNT.PASS.rawValue)
-                    DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: segue_type.managepark.rawValue, sender: self)
-
-                    }
-
-                }, failure: { (error) in
-                    
-                    self.showAlert(title: error, completion: {_ in })
-                    App.removeLoadingOnView(view: self.view)
-
-                })
-            }
-
+    
+        
+        if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {
+            self.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", completion: {_ in })
         }
+        else if (txfPasswords.text?.contains(" "))! || (txfUserName.text?.contains(" "))! {
+            self.showAlert(title: "Tài khoản và mật khẩu không được có khoảng trắng", completion: {_ in })
+            
+        }
+        else {
+            App.showLoadingOnView(view: self.view)
+            let req = loginReq()
+            req.username = txfUserName.text!
+            req.password = txfPasswords.text!
+            
+            services.userLogin(request: req, success: {
+                userLogin.password = req.password
+                userLogin.username = req.username
+                
+                App.removeLoadingOnView(view: self.view)
+                UserDefaults.standard.setValue(req.username, forKey: LOGIN_ACCOUNT.USER.rawValue)
+                UserDefaults.standard.setValue(req.password, forKey: LOGIN_ACCOUNT.PASS.rawValue)
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: segue_type.managepark.rawValue, sender: self)
+                    
+                }
+                
+            }, failure: { (error) in
+                
+                self.showAlert(title: error, completion: {_ in })
+                App.removeLoadingOnView(view: self.view)
+                
+            })
+        }
+        
         
     }
     @IBAction func register(_ sender: Any) {

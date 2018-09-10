@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import Cloudinary
 import Alamofire
+import KMPlaceholderTextView
 
 class ParkManagerViewController: UIViewController,MapSelectionViewControllerDelegate {
  
@@ -28,6 +29,12 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         super.viewDidLoad()
         config = CLDConfiguration(cloudName: cloudName, apiKey: apiKey, apiSecret: apiSecret)
         cloudinary = CLDCloudinary(configuration: self.config)
+        txvAddress.placeholderColor = UIColor.lightGray
+        txvAddress.textColor = UIColor.white
+        
+        txvName.placeholderColor = UIColor.lightGray
+        txvName.textColor = UIColor.white
+
         barCost.setPlaceHolder("Chọn giá")
         barCost.setIcon(#imageLiteral(resourceName: "money_black"))
         barCost.btnSelect.addTarget(self, action: #selector(ParkManagerViewController.selectCost), for: .touchUpInside)
@@ -79,8 +86,8 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
 
     @IBOutlet weak var imvAvatar: UIImageView!
    // @IBOutlet weak var txvType: UITextField!
-    @IBOutlet weak var txvName: UITextView!
-    @IBOutlet weak var txvAddress: UITextView!
+    @IBOutlet weak var txvName: KMPlaceholderTextView!
+    @IBOutlet weak var txvAddress: KMPlaceholderTextView!
     //@IBOutlet weak var txfCost: UITextField!
     //@IBOutlet weak var txfTime: UITextField!
     //@IBOutlet weak var txfTotal: UITextField!
@@ -94,6 +101,8 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         if park != nil  {
             timeValue = [(park?.openTime)!, (park?.closeTime)!]
             sizeValue = [(park?.total)!]
+            costValue = [(park?.cost)!, (park?.numberHours)!]
+            typeValue = [(park?.type)!]
             
             txvName.text = park?.name
             txvAddress.text = park?.address
@@ -103,6 +112,8 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
             barPhone.text.text  = park?.phone
             coordinate = park?.position
             imvAvatar.setImage(url: park?.imageUrl)
+            barType.text.text = stringMobileType((park?.type)!)
+           
         }
     }
     func uploadImage(data: Data, name: String) {
@@ -159,9 +170,9 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         request.numberHours = costValue[1]
         request.id = park?.id
         request.imageUrl = urlImage
-
-        //request.openTime =  timeValue[0]
-        //request.closeTime =  timeValue[1]
+        request.type = typeValue[0]
+        request.openTime =  timeValue[0]
+        request.closeTime =  timeValue[1]
         //request.email =  ""
         services.updatePark(request: request, success: {
             App.removeLoadingOnView(view: self.view)
@@ -179,15 +190,26 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         }
     }
     func validateData() -> Bool {
-        /*
-        if txfPhone.text?.count == 0 {
-            self.showAlert(title: "Hãy nhập số dt", completion: { (complete) in
-
+        if txvName.text.count == 0 {
+            self.showAlert(title: "Hãy đặt tên bãi", completion: { (complete) in
+                
             })
             return false
         }
-        */
-        return true        
+        
+        if coordinate == nil {
+            self.showAlert(title: "Hãy chọn vị trí bãi đỗ", completion: { (complete) in
+                
+            })
+            return false
+        }
+        if barPhone.text.text?.count == 0 {
+            self.showAlert(title: "Hãy nhập số dt", completion: { (complete) in
+                
+            })
+            return false
+        }
+        return true
         
     }
 

@@ -26,7 +26,7 @@ class MobileType: GreenView,UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         if row == 0 {
 
-            return attributeString(#imageLiteral(resourceName: "moto"), mobileType.all.0)
+            return attributeString(#imageLiteral(resourceName: "mobiall"), mobileType.all.0)
             
         }
         if row == 1 {
@@ -35,7 +35,7 @@ class MobileType: GreenView,UIPickerViewDelegate, UIPickerViewDataSource {
 
         }
         
-        return attributeString(#imageLiteral(resourceName: "moto"), mobileType.oto.0)
+        return attributeString(#imageLiteral(resourceName: "oto"), mobileType.oto.0)
 
     }
     func attributeString(_ icon: UIImage,_ string: String ) -> NSAttributedString? {

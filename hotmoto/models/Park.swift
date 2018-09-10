@@ -26,8 +26,8 @@ class Park: Mi {
     @objc dynamic var imageUrl =  ""
     @objc dynamic var cost =  0
     @objc dynamic var numberHours =  0
+    @objc dynamic var type =  0
 
-    
 
 
     var marker: GMSMarker?
@@ -74,8 +74,9 @@ class insertParkReq: Mi {
     @objc dynamic  var phone: String?
     @objc dynamic  var username: String?
     @objc dynamic  var total = 0
-    @objc dynamic  var openTime: String?
-    @objc dynamic  var closeTime: String?
+    @objc dynamic  var openTime = 0
+    @objc dynamic  var closeTime = 0
+    @objc dynamic  var type = 0
     @objc dynamic  var email: String?
     @objc dynamic  var imageUrl: String?
     @objc dynamic  var cost =  0

@@ -24,9 +24,9 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     var mapView: GMSMapView!
     var locationManager = CLLocationManager()
     var arrayParks = [Park]()
+    var selectedPark: Park?
     var selectedMarker: GMSMarker!
     var detailVC = DetailParkViewController.init(nibName: "DetailParkViewController", bundle: nil)
-
     var results: [PXGoogleDirectionsRoute]!
 
     @IBAction func selectLogout(_ sender: Any) {
@@ -125,6 +125,9 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         
         if selectedMarker != marker {
+            selectedPark = arrayParks.filter({$0.marker == marker}).last
+            
+
             infoView.dismiss()
             selectedMarker = marker
             self.showDirectsRoad(from:selectedLocat!.coordinate , to: marker.position)
@@ -134,8 +137,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         infoView.showInfo(inView: self.view)
-        let park = arrayParks.filter({$0.marker == marker}).last
-        infoView.loadPark(park: park!)
+        infoView.loadPark(park: selectedPark!)
         self.mapviewFocusToMarker(marker: marker)
 
     }
@@ -296,14 +298,16 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         var bounds = GMSCoordinateBounds()
     
         bounds = bounds.includingCoordinate(selectedLocat!.coordinate)
-        
+        bounds = bounds.includingCoordinate(selectedMarker!.position)
+
+        var distance = 0
         for i in 0 ..< results.count {
             polylinesOnDrawing.append ( results[i].drawOnMap(mapView, approximate: true, strokeColor: UIColor.black.withAlphaComponent(0.7), strokeWidth: 5.0))
             bounds = bounds.includingBounds(results[i].bounds!)
-
+            distance += Int(results[i].totalDuration)
         }
-        
-        let padding = 50
+        selectedMarker.title = "\(stringDistance(distance))  " + (selectedPark?.name)!
+        let padding = 100
         
         mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: CGFloat(padding)))
         //results[routeIndex].drawOnMap(mapView, approximate: false, strokeColor: UIColor.purple, strokeWidth: 4.0)

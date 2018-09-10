@@ -10,7 +10,7 @@ import UIKit
 import Cloudinary
 import GoogleMaps
 import Alamofire
-
+import KMPlaceholderTextView
 
 class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     func mapSelectionDidSelect(location: CLLocationCoordinate2D, suggest: String?) {
@@ -23,8 +23,8 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     var cloudinary: CLDCloudinary!
     //properties
     @IBOutlet weak var imvAvatar: UIImageView!
-    @IBOutlet weak var txvAddress: UITextView!
-    @IBOutlet weak var txvParkName: UITextView!
+    @IBOutlet weak var txvAddress: KMPlaceholderTextView!
+    @IBOutlet weak var txvParkName: KMPlaceholderTextView!
     
     @IBOutlet weak var barCost: SlectionBarView!
     @IBOutlet weak var barType: SlectionBarView!
@@ -49,7 +49,12 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         super.viewDidLoad() //tvuVpl7UHhIuzWu83G1UYPo5ZyQ
         config = CLDConfiguration(cloudName: cloudName, apiKey: apiKey, apiSecret: apiSecret)
         cloudinary = CLDCloudinary(configuration: self.config)
-        
+        txvAddress.placeholderColor = UIColor.lightGray
+        txvAddress.textColor = UIColor.white
+
+        txvParkName.placeholderColor = UIColor.lightGray
+        txvParkName.textColor = UIColor.white
+
         
         barCost.setPlaceHolder("Chọn giá")
         barCost.setIcon(#imageLiteral(resourceName: "money_black"))
@@ -147,9 +152,10 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         request.cost =  costValue[0]
         request.numberHours = costValue[1]
         request.imageUrl = urlImage
+        request.type = typeValue[0]
+        request.openTime =  timeValue[0]
+        request.closeTime =  timeValue[1]
 
-        //request.openTime =  0
-        //request.closeTime =  24
         //request.email =  ""
         services.insertPark(request: request, success: {
             App.removeLoadingOnView(view: self.view)
@@ -163,6 +169,13 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         }
     }
     func validateData() -> Bool {
+        if txvParkName.text.count == 0 {
+            self.showAlert(title: "Hãy đặt tên bãi", completion: { (complete) in
+                
+            })
+            return false
+        }
+
         if coordinate == nil {
             self.showAlert(title: "Hãy chọn vị trí bãi đỗ", completion: { (complete) in
                 

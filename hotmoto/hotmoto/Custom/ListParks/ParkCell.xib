@@ -62,11 +62,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moto" translatesAutoresizingMaskIntoConstraints="NO" id="d8L-05-UL1">
+                        <rect key="frame" x="112" y="63" width="31" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="S1r-Sb-uIJ"/>
+                            <constraint firstAttribute="width" constant="31" id="gO3-JO-pAv"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ5-jY-uQw">
+                        <rect key="frame" x="291" y="6" width="30" height="30"/>
+                        <state key="normal" title="0/0"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="wG4-ub-QXK" secondAttribute="trailing" constant="16" id="OK7-H4-Abe"/>
                     <constraint firstItem="wG4-ub-QXK" firstAttribute="centerY" secondItem="zg0-jj-8WW" secondAttribute="centerY" id="RIA-89-KNB"/>
                     <constraint firstItem="8nN-QE-wz6" firstAttribute="top" secondItem="jXy-xb-9c8" secondAttribute="top" constant="-25" id="T71-zo-P6h"/>
+                    <constraint firstAttribute="trailing" secondItem="ZJ5-jY-uQw" secondAttribute="trailing" constant="8" id="TmG-7G-POq"/>
+                    <constraint firstItem="d8L-05-UL1" firstAttribute="centerY" secondItem="zg0-jj-8WW" secondAttribute="centerY" id="Z4s-g1-oaf"/>
                     <constraint firstItem="8Ng-LX-kdV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ZGt-E8-hf2"/>
                     <constraint firstItem="8Ng-LX-kdV" firstAttribute="leading" secondItem="jXy-xb-9c8" secondAttribute="trailing" constant="8" id="Zed-GE-XC5"/>
                     <constraint firstItem="rtT-yH-CXJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="bTC-eK-JKU"/>
@@ -75,14 +88,18 @@
                     <constraint firstItem="jXy-xb-9c8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="iBP-w1-a1d"/>
                     <constraint firstItem="jXy-xb-9c8" firstAttribute="top" secondItem="rtT-yH-CXJ" secondAttribute="bottom" constant="7" id="iWA-cI-wdV"/>
                     <constraint firstItem="zg0-jj-8WW" firstAttribute="top" secondItem="8Ng-LX-kdV" secondAttribute="bottom" constant="8" id="kMW-6l-h26"/>
+                    <constraint firstItem="d8L-05-UL1" firstAttribute="leading" secondItem="zg0-jj-8WW" secondAttribute="trailing" constant="8" id="ltu-w2-ACo"/>
                     <constraint firstItem="8nN-QE-wz6" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="pRh-hE-leQ"/>
+                    <constraint firstItem="ZJ5-jY-uQw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="qGD-ZL-8k3"/>
                     <constraint firstAttribute="bottomMargin" secondItem="zg0-jj-8WW" secondAttribute="bottom" constant="1.5" id="rWV-3w-cgS"/>
                     <constraint firstItem="8nN-QE-wz6" firstAttribute="leading" secondItem="jXy-xb-9c8" secondAttribute="trailing" constant="8" id="stP-gl-qVO"/>
                     <constraint firstItem="zg0-jj-8WW" firstAttribute="leading" secondItem="jXy-xb-9c8" secondAttribute="trailing" constant="8" id="yUL-Fa-YyN"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="btnCount" destination="ZJ5-jY-uQw" id="Rox-Rg-2pR"/>
                 <outlet property="imvAvatar" destination="jXy-xb-9c8" id="Fv4-o3-56W"/>
+                <outlet property="imvType" destination="d8L-05-UL1" id="fmN-x9-cFN"/>
                 <outlet property="lblAddress" destination="8Ng-LX-kdV" id="k4U-YW-dYy"/>
                 <outlet property="lblCost" destination="wG4-ub-QXK" id="9EU-3O-HBz"/>
                 <outlet property="lblName" destination="8nN-QE-wz6" id="wNX-YT-LSU"/>
@@ -92,6 +109,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="moto" width="24" height="24"/>
         <image name="placeholder" width="13" height="18"/>
     </resources>
 </document>

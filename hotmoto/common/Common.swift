@@ -125,6 +125,15 @@ func money(_ value: Int) -> String {
     }
     return ""
 }
+func stringDistance(_ value: Int) -> String {
+    let format = NumberFormatter()
+    format.minimumFractionDigits = 0
+    format.maximumFractionDigits = 2
+    format.minimumIntegerDigits = 1
+//    let string = String(format: "%.2f", CGFloat(value)/1000)
+    return format.string(from: NSNumber(floatLiteral: Double(value)/1000))! +  "km"
+    
+}
 
 func stringMobileType(_ value: Int) -> String {
     if value == 1 {
@@ -161,5 +170,31 @@ func stringForSize(_ size: Int) -> String {
         return "trên 100"
     }
     return "\(size)"
+    
+}
+func iconForType(_ type: Int) -> UIImage? {
+    switch type {
+    case 0:
+        return #imageLiteral(resourceName: "mobiall")
+    case 1:
+        return  #imageLiteral(resourceName: "moto")
+    case 2:
+        return #imageLiteral(resourceName: "oto")
+    default:
+        return nil
+    }
+    
+}
+func iconForTypeWhite(_ type: Int) -> UIImage? {
+    switch type {
+    case 0:
+        return #imageLiteral(resourceName: "mobiall-white")
+    case 1:
+        return  #imageLiteral(resourceName: "moto-white")
+    case 2:
+        return #imageLiteral(resourceName: "oto-white")
+    default:
+        return nil
+    }
     
 }
