@@ -22,8 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2dT-y5-o6e">
                         <rect key="frame" x="0.0" y="0.0" width="100" height="75"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olk-c2-6xn">
-                                <rect key="frame" x="8" y="46" width="84" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="olk-c2-6xn">
+                                <rect key="frame" x="5" y="46" width="90" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="0.56163726993865026" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -38,11 +38,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1647058824" green="0.18039215689999999" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="olk-c2-6xn" secondAttribute="bottom" constant="5" id="Dib-Hs-nfl"/>
                             <constraint firstItem="olk-c2-6xn" firstAttribute="top" secondItem="Z6z-6S-v2o" secondAttribute="bottom" constant="1" id="GZl-vh-1Tu"/>
-                            <constraint firstAttribute="trailing" secondItem="olk-c2-6xn" secondAttribute="trailing" constant="8" id="Gny-3G-t8P"/>
+                            <constraint firstAttribute="trailing" secondItem="olk-c2-6xn" secondAttribute="trailing" constant="5" id="Gny-3G-t8P"/>
                             <constraint firstItem="Z6z-6S-v2o" firstAttribute="centerX" secondItem="2dT-y5-o6e" secondAttribute="centerX" id="jAP-5j-E6A"/>
                             <constraint firstItem="Z6z-6S-v2o" firstAttribute="top" secondItem="2dT-y5-o6e" secondAttribute="top" constant="8" id="rdr-Z9-yyK"/>
-                            <constraint firstItem="olk-c2-6xn" firstAttribute="leading" secondItem="2dT-y5-o6e" secondAttribute="leading" constant="8" id="vSe-vw-GG8"/>
+                            <constraint firstItem="olk-c2-6xn" firstAttribute="leading" secondItem="2dT-y5-o6e" secondAttribute="leading" constant="5" id="vSe-vw-GG8"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

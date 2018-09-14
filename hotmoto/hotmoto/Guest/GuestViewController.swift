@@ -12,7 +12,9 @@ import PXGoogleDirections
 
 class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate, PXGoogleDirectionsDelegate, ListParksViewControllerDelegate {
     func ListParksViewControllerDidSelectPark(_ park: Park) {
+        selectedPark = park
         selectedMarker = park.marker
+        mapView.selectedMarker = selectedMarker
         self.showDirectsRoad(from:selectedLocat!.coordinate , to: selectedMarker.position)
 
     }

@@ -9,18 +9,18 @@
 import UIKit
 
 class GreenStepField: GreenView, UITextFieldDelegate {
-
+    
     @IBOutlet weak var tfContent: UITextField!
     @IBOutlet weak var centerView: UIView!
     @IBOutlet weak var rightView: GreenButtonCenter!
     @IBOutlet weak var leftView: GreenButtonCenter!
     var actionHandle : ((Int) -> Void)!
-
+    
     var min = 0
     var max = 0
     var step = 0
     
-     private func validate()
+    private func validate()
     {
         if(value > max )
         {
@@ -32,7 +32,7 @@ class GreenStepField: GreenView, UITextFieldDelegate {
         }
         tfContent.text = String(value)
     }
-
+    
     override func initStyle()
     {
         self.layer.cornerRadius = greenDefine.GreenInfoFieldStep_Radius
@@ -52,6 +52,10 @@ class GreenStepField: GreenView, UITextFieldDelegate {
                 weakSelf.actionHandle(weakSelf.value)
             }
         }
+        let decresePress = UILongPressGestureRecognizer(target: self, action: #selector(GreenStepField.decreasePress))
+        leftView.addGestureRecognizer(decresePress)
+        
+        
         
         rightView.setTarget(greenDefine.GreenInfoFieldStep_RightImage.tint(greenDefine.GreenInfoFieldStep_ButtonTintColor)) { (button) in
             weakSelf.value = weakSelf.value + weakSelf.step;
@@ -60,18 +64,53 @@ class GreenStepField: GreenView, UITextFieldDelegate {
                 weakSelf.actionHandle(weakSelf.value)
             }
         }
+        let incresePress = UILongPressGestureRecognizer(target: self, action: #selector(GreenStepField.incresePress))
+        rightView.addGestureRecognizer(incresePress)
+        
+        
         tfContent.textAlignment = .center;
     }
-
     
+    @objc func decreasePress(tap : UILongPressGestureRecognizer) {
+        if tap.state == .began {
+            timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
+                if timer.isValid {
+                    self.value = self.value - self.step;
+                }
+            })
+        }
+        if tap.state == .ended {
+            timer?.invalidate()
+            actionHandle(self.value)
+            
+        }
+    }
+    var timer: Timer?
+    
+    @objc func incresePress(tap : UILongPressGestureRecognizer) {
+        if tap.state == .began {
+            timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { (timer) in
+                if timer.isValid {
+                    self.value = self.value + self.step;
+                    
+                }
+            })
+            
+        }
+        
+        if tap.state == .ended {
+            timer?.invalidate()
+            actionHandle(self.value)
+        }
+    }
     //-------------------------------------------------------Public function
     open func target(action :  @escaping ((Int)-> Void))
     {
         self.actionHandle = action ;
     }
-
+    
     open var value: Int = 0
-    {
+        {
         didSet
         {
             tfContent.text = String(value)
@@ -92,7 +131,7 @@ class GreenStepField: GreenView, UITextFieldDelegate {
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-       
+        
         if string == "" {
             return true
         }

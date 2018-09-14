@@ -52,7 +52,7 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         barSize.btnSelect.addTarget(self, action: #selector(ParkManagerViewController.selectSize), for: .touchUpInside)
 
         barPhone.setPlaceHolder("SDT liên lạc")
-        barPhone.setIcon(#imageLiteral(resourceName: "call"))
+        barPhone.setIcon(#imageLiteral(resourceName: "call-Black"))
         barPhone.btnSelect.addTarget(self, action: #selector(ParkManagerViewController.selectPhone), for: .touchUpInside)
 
         // Do any additional setup after loading the view.
