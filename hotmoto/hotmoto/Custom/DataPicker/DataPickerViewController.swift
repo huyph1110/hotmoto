@@ -45,7 +45,7 @@ class DataPickerViewController: UIViewController {
 
             view.rollToValue(values[0])
             viewPicker.addSubview(view)
-            lblGuild.text = "Giới hạn loại xe được gửi"
+            lblGuild.text = "Các loại xe được gửi"
         }
         if type == pickerType.time {
             let view = TimePicker()

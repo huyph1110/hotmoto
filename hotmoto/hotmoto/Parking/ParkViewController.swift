@@ -25,6 +25,7 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     @IBOutlet weak var imvAvatar: UIImageView!
     @IBOutlet weak var txvAddress: KMPlaceholderTextView!
     @IBOutlet weak var txvParkName: KMPlaceholderTextView!
+    @IBOutlet weak var txvDescription: KMPlaceholderTextView!
     
     @IBOutlet weak var barCost: SlectionBarView!
     @IBOutlet weak var barType: SlectionBarView!
@@ -54,7 +55,6 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
 
         txvParkName.placeholderColor = UIColor.lightGray
         txvParkName.textColor = UIColor.white
-
         
         barCost.setPlaceHolder("Chọn giá")
         barCost.setIcon(#imageLiteral(resourceName: "money_black"))

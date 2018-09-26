@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63D3070FE12BA44A925BFB6E /* Pods_hotmoto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */; };
+		C7857CDF17F5C458A86B127C /* Pods_MotoPark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA0DB51B84AE901DB20ECD6 /* Pods_MotoPark.framework */; };
 		E530A8B6207760C3006D1454 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B5207760C3006D1454 /* Park.swift */; };
 		E530A8B8207766D2006D1454 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B7207766D2006D1454 /* Guest.swift */; };
 		E542786C20F0BDF300C302CE /* InputTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542786A20F0BDF300C302CE /* InputTextCell.swift */; };
@@ -160,9 +160,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		25CD97025ED47FAB9E2EEDEC /* Pods-MotoPark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotoPark.release.xcconfig"; path = "Pods/Target Support Files/Pods-MotoPark/Pods-MotoPark.release.xcconfig"; sourceTree = "<group>"; };
+		3709102CC1AD712F64D85399 /* Pods-motopark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-motopark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-motopark/Pods-motopark.debug.xcconfig"; sourceTree = "<group>"; };
 		449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hotmoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.debug.xcconfig"; sourceTree = "<group>"; };
+		8A3B740AAB0FF5551F727881 /* Pods-motopark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-motopark.release.xcconfig"; path = "Pods/Target Support Files/Pods-motopark/Pods-motopark.release.xcconfig"; sourceTree = "<group>"; };
+		8CA8B5C1CC85DF5831A6B626 /* Pods_motopark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_motopark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFB12BBC953D9C851EFDC81F /* Pods-MotoPark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotoPark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MotoPark/Pods-MotoPark.debug.xcconfig"; sourceTree = "<group>"; };
+		CEA0DB51B84AE901DB20ECD6 /* Pods_MotoPark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotoPark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.release.xcconfig"; sourceTree = "<group>"; };
+		E5297C882154DAB3004AAA55 /* hotmoto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hotmoto.entitlements; sourceTree = "<group>"; };
 		E530A8B5207760C3006D1454 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		E530A8B7207766D2006D1454 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		E542786A20F0BDF300C302CE /* InputTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextCell.swift; sourceTree = "<group>"; };
@@ -259,6 +266,7 @@
 		E56AFF0D214658FE00247658 /* ABView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABView.xib; sourceTree = "<group>"; };
 		E578B0F120BAFEB100D8F0A9 /* DSCameraHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSCameraHandler.swift; sourceTree = "<group>"; };
 		E578B0F320BB002900D8F0A9 /* UIViewController+ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ImagePicker.swift"; sourceTree = "<group>"; };
+		E57A4EE52158987600A22D8C /* MotoPark.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MotoPark.entitlements; sourceTree = "<group>"; };
 		E580F3A82126C73F001EF05B /* InfoItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoItemCell.swift; sourceTree = "<group>"; };
 		E580F3A92126C73F001EF05B /* InfoParkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoParkView.xib; sourceTree = "<group>"; };
 		E580F3AA2126C73F001EF05B /* InfoItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoItemCell.xib; sourceTree = "<group>"; };
@@ -286,7 +294,7 @@
 		E5A4918620844AD800399F5A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkManagerViewController.swift; sourceTree = "<group>"; };
 		E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectionViewController.swift; sourceTree = "<group>"; };
-		E5DE3A442067382C007C4D1F /* hotmoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotmoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5DE3A442067382C007C4D1F /* MotoPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotoPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5DE3A472067382C007C4D1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5DE3A492067382C007C4D1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5DE3A4C2067382C007C4D1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -311,7 +319,7 @@
 			files = (
 				E59F83CD212C7217004BD65C /* TPKeyboardAvoidingSwift.framework in Frameworks */,
 				E5DE3A6020673B08007C4D1F /* Alamofire.framework in Frameworks */,
-				63D3070FE12BA44A925BFB6E /* Pods_hotmoto.framework in Frameworks */,
+				C7857CDF17F5C458A86B127C /* Pods_MotoPark.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +331,10 @@
 			children = (
 				730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */,
 				D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */,
+				3709102CC1AD712F64D85399 /* Pods-motopark.debug.xcconfig */,
+				8A3B740AAB0FF5551F727881 /* Pods-motopark.release.xcconfig */,
+				BFB12BBC953D9C851EFDC81F /* Pods-MotoPark.debug.xcconfig */,
+				25CD97025ED47FAB9E2EEDEC /* Pods-MotoPark.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -335,6 +347,8 @@
 				E544A17920D944A40029B93E /* libPods-PXGoogleDirections.a */,
 				E5DE3A6120673B08007C4D1F /* Alamofire.framework */,
 				449E63D2DC3251B378E1C6C2 /* Pods_hotmoto.framework */,
+				8CA8B5C1CC85DF5831A6B626 /* Pods_motopark.framework */,
+				CEA0DB51B84AE901DB20ECD6 /* Pods_MotoPark.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -592,6 +606,7 @@
 		E5DE3A3B2067382C007C4D1F = {
 			isa = PBXGroup;
 			children = (
+				E57A4EE52158987600A22D8C /* MotoPark.entitlements */,
 				E542A8D5207A194F009DF90E /* README.md */,
 				E570172B21045D0300A29D4B /* Extension */,
 				E578B0F020BAFEB100D8F0A9 /* libs */,
@@ -608,7 +623,7 @@
 		E5DE3A452067382C007C4D1F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E5DE3A442067382C007C4D1F /* hotmoto.app */,
+				E5DE3A442067382C007C4D1F /* MotoPark.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -616,6 +631,7 @@
 		E5DE3A462067382C007C4D1F /* hotmoto */ = {
 			isa = PBXGroup;
 			children = (
+				E5297C882154DAB3004AAA55 /* hotmoto.entitlements */,
 				E580F3A62126C73F001EF05B /* Custom */,
 				E5DE3A6520673E0C007C4D1F /* Guest */,
 				E5DE3A6620673E0C007C4D1F /* Parking */,
@@ -686,9 +702,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E5DE3A432067382C007C4D1F /* hotmoto */ = {
+		E5DE3A432067382C007C4D1F /* MotoPark */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5DE3A562067382C007C4D1F /* Build configuration list for PBXNativeTarget "hotmoto" */;
+			buildConfigurationList = E5DE3A562067382C007C4D1F /* Build configuration list for PBXNativeTarget "MotoPark" */;
 			buildPhases = (
 				455C4A4BF197908E27BBD933 /* [CP] Check Pods Manifest.lock */,
 				E5DE3A402067382C007C4D1F /* Sources */,
@@ -701,9 +717,9 @@
 			);
 			dependencies = (
 			);
-			name = hotmoto;
+			name = MotoPark;
 			productName = hotmoto;
-			productReference = E5DE3A442067382C007C4D1F /* hotmoto.app */;
+			productReference = E5DE3A442067382C007C4D1F /* MotoPark.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -713,16 +729,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Huy;
 				TargetAttributes = {
 					E5DE3A432067382C007C4D1F = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
-			buildConfigurationList = E5DE3A3F2067382C007C4D1F /* Build configuration list for PBXProject "hotmoto" */;
+			buildConfigurationList = E5DE3A3F2067382C007C4D1F /* Build configuration list for PBXProject "MotoPark" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -735,7 +759,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E5DE3A432067382C007C4D1F /* hotmoto */,
+				E5DE3A432067382C007C4D1F /* MotoPark */,
 			);
 		};
 /* End PBXProject section */
@@ -828,7 +852,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-hotmoto-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MotoPark-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -841,7 +865,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-MotoPark/Pods-MotoPark-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
@@ -860,7 +884,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MotoPark/Pods-MotoPark-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -977,6 +1001,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -984,6 +1009,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -995,6 +1021,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 58JMRW9E5N;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1034,6 +1061,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1041,6 +1069,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1052,6 +1081,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 58JMRW9E5N;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1072,11 +1102,14 @@
 		};
 		E5DE3A572067382C007C4D1F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 730D13D70003136300A50607 /* Pods-hotmoto.debug.xcconfig */;
+			baseConfigurationReference = BFB12BBC953D9C851EFDC81F /* Pods-MotoPark.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 5779D9JCS3;
+				CODE_SIGN_ENTITLEMENTS = MotoPark.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 58JMRW9E5N;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1086,22 +1119,25 @@
 				INFOPLIST_FILE = hotmoto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nhatcuongpublic.hotmoto;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoquang.MotoPark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ceac3eff-449b-41b3-987b-220cc75be608";
-				PROVISIONING_PROFILE_SPECIFIER = NHATCUONG_PUBLIC_PROVISIONING;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
+				TAPI_VERIFY_MODE = ErrorsOnly;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		E5DE3A582067382C007C4D1F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */;
+			baseConfigurationReference = 25CD97025ED47FAB9E2EEDEC /* Pods-MotoPark.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 5779D9JCS3;
+				CODE_SIGN_ENTITLEMENTS = MotoPark.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 58JMRW9E5N;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1111,11 +1147,11 @@
 				INFOPLIST_FILE = hotmoto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nhatcuongpublic.hotmoto;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hoquang.MotoPark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3f4dbf0b-8827-46fe-820e-0f0a7f092510";
-				PROVISIONING_PROFILE_SPECIFIER = NHATCUONG_PUBLIC_PROVISIONING;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
+				TAPI_VERIFY_MODE = ErrorsOnly;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1123,7 +1159,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E5DE3A3F2067382C007C4D1F /* Build configuration list for PBXProject "hotmoto" */ = {
+		E5DE3A3F2067382C007C4D1F /* Build configuration list for PBXProject "MotoPark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5DE3A542067382C007C4D1F /* Debug */,
@@ -1132,7 +1168,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5DE3A562067382C007C4D1F /* Build configuration list for PBXNativeTarget "hotmoto" */ = {
+		E5DE3A562067382C007C4D1F /* Build configuration list for PBXNativeTarget "MotoPark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5DE3A572067382C007C4D1F /* Debug */,

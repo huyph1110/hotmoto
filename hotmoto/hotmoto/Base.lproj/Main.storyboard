@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="hotmoto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MotoPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CjM-hE-S1C"/>
                         <viewControllerLayoutGuide type="bottom" id="dJJ-Ya-Okz"/>
@@ -21,6 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="motopark" translatesAutoresizingMaskIntoConstraints="NO" id="chY-5U-I6Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EK2-NY-DRB" customClass="TPKeyboardAvoidingScrollView" customModule="TPKeyboardAvoidingSwift">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
@@ -28,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEI-TE-ell">
-                                                <rect key="frame" x="67" y="268.5" width="240" height="130"/>
+                                                <rect key="frame" x="67.5" y="268.5" width="240" height="130"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="user name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hSK-FI-OhY">
                                                         <rect key="frame" x="8" y="8" width="224" height="30"/>
@@ -91,16 +94,16 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL4-8S-W5Y">
-                                                <rect key="frame" x="248" y="406.5" width="51" height="30"/>
+                                                <rect key="frame" x="248.5" y="406.5" width="51" height="30"/>
                                                 <state key="normal" title="Tìm bãi">
-                                                    <color key="titleColor" red="0.08235294118" green="0.4941176471" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="selectLoginType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ysa-H8-Zby"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="dL4-8S-W5Y" firstAttribute="top" secondItem="LEI-TE-ell" secondAttribute="bottom" constant="8" id="4zU-RW-VMr"/>
                                             <constraint firstItem="dL4-8S-W5Y" firstAttribute="trailing" secondItem="LEI-TE-ell" secondAttribute="trailing" constant="-8" id="QVf-zA-st4"/>
@@ -109,6 +112,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="g5m-gz-b8u" firstAttribute="leading" secondItem="EK2-NY-DRB" secondAttribute="leading" id="O4M-SL-A3B"/>
                                     <constraint firstAttribute="trailing" secondItem="g5m-gz-b8u" secondAttribute="trailing" id="dhs-mL-Ty5"/>
@@ -122,9 +126,13 @@
                             <constraint firstItem="EK2-NY-DRB" firstAttribute="top" secondItem="CjM-hE-S1C" secondAttribute="bottom" id="Kh6-Cw-xUt"/>
                             <constraint firstAttribute="trailing" secondItem="EK2-NY-DRB" secondAttribute="trailing" id="PMf-S7-Iam"/>
                             <constraint firstItem="g5m-gz-b8u" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="SIz-o0-Bbx"/>
+                            <constraint firstItem="dJJ-Ya-Okz" firstAttribute="top" secondItem="chY-5U-I6Z" secondAttribute="bottom" id="SXB-Ic-U7W"/>
                             <constraint firstItem="g5m-gz-b8u" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dT7-6x-jro"/>
+                            <constraint firstAttribute="trailing" secondItem="chY-5U-I6Z" secondAttribute="trailing" id="jcJ-A6-uVs"/>
                             <constraint firstItem="EK2-NY-DRB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kpc-Nk-yWs"/>
+                            <constraint firstItem="chY-5U-I6Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nIg-vu-pQu"/>
                             <constraint firstItem="dJJ-Ya-Okz" firstAttribute="top" secondItem="EK2-NY-DRB" secondAttribute="bottom" id="qVO-Pz-yfi"/>
+                            <constraint firstItem="chY-5U-I6Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vRq-ky-jac"/>
                         </constraints>
                     </view>
                     <connections>
@@ -142,7 +150,7 @@
         <!--My Park List View Controller-->
         <scene sceneID="zGi-as-Sdz">
             <objects>
-                <viewController id="cMf-5y-OeQ" customClass="MyParkListViewController" customModule="hotmoto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cMf-5y-OeQ" customClass="MyParkListViewController" customModule="MotoPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O6h-yY-1es"/>
                         <viewControllerLayoutGuide type="bottom" id="4P0-lJ-vVI"/>
@@ -206,7 +214,7 @@
         <!--Park View Controller-->
         <scene sceneID="UZa-g3-F64">
             <objects>
-                <viewController id="da2-fQ-6CG" customClass="ParkViewController" customModule="hotmoto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="da2-fQ-6CG" customClass="ParkViewController" customModule="MotoPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cGv-1M-MfE"/>
                         <viewControllerLayoutGuide type="bottom" id="Zpb-AV-ToM"/>
@@ -219,10 +227,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBP-B1-4AZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="638"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="710.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYD-gh-I6l">
-                                                <rect key="frame" x="317" y="194" width="50" height="50"/>
+                                                <rect key="frame" x="317" y="193.5" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="4TC-yI-FSp"/>
                                                     <constraint firstAttribute="height" constant="50" id="9sX-OE-8MI"/>
@@ -235,7 +243,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIb-V7-h5x">
-                                                <rect key="frame" x="16" y="8" width="343" height="178.5"/>
+                                                <rect key="frame" x="16" y="8" width="343" height="178"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Q2-DD-ZkW">
                                                         <rect key="frame" x="8" y="8" width="81" height="74"/>
@@ -284,7 +292,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7n0-yi-Epz" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
-                                                        <rect key="frame" x="8" y="135" width="327" height="35.5"/>
+                                                        <rect key="frame" x="8" y="134.5" width="327" height="35.5"/>
                                                         <color key="backgroundColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
@@ -324,43 +332,43 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uzd-gf-yoi" customClass="SlectionBarView" customModule="hotmoto" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="252" width="327" height="48"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uzd-gf-yoi" customClass="SlectionBarView" customModule="MotoPark" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="251.5" width="327" height="48"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="IgD-6b-U4E"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Eo-o0-cnJ" customClass="SlectionBarView" customModule="hotmoto" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="316" width="327" height="48"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Eo-o0-cnJ" customClass="SlectionBarView" customModule="MotoPark" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="315.5" width="327" height="48"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="F7x-jH-v3V"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQe-dm-rP9" customClass="SlectionBarView" customModule="hotmoto" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="380" width="327" height="48"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQe-dm-rP9" customClass="SlectionBarView" customModule="MotoPark" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="379.5" width="327" height="48"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="2nT-MN-vWC"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tR8-jn-FNr" customClass="SlectionBarView" customModule="hotmoto" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="444" width="327" height="48"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tR8-jn-FNr" customClass="SlectionBarView" customModule="MotoPark" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="443.5" width="327" height="48"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="Vlr-ad-dQn"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2v-nR-72Q" customClass="SlectionBarView" customModule="hotmoto" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="508" width="327" height="48"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2v-nR-72Q" customClass="SlectionBarView" customModule="MotoPark" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="507.5" width="327" height="48"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="RB2-Yk-exB"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI4-bq-dJE">
-                                                <rect key="frame" x="87.5" y="564" width="200" height="44"/>
+                                                <rect key="frame" x="87.5" y="636.5" width="200" height="44"/>
                                                 <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="3Vk-YU-QtS"/>
@@ -379,19 +387,41 @@
                                                     <action selector="createPark:" destination="da2-fQ-6CG" eventType="touchUpInside" id="XFd-LJ-OzH"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnN-ct-nRD">
+                                                <rect key="frame" x="24" y="571.5" width="327" height="49"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FYR-D1-jjb" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                                                        <rect key="frame" x="8" y="8" width="311" height="33"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Mô tả"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="FYR-D1-jjb" firstAttribute="leading" secondItem="jnN-ct-nRD" secondAttribute="leading" constant="8" id="Pvk-e7-2xI"/>
+                                                    <constraint firstAttribute="bottom" secondItem="FYR-D1-jjb" secondAttribute="bottom" constant="8" id="Y7C-d1-8aL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FYR-D1-jjb" secondAttribute="trailing" constant="8" id="a17-sx-Mxg"/>
+                                                    <constraint firstItem="FYR-D1-jjb" firstAttribute="top" secondItem="jnN-ct-nRD" secondAttribute="top" constant="8" id="xNt-PW-Qxo"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="L2v-nR-72Q" firstAttribute="leading" secondItem="GBP-B1-4AZ" secondAttribute="leading" constant="24" id="1Vw-hM-4M0"/>
+                                            <constraint firstItem="jnN-ct-nRD" firstAttribute="leading" secondItem="GBP-B1-4AZ" secondAttribute="leading" constant="24" id="3aZ-mK-qg1"/>
                                             <constraint firstAttribute="trailing" secondItem="FQe-dm-rP9" secondAttribute="trailing" constant="24" id="7yM-b3-m7Y"/>
                                             <constraint firstAttribute="trailing" secondItem="L2v-nR-72Q" secondAttribute="trailing" constant="24" id="C2Z-4p-bBs"/>
+                                            <constraint firstItem="GI4-bq-dJE" firstAttribute="top" secondItem="jnN-ct-nRD" secondAttribute="bottom" constant="16" id="CUm-ui-3gu"/>
                                             <constraint firstAttribute="trailing" secondItem="8Eo-o0-cnJ" secondAttribute="trailing" constant="24" id="I1e-wb-PMW"/>
                                             <constraint firstAttribute="trailing" secondItem="Uzd-gf-yoi" secondAttribute="trailing" constant="24" id="Mmf-ov-qAp"/>
                                             <constraint firstItem="8Eo-o0-cnJ" firstAttribute="top" secondItem="Uzd-gf-yoi" secondAttribute="bottom" constant="16" id="Nqt-EN-ZYD"/>
                                             <constraint firstItem="L2v-nR-72Q" firstAttribute="top" secondItem="tR8-jn-FNr" secondAttribute="bottom" constant="16" id="WBU-cd-zzk"/>
                                             <constraint firstItem="kYD-gh-I6l" firstAttribute="top" secondItem="GIb-V7-h5x" secondAttribute="bottom" constant="7.5" id="WLk-oH-T7e"/>
                                             <constraint firstItem="Uzd-gf-yoi" firstAttribute="top" secondItem="kYD-gh-I6l" secondAttribute="bottom" constant="8" id="Xa8-P7-Np5"/>
-                                            <constraint firstItem="GI4-bq-dJE" firstAttribute="top" secondItem="L2v-nR-72Q" secondAttribute="bottom" constant="8" id="Xx6-ct-d6T"/>
                                             <constraint firstItem="tR8-jn-FNr" firstAttribute="top" secondItem="FQe-dm-rP9" secondAttribute="bottom" constant="16" id="YLc-oq-xvS"/>
                                             <constraint firstItem="Uzd-gf-yoi" firstAttribute="leading" secondItem="GBP-B1-4AZ" secondAttribute="leading" constant="24" id="eBq-dj-irM"/>
                                             <constraint firstAttribute="trailing" secondItem="tR8-jn-FNr" secondAttribute="trailing" constant="24" id="fEb-Ua-tXq"/>
@@ -405,6 +435,8 @@
                                             <constraint firstItem="GI4-bq-dJE" firstAttribute="centerX" secondItem="GBP-B1-4AZ" secondAttribute="centerX" id="qdI-5E-5lh"/>
                                             <constraint firstItem="tR8-jn-FNr" firstAttribute="leading" secondItem="GBP-B1-4AZ" secondAttribute="leading" constant="24" id="r1e-aO-p5I"/>
                                             <constraint firstItem="GIb-V7-h5x" firstAttribute="leading" secondItem="GBP-B1-4AZ" secondAttribute="leading" constant="16" id="sCK-2T-byO"/>
+                                            <constraint firstAttribute="trailing" secondItem="jnN-ct-nRD" secondAttribute="trailing" constant="24" id="v3q-Ld-Flp"/>
+                                            <constraint firstItem="jnN-ct-nRD" firstAttribute="top" secondItem="L2v-nR-72Q" secondAttribute="bottom" constant="16" id="vfr-bQ-Swu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -453,6 +485,7 @@
                         <outlet property="barType" destination="8Eo-o0-cnJ" id="HaE-S3-JAb"/>
                         <outlet property="imvAvatar" destination="alf-ja-6U0" id="GOO-gS-p8E"/>
                         <outlet property="txvAddress" destination="7n0-yi-Epz" id="0wh-Bx-2yE"/>
+                        <outlet property="txvDescription" destination="FYR-D1-jjb" id="Wqy-wm-rKE"/>
                         <outlet property="txvParkName" destination="Dkh-GH-2pf" id="nDZ-uY-1b7"/>
                     </connections>
                 </viewController>
@@ -463,7 +496,7 @@
         <!--Map Selection View Controller-->
         <scene sceneID="RJU-75-Sqn">
             <objects>
-                <viewController id="HEd-dC-3eI" customClass="MapSelectionViewController" customModule="hotmoto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HEd-dC-3eI" customClass="MapSelectionViewController" customModule="MotoPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LUe-IS-lud"/>
                         <viewControllerLayoutGuide type="bottom" id="a6H-EQ-MYt"/>
@@ -565,7 +598,7 @@
         <!--Park Manager View Controller-->
         <scene sceneID="ths-bm-SlJ">
             <objects>
-                <viewController id="e66-5I-Bkq" customClass="ParkManagerViewController" customModule="hotmoto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e66-5I-Bkq" customClass="ParkManagerViewController" customModule="MotoPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V3e-vd-XAb"/>
                         <viewControllerLayoutGuide type="bottom" id="Ju7-Cg-Hs6"/>
@@ -578,10 +611,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tc4-fJ-lno">
-                                        <rect key="frame" x="0.0" y="8" width="375" height="623"/>
+                                        <rect key="frame" x="0.0" y="8" width="375" height="688.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbb-Uq-mTD">
-                                                <rect key="frame" x="87.5" y="559" width="200" height="44"/>
+                                                <rect key="frame" x="87.5" y="624.5" width="200" height="44"/>
                                                 <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="NaL-rt-P6j"/>
@@ -601,7 +634,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrK-3W-2fx">
-                                                <rect key="frame" x="312" y="194.5" width="55" height="44"/>
+                                                <rect key="frame" x="312" y="194" width="55" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="55" id="Br9-35-bAF"/>
                                                     <constraint firstAttribute="height" constant="44" id="cPR-t6-8Pp"/>
@@ -614,7 +647,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63a-Qs-7uU">
-                                                <rect key="frame" x="16" y="8" width="343" height="178.5"/>
+                                                <rect key="frame" x="16" y="8" width="343" height="178"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Tv-IE-yzU">
                                                         <rect key="frame" x="8" y="8" width="81" height="74"/>
@@ -659,7 +692,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bjw-FV-Dc6" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
-                                                        <rect key="frame" x="8" y="135" width="327" height="35.5"/>
+                                                        <rect key="frame" x="8" y="134.5" width="327" height="35.5"/>
                                                         <color key="backgroundColor" red="0.27058823529411763" green="0.30980392156862746" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="textColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
@@ -696,44 +729,66 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkZ-JV-vrW" customClass="SlectionBarView" customModule="hotmoto" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="240" width="327" height="48"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IkZ-JV-vrW" customClass="SlectionBarView" customModule="MotoPark" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="239.5" width="327" height="48"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="Sgd-2h-skG"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZf-fL-NwE" customClass="SlectionBarView" customModule="hotmoto" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="304" width="327" height="48"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZf-fL-NwE" customClass="SlectionBarView" customModule="MotoPark" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="303.5" width="327" height="48"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="aYV-10-iJv"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbU-Ax-BX8" customClass="SlectionBarView" customModule="hotmoto" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="368" width="327" height="48"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbU-Ax-BX8" customClass="SlectionBarView" customModule="MotoPark" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="367.5" width="327" height="48"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="CkZ-XL-DNc"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mde-lj-7Xb" customClass="SlectionBarView" customModule="hotmoto" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="432" width="327" height="48"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mde-lj-7Xb" customClass="SlectionBarView" customModule="MotoPark" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="431.5" width="327" height="48"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="71n-rZ-x7n"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1J-De-u9r" customClass="SlectionBarView" customModule="hotmoto" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="496" width="327" height="48"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1J-De-u9r" customClass="SlectionBarView" customModule="MotoPark" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="495.5" width="327" height="48"/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="D1Q-BA-DJj"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAt-Mh-GlE">
+                                                <rect key="frame" x="24" y="559.5" width="327" height="49"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PFv-C9-RhY" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                                                        <rect key="frame" x="8" y="8" width="311" height="33"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Mô tả"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="PFv-C9-RhY" firstAttribute="leading" secondItem="FAt-Mh-GlE" secondAttribute="leading" constant="8" id="7Nx-wz-teB"/>
+                                                    <constraint firstItem="PFv-C9-RhY" firstAttribute="top" secondItem="FAt-Mh-GlE" secondAttribute="top" constant="8" id="AIa-2a-33B"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PFv-C9-RhY" secondAttribute="trailing" constant="8" id="DS8-IF-bwM"/>
+                                                    <constraint firstAttribute="bottom" secondItem="PFv-C9-RhY" secondAttribute="bottom" constant="8" id="S3x-m4-0Iw"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="FAt-Mh-GlE" firstAttribute="top" secondItem="x1J-De-u9r" secondAttribute="bottom" constant="16" id="0dx-E9-g2m"/>
                                             <constraint firstAttribute="trailing" secondItem="ZZf-fL-NwE" secondAttribute="trailing" constant="24" id="0jh-p5-L0b"/>
                                             <constraint firstItem="mde-lj-7Xb" firstAttribute="top" secondItem="UbU-Ax-BX8" secondAttribute="bottom" constant="16" id="1lr-aa-zn6"/>
                                             <constraint firstAttribute="bottom" secondItem="hbb-Uq-mTD" secondAttribute="bottom" constant="20" id="8QO-Gx-Vzh"/>
@@ -741,8 +796,8 @@
                                             <constraint firstItem="x1J-De-u9r" firstAttribute="leading" secondItem="tc4-fJ-lno" secondAttribute="leading" constant="24" id="FKT-m6-uGq"/>
                                             <constraint firstAttribute="trailing" secondItem="IkZ-JV-vrW" secondAttribute="trailing" constant="24" id="MUx-6m-2ix"/>
                                             <constraint firstItem="IkZ-JV-vrW" firstAttribute="leading" secondItem="tc4-fJ-lno" secondAttribute="leading" constant="24" id="Mgv-eI-2HG"/>
-                                            <constraint firstItem="hbb-Uq-mTD" firstAttribute="top" secondItem="x1J-De-u9r" secondAttribute="bottom" constant="15" id="O1A-gc-ELq"/>
                                             <constraint firstItem="ZZf-fL-NwE" firstAttribute="leading" secondItem="tc4-fJ-lno" secondAttribute="leading" constant="24" id="OjV-cN-FXf"/>
+                                            <constraint firstItem="FAt-Mh-GlE" firstAttribute="leading" secondItem="tc4-fJ-lno" secondAttribute="leading" constant="24" id="Oo1-kM-cuQ"/>
                                             <constraint firstItem="mde-lj-7Xb" firstAttribute="leading" secondItem="tc4-fJ-lno" secondAttribute="leading" constant="24" id="OvU-1A-DQd"/>
                                             <constraint firstAttribute="trailing" secondItem="63a-Qs-7uU" secondAttribute="trailing" constant="16" id="RoC-Vu-BRC"/>
                                             <constraint firstAttribute="trailing" secondItem="UbU-Ax-BX8" secondAttribute="trailing" constant="24" id="U2q-DH-5KH"/>
@@ -751,6 +806,8 @@
                                             <constraint firstItem="IkZ-JV-vrW" firstAttribute="top" secondItem="jrK-3W-2fx" secondAttribute="bottom" constant="1.5" id="bQZ-0b-i9W"/>
                                             <constraint firstAttribute="trailing" secondItem="mde-lj-7Xb" secondAttribute="trailing" constant="24" id="cta-NX-asP"/>
                                             <constraint firstItem="UbU-Ax-BX8" firstAttribute="top" secondItem="ZZf-fL-NwE" secondAttribute="bottom" constant="16" id="g5n-LX-oFr"/>
+                                            <constraint firstAttribute="trailing" secondItem="FAt-Mh-GlE" secondAttribute="trailing" constant="24" id="inE-fB-dje"/>
+                                            <constraint firstItem="hbb-Uq-mTD" firstAttribute="top" secondItem="FAt-Mh-GlE" secondAttribute="bottom" constant="16" id="jqD-bQ-V32"/>
                                             <constraint firstItem="x1J-De-u9r" firstAttribute="top" secondItem="mde-lj-7Xb" secondAttribute="bottom" constant="16" id="ma7-jP-8dW"/>
                                             <constraint firstAttribute="trailing" secondItem="x1J-De-u9r" secondAttribute="trailing" constant="24" id="nzr-Gz-p38"/>
                                             <constraint firstItem="63a-Qs-7uU" firstAttribute="top" secondItem="tc4-fJ-lno" secondAttribute="top" constant="8" id="oCg-hA-Yak"/>
@@ -814,7 +871,7 @@
         <!--Guest View Controller-->
         <scene sceneID="IoJ-2V-ysb">
             <objects>
-                <viewController id="ZGm-Cg-vJJ" customClass="GuestViewController" customModule="hotmoto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZGm-Cg-vJJ" customClass="GuestViewController" customModule="MotoPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ign-5O-D6Z"/>
                         <viewControllerLayoutGuide type="bottom" id="KM8-rM-d6t"/>
@@ -824,25 +881,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrI-kS-0zT">
-                                <rect key="frame" x="134" y="617" width="106" height="30"/>
+                                <rect key="frame" x="134.5" y="617" width="106" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.079431077449999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Xem danh sach"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frV-qj-7yP">
                                 <rect key="frame" x="305" y="20" width="54" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.079431077449999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="làm mới"/>
                                 <connections>
                                     <action selector="selectRefresh:" destination="ZGm-Cg-vJJ" eventType="touchUpInside" id="gbM-ex-Cgz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iwa-bN-OJo">
-                                <rect key="frame" x="16" y="20" width="73" height="30"/>
-                                <state key="normal" title="đăng nhập"/>
+                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iwa-bN-OJo">
+                                <rect key="frame" x="16" y="20" width="52" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.079431077453987725" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Quản lý"/>
                                 <connections>
                                     <action selector="selectLogout:" destination="ZGm-Cg-vJJ" eventType="touchUpInside" id="3mb-Qf-fF4"/>
                                     <action selector="selectRefresh:" destination="ZGm-Cg-vJJ" eventType="touchUpInside" id="Ckr-CM-fYk"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNE-rg-XyI" customClass="InfoParkView" customModule="hotmoto" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNE-rg-XyI" customClass="InfoParkView" customModule="MotoPark" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="436" width="375" height="231"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -872,7 +932,7 @@
         <!--List Parks View Controller-->
         <scene sceneID="hcy-9J-Vgz">
             <objects>
-                <viewController storyboardIdentifier="ListParksViewController" id="1aG-WP-zLK" customClass="ListParksViewController" customModule="hotmoto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListParksViewController" id="1aG-WP-zLK" customClass="ListParksViewController" customModule="MotoPark" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VHX-ku-9BC"/>
                         <viewControllerLayoutGuide type="bottom" id="o9A-yg-Kxo"/>
@@ -925,6 +985,7 @@
     </scenes>
     <resources>
         <image name="back" width="24" height="24"/>
+        <image name="motopark" width="600" height="337"/>
         <image name="photo-camera" width="12" height="10"/>
         <image name="pin" width="36" height="36"/>
     </resources>

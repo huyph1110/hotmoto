@@ -41,5 +41,10 @@ struct ColorsConfig {
     static let sundayTextDisabled = UIColor(red: 1.0, green: 0.6, blue: 0.6, alpha: 1.0)
     static let sundaySelectionBackground = selectionBackground
     static let markColor = UIColor("#4CD964")
-    
+    static let button_green = UIColor("#5FB660")
+    static let button_blue = UIColor("#377BB5")
+    static let button_red = UIColor("#D75452")
+    static let button_yellow = UIColor("#EBAA56")
+    static let button_violet = UIColor("#5FBED9")
+
 }

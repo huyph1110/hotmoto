@@ -18,12 +18,11 @@ class ListParksViewController: UIViewController, UITableViewDelegate,UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let park = arrayPark[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ParkCell") as! ParkCell
-        cell.lblState.text = park.status == 0 ? "Mở cửa" : "Đóng cửa"    //0: san sang ; 1: da dong
-
+        cell.lblState.attributedText = stateForPark(park)
         cell.imvType.image = iconForType(park.type)
         cell.lblName.text = park.name
         cell.lblAddress.text = park.address
-        cell.lblCost.text = stringForCost(park.cost, park.numberHours)
+        cell.lblCost.attributedText = attriButestringForCost(park.cost , park.numberHours )
         cell.imvAvatar?.setImage(url: park.imageUrl)
         let current = park.total - park.AvailableSlot
         cell.btnCount.setAttributedTitle(attributeStringForCount(current, park.total), for: .normal)

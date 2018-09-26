@@ -27,8 +27,9 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         let park = arrayPark[indexPath.row]
         cell.lblName.text = park.name
         cell.lblAddress.text = park.address
-        cell.lblState.text = park.status == 0 ? "Mở cửa" : "Đóng cửa"    //0: san sang ; 1: da dong
-        cell.lblCost.text = stringForCost(park.cost, park.numberHours)
+        cell.lblState.attributedText = stateForPark(park)
+        cell.lblCost.attributedText = attriButestringForCost(park.cost , park.numberHours )
+
         cell.imvAvatar?.setImage(url: park.imageUrl)
         cell.imvType.image = iconForType(park.type)
         let current = park.total - park.AvailableSlot
@@ -147,5 +148,5 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         }
         
     }
-    
+
 }

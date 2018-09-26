@@ -51,9 +51,9 @@ class DetailParkViewController: UIViewController {
         lblTotal.text = "\(park.total)"
         btnPhone.setTitle(park.phone, for: .normal)
         txvAddress.text = park.address
-        lblCost.text = stringForCost(park?.cost ?? 0, park?.numberHours ?? 0)
+        lblCost.attributedText = attriButestringForCost(park.cost , park.numberHours )
         lblTotal.text = "\(park.total)"
-        lblAvail.text = "\(park.AvailableSlot)"
+        lblAvail.attributedText = attributeStringForAvailSlot(park.AvailableSlot)
         imvMobiType.image = iconForType(park.type)
     }
     

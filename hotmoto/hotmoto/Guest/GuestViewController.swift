@@ -306,7 +306,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
             bounds = bounds.includingBounds(results[i].bounds!)
             distance += Int(results[i].totalDuration)
         }
-        selectedMarker.title = "\(stringDistance(distance))  " + (selectedPark?.name)!
+        selectedMarker.title = "~\(stringDistance(distance))  " + (selectedPark?.name)!
         let padding = 100
         
         mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: CGFloat(padding)))

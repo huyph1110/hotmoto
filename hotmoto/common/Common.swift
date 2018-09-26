@@ -156,6 +156,19 @@ func stringForCost(_ value: Int,_ hour: Int) -> String {
     
     return "\(money(value)) đ / \(hour) giờ"
 }
+func attriButestringForCost(_ value: Int,_ hour: Int) -> NSAttributedString {
+    if  value == 0 {
+        return NSAttributedString(string: "Miễn phí", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_green])
+    }
+    if hour == 24 {
+        return NSAttributedString(string: "\(money(value)) đ / ngày", attributes: [NSAttributedStringKey.foregroundColor  : UIColor.black])
+
+    }
+    return NSAttributedString(string: "\(money(value)) đ / \(hour) giờ", attributes: [NSAttributedStringKey.foregroundColor  : UIColor.black])
+
+}
+
+
 func stringForTime(_ begin: Int,_ end: Int) -> String {
     let beginHour = begin/60
     let beginMin = begin % 60
@@ -176,17 +189,25 @@ func stringForSize(_ size: Int) -> String {
 func attributeStringForCount(_ current: Int, _ total: Int) -> NSAttributedString {
     let returnStr = NSMutableAttributedString(string: "")
     if current < total {
-        let currentstr = NSAttributedString(string: "\(current)/", attributes: [NSAttributedStringKey.foregroundColor  : UIColor.blue])
+        let currentstr = NSAttributedString(string: "\(current)/", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_blue])
         returnStr.append(currentstr)
     }
     else {
-        let currentstr = NSAttributedString(string: "\(current)/", attributes: [NSAttributedStringKey.foregroundColor  : UIColor.red])
+        let currentstr = NSAttributedString(string: "\(current)/", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_red])
         returnStr.append(currentstr)
     }
-    let totalStr = NSAttributedString(string: "\(total)", attributes: [NSAttributedStringKey.foregroundColor  : UIColor.red])
+    let totalStr = NSAttributedString(string: "\(total)", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_red])
     returnStr.append(totalStr)
     return returnStr
 }
+
+func attributeStringForAvailSlot(_ avail: Int) -> NSAttributedString {
+    if avail == 0 {
+        return NSAttributedString(string: "\(avail)", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_red])
+    }
+    return NSAttributedString(string: "\(avail)", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_blue])
+}
+
 func iconForType(_ type: Int) -> UIImage? {
     switch type {
     case 0:
@@ -212,4 +233,24 @@ func iconForTypeWhite(_ type: Int) -> UIImage? {
         return nil
     }
     
+}
+func stateForPark(_ park: Park) -> NSAttributedString {
+    if park.status == 1 {//0: san sang ; 1: da dong
+
+        return NSAttributedString(string: "Đóng cửa", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_yellow])
+    }
+    //else
+    //ngoai gio lam viec
+    let now = Date()
+    let currentBeginMin = now.minute() + now.hour()*60
+    
+    if currentBeginMin < park.openTime || currentBeginMin > park.closeTime {
+        return NSAttributedString(string: "Đóng cửa", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_yellow])
+    }
+    //đã đầy
+    if park.AvailableSlot == 0 {
+        return NSAttributedString(string: "Đã đầy", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_red])
+    }
+    
+    return NSAttributedString(string: "Mở cửa", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_green])
 }

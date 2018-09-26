@@ -70,7 +70,7 @@ class InfoParkView: GreenView, UICollectionViewDelegate, UICollectionViewDataSou
     func loadPark(park: Park) {
         arrayInfo.removeAll()
         myPark = park
-        lblStatus.text = park.status == 0 ? "Mở cửa" : "Đã đóng"
+        lblStatus.attributedText = stateForPark(park)
 
         let itemTot = InfoItem()
         let current = park.total - park.AvailableSlot
@@ -88,7 +88,7 @@ class InfoParkView: GreenView, UICollectionViewDelegate, UICollectionViewDataSou
         itemType.icon = iconForTypeWhite(park.type)
         arrayInfo.append(itemType)
         
-        lblCost.text = stringForCost(park.cost , park.numberHours )
+        lblCost.attributedText = attriButestringForCost(park.cost , park.numberHours )
         clvInfo.reloadData()
 
         
