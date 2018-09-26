@@ -6,28 +6,24 @@ Insert: (POST):http://hotmoto.mr47.net/parkings
     
     them loai xe vao: param: type(Int) 
     openTime va closeTime chuyen sang Int
-  {
-  
-	"id":"5af90325a0ccf74aec2269f1",
-	"location":
-	{
-		"type":"Point",
-		"coordinates":[106.65500421077,10.8401665597548]
-		},
-	"name":"test name",
+  {	"id":"5af90325a0ccf74aec2269f1",
+  	"location":{"type":"Point","coordinates":[106.65500421077,10.8401665597548]},
+	"name":"1",
 	"address":"test address",
 	"phone":"012345",
-	"total":14,
+	"total":14, 
 	"AvailableSlot":0,
-	"openTime":"",
-	"closeTime":"",
+	"openTime":0,
+	"closeTime":0,
 	"status":1,
 	"fullname":"Le An",
-	"cost":0,
-	"numberHours":0,
+	"cost":10000,
+	"numberHours":4,
 	"username":"lean",
 	"email":"leantompro@gmail.com",
-	"imageUrl":""	
+	"imageUrl":"",
+	"description":"",
+	"type":0
   }
 
 Get: (GET) : http://hotmoto.mr47.net/parkings
