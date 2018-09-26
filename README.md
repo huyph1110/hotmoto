@@ -37,8 +37,30 @@ Get Parking theo Username: (POST) : http://hotmoto.mr47.net/parkings/users
 	{
 		"username":"lean"
 	}
+Get Parking theo Username: (POST) : http://hotmoto.mr47.net/parkings/users 
 
+	{
+		"username":"lean"
+	}
 Update: (PUT): http://hotmoto.mr47.net/parkings
+
+Update Slot: (POST): hotmoto.mr47.net/parkings/updateSlot
+
+{
+	
+	"slot":4,
+	"id_park":"5af90325a0ccf74aec2269f1"
+
+}
+
+Update Price: (POST): hotmoto.mr47.net/parkings/updateCost
+
+{
+	
+	"cost":4,
+	"id_park":"5af90325a0ccf74aec2269f1"
+
+}
 
 Delete: (DELETE): http://hotmoto.mr47.net/parkings
 
