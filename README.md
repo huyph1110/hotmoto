@@ -6,7 +6,8 @@ Insert: (POST):http://hotmoto.mr47.net/parkings
     
     them loai xe vao: param: type(Int) 
     openTime va closeTime chuyen sang Int
-  {	"id":"5af90325a0ccf74aec2269f1",
+  {	
+  	"id":"5af90325a0ccf74aec2269f1",
   	"location":{"type":"Point","coordinates":[106.65500421077,10.8401665597548]},
 	"name":"1",
 	"address":"test address",
