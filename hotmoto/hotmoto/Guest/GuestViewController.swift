@@ -307,8 +307,10 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
             distance += Int(results[i].totalDuration)
         }
         selectedMarker.title = "~\(stringDistance(distance))  " + (selectedPark?.name)!
-        let padding = 100
-        
+        var padding = 100
+        if results.count == 0 {
+            padding = 1000
+        }
         mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: CGFloat(padding)))
         //results[routeIndex].drawOnMap(mapView, approximate: false, strokeColor: UIColor.purple, strokeWidth: 4.0)
         //results[routeIndex].drawOriginMarkerOnMap(mapView, title: "Origin", color: UIColor.green, opacity: 1.0, flat: true)

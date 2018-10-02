@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C7857CDF17F5C458A86B127C /* Pods_MotoPark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA0DB51B84AE901DB20ECD6 /* Pods_MotoPark.framework */; };
+		E503C058215B3C7F0003C471 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503C056215B3C7F0003C471 /* AttendanceViewController.swift */; };
+		E503C059215B3C7F0003C471 /* AttendanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E503C057215B3C7F0003C471 /* AttendanceViewController.xib */; };
+		E503C05C215B6E8B0003C471 /* AttendanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503C05A215B6E8B0003C471 /* AttendanceCollectionViewCell.swift */; };
+		E503C05D215B6E8B0003C471 /* AttendanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E503C05B215B6E8B0003C471 /* AttendanceCollectionViewCell.xib */; };
+		E503C061215B88B40003C471 /* NewMobiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503C05F215B88B40003C471 /* NewMobiViewController.swift */; };
+		E503C062215B88B40003C471 /* NewMobiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E503C060215B88B40003C471 /* NewMobiViewController.xib */; };
 		E530A8B6207760C3006D1454 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B5207760C3006D1454 /* Park.swift */; };
 		E530A8B8207766D2006D1454 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B7207766D2006D1454 /* Guest.swift */; };
 		E542786C20F0BDF300C302CE /* InputTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542786A20F0BDF300C302CE /* InputTextCell.swift */; };
@@ -15,6 +21,8 @@
 		E542A8D6207A194F009DF90E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E542A8D5207A194F009DF90E /* README.md */; };
 		E54C7E2D2126CDCF00EC5278 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E54C7E2C2126CDCF00EC5278 /* GoogleMaps.bundle */; };
 		E5547BFE20E07E3A0062E83E /* GooglePlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5547BFC20E07E3A0062E83E /* GooglePlaces.swift */; };
+		E564870D21627A5900FC378C /* EditMobiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564870B21627A5900FC378C /* EditMobiViewController.swift */; };
+		E564870E21627A5900FC378C /* EditMobiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E564870C21627A5900FC378C /* EditMobiViewController.xib */; };
 		E56AFEAC2146574800247658 /* CountUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEAA2146574800247658 /* CountUpdateViewController.swift */; };
 		E56AFEAD2146574800247658 /* CountUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFEAB2146574800247658 /* CountUpdateViewController.xib */; };
 		E56AFF0E214658FE00247658 /* GreenDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFEB4214658FE00247658 /* GreenDialog.swift */; };
@@ -125,6 +133,8 @@
 		E580F3D52126C740001EF05B /* DetailParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3C02126C73F001EF05B /* DetailParkViewController.swift */; };
 		E580F3D62126C740001EF05B /* DetailParkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3C12126C73F001EF05B /* DetailParkViewController.xib */; };
 		E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C454020AC160500C493DA /* MyParkListViewController.swift */; };
+		E58D425E2161D74200BAB26D /* Mobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D425D2161D74200BAB26D /* Mobile.swift */; };
+		E5974F29215CE0D70038EBE9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5974F27215CE0D70038EBE9 /* Model.xcdatamodeld */; };
 		E59F063E20AA9FC9008E0DCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F063D20AA9FC9008E0DCC /* User.swift */; };
 		E59F83CD212C7217004BD65C /* TPKeyboardAvoidingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */; };
 		E5A4918720844AD800399F5A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4918620844AD800399F5A /* Common.swift */; };
@@ -169,6 +179,12 @@
 		BFB12BBC953D9C851EFDC81F /* Pods-MotoPark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotoPark.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MotoPark/Pods-MotoPark.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA0DB51B84AE901DB20ECD6 /* Pods_MotoPark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MotoPark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A6591142D7CFE720FA404E /* Pods-hotmoto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotmoto.release.xcconfig"; path = "Pods/Target Support Files/Pods-hotmoto/Pods-hotmoto.release.xcconfig"; sourceTree = "<group>"; };
+		E503C056215B3C7F0003C471 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
+		E503C057215B3C7F0003C471 /* AttendanceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceViewController.xib; sourceTree = "<group>"; };
+		E503C05A215B6E8B0003C471 /* AttendanceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCollectionViewCell.swift; sourceTree = "<group>"; };
+		E503C05B215B6E8B0003C471 /* AttendanceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceCollectionViewCell.xib; sourceTree = "<group>"; };
+		E503C05F215B88B40003C471 /* NewMobiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMobiViewController.swift; sourceTree = "<group>"; };
+		E503C060215B88B40003C471 /* NewMobiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewMobiViewController.xib; sourceTree = "<group>"; };
 		E5297C882154DAB3004AAA55 /* hotmoto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hotmoto.entitlements; sourceTree = "<group>"; };
 		E530A8B5207760C3006D1454 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		E530A8B7207766D2006D1454 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
@@ -178,6 +194,8 @@
 		E544A17920D944A40029B93E /* libPods-PXGoogleDirections.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-PXGoogleDirections.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54C7E2C2126CDCF00EC5278 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		E5547BFC20E07E3A0062E83E /* GooglePlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlaces.swift; sourceTree = "<group>"; };
+		E564870B21627A5900FC378C /* EditMobiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMobiViewController.swift; sourceTree = "<group>"; };
+		E564870C21627A5900FC378C /* EditMobiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditMobiViewController.xib; sourceTree = "<group>"; };
 		E56AFEAA2146574800247658 /* CountUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountUpdateViewController.swift; sourceTree = "<group>"; };
 		E56AFEAB2146574800247658 /* CountUpdateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountUpdateViewController.xib; sourceTree = "<group>"; };
 		E56AFEB4214658FE00247658 /* GreenDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenDialog.swift; sourceTree = "<group>"; };
@@ -289,6 +307,8 @@
 		E580F3C02126C73F001EF05B /* DetailParkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailParkViewController.swift; sourceTree = "<group>"; };
 		E580F3C12126C73F001EF05B /* DetailParkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailParkViewController.xib; sourceTree = "<group>"; };
 		E58C454020AC160500C493DA /* MyParkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyParkListViewController.swift; sourceTree = "<group>"; };
+		E58D425D2161D74200BAB26D /* Mobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile.swift; sourceTree = "<group>"; };
+		E5974F28215CE0D70038EBE9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E59F063D20AA9FC9008E0DCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TPKeyboardAvoidingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5A4918620844AD800399F5A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -353,12 +373,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E503C05E215B88770003C471 /* NewMobi */ = {
+			isa = PBXGroup;
+			children = (
+				E503C05F215B88B40003C471 /* NewMobiViewController.swift */,
+				E503C060215B88B40003C471 /* NewMobiViewController.xib */,
+			);
+			path = NewMobi;
+			sourceTree = "<group>";
+		};
 		E54C7E2B2126CDCF00EC5278 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				E54C7E2C2126CDCF00EC5278 /* GoogleMaps.bundle */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E564870A2162790900FC378C /* EditMobi */ = {
+			isa = PBXGroup;
+			children = (
+				E564870B21627A5900FC378C /* EditMobiViewController.swift */,
+				E564870C21627A5900FC378C /* EditMobiViewController.xib */,
+			);
+			path = EditMobi;
 			sourceTree = "<group>";
 		};
 		E56AFEB2214658FD00247658 /* GreenFramework */ = {
@@ -528,6 +566,8 @@
 		E580F3A62126C73F001EF05B /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				E564870A2162790900FC378C /* EditMobi */,
+				E503C05E215B88770003C471 /* NewMobi */,
 				E580F3A72126C73F001EF05B /* InfoPark */,
 				E580F3AC2126C73F001EF05B /* SlectionBar */,
 				E580F3AF2126C73F001EF05B /* DataPicker */,
@@ -631,6 +671,7 @@
 		E5DE3A462067382C007C4D1F /* hotmoto */ = {
 			isa = PBXGroup;
 			children = (
+				E5974F27215CE0D70038EBE9 /* Model.xcdatamodeld */,
 				E5297C882154DAB3004AAA55 /* hotmoto.entitlements */,
 				E580F3A62126C73F001EF05B /* Custom */,
 				E5DE3A6520673E0C007C4D1F /* Guest */,
@@ -663,6 +704,7 @@
 				E530A8B5207760C3006D1454 /* Park.swift */,
 				E530A8B7207766D2006D1454 /* Guest.swift */,
 				E59F063D20AA9FC9008E0DCC /* User.swift */,
+				E58D425D2161D74200BAB26D /* Mobile.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -684,6 +726,10 @@
 				E58C454020AC160500C493DA /* MyParkListViewController.swift */,
 				E542786A20F0BDF300C302CE /* InputTextCell.swift */,
 				E542786B20F0BDF300C302CE /* InputTextCell.xib */,
+				E503C056215B3C7F0003C471 /* AttendanceViewController.swift */,
+				E503C057215B3C7F0003C471 /* AttendanceViewController.xib */,
+				E503C05A215B6E8B0003C471 /* AttendanceCollectionViewCell.swift */,
+				E503C05B215B6E8B0003C471 /* AttendanceCollectionViewCell.xib */,
 			);
 			path = Parking;
 			sourceTree = "<group>";
@@ -787,6 +833,7 @@
 				E56AFF61214658FE00247658 /* ABView.xib in Resources */,
 				E580F3C42126C73F001EF05B /* InfoItemCell.xib in Resources */,
 				E56AFF0F214658FE00247658 /* DialogInfoView.xib in Resources */,
+				E503C05D215B6E8B0003C471 /* AttendanceCollectionViewCell.xib in Resources */,
 				E56AFF2F214658FE00247658 /* GGuita.png in Resources */,
 				E56AFF5C214658FE00247658 /* GreenInfoFieldSymbol.xib in Resources */,
 				E542786D20F0BDF300C302CE /* InputTextCell.xib in Resources */,
@@ -805,6 +852,7 @@
 				E56AFF56214658FE00247658 /* MIDateView.xib in Resources */,
 				E56AFF3E214658FE00247658 /* Panel.png in Resources */,
 				E580F3C32126C73F001EF05B /* InfoParkView.xib in Resources */,
+				E503C062215B88B40003C471 /* NewMobiViewController.xib in Resources */,
 				E5DE3A522067382C007C4D1F /* LaunchScreen.storyboard in Resources */,
 				E56AFF2B214658FE00247658 /* GHome.png in Resources */,
 				E580F3CC2126C740001EF05B /* CostPicker.xib in Resources */,
@@ -812,10 +860,12 @@
 				E56AFF48214658FE00247658 /* GEmail.png in Resources */,
 				E56AFF58214658FE00247658 /* GreenSwipeView.xib in Resources */,
 				E56AFF38214658FE00247658 /* GNext.png in Resources */,
+				E564870E21627A5900FC378C /* EditMobiViewController.xib in Resources */,
 				E580F3C92126C740001EF05B /* MobileType.xib in Resources */,
 				E56AFF43214658FE00247658 /* Trash.png in Resources */,
 				E56AFF50214658FE00247658 /* GreenInfoFieldHorizontal.xib in Resources */,
 				E56AFF42214658FE00247658 /* GDashboard.png in Resources */,
+				E503C059215B3C7F0003C471 /* AttendanceViewController.xib in Resources */,
 				E56AFF30214658FE00247658 /* GPlus.png in Resources */,
 				E580F3CF2126C740001EF05B /* SizePicker.xib in Resources */,
 				E56AFF4A214658FE00247658 /* Refresh.png in Resources */,
@@ -900,8 +950,11 @@
 				E56AFF5D214658FE00247658 /* GreenButtonCenter.swift in Sources */,
 				E580F3D42126C740001EF05B /* ListParksViewController.swift in Sources */,
 				E56AFF0E214658FE00247658 /* GreenDialog.swift in Sources */,
+				E58D425E2161D74200BAB26D /* Mobile.swift in Sources */,
+				E564870D21627A5900FC378C /* EditMobiViewController.swift in Sources */,
 				E56AFF52214658FE00247658 /* ABView.swift in Sources */,
 				E5DE3A6D2067473A007C4D1F /* ParkViewController.swift in Sources */,
+				E503C058215B3C7F0003C471 /* AttendanceViewController.swift in Sources */,
 				E56AFF1D214658FE00247658 /* GreenExtension+Array.swift in Sources */,
 				E56AFF17214658FE00247658 /* GreenExtension+UIImage.swift in Sources */,
 				E56AFF10214658FE00247658 /* DialogInfoView.swift in Sources */,
@@ -916,6 +969,8 @@
 				E5DE3A4A2067382C007C4D1F /* ViewController.swift in Sources */,
 				E580F3D52126C740001EF05B /* DetailParkViewController.swift in Sources */,
 				E5DE3A692067439E007C4D1F /* Constant.swift in Sources */,
+				E503C061215B88B40003C471 /* NewMobiViewController.swift in Sources */,
+				E503C05C215B6E8B0003C471 /* AttendanceCollectionViewCell.swift in Sources */,
 				E578B0F420BB002900D8F0A9 /* UIViewController+ImagePicker.swift in Sources */,
 				E580F3D12126C740001EF05B /* DataPickerViewController.swift in Sources */,
 				E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */,
@@ -950,6 +1005,7 @@
 				E56AFF22214658FE00247658 /* GreenView.swift in Sources */,
 				E56AFF18214658FE00247658 /* UIDeviceExtension.swift in Sources */,
 				E5DE3A5D20673AF4007C4D1F /* Services.swift in Sources */,
+				E5974F29215CE0D70038EBE9 /* Model.xcdatamodeld in Sources */,
 				E56AFF21214658FE00247658 /* GreenTextView.swift in Sources */,
 				E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */,
 				E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */,
@@ -1178,6 +1234,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E5974F27215CE0D70038EBE9 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E5974F28215CE0D70038EBE9 /* Model.xcdatamodel */,
+			);
+			currentVersion = E5974F28215CE0D70038EBE9 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E5DE3A3C2067382C007C4D1F /* Project object */;
 }

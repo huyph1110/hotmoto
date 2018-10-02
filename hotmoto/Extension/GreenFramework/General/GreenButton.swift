@@ -10,5 +10,14 @@ import UIKit
 
  class GreenButton: UIButton
 {
+    func initStyle()
+    {
+        self.backgroundColor = ColorsConfig.button_green
+        self.layer.cornerRadius = 5
+        self.setTitleColor(UIColor.white, for: .normal)
+    }
     
+    override  func awakeFromNib() {
+        initStyle()
+    }
 }

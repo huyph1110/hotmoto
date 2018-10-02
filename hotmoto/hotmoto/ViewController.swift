@@ -36,7 +36,6 @@ class ViewController: UIViewController {
         txfUserName.leftViewMode = UITextFieldViewMode.always
         txfPasswords.leftView = paddingView2
         txfPasswords.leftViewMode = UITextFieldViewMode.always
-
     }
 
     override func didReceiveMemoryWarning() {

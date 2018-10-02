@@ -14,8 +14,7 @@ import KMPlaceholderTextView
 
 class ParkManagerViewController: UIViewController,MapSelectionViewControllerDelegate {
  
-    
-   
+
     func mapSelectionDidSelect(location: CLLocationCoordinate2D, suggest: String?) {
         coordinate = location
         txvAddress.text = suggest
@@ -70,13 +69,8 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
             (vc as! MapSelectionViewController).delegate = self
             (vc as! MapSelectionViewController).parkCoordinate = park?.position
         }
-        
-        
     }
 
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     @IBOutlet weak var barCost: SlectionBarView!
     @IBOutlet weak var barType: SlectionBarView!
@@ -96,7 +90,10 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
     
     
     var park: Park?
-    
+    var attendanceVC = AttendanceViewController()
+    @IBAction func parking(_ sender: Any) {
+        self.present(attendanceVC, animated: true, completion: nil)
+    }
     func loadPark()  {
         if park != nil  {
             timeValue = [(park?.openTime)!, (park?.closeTime)!]

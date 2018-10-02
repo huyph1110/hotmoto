@@ -77,7 +77,7 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
     
 
     @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+      //  self.dismiss(animated: true, completion: nil)
     }
     
     /*

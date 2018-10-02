@@ -74,18 +74,15 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cancel(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
-    }
+
     
     @IBAction func selectLocation(_ sender: Any) {
         scrollSuggestView.isHidden  = true
     }
     
     @IBAction func skip(_ sender: Any) {
-        
         delegate?.mapSelectionDidSelect(location: coordinate, suggest: nil)
-        self.dismiss(animated: false, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     func setupSubViews()  {
         self.view.bringSubview(toFront: btnSelect)
