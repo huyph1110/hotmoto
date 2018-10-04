@@ -23,7 +23,7 @@ Insert: (POST):http://hotmoto.mr47.net/parkings
 		"username":"lean",
 		"email":"leantompro@gmail.com",
 		"imageUrl":"",
-		"description":"",
+		"description_park":"",
 		"type":0
   }
 
