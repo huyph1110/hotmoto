@@ -10,8 +10,8 @@ import UIKit
 import AVFoundation
 class NewMobiViewController: UIViewController {
 
+    @IBOutlet weak var btnRefresh: UIButton!
     @IBOutlet weak var txfCode: UITextField!
-    @IBOutlet weak var imvValue: UIImageView!
     @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var screenView: UIView!
     var captureSession: AVCaptureSession?
@@ -64,9 +64,10 @@ class NewMobiViewController: UIViewController {
             
             screenView.layer.addSublayer(videoPreviewLayer!)
             screenView.bringSubview(toFront: captureButton)
+            screenView.bringSubview(toFront: btnRefresh)
+
             //start video capture
             captureSession?.startRunning()
-                        
             //Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
             
@@ -86,6 +87,11 @@ class NewMobiViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         videoPreviewLayer?.frame = screenView.layer.bounds
     }
+    override func viewWillAppear(_ animated: Bool) {
+        if captureSession?.isRunning == false {
+            captureSession?.startRunning()
+        }
+    }
     @IBAction func capture(_ sender: Any) {
         guard let capturePhotoOutput = self.capturePhotoOutput else { return }
         
@@ -100,6 +106,11 @@ class NewMobiViewController: UIViewController {
         // Call capturePhoto method by passing our photo settings and a delegate implementing AVCapturePhotoCaptureDelegate
         capturePhotoOutput.capturePhoto(with: photoSettings, delegate: self)
     }
+    
+    @IBAction func resume(_ sender: Any) {
+        captureSession?.startRunning()
+        
+    }
     @IBAction func quit(_ sender: Any) {
         dismiss()
     }
@@ -109,6 +120,8 @@ class NewMobiViewController: UIViewController {
             let newmobile = initMobile()
             newmobile.code = txfCode.text
             newmobile.image = imgData
+            newmobile.state = Mobi_State.checkin.rawValue
+            newmobile.timein = Date()
             complete?(newmobile)
 
         }
@@ -148,6 +161,8 @@ extension NewMobiViewController : AVCapturePhotoCaptureDelegate {
                      resolvedSettings: AVCaptureResolvedPhotoSettings,
                      bracketSettings: AVCaptureBracketedStillImageSettings?,
                      error: Error?) {
+        captureSession?.stopRunning()
+
         // Make sure we get some photo sample buffer
         guard error == nil,
             let photoSampleBuffer = photoSampleBuffer else {
@@ -164,13 +179,15 @@ extension NewMobiViewController : AVCapturePhotoCaptureDelegate {
         let ratio = CGFloat( 500) / CGFloat(imageData.count)
 
         let capturedImage = UIImage.init(data: imageData , scale: ratio)
-        
+        let data = capturedImage?.dataValue()
+        //            imvValue.image = image
+        imgData = data
+        /*
         if let image = capturedImage {
             // Save our captured image to photos album
-            imvValue.image = image
-            imgData = imageData
            // UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
+         */
     }
 }
 extension NewMobiViewController : AVCaptureMetadataOutputObjectsDelegate {

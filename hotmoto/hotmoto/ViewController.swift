@@ -47,7 +47,10 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: segue_type.guest.rawValue, sender: self)
 
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     @IBAction func login(_ sender: UIButton) {
     
         

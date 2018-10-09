@@ -24,9 +24,11 @@ class Park: Mi {
     @objc dynamic var username =  ""
     @objc dynamic var fullname =  ""
     @objc dynamic var imageUrl =  ""
+
     @objc dynamic var cost =  0
     @objc dynamic var numberHours =  0
     @objc dynamic var type =  0
+    @objc dynamic var description_park =  ""
 
 
 
@@ -73,6 +75,8 @@ class insertParkReq: Mi {
     @objc dynamic  var address: String?
     @objc dynamic  var phone: String?
     @objc dynamic  var username: String?
+    @objc dynamic  var description_park: String?
+
       var total: Int?
       var AvailableSlot:  Int?
       var openTime:  Int?

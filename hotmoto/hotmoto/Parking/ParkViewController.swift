@@ -11,6 +11,7 @@ import Cloudinary
 import GoogleMaps
 import Alamofire
 import KMPlaceholderTextView
+import JGProgressHUD
 
 class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     func mapSelectionDidSelect(location: CLLocationCoordinate2D, suggest: String?) {
@@ -33,8 +34,6 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     @IBOutlet weak var barSize: SlectionBarView!
     @IBOutlet weak var barPhone: SlectionBarView!
     
-
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -42,7 +41,6 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         if vc is MapSelectionViewController {
             (vc as! MapSelectionViewController).delegate = self
         }
-        
 
     }
 
@@ -94,22 +92,30 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     }
     
     @IBAction func createPark(_ sender: Any) {
-        addNewPark()
+        prepareAndAddPark()
     }
     
-    func uploadImage(data: Data, name: String) {
-        
-        
+    func uploadImage(data: Data, name: String, complete: @escaping (() -> Void)) {
+        let hud = JGProgressHUD(style: .dark)
+        hud.indicatorView = JGProgressHUDRingIndicatorView()
+        hud.textLabel.text = "Đang gửi file"
+        hud.show(in: self.view)
+
         _ =  cloudinary.createUrl().generate(name)
         cloudinary.createUploader().signedUpload(data: data, params: nil, progress: { (progress) in
             print(progress.fractionCompleted)
+            hud.progress = Float(progress.fractionCompleted)
+
         }) { (resul, error) in
             print(error?.description ?? "")
             if error == nil {
-                self.urlImage = resul?.url
                 self.imvAvatar.image = UIImage.init(data: data)
+                hud.textLabel.text = ""
+                hud.indicatorView = JGProgressHUDSuccessIndicatorView()
             }
-
+            self.urlImage = resul?.url
+            complete()
+            hud.dismiss()
         }
 
     }
@@ -120,8 +126,8 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         let image = info[UIImagePickerControllerEditedImage] as! UIImage
         //let url = info[UIImagePickerControllerReferenceURL] as! String
         //let type = info[UIImagePickerControllerMediaType] as! String
-        let data = UIImagePNGRepresentation(image)
-        uploadImage(data: data!, name: generateImageName(type: "png")!)
+        imvAvatar.image = image
+        imageData = UIImagePNGRepresentation(image)
         picker.dismiss(animated: true, completion: nil)
         
     }
@@ -134,15 +140,30 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         }
         return nil
     }
+    var imageData: Data?
+
     var urlImage: String?
     var coordinate: CLLocationCoordinate2D? = nil
-    func addNewPark()  {
+    func prepareAndAddPark()  {
         if validateData() == false {
             return
         }
+        if let data = imageData {
+            uploadImage(data: data, name: generateImageName(type: "png")!, complete: {
+                () -> Void in
+                self.addNewPark()
+            })
+            
+        }else {
+            addNewPark()
+        }
         
+    }
+    func addNewPark()  {
+      
         App.showLoadingOnView(view: self.view)
         let request = insertParkReq()
+        request.description_park = txvDescription.text
         request.location = location(coordinate: coordinate!)
         request.name = txvParkName.text
         request.address = txvAddress.text

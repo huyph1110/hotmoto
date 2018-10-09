@@ -8,25 +8,41 @@
 
 import UIKit
 
-class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource {
+class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UISearchBarDelegate {
 
-
+    var park: Park?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionCode.register(UINib(nibName: "AttendanceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         // Do any additional setup after loading the view.
-        arrayMobi = fetchMobies()
+        
+        if let apark = park {
+            let array = fetchMobies()
+            arrayMobi = array.filter{$0.parkID == apark.id && $0.state == Mobi_State.checkin.rawValue}
+            arrayMobiResult = arrayMobi
+        }
+        
         newmobiVC.complete = {
             (mobile) -> Void in
+            mobile.parkID = self.park?.id
             mobile.save()
             self.newmobiVC.dismiss()
             self.arrayMobi.insert(mobile, at: 0)
-            self.collectionCode.insertItems(at: [IndexPath(item: 0, section: 0)])
+            self.arrayMobiResult.insert(mobile, at: 0)
+
+            self.collectionCode.insertItems(at: [IndexPath(row: 0, section: 0)])
         }
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
     @IBAction func history(_ sender: Any) {
-    
+        let vc = HistoryViewController()
+        vc.park = park
+        self.present(vc) {
+            
+        }
     }
     var newmobiVC = NewMobiViewController()
     
@@ -39,14 +55,15 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var collectionCode: UICollectionView!
     var arrayMobi = [Mobile]()
-    
+    var arrayMobiResult = [Mobile]()
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayMobi.count
+        return arrayMobiResult.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let mobile = arrayMobi[indexPath.row]
+        let mobile = arrayMobiResult[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AttendanceCollectionViewCell
         cell.lblCode.text = mobile.code
         if mobile.image != nil {
@@ -60,7 +77,7 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let mobile = arrayMobi[indexPath.row]
+        let mobile = arrayMobiResult[indexPath.row]
         let mobivc = EditMobiViewController()
         mobivc.mobi = mobile
         mobivc.saveComplete = {
@@ -70,7 +87,7 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
         }
         mobivc.delComplete = {
             () -> Void in
-            self.arrayMobi.remove(at: indexPath.row)
+            self.arrayMobiResult.remove(at: indexPath.row)
             collectionView.deleteItems(at: [indexPath])
             mobivc.dismiss()
 
@@ -94,6 +111,16 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
     }
     */
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.length > 0 {
+            arrayMobiResult = arrayMobi.filter{ ($0.code?.contains(searchText))!}
+        }else {
+            arrayMobiResult = arrayMobi
+        }
+        collectionCode.reloadData()
+    }
     
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchbar.resignFirstResponder()
+    }
 }

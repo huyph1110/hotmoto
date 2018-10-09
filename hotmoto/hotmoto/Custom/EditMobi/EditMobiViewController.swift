@@ -28,7 +28,9 @@ class EditMobiViewController: UIViewController {
     @IBAction func release(_ sender: Any) {
         self.showConfirm(title: "Xác nhận trả xe?", detail: "") { (ok) in
             if ok {
-                self.mobi?.delete()
+                self.mobi?.state = Mobi_State.checkout.rawValue
+                self.mobi?.timeout = Date()
+                self.mobi?.save()
                 self.delComplete?()
             }
         }

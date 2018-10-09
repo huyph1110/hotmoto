@@ -8,6 +8,14 @@
 
 import UIKit
 import CoreData
+
+enum Mobi_State: Int16 {
+    case checkin = 1
+    case checkout = 0
+    case delete = -1
+
+}
+
 func fetchMobies() -> [Mobile] {
 
     let managedContext = App.persistentContainer.viewContext
@@ -17,6 +25,18 @@ func fetchMobies() -> [Mobile] {
     
     return results as! [Mobile]
 }
+
+func fetchMobies(predicate: NSPredicate) -> [Mobile] {
+    
+    let managedContext = App.persistentContainer.viewContext
+    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Mobile")
+    fetch.predicate = predicate
+    
+    let results = try! managedContext.fetch(fetch)
+    
+    return results as! [Mobile]
+}
+
 extension Mobile {
    
     func save(){
@@ -29,6 +49,7 @@ extension Mobile {
     }
     
     func delete()  {
+        
         let managedContext = App.persistentContainer.viewContext
         managedContext.delete(self)
         do {
@@ -51,6 +72,6 @@ func initMobile() -> Mobile {
     
     let managedContext = App.persistentContainer.viewContext
     let mobiEntity = NSEntityDescription.entity(forEntityName: "Mobile", in: managedContext)!
-    let mobi = NSManagedObject(entity: mobiEntity, insertInto: managedContext)
-    return mobi as! Mobile
+    let mobi = NSManagedObject(entity: mobiEntity, insertInto: managedContext) as! Mobile
+    return mobi
 }

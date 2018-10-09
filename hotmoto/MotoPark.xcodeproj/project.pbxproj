@@ -109,6 +109,8 @@
 		E56AFF5F214658FE00247658 /* GreenSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFF0B214658FE00247658 /* GreenSwipeView.swift */; };
 		E56AFF60214658FE00247658 /* GreenInfoFieldSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56AFF0C214658FE00247658 /* GreenInfoFieldSymbol.swift */; };
 		E56AFF61214658FE00247658 /* ABView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56AFF0D214658FE00247658 /* ABView.xib */; };
+		E5713E62216715EF00EBA4C0 /* HistoryMobiViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5713E60216715EF00EBA4C0 /* HistoryMobiViewCell.swift */; };
+		E5713E63216715EF00EBA4C0 /* HistoryMobiViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5713E61216715EF00EBA4C0 /* HistoryMobiViewCell.xib */; };
 		E578B0F220BAFEB100D8F0A9 /* DSCameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E578B0F120BAFEB100D8F0A9 /* DSCameraHandler.swift */; };
 		E578B0F420BB002900D8F0A9 /* UIViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E578B0F320BB002900D8F0A9 /* UIViewController+ImagePicker.swift */; };
 		E580F3C22126C73F001EF05B /* InfoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580F3A82126C73F001EF05B /* InfoItemCell.swift */; };
@@ -154,6 +156,8 @@
 		E5DE3A6B206746CE007C4D1F /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A6A206746CE007C4D1F /* GuestViewController.swift */; };
 		E5DE3A6D2067473A007C4D1F /* ParkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A6C2067473A007C4D1F /* ParkViewController.swift */; };
 		E5EFB32E20A1527D00F4AEB9 /* MapTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EFB32D20A1527D00F4AEB9 /* MapTasks.swift */; };
+		E5F296562166241100AEB0DB /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F296542166241100AEB0DB /* HistoryViewController.swift */; };
+		E5F296572166241100AEB0DB /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5F296552166241100AEB0DB /* HistoryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -282,6 +286,8 @@
 		E56AFF0B214658FE00247658 /* GreenSwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenSwipeView.swift; sourceTree = "<group>"; };
 		E56AFF0C214658FE00247658 /* GreenInfoFieldSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenInfoFieldSymbol.swift; sourceTree = "<group>"; };
 		E56AFF0D214658FE00247658 /* ABView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ABView.xib; sourceTree = "<group>"; };
+		E5713E60216715EF00EBA4C0 /* HistoryMobiViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMobiViewCell.swift; sourceTree = "<group>"; };
+		E5713E61216715EF00EBA4C0 /* HistoryMobiViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryMobiViewCell.xib; sourceTree = "<group>"; };
 		E578B0F120BAFEB100D8F0A9 /* DSCameraHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DSCameraHandler.swift; sourceTree = "<group>"; };
 		E578B0F320BB002900D8F0A9 /* UIViewController+ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ImagePicker.swift"; sourceTree = "<group>"; };
 		E57A4EE52158987600A22D8C /* MotoPark.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MotoPark.entitlements; sourceTree = "<group>"; };
@@ -330,6 +336,8 @@
 		E5DE3A6A206746CE007C4D1F /* GuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
 		E5DE3A6C2067473A007C4D1F /* ParkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkViewController.swift; sourceTree = "<group>"; };
 		E5EFB32D20A1527D00F4AEB9 /* MapTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTasks.swift; sourceTree = "<group>"; };
+		E5F296542166241100AEB0DB /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		E5F296552166241100AEB0DB /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,6 +562,19 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		E5713E5F216715B200EBA4C0 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				E503C05A215B6E8B0003C471 /* AttendanceCollectionViewCell.swift */,
+				E503C05B215B6E8B0003C471 /* AttendanceCollectionViewCell.xib */,
+				E542786A20F0BDF300C302CE /* InputTextCell.swift */,
+				E542786B20F0BDF300C302CE /* InputTextCell.xib */,
+				E5713E60216715EF00EBA4C0 /* HistoryMobiViewCell.swift */,
+				E5713E61216715EF00EBA4C0 /* HistoryMobiViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
 		E578B0F020BAFEB100D8F0A9 /* libs */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,16 +741,15 @@
 		E5DE3A6620673E0C007C4D1F /* Parking */ = {
 			isa = PBXGroup;
 			children = (
+				E5713E5F216715B200EBA4C0 /* cells */,
 				E5DE3A6C2067473A007C4D1F /* ParkViewController.swift */,
 				E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */,
 				E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */,
 				E58C454020AC160500C493DA /* MyParkListViewController.swift */,
-				E542786A20F0BDF300C302CE /* InputTextCell.swift */,
-				E542786B20F0BDF300C302CE /* InputTextCell.xib */,
 				E503C056215B3C7F0003C471 /* AttendanceViewController.swift */,
 				E503C057215B3C7F0003C471 /* AttendanceViewController.xib */,
-				E503C05A215B6E8B0003C471 /* AttendanceCollectionViewCell.swift */,
-				E503C05B215B6E8B0003C471 /* AttendanceCollectionViewCell.xib */,
+				E5F296542166241100AEB0DB /* HistoryViewController.swift */,
+				E5F296552166241100AEB0DB /* HistoryViewController.xib */,
 			);
 			path = Parking;
 			sourceTree = "<group>";
@@ -851,8 +871,10 @@
 				E56AFF45214658FE00247658 /* GCheck.png in Resources */,
 				E56AFF56214658FE00247658 /* MIDateView.xib in Resources */,
 				E56AFF3E214658FE00247658 /* Panel.png in Resources */,
+				E5713E63216715EF00EBA4C0 /* HistoryMobiViewCell.xib in Resources */,
 				E580F3C32126C73F001EF05B /* InfoParkView.xib in Resources */,
 				E503C062215B88B40003C471 /* NewMobiViewController.xib in Resources */,
+				E5F296572166241100AEB0DB /* HistoryViewController.xib in Resources */,
 				E5DE3A522067382C007C4D1F /* LaunchScreen.storyboard in Resources */,
 				E56AFF2B214658FE00247658 /* GHome.png in Resources */,
 				E580F3CC2126C740001EF05B /* CostPicker.xib in Resources */,
@@ -915,10 +937,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MotoPark/Pods-MotoPark-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MotoPark/Pods-MotoPark-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoidingSwift/TPKeyboardAvoidingSwift.framework",
@@ -928,13 +951,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoidingSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MotoPark/Pods-MotoPark-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MotoPark/Pods-MotoPark-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -960,6 +984,7 @@
 				E56AFF10214658FE00247658 /* DialogInfoView.swift in Sources */,
 				E56AFF14214658FE00247658 /* GreenExtension+String.swift in Sources */,
 				E580F3D02126C740001EF05B /* CostPicker.swift in Sources */,
+				E5713E62216715EF00EBA4C0 /* HistoryMobiViewCell.swift in Sources */,
 				E56AFF19214658FE00247658 /* GreenExtention+UIView.swift in Sources */,
 				E530A8B6207760C3006D1454 /* Park.swift in Sources */,
 				E56AFF55214658FE00247658 /* MIDateView.swift in Sources */,
@@ -1007,6 +1032,7 @@
 				E5DE3A5D20673AF4007C4D1F /* Services.swift in Sources */,
 				E5974F29215CE0D70038EBE9 /* Model.xcdatamodeld in Sources */,
 				E56AFF21214658FE00247658 /* GreenTextView.swift in Sources */,
+				E5F296562166241100AEB0DB /* HistoryViewController.swift in Sources */,
 				E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */,
 				E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */,
 				E56AFF23214658FE00247658 /* GreenButton.swift in Sources */,

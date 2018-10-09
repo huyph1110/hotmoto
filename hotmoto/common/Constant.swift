@@ -10,6 +10,7 @@ import UIKit
 var cloudName = "huyph00"
 var apiKey = "751342836181944"
 var apiSecret = "tvuVpl7UHhIuzWu83G1UYPo5ZyQ"
+
 let GoogleMap_API = "AIzaSyBxsfr_Ymwg4FByyh1S6K7Xrczj6WQ4kwA"
 
 class Constant: NSObject {
@@ -22,6 +23,13 @@ enum LOGIN_TYPE {
 enum LOGIN_ACCOUNT : String {
     case USER = "LOGINUSER"
     case PASS = "LOGINPASS"
+    case TOKEN = "TOKEN"
+
+}
+enum SYSTEM : String {
+
+    case TOKEN = "TOKEN"
+    
 }
 
 

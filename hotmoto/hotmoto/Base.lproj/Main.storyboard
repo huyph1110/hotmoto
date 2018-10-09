@@ -196,7 +196,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Danh sách bãi đỗ" id="b7y-vf-lK7">
-                        <barButtonItem key="backBarButtonItem" title=" " id="mq4-fc-c7e"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="Q0d-dl-zj1"/>
                         <barButtonItem key="rightBarButtonItem" title="thêm" id="Erd-V4-3jt">
                             <connections>
                                 <segue destination="da2-fQ-6CG" kind="show" id="96d-in-DZw"/>
@@ -824,7 +824,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="r5Z-JY-YEg">
                         <barButtonItem key="backBarButtonItem" title=" " id="33h-5N-o4s"/>
-                        <barButtonItem key="rightBarButtonItem" title="Bãi xe" id="SKN-XR-hdL">
+                        <barButtonItem key="rightBarButtonItem" title="Vào bãi xe" id="SKN-XR-hdL">
                             <connections>
                                 <action selector="parking:" destination="e66-5I-Bkq" id="oZO-KW-Czy"/>
                             </connections>
@@ -838,6 +838,7 @@
                         <outlet property="barType" destination="ZZf-fL-NwE" id="zM6-k5-Mrr"/>
                         <outlet property="imvAvatar" destination="5X7-a4-nSm" id="eL0-AC-dKm"/>
                         <outlet property="txvAddress" destination="bjw-FV-Dc6" id="iF3-pU-oni"/>
+                        <outlet property="txvDescription" destination="PFv-C9-RhY" id="FN3-yl-wkJ"/>
                         <outlet property="txvName" destination="Tbk-qD-WEu" id="Tu0-rD-0AD"/>
                     </connections>
                 </viewController>
@@ -967,6 +968,6 @@
         <image name="pin" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K3m-Up-In1"/>
+        <segue reference="lOA-rH-KUq"/>
     </inferredMetricsTieBreakers>
 </document>

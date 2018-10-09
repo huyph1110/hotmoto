@@ -11,6 +11,7 @@ import GoogleMaps
 import Cloudinary
 import Alamofire
 import KMPlaceholderTextView
+import JGProgressHUD
 
 class ParkManagerViewController: UIViewController,MapSelectionViewControllerDelegate {
  
@@ -78,6 +79,7 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
     @IBOutlet weak var barSize: SlectionBarView!
     @IBOutlet weak var barPhone: SlectionBarView!
 
+    @IBOutlet weak var txvDescription: KMPlaceholderTextView!
     @IBOutlet weak var imvAvatar: UIImageView!
    // @IBOutlet weak var txvType: UITextField!
     @IBOutlet weak var txvName: KMPlaceholderTextView!
@@ -92,6 +94,7 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
     var park: Park?
     var attendanceVC = AttendanceViewController()
     @IBAction func parking(_ sender: Any) {
+        attendanceVC.park = park
         self.present(attendanceVC, animated: true, completion: nil)
     }
     func loadPark()  {
@@ -110,20 +113,36 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
             coordinate = park?.position
             imvAvatar.setImage(url: park?.imageUrl)
             barType.text.text = stringMobileType((park?.type)!)
-           
+            txvDescription.text = park?.description_park
+            self.title = park?.name
+
         }
     }
-    func uploadImage(data: Data, name: String) {
+    var imageData: Data?
+    
+    func uploadImage(data: Data, name: String, complete: @escaping (() -> Void)) {
+        let hud = JGProgressHUD(style: .dark)
+        hud.vibrancyEnabled = true
+        hud.indicatorView = JGProgressHUDRingIndicatorView()
+
+        hud.textLabel.text = "Đang gửi file"
+        hud.show(in: self.view)
+
         _ =  cloudinary.createUrl().generate(name)
         cloudinary.createUploader().signedUpload(data: data, params: nil, progress: { (progress) in
             print(progress.fractionCompleted)
+            hud.progress = Float(progress.fractionCompleted)
         }) { (resul, error) in
             print(error?.description ?? "")
             if error == nil {
-                self.urlImage = resul?.url
-                self.imvAvatar.image = UIImage.init(data: data)
+                hud.textLabel.text = ""
+                hud.indicatorView = JGProgressHUDSuccessIndicatorView()
             }
-            
+            self.urlImage = resul?.url
+
+            complete()
+            hud.dismiss()
+
         }
         
     }
@@ -134,8 +153,10 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         let image = info[UIImagePickerControllerEditedImage] as! UIImage
         //let url = info[UIImagePickerControllerReferenceURL] as! String
         //let type = info[UIImagePickerControllerMediaType] as! String
-        let data = UIImagePNGRepresentation(image)
-        uploadImage(data: data!, name: generateImageName(type: "png")!)
+
+        imvAvatar.image = image
+        imageData = UIImagePNGRepresentation(image)
+
         picker.dismiss(animated: true, completion: nil)
         
     }
@@ -150,10 +171,23 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
     }
     var urlImage: String?
     var coordinate: CLLocationCoordinate2D? = nil
-    func updatePark()  {
+    func prepareAndUpdatePark()  {
         if validateData() == false {
             return
         }
+        if let data = imageData {
+            uploadImage(data: data, name: generateImageName(type: "png")!, complete: {
+                () -> Void in
+                self.updatePark()
+            })
+
+        }else {
+            updatePark()
+        }
+
+    }
+    
+    func updatePark()  {
         
         App.showLoadingOnView(view: self.view)
         let request = insertParkReq()
@@ -171,15 +205,15 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         request.openTime =  timeValue[0]
         request.closeTime =  timeValue[1]
         request.AvailableSlot = park?.AvailableSlot
-        
+        request.description_park = txvDescription.text
         //request.email =  ""
         services.updatePark(request: request, success: {
             App.removeLoadingOnView(view: self.view)
             self.showAlert(title: "Cập nhật thành công", completion: { (_) in
                 self.dismiss(animated: true, completion: nil)
-
+                self.navigationController?.popViewController(animated: true)
             })
-
+            
         }) { (error) in
             App.removeLoadingOnView(view: self.view)
             
@@ -213,8 +247,7 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
     }
 
     @IBAction func save(_ sender: Any) {
-        updatePark()
-        
+        prepareAndUpdatePark()
     }
     
     @IBAction func selectEdit(_ sender: Any) {
@@ -293,7 +326,18 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
     var timeValue = [0,0]
     var sizeValue = [0]
 
-   
+    func removeImage(_ url: String?)  {
+        if let strUrl = url {
+            if let string = strUrl.components(separatedBy: "/").last {
+                if let publicID = string.components(separatedBy: ".").first{
+                    cloudinary.createManagementApi().destroy(publicID, params: nil) { (resul, error) in
+
+                    }
+                }
+            }
+
+        }
+    }
     /*
     // MARK: - Navigation
 

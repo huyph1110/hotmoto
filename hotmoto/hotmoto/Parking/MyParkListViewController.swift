@@ -61,6 +61,8 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         // Dispose of any resources that can be recreated.
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+
         loadMyParks()
 
     }
@@ -76,9 +78,7 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
     @IBOutlet weak var tbvData: UITableView!
     
 
-    @IBAction func back(_ sender: Any) {
-      //  self.dismiss(animated: true, completion: nil)
-    }
+
     
     /*
     // MARK: - Load data

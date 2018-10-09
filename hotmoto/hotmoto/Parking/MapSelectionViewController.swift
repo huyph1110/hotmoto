@@ -29,7 +29,7 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
         
         let text = itemsNearby[indexPath.row].name
         delegate?.mapSelectionDidSelect(location: coordinate, suggest: text)
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var btnSelect: UIButton!

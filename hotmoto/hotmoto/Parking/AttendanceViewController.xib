@@ -42,7 +42,7 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cWi-WF-v3E">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cWi-WF-v3E">
                     <rect key="frame" x="0.0" y="120" width="375" height="506"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SNF-m5-JxT">
@@ -70,7 +70,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="56" id="2o5-Be-Tb5"/>
                     </constraints>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="fZd-PV-1El"/>
                     </connections>

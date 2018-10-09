@@ -11,6 +11,7 @@ import PXGoogleDirections
 import UIKit
 import AlamofireImage
 import CoreData
+import JGProgressHUD
 
 let App = UIApplication.shared.delegate as! AppDelegate
 let mapTasks = MapTasks()
@@ -145,7 +146,10 @@ extension UIImageView {
         }
     }
 }
- func callPhone(_ phone: String) {
+
+
+
+func callPhone(_ phone: String) {
     if let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url) {
         UIApplication.shared.open(url)
         

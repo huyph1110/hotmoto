@@ -149,7 +149,11 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         for park  in arrayParks {
             bounds = bounds.includingCoordinate((park.marker?.position)!)
         }
-        mapView.animate(with: GMSCameraUpdate.fit(bounds, with: UIEdgeInsetsMake(50.0 , 50.0 ,50.0 ,50.0)))
+        var edge = UIEdgeInsetsMake(50.0 , 50.0 ,50.0 ,50.0)
+        if arrayParks.count == 0 {
+            edge = UIEdgeInsetsMake(1000.0 , 1000.0 ,1000.0 ,1000.0)
+        }
+        mapView.animate(with: GMSCameraUpdate.fit(bounds, with: edge))
     }
     func mapviewFocusToMarker( marker: GMSMarker) {
         mapView.animate(toLocation: marker.position)
