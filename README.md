@@ -97,3 +97,21 @@ Register:(POST)   http://hotmoto.mr47.net/users/register
 		"password":"123"
 		
 	}
+
+
+PushNotification Single Device : http://hotmoto.mr47.net/api/pushNotificationSingle
+	{
+	
+     		 "title": "Hello every body",
+     		 "content": "Hello IOS push notification",
+     		 "deviceToken": "86d4683d6da8fb7bee9cab9fdb0b7284a74c4cbc397c65e733786051b2b03f04"
+    
+	}
+	
+Response Data:
+	{
+    		"alert": "{\"aps\":{\"alert\":{\"title\":\"Hello every body\",\"body\":\"Hello IOS push 	notification\"},\"badge\":1,\"sound\":\"bingbong.aiff\"}}",
+	  	"success": true,
+	    	"error": null
+	}
+
