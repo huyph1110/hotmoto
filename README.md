@@ -118,4 +118,15 @@ Response Data:
 	  	"success": true,
 	    	"error": null
 	}
+	
+Register Devicetoken: hotmoto.mr47.net/api/registerDeviceToken
 
+	{
+		"userID":"5afaae8ca0ccf760e2bc605c",
+		"deviceToken":"123"
+	}
+Delete Devicetoken: hotmoto.mr47.net/api/deleteDeviceToken
+
+	{
+		"userID":"5afaae8ca0ccf760e2bc605c"
+	}	
