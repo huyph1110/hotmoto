@@ -100,6 +100,7 @@ Register:(POST)   http://hotmoto.mr47.net/users/register
 
 
 PushNotification Single Device : http://hotmoto.mr47.net/api/pushNotificationSingle
+
 	{
 	
      		 "title": "Hello every body",
@@ -109,8 +110,11 @@ PushNotification Single Device : http://hotmoto.mr47.net/api/pushNotificationSin
 	}
 	
 Response Data:
+
 	{
-    		"alert": "{\"aps\":{\"alert\":{\"title\":\"Hello every body\",\"body\":\"Hello IOS push 	notification\"},\"badge\":1,\"sound\":\"bingbong.aiff\"}}",
+    		"alert": "{\"aps\":{\"alert\":{\"title\":\"Hello every body\",\"body\":\"Hello IOS push 	notification\"},
+		\"badge\":1,
+		\"sound\":\"bingbong.aiff\"}}",
 	  	"success": true,
 	    	"error": null
 	}
