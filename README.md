@@ -87,6 +87,14 @@ Login:(POST)   http://hotmoto.mr47.net/users/login
 		"password":"123"
 		
 	}
+response data login :
+
+	{
+	    "id": "5afaae8ca0ccf760e2bc605c",
+	    "username": "user1",
+	    "password": "password1",
+	    "devicetoken": "123"
+	}
 	
 	
 Register:(POST)   http://hotmoto.mr47.net/users/register
