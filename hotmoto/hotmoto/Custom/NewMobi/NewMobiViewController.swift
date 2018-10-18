@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 class NewMobiViewController: UIViewController {
 
+    @IBOutlet weak var imageview: UIImageView!
     @IBOutlet weak var btnRefresh: UIButton!
     @IBOutlet weak var txfCode: UITextField!
     @IBOutlet weak var captureButton: UIButton!
@@ -44,7 +45,7 @@ class NewMobiViewController: UIViewController {
             
             // Get an instance of ACCapturePhotoOutput class
             capturePhotoOutput = AVCapturePhotoOutput()
-            capturePhotoOutput?.isHighResolutionCaptureEnabled = true
+            capturePhotoOutput?.isHighResolutionCaptureEnabled = false
             
             // Set the output on the capture session
             captureSession?.addOutput(capturePhotoOutput!)
@@ -61,6 +62,7 @@ class NewMobiViewController: UIViewController {
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             videoPreviewLayer?.frame = screenView.layer.bounds
+           
             
             screenView.layer.addSublayer(videoPreviewLayer!)
             screenView.bringSubview(toFront: captureButton)
@@ -84,10 +86,27 @@ class NewMobiViewController: UIViewController {
         }
         
     }
+    func transformOrientation(orientation: UIInterfaceOrientation) -> AVCaptureVideoOrientation {
+
+        switch orientation {
+        case .landscapeLeft:
+            return .landscapeLeft
+        case .landscapeRight:
+            return .landscapeRight
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+        default:
+            return .portrait
+        }
+    }
     override func viewDidLayoutSubviews() {
         videoPreviewLayer?.frame = screenView.layer.bounds
     }
     override func viewWillAppear(_ animated: Bool) {
+        imgData = nil
+        txfCode.text = nil
+        imageview.image = nil
+        
         if captureSession?.isRunning == false {
             captureSession?.startRunning()
         }
@@ -100,7 +119,7 @@ class NewMobiViewController: UIViewController {
         
         // Set photo settings for our need
         photoSettings.isAutoStillImageStabilizationEnabled = true
-        photoSettings.isHighResolutionPhotoEnabled = true
+        photoSettings.isHighResolutionPhotoEnabled = false
         photoSettings.flashMode = .auto
         
         // Call capturePhoto method by passing our photo settings and a delegate implementing AVCapturePhotoCaptureDelegate
@@ -176,12 +195,14 @@ extension NewMobiViewController : AVCapturePhotoCaptureDelegate {
         }
         
         // Initialise an UIImage with our image data
-        let ratio = CGFloat( 500) / CGFloat(imageData.count)
-
-        let capturedImage = UIImage.init(data: imageData , scale: ratio)
-        let data = capturedImage?.dataValue()
-        //            imvValue.image = image
-        imgData = data
+        let ratio = CGFloat(300000) / CGFloat(imageData.count)
+        
+        let capturedImage = UIImage(data: imageData , scale: 1)
+        let imageResult = UIImageJPEGRepresentation(capturedImage! , ratio)
+        
+        //let image = capturedImage.sca
+        imageview.image = UIImage(data: imageResult!)
+        imgData = imageResult
         /*
         if let image = capturedImage {
             // Save our captured image to photos album
@@ -189,7 +210,9 @@ extension NewMobiViewController : AVCapturePhotoCaptureDelegate {
         }
          */
     }
+   
 }
+
 extension NewMobiViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ captureOutput: AVCaptureMetadataOutput,
                         didOutput metadataObjects: [AVMetadataObject],

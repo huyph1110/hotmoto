@@ -88,7 +88,8 @@ class InfoParkView: GreenView, UICollectionViewDelegate, UICollectionViewDataSou
         itemType.icon = iconForTypeWhite(park.type)
         arrayInfo.append(itemType)
         
-        lblCost.attributedText = attriButestringForCost(park.cost , park.numberHours )
+        lblCost.text = stringForCost(park.cost, park.numberHours)
+        
         clvInfo.reloadData()
 
         

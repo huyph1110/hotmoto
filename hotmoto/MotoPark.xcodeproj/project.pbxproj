@@ -692,7 +692,6 @@
 		E5DE3A462067382C007C4D1F /* hotmoto */ = {
 			isa = PBXGroup;
 			children = (
-				E5974F27215CE0D70038EBE9 /* Model.xcdatamodeld */,
 				E5297C882154DAB3004AAA55 /* hotmoto.entitlements */,
 				E580F3A62126C73F001EF05B /* Custom */,
 				E5DE3A6520673E0C007C4D1F /* Guest */,
@@ -721,6 +720,7 @@
 		E5DE3A6220673B6B007C4D1F /* models */ = {
 			isa = PBXGroup;
 			children = (
+				E5974F27215CE0D70038EBE9 /* Model.xcdatamodeld */,
 				E5DE3A6320673B76007C4D1F /* Mi.swift */,
 				E530A8B5207760C3006D1454 /* Park.swift */,
 				E530A8B7207766D2006D1454 /* Guest.swift */,
@@ -802,6 +802,9 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};

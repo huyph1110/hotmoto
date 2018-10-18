@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,13 +20,21 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gara" translatesAutoresizingMaskIntoConstraints="NO" id="gNn-CF-II1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyg-bZ-4X1">
+                                <rect key="frame" x="127.00000000000001" y="65.333333333333343" width="160.33333333333337" height="90.333333333333343"/>
+                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="50"/>
+                                <color key="textColor" red="0.072587020695209503" green="0.09714537113904953" blue="0.25520816445350647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gNn-CF-II1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2lg-Xu-ADT"/>
+                            <constraint firstItem="Vyg-bZ-4X1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.3" id="IGy-eQ-A04"/>
                             <constraint firstItem="gNn-CF-II1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OuK-5r-gbr"/>
+                            <constraint firstItem="Vyg-bZ-4X1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kaK-aJ-CVA"/>
                             <constraint firstItem="gNn-CF-II1" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="uiu-56-QKI"/>
                             <constraint firstItem="gNn-CF-II1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wBl-Os-Isc"/>
                         </constraints>

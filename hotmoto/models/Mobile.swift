@@ -38,7 +38,7 @@ func fetchMobies(predicate: NSPredicate) -> [Mobile] {
 }
 
 extension Mobile {
-   
+    
     func save(){
         let managedContext = App.persistentContainer.viewContext
         do {

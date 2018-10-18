@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="btnRefresh" destination="znL-7h-mxt" id="bQ4-Bq-uEI"/>
                 <outlet property="captureButton" destination="ZoS-YA-UXl" id="pGv-Z2-wW2"/>
+                <outlet property="imageview" destination="ePJ-MU-a7p" id="ea2-3e-NO1"/>
                 <outlet property="screenView" destination="kKq-uw-ZqX" id="DqW-a2-GGn"/>
                 <outlet property="txfCode" destination="M4w-Ko-3Gd" id="2Gx-rB-EK3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -88,11 +89,20 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ePJ-MU-a7p">
+                                    <rect key="frame" x="0.0" y="28" width="141" height="128"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="141" id="btx-5m-k38"/>
+                                        <constraint firstAttribute="height" constant="128" id="cOs-Lq-vPm"/>
+                                    </constraints>
+                                </imageView>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="ePJ-MU-a7p" firstAttribute="top" secondItem="PjZ-Ar-f9T" secondAttribute="top" constant="28" id="0UD-pm-ndc"/>
                                 <constraint firstAttribute="trailing" secondItem="kKq-uw-ZqX" secondAttribute="trailing" id="QLT-IB-DIE"/>
                                 <constraint firstItem="M4w-Ko-3Gd" firstAttribute="centerX" secondItem="kKq-uw-ZqX" secondAttribute="centerX" id="Uir-6A-mnW"/>
                                 <constraint firstItem="M4w-Ko-3Gd" firstAttribute="top" secondItem="kKq-uw-ZqX" secondAttribute="bottom" constant="8" id="Vlv-bg-iyH"/>
+                                <constraint firstItem="ePJ-MU-a7p" firstAttribute="leading" secondItem="PjZ-Ar-f9T" secondAttribute="leading" id="bA1-Il-deX"/>
                                 <constraint firstItem="dME-gQ-VE8" firstAttribute="centerX" secondItem="kKq-uw-ZqX" secondAttribute="centerX" id="dVu-pS-1GK"/>
                                 <constraint firstItem="dME-gQ-VE8" firstAttribute="top" secondItem="M4w-Ko-3Gd" secondAttribute="bottom" constant="8" id="e1h-oA-FBd"/>
                                 <constraint firstItem="r4Y-kY-VmJ" firstAttribute="trailing" secondItem="kKq-uw-ZqX" secondAttribute="trailing" constant="-8" id="gaW-Mt-d7i"/>

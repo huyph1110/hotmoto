@@ -10,17 +10,21 @@ import UIKit
 
 class EditMobiViewController: UIViewController {
     var mobi : Mobile?
+    var park : Park?
+
     var saveComplete: (() -> Void)?
     var delComplete: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if mobi != nil {
-            loadMobi(mobi!)
+        if mobi != nil && park != nil{
+            loadMobi(mobi!, park!)
         }
         // Do any additional setup after loading the view.
         
     }
+    @IBOutlet weak var lblCost: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var txfCode: UITextField!
@@ -47,9 +51,11 @@ class EditMobiViewController: UIViewController {
     @IBAction func cancel(_ sender: Any) {
         dismiss()
     }
-    func loadMobi(_ mobi: Mobile) {
+    func loadMobi(_ mobi: Mobile, _ park: Park) {
         imageView.image = UIImage(data: mobi.image!)
         txfCode.text = mobi.code
+        lblTime.text = stringDurationTimeParking(mobi)
+        lblCost.text = stringCostParking(mobi, park)
     }
     func valid() -> Bool {
         if txfCode.text?.count == 0 {

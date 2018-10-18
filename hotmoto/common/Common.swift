@@ -147,7 +147,26 @@ extension UIImageView {
     }
 }
 
+func stringDurationTimeParking(_ mobile: Mobile) -> String {
+    if let datein = mobile.timein {
+        let secs = Date().timeIntervalSince(datein)
+        let hours = secs/3600
+        return String(format: "%.2f giờ", hours)
+    }
+    return ""
+}
 
+func stringCostParking(_ mobile: Mobile, _ park: Park) -> String {
+    if park.numberHours > 0 {
+        let duration = Date().timeIntervalSince(mobile.timein!) / 3600
+        var count = Int(duration)/park.numberHours
+        if Int(duration)%park.numberHours > 0 {
+            count += 1
+        }
+        return money(park.cost * count) + " đ"
+    }
+   return ""
+}
 
 func callPhone(_ phone: String) {
     if let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url) {

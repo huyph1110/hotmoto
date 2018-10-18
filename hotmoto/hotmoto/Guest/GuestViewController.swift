@@ -125,7 +125,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     }
     */
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        
+        shouldLoadParking = false
         if selectedMarker != marker {
             selectedPark = arrayParks.filter({$0.marker == marker}).last
             infoView.dismiss()
@@ -138,42 +138,76 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         infoView.showInfo(inView: self.view)
         infoView.loadPark(park: selectedPark!)
-        self.mapviewFocusToMarker(marker: marker)
+      //  self.mapviewFocusToMarker(marker: marker)
 
     }
-
+    /*
     func mapviewBoundAllMarker()  {
-        var bounds = GMSCoordinateBounds()
-        bounds = bounds.includingCoordinate(selectedLocat!.coordinate)
-
-        for park  in arrayParks {
-            bounds = bounds.includingCoordinate((park.marker?.position)!)
-        }
-        var edge = UIEdgeInsetsMake(50.0 , 50.0 ,50.0 ,50.0)
+        print(mapView.padding)
         if arrayParks.count == 0 {
-            edge = UIEdgeInsetsMake(1000.0 , 1000.0 ,1000.0 ,1000.0)
+            mapView.animate(toLocation: selectedLocat!.coordinate)
+        }else {
+            var bounds = GMSCoordinateBounds()
+            bounds = bounds.includingCoordinate(selectedLocat!.coordinate)
+            
+            for park  in arrayParks {
+                bounds = bounds.includingCoordinate((park.marker?.position)!)
+            }
+            let padding = 100
+            mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: CGFloat(padding)))
+
         }
-        mapView.animate(with: GMSCameraUpdate.fit(bounds, with: edge))
+
     }
+ 
     func mapviewFocusToMarker( marker: GMSMarker) {
-        mapView.animate(toLocation: marker.position)
+        //mapView.animate(toLocation: marker.position)
     }
-    
+     */
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         infoView.dismiss()
+        shouldLoadParking = true
     }
     
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
-        startMarker = GMSMarker(position: coordinate)
-        startMarker!.title = nil
-        startMarker!.tracksViewChanges = true
-        startMarker!.map = mapView
-        startMarker!.icon = #imageLiteral(resourceName: "pin")
-        
-        selectedLocat = CLLocation.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        loadParking(atlocation: coordinate, distance: 1000)
-
+      
     }
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        
+        if shouldLoadParking {
+            selectedLocat = CLLocation.init(latitude: position.target.latitude, longitude: position.target.longitude)
+            loadParking(atlocation: (selectedLocat?.coordinate)!, distance: 1000)
+        }
+    }
+    
+    
+    func getRadius() -> Float {
+        
+        let centerCoordinate = getCenterCoordinate()
+        // init center location from center coordinate
+        let centerLocation = CLLocation(latitude: centerCoordinate.latitude, longitude: centerCoordinate.longitude)
+        let topCenterCoordinate = self.getTopCenterCoordinate()
+        let topCenterLocation = CLLocation(latitude: topCenterCoordinate.latitude, longitude: topCenterCoordinate.longitude)
+        
+        let radius = CLLocationDistance(centerLocation.distance(from: topCenterLocation))
+        
+        return roundf(Float(radius))
+    }
+    func getCenterCoordinate() -> CLLocationCoordinate2D {
+        let centerPoint = self.mapView.center
+        let centerCoordinate = self.mapView.projection.coordinate(for: centerPoint)
+        return centerCoordinate
+    }
+    
+    func getTopCenterCoordinate() -> CLLocationCoordinate2D {
+        // to get coordinate from CGPoint of your map
+        let apoint = CGPoint.init(x: self.mapView.frame.width / 2, y: 0)
+        let topCenterCoor = self.mapView.convert(apoint, from: self.mapView)
+        let point = self.mapView.projection.coordinate(for: topCenterCoor)
+        return point
+    }
+
+    var shouldLoadParking = true
     var startMarker: GMSMarker?
     // MARK: - Services +
 
@@ -184,7 +218,11 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         let long =  locat.longitude
         
         request.position = [Float( long ),Float( lat)]
-        request.scope = distance
+        var radius = getRadius()
+        if radius > 5000 {
+            radius = 5000 // max scope meter
+        }
+        request.scope = radius
         
         services.getParks(request: request, success: { (lstPark) in
             
@@ -194,7 +232,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
                 self.startMarker?.map = self.mapView
                 self.loadArrayPark(parks: lstPark!)
                 App.removeLoadingOnView(view: self.view)
-                self.mapviewBoundAllMarker()
+               // self.mapviewBoundAllMarker()
             }
             
         }) { (error) in
@@ -311,10 +349,8 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
             distance += Int(results[i].totalDuration)
         }
         selectedMarker.title = "~\(stringDistance(distance))  " + (selectedPark?.name)!
-        var padding = 100
-        if results.count == 0 {
-            padding = 1000
-        }
+        let padding = 100
+    
         mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: CGFloat(padding)))
         //results[routeIndex].drawOnMap(mapView, approximate: false, strokeColor: UIColor.purple, strokeWidth: 4.0)
         //results[routeIndex].drawOriginMarkerOnMap(mapView, title: "Origin", color: UIColor.green, opacity: 1.0, flat: true)

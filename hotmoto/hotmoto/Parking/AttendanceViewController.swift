@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UISearchBarDelegate {
 
     var park: Park?
+    @IBOutlet weak var titileBarItem: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,7 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
             let array = fetchMobies()
             arrayMobi = array.filter{$0.parkID == apark.id && $0.state == Mobi_State.checkin.rawValue}
             arrayMobiResult = arrayMobi
+            titileBarItem.title = apark.name
         }
         
         newmobiVC.complete = {
@@ -67,7 +70,8 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AttendanceCollectionViewCell
         cell.lblCode.text = mobile.code
         if mobile.image != nil {
-            cell.imvImage.image = UIImage(data: mobile.image!)
+           
+            cell.imvImage.image = UIImage.af_threadSafeImage(with: mobile.image!)
 
         }else {
             cell.imvImage.image = nil
@@ -80,6 +84,8 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
         let mobile = arrayMobiResult[indexPath.row]
         let mobivc = EditMobiViewController()
         mobivc.mobi = mobile
+        mobivc.park = park
+        
         mobivc.saveComplete = {
             () -> Void in
             collectionView.reloadItems(at: [indexPath])

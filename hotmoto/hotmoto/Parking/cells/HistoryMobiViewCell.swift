@@ -20,16 +20,17 @@ class HistoryMobiViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBOutlet weak var lblValue: UILabel!
     @IBOutlet weak var lblCode: UILabel!
     @IBOutlet weak var imvOut: UIImageView!
     @IBOutlet weak var lblTimeIn: UILabel!
     @IBOutlet weak var lblTimeOut: UILabel!
     
-    func setMobi(_ mobi: Mobile) {
+    func setMobi(_ mobi: Mobile, _ park: Park) {
         lblCode.text = mobi.code
        
         if let date = mobi.timein {
-             lblTimeIn.text = "\(date.hour()):\(date.minute())"
+            lblTimeIn.text = "\(date.hour()):\(date.minute())"
         }else {
             lblTimeIn.text = nil
         }
@@ -37,9 +38,12 @@ class HistoryMobiViewCell: UITableViewCell {
         if let date = mobi.timeout {
             imvOut.isHidden = false
             lblTimeOut.text = "\(date.hour()):\(date.minute())"
+            lblValue.text = stringCostParking(mobi, park)
         }else {
             lblTimeOut.text = nil
             imvOut.isHidden = true
+            lblValue.text = nil
         }
+        
     }
 }
