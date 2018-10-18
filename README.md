@@ -20,6 +20,7 @@ Insert: (POST):http://hotmoto.mr47.net/parkings
 		"fullname":"Le An",
 		"cost":10000,
 		"numberHours":4,
+		"userID":"1234",
 		"username":"lean",
 		"email":"leantompro@gmail.com",
 		"imageUrl":"",
