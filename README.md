@@ -1,6 +1,6 @@
 # hotmoto
-Parkings : http://hotmoto.mr47.net/parkings
-Insert: (POST):http://hotmoto.mr47.net/parkings
+Parkings : http://hotmoto.mr47.net/api/parkings
+Insert: (POST):http://hotmoto.mr47.net/api/parkings
 	example:
 	cost va numberHours gía theo số lượng giờ ví dụ : 5$ / 4hour
     
@@ -28,19 +28,19 @@ Insert: (POST):http://hotmoto.mr47.net/parkings
 		"type":0
   }
 
-Get: (GET) : http://hotmoto.mr47.net/parkings
+Get: (GET) : http://hotmoto.mr47.net/api/parkings
 
-Get Parking theo Username: (POST) : http://hotmoto.mr47.net/parkings/users 
-
-	{
-		"username":"lean"
-	}
-Get Parking theo Username: (POST) : http://hotmoto.mr47.net/parkings/users 
+Get Parking theo Username: (POST) : http://hotmoto.mr47.net/api/parkings/users 
 
 	{
 		"username":"lean"
 	}
-Update: (PUT): http://hotmoto.mr47.net/parkings
+Get Parking theo Username: (POST) : http://hotmoto.mr47.net/api/parkings/users 
+
+	{
+		"username":"lean"
+	}
+Update: (PUT): http://hotmoto.mr47.net/api/parkings
 
 Update Slot: (POST): hotmoto.mr47.net/parkings/updateSlot
 
@@ -60,7 +60,7 @@ Update Price: (POST): hotmoto.mr47.net/parkings/updateCost
 
 }
 
-Delete: (DELETE): http://hotmoto.mr47.net/parkings
+Delete: (DELETE): http://hotmoto.mr47.net/api/parkings
 
 	{
 	
@@ -68,7 +68,7 @@ Delete: (DELETE): http://hotmoto.mr47.net/parkings
 		
 	}
 	
-Get locations gần vị trí truyên vô:(POST) http://hotmoto.mr47.net/parkings/getNearCurrents 
+Get locations gần vị trí truyên vô:(POST) http://hotmoto.mr47.net/api/parkings/getNearCurrents 
 
 {
 
@@ -80,7 +80,7 @@ Trong đó : Position:  (long,lat)
 Scope: Pham vi
 // DANG NHAP
 
-Login:(POST)   http://hotmoto.mr47.net/users/login 
+Login:(POST)   http://hotmoto.mr47.net/api/users/login 
 
 	{
 	
@@ -98,7 +98,7 @@ response data login :
 	}
 	
 	
-Register:(POST)   http://hotmoto.mr47.net/users/register
+Register:(POST)   http://hotmoto.mr47.net/api/users/register
 
 	{
 	
@@ -108,7 +108,7 @@ Register:(POST)   http://hotmoto.mr47.net/users/register
 	}
 
 
-PushNotification Single Device : http://hotmoto.mr47.net/api/pushNotificationSingle
+PushNotification Single Device : http://hotmoto.mr47.net/api/api/pushNotificationSingle
 
 	{
 	
