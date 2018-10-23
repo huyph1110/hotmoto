@@ -15,7 +15,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         selectedPark = park
         selectedMarker = park.marker
         mapView.selectedMarker = selectedMarker
-        self.showDirectsRoad(from:selectedLocat!.coordinate , to: selectedMarker.position)
+        self.showDirectsRoad(from: (mapView.myLocation?.coordinate)! , to: selectedMarker.position)
 
     }
     
@@ -130,17 +130,43 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
             selectedPark = arrayParks.filter({$0.marker == marker}).last
             infoView.dismiss()
             selectedMarker = marker
-            self.showDirectsRoad(from:selectedLocat!.coordinate , to: marker.position)
+            self.showDirectsRoad(from: (mapView.myLocation?.coordinate)! , to: selectedMarker.position)
+
         }
         return false
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         infoView.showInfo(inView: self.view)
+        infoView.btnBook.addTarget(self, action: #selector(GuestViewController.notification(_:)), for: .touchUpInside)
         infoView.loadPark(park: selectedPark!)
       //  self.mapviewFocusToMarker(marker: marker)
 
     }
+    @objc func notification(_ sender: Any) {
+        //check phone
+        let req = pushNotificationReq()
+
+        if let username = userLogin?.username {
+            req.content = "yêu cầu từ " + username
+
+        }else {
+            req.content = ""
+
+        }
+        
+        req.title = "Bạn nhận được một yêu cầu gửi xe"
+        req.username = selectedPark?.username ?? ""
+        
+        services.pushNotification(request: req, success: {
+            
+        }) { (error) in
+            self.showAlert(title: error, completion: {_ in })
+        }
+    }
+    
+    
+    
     /*
     func mapviewBoundAllMarker()  {
         print(mapView.padding)

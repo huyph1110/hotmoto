@@ -196,7 +196,7 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         request.address = txvAddress.text
         request.phone = barPhone.text.text
         request.total = sizeValue[0]
-        request.username =  userLogin.username
+        request.username =  userLogin?.username
         request.cost =  costValue[0]
         request.numberHours = costValue[1]
         request.id = park?.id

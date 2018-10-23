@@ -52,7 +52,6 @@ class ViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     @IBAction func login(_ sender: UIButton) {
-    
         
         if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {
             self.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", completion: {_ in })
@@ -62,33 +61,55 @@ class ViewController: UIViewController {
             
         }
         else {
-            App.showLoadingOnView(view: self.view)
-            let req = loginReq()
-            req.username = txfUserName.text!
-            req.password = txfPasswords.text!
             
-            services.userLogin(request: req, success: {
-                userLogin.password = req.password
-                userLogin.username = req.username
-                
+            App.showLoadingOnView(view: self.view)
+           
+            loginFunc { (success) in
                 App.removeLoadingOnView(view: self.view)
-                UserDefaults.standard.setValue(req.username, forKey: LOGIN_ACCOUNT.USER.rawValue)
-                UserDefaults.standard.setValue(req.password, forKey: LOGIN_ACCOUNT.PASS.rawValue)
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: segue_type.managepark.rawValue, sender: self)
-                    
+                if success {
+                    self.regTokenFunc { (success) in
+                        App.removeLoadingOnView(view: self.view)
+                        if success {
+                            UserDefaults.standard.setValue(userLogin?.username, forKey: LOGIN_ACCOUNT.USER.rawValue)
+                            UserDefaults.standard.setValue(userLogin?.password, forKey: LOGIN_ACCOUNT.PASS.rawValue)
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: segue_type.managepark.rawValue, sender: self)
+                            }
+                        }
+                    }
                 }
-                
-            }, failure: { (error) in
-                
-                self.showAlert(title: error, completion: {_ in })
-                App.removeLoadingOnView(view: self.view)
-                
-            })
+            }
         }
-        
-        
     }
+    
+    func loginFunc(complete :@escaping ((Bool)->Void) ) {
+        let req = loginReq()
+        req.username = txfUserName.text!
+        req.password = txfPasswords.text!
+        
+        services.userLogin(request: req, success: { (user) in
+            userLogin = user
+            complete(true)
+
+
+        }, failure: { (error) in
+            self.showAlert(title: error, completion: {_ in })
+            complete(false)
+
+        })
+    }
+    func regTokenFunc(complete :@escaping ((Bool)->Void) ) {
+        let req = registerTokenReq()
+        req.userID = userLogin?.userID ?? ""
+        req.deviceToken = UserDefaults.standard.value(forKey: SYSTEM.TOKEN.rawValue) as! String
+        services.registerToken(request: req, success: {
+            complete(true)
+        }) { (error) in
+            self.showAlert(title: error, completion: {_ in })
+            complete(false)
+        }
+    }
+    
     @IBAction func register(_ sender: Any) {
         
         if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {

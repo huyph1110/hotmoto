@@ -91,6 +91,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(token, forKey: SYSTEM.TOKEN.rawValue)
         print("my token = " + token)
     }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if application.applicationState == .active {
+            if let vc = self.window?.rootViewController {
+              
+            }
+     
+        }
+
+    }
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation

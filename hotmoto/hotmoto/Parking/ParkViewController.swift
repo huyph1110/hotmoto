@@ -169,7 +169,8 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         request.address = txvAddress.text
         request.phone = barPhone.text.text
         request.total = sizeValue[0]
-        request.username =  userLogin.username
+        request.username =  userLogin?.username
+        request.userID = userLogin?.userID
         request.cost =  costValue[0]
         request.numberHours = costValue[1]
         request.imageUrl = urlImage

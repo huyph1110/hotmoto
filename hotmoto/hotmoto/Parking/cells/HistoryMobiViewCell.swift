@@ -37,8 +37,18 @@ class HistoryMobiViewCell: UITableViewCell {
         
         if let date = mobi.timeout {
             imvOut.isHidden = false
-            lblTimeOut.text = "\(date.hour()):\(date.minute())"
             lblValue.text = stringCostParking(mobi, park)
+            if date.isEqual(to: mobi.timein!) == false {
+                lblTimeOut.text = nil
+                let day = "(\(date.day())/\(date.month()))"
+                let hour =  "\(date.hour()):\(date.minute())"
+                lblTimeOut.addAttributeText(text: hour, font: lblTimeOut.font, color: lblTimeOut.textColor)
+                lblTimeOut.addAttributeText(text: day, font: lblTimeOut.font, color: .blue)
+                
+            }else {
+                lblTimeOut.text = "\(date.hour()):\(date.minute())"
+
+            }
         }else {
             lblTimeOut.text = nil
             imvOut.isHidden = true

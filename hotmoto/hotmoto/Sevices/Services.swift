@@ -120,7 +120,7 @@ class Services: NSObject {
         if(response.result.isSuccess)
         {
             if response.result.value is Array<Any> {
-                res.arrayResponse = response.result.value as! Array<Any>
+                res.arrayResponse = response.result.value as? Array<Any>
             }
             else if response.result.value is String {
                 res.message = response.result.value as! String
@@ -128,11 +128,12 @@ class Services: NSObject {
             }
             else if response.result.value is Dictionary<String, Any> {
                 let dic = response.result.value as! Dictionary <String, Any>
-                res.error = dic.keys.first == "error"
+                res.error = (dic.keys.first == "error" &&  !(dic.values.first is NSNull))
                 if dic[dic.keys.first!] is String {
                     res.message = dic[dic.keys.first!] as! String
 
                 }
+                res.dictionaryResponse = response.result.value as? NSDictionary
             }
 
             return res

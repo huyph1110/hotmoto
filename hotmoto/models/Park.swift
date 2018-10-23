@@ -22,6 +22,8 @@ class Park: Mi {
     @objc dynamic var status =  0 //0: san sang ; 1: da dong
     @objc dynamic var email =  ""
     @objc dynamic var username =  ""
+    @objc dynamic var userID =  ""
+
     @objc dynamic var fullname =  ""
     @objc dynamic var imageUrl =  ""
 
@@ -75,6 +77,7 @@ class insertParkReq: Mi {
     @objc dynamic  var address: String?
     @objc dynamic  var phone: String?
     @objc dynamic  var username: String?
+    @objc dynamic  var userID: String?
     @objc dynamic  var description_park: String?
 
       var total: Int?
@@ -89,6 +92,7 @@ class insertParkReq: Mi {
     @objc dynamic  var id: String?
 
 }
+
 func location(coordinate: CLLocationCoordinate2D) -> NSDictionary {
    return ["coordinates" : [coordinate.longitude,coordinate.latitude] , "type" : "Point"]
 }
@@ -122,6 +126,15 @@ extension Services {
 
     func insertPark(request : insertParkReq, success: @escaping (() -> Void), failure:@escaping ((String) -> Void)){
         services.request(api: .parkings, method: .post, param: request.dictionary() as Dictionary<String, AnyObject>, success: { (response) in
+            success()
+            
+        }) { (error) in
+            failure(error)
+        }
+    }
+    func deletePark(parkID : String, success: @escaping (() -> Void), failure:@escaping ((String) -> Void)){
+        let param = ["id": parkID]
+        services.request(api: .parkings, method: .delete, param: param as Dictionary<String, AnyObject>, success: { (response) in
             success()
             
         }) { (error) in

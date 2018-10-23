@@ -47,13 +47,41 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         
         self.performSegue(withIdentifier: segue_type.editpark.rawValue, sender: self)
     }
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Xóa"
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            showConfirm(title: "Xác nhận xóa bãi đỗ", detail: "") { (accept) in
+                if accept {
+                    
+                    let park = self.arrayPark[indexPath.row]
+                    services.deletePark(parkID: park.id ?? "", success: {
+                        DispatchQueue.main.async {
+                            self.arrayPark.remove(at: indexPath.row)
+                            tableView.deleteRows(at: [indexPath], with: .automatic)
+                        }
+                    }, failure: { (error) in
+                        self.showAlert(title: error, completion: { (_) in
+                            
+                        })
+                    })
+                }
+            }
+           
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tbvData.register(UINib.init(nibName: "ParkCell", bundle: nil), forCellReuseIdentifier: "ParkCell")
         // Do any additional setup after loading the view.
         tbvData.rowHeight = UITableViewAutomaticDimension
         tbvData.estimatedRowHeight = 44
+        
     }
 
     override func didReceiveMemoryWarning() {

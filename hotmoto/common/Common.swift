@@ -167,7 +167,6 @@ func stringCostParking(_ mobile: Mobile, _ park: Park) -> String {
     }
    return ""
 }
-
 func callPhone(_ phone: String) {
     if let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url) {
         UIApplication.shared.open(url)

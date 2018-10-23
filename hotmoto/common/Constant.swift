@@ -23,7 +23,6 @@ enum LOGIN_TYPE {
 enum LOGIN_ACCOUNT : String {
     case USER = "LOGINUSER"
     case PASS = "LOGINPASS"
-    case TOKEN = "TOKEN"
 
 }
 enum SYSTEM : String {

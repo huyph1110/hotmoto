@@ -57,7 +57,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4L-8I-J0S">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4L-8I-J0S">
                             <rect key="frame" x="37.5" y="494" width="300" height="34"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thời gian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM6-DT-teQ">
@@ -83,7 +83,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHv-aw-tYg" customClass="GreenButton" customModule="MotoPark" customModuleProvider="target">
-                            <rect key="frame" x="37" y="536" width="62" height="30"/>
+                            <rect key="frame" x="37.5" y="536" width="62" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="62" id="fMi-xp-fpk"/>
                             </constraints>
@@ -93,7 +93,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tJ-fe-S9x" customClass="GreenButton" customModule="MotoPark" customModuleProvider="target">
-                            <rect key="frame" x="267" y="536" width="70" height="30"/>
+                            <rect key="frame" x="267.5" y="536" width="70" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="19a-9L-bDL"/>
                             </constraints>
@@ -105,7 +105,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="BWC-Ap-L4s" firstAttribute="top" secondItem="66R-VP-8SM" secondAttribute="bottom" constant="8" id="87x-DC-rd2"/>
-                        <constraint firstItem="p4L-8I-J0S" firstAttribute="top" secondItem="BWC-Ap-L4s" secondAttribute="bottom" constant="59.5" id="8qI-GM-5CE"/>
+                        <constraint firstItem="p4L-8I-J0S" firstAttribute="top" secondItem="BWC-Ap-L4s" secondAttribute="bottom" constant="7.5" id="8qI-GM-5CE"/>
                         <constraint firstItem="IHv-aw-tYg" firstAttribute="top" secondItem="BWC-Ap-L4s" secondAttribute="bottom" constant="49.5" id="CN9-6l-j1i"/>
                         <constraint firstItem="p4L-8I-J0S" firstAttribute="width" secondItem="BWC-Ap-L4s" secondAttribute="width" id="Dxu-nl-V1j"/>
                         <constraint firstAttribute="bottom" secondItem="66R-VP-8SM" secondAttribute="bottom" constant="100" id="Ex8-hv-vGW"/>

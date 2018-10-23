@@ -33,9 +33,7 @@ class HistoryViewController: UIViewController , UITableViewDelegate, UITableView
         let key = allkey[section]
         return groupByDate[key]?.count ?? 0
     }
-    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-        return "Xóa"
-    }
+   
     func numberOfSections(in tableView: UITableView) -> Int {
         return groupByDate.keys.count
     }
@@ -53,6 +51,9 @@ class HistoryViewController: UIViewController , UITableViewDelegate, UITableView
         cell.setMobi(array![indexPath.row], park!)
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Xóa"
     }
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         let allkey = Array(groupByDate.keys)
