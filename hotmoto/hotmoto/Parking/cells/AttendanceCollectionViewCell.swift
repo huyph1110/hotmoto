@@ -15,6 +15,7 @@ class AttendanceCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var lblTimein: UILabel!
     @IBOutlet weak var lblCode: UILabel!
     @IBOutlet weak var imvImage: UIImageView!
 }

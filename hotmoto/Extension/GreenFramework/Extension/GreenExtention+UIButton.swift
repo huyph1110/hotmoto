@@ -147,3 +147,27 @@ open class ButtonWarning: UIButton {
     }
 }
 
+class RoundrectButton: UIButton
+{
+    func initStyle()
+    {
+        self.layer.cornerRadius = 5
+    }
+    
+    override  func awakeFromNib() {
+        initStyle()
+    }
+}
+class BorderButton: UIButton
+{
+    func initStyle()
+    {
+        self.layer.cornerRadius = 5
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    override  func awakeFromNib() {
+        initStyle()
+    }
+}

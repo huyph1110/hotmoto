@@ -125,8 +125,9 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     }
     */
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        shouldLoadParking = false
+
         if selectedMarker != marker {
+
             selectedPark = arrayParks.filter({$0.marker == marker}).last
             infoView.dismiss()
             selectedMarker = marker
@@ -304,7 +305,8 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
 
 
     func showDirectsRoad(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) {
-        
+        shouldLoadParking = false
+
         directionsAPI.delegate = self
         directionsAPI.from = PXLocation.coordinateLocation(from)
         directionsAPI.to = PXLocation.coordinateLocation(to)
@@ -370,7 +372,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
 
         var distance = 0
         for i in 0 ..< results.count {
-            polylinesOnDrawing.append ( results[i].drawOnMap(mapView, approximate: true, strokeColor: UIColor.black.withAlphaComponent(0.7), strokeWidth: 5.0))
+            polylinesOnDrawing.append ( results[i].drawOnMap(mapView, approximate: true, strokeColor: ColorsConfig.button_blue.withAlphaComponent(0.7), strokeWidth: 5.0))
             bounds = bounds.includingBounds(results[i].bounds!)
             distance += Int(results[i].totalDuration)
         }

@@ -87,35 +87,6 @@ open  class GreenView: UIView
         
     }
     
-    func present(inView: UIView)  {
-        self.frame = inView.bounds
-        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        inView.addSubview(self)
-        self.layoutIfNeeded()
-        self.alpha = 0
-        UIView.animate(withDuration: 0.33) {
-            self.alpha = 1
-            
-        }
-        didPresent()
-    }
-    
-    func dismiss() {
-        UIView.animate(withDuration: 0.33, animations: {
-            self.alpha = 0
-            
-        }) { (finish) in
-            self.removeFromSuperview()
-        }
-        didDismiss()
-    }
-    open func didPresent()  {
-        
-    }
-    open func didDismiss()  {
-        
-    }
-    
 }
 
 func heightConstraint(ofView view: UIView) -> NSLayoutConstraint? {

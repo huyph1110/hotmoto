@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import GoogleMobileAds
 
 class MyParkListViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     var arrayPark = [Park](){
@@ -17,7 +18,8 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
             }
         }
     }
-    
+    @IBOutlet weak var bannerView: GADBannerView!
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayPark.count
     }
@@ -81,7 +83,9 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         // Do any additional setup after loading the view.
         tbvData.rowHeight = UITableViewAutomaticDimension
         tbvData.estimatedRowHeight = 44
-        
+        bannerView.adUnitID = Admob_UnitID
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
 
     override func didReceiveMemoryWarning() {

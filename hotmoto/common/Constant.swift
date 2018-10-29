@@ -12,13 +12,15 @@ var apiKey = "751342836181944"
 var apiSecret = "tvuVpl7UHhIuzWu83G1UYPo5ZyQ"
 
 let GoogleMap_API = "AIzaSyBxsfr_Ymwg4FByyh1S6K7Xrczj6WQ4kwA"
+let Admob_ApplicationID = "ca-app-pub-6694327567060424~7544807820"
+let Admob_UnitID = "ca-app-pub-6694327567060424/7870867616"
 
 class Constant: NSObject {
 
 }
 enum LOGIN_TYPE {
-    case GUEST
-    case PARK
+    case LOGIN
+    case REGISTER
 }
 enum LOGIN_ACCOUNT : String {
     case USER = "LOGINUSER"

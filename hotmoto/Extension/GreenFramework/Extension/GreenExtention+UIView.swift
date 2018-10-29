@@ -256,7 +256,22 @@ public extension UIView
         self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: 0))
     }
     
+    func present(inView: UIView)  {
+        self.center = CGPoint(x: inView.frame.width/2, y: inView.frame.height/2)
+        inView.addSubview(self)
+        self.alpha = 0
+        UIView.animate(withDuration: 0.33) {
+            self.alpha = 1
+            
+        }
+    }
     
-    
-    
+    func dismiss() {
+        UIView.animate(withDuration: 0.33, animations: {
+            self.alpha = 0
+            
+        }) { (finish) in
+            self.removeFromSuperview()
+        }
+    }
 }

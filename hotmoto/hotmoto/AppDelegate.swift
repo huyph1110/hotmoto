@@ -11,7 +11,7 @@ import GoogleMaps
 import PXGoogleDirections
 import CoreData
 import UserNotifications
-
+import GoogleMobileAds
 
 var directionsAPI: PXGoogleDirections!
 
@@ -29,7 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(GoogleMap_API)
         directionsAPI = PXGoogleDirections(apiKey: GoogleMap_API) // A valid server-side API key is required here
-       
+        GADMobileAds.configure(withApplicationID: Admob_ApplicationID)
+
         /*
         let mobies = fetchMobies()
         print(mobies.first?.code)

@@ -19,9 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="130" height="120"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HJU-XX-4by">
-                        <rect key="frame" x="0.0" y="0.0" width="130" height="94"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daX-TQ-gs0">
                         <rect key="frame" x="0.0" y="94" width="130" height="26"/>
                         <constraints>
@@ -31,15 +28,27 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnl-MY-pWt">
+                        <rect key="frame" x="0.0" y="6" width="130" height="15"/>
+                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="13"/>
+                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HJU-XX-4by">
+                        <rect key="frame" x="20" y="25" width="90" height="71"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="daX-TQ-gs0" secondAttribute="trailing" id="1gd-Rn-RsN"/>
-                <constraint firstItem="HJU-XX-4by" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8VM-td-Ydq"/>
-                <constraint firstItem="HJU-XX-4by" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NBy-gW-98d"/>
-                <constraint firstItem="daX-TQ-gs0" firstAttribute="top" secondItem="HJU-XX-4by" secondAttribute="bottom" id="Qpy-JY-9Vd"/>
-                <constraint firstAttribute="trailing" secondItem="HJU-XX-4by" secondAttribute="trailing" id="T2i-Q4-mk5"/>
+                <constraint firstItem="Gnl-MY-pWt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3ze-0H-qDh"/>
+                <constraint firstAttribute="trailing" secondItem="Gnl-MY-pWt" secondAttribute="trailing" id="7TU-Ec-wWz"/>
+                <constraint firstItem="HJU-XX-4by" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="8VM-td-Ydq"/>
+                <constraint firstItem="HJU-XX-4by" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="NBy-gW-98d"/>
+                <constraint firstItem="daX-TQ-gs0" firstAttribute="top" secondItem="HJU-XX-4by" secondAttribute="bottom" constant="-2" id="Qpy-JY-9Vd"/>
+                <constraint firstAttribute="trailing" secondItem="HJU-XX-4by" secondAttribute="trailing" constant="20" id="T2i-Q4-mk5"/>
                 <constraint firstItem="daX-TQ-gs0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fEN-ce-lVv"/>
+                <constraint firstItem="Gnl-MY-pWt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="hGb-La-Ree"/>
                 <constraint firstAttribute="bottom" secondItem="daX-TQ-gs0" secondAttribute="bottom" id="oDb-QB-q5L"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -47,8 +56,9 @@
             <connections>
                 <outlet property="imvImage" destination="HJU-XX-4by" id="9I8-nI-F6R"/>
                 <outlet property="lblCode" destination="daX-TQ-gs0" id="aL5-IC-AGs"/>
+                <outlet property="lblTimein" destination="Gnl-MY-pWt" id="xVD-Hn-KTH"/>
             </connections>
-            <point key="canvasLocation" x="56" y="89"/>
+            <point key="canvasLocation" x="56" y="88.15592203898052"/>
         </collectionViewCell>
     </objects>
 </document>

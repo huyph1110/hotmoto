@@ -76,7 +76,19 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
         }else {
             cell.imvImage.image = nil
         }
-        
+        if let date = mobile.timein {
+            if date.isEqual(to: Date()) == false {
+                cell.lblTimein.text = nil
+                let day = "(\(date.day())/\(date.month()))"
+                let hour =  "\(date.hour()):\(date.minute())"
+                cell.lblTimein.addAttributeText(text: hour, font: cell.lblTimein.font, color: cell.lblTimein.textColor)
+                cell.lblTimein.addAttributeText(text: day, font: cell.lblTimein.font, color: .blue)
+                
+            }else {
+                cell.lblTimein.text = "\(date.hour()):\(date.minute())"
+                
+            }
+        }
         return cell
     }
     

@@ -27,6 +27,7 @@ class EditMobiViewController: UIViewController {
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var lblTimeIn: UILabel!
     @IBOutlet weak var txfCode: UITextField!
     
     @IBAction func release(_ sender: Any) {
@@ -56,6 +57,20 @@ class EditMobiViewController: UIViewController {
         txfCode.text = mobi.code
         lblTime.text = stringDurationTimeParking(mobi)
         lblCost.text = stringCostParking(mobi, park)
+        if let date = mobi.timein {
+            if date.isEqual(to: Date()) == false {
+                lblTimeIn.text = nil
+                let day = "(\(date.day())/\(date.month()))"
+                let hour =  "\(date.hour()):\(date.minute())"
+                lblTimeIn.addAttributeText(text: hour, font: lblTimeIn.font, color: lblTimeIn.textColor)
+                lblTimeIn.addAttributeText(text: day, font: lblTimeIn.font, color: .blue)
+                
+            }else {
+                lblTimeIn.text = "\(date.hour()):\(date.minute())"
+                
+            }
+        }
+        
     }
     func valid() -> Bool {
         if txfCode.text?.count == 0 {

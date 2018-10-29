@@ -289,7 +289,6 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
     var timeValue = [0,0]
     var sizeValue = [0]
     
-
     
 }
 

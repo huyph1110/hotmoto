@@ -25,6 +25,7 @@ target 'MotoPark' do
    pod 'KMPlaceholderTextView'
    pod 'PureLayout'
    pod 'JGProgressHUD'
+   pod 'Google-Mobile-Ads-SDK'
 
 end
 

@@ -7,18 +7,26 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GADBannerViewDelegate {
 
     @IBOutlet weak var txfPasswords: UITextField!
     @IBOutlet weak var txfUserName: UITextField!
-    @IBOutlet weak var loginHeigh: NSLayoutConstraint!
+    @IBOutlet weak var bannerView: GADBannerView!
     
-    var type = LOGIN_TYPE.GUEST
+    @IBOutlet  var viewUserInfo: UIView!
+    @IBOutlet weak var btnAccept: UIButton!
+    
+    
+    
+    var type = LOGIN_TYPE.LOGIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+      
+        
         if let user = UserDefaults.standard.value(forKey: LOGIN_ACCOUNT.USER.rawValue) {
             txfUserName.text = user as? String
 
@@ -36,14 +44,52 @@ class ViewController: UIViewController {
         txfUserName.leftViewMode = UITextFieldViewMode.always
         txfPasswords.leftView = paddingView2
         txfPasswords.leftViewMode = UITextFieldViewMode.always
+        
+        bannerView.adUnitID = Admob_UnitID
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        
+        bannerView.delegate = self
     }
+    override func viewDidAppear(_ animated: Bool) {
 
+    }
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print(error)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func managePark(_ sender: Any) {
+        type = LOGIN_TYPE.LOGIN
+        viewUserInfo.isHidden = false
+        viewUserInfo.present(inView: self.view)
+        btnAccept.setTitle("Đăng nhập", for: .normal)
+    }
+    @IBAction func register(_ sender: Any) {
+        type = LOGIN_TYPE.REGISTER
+        viewUserInfo.isHidden = false
+        viewUserInfo.present(inView: self.view)
+        btnAccept.setTitle("Đăng ký", for: .normal)
+    }
+    @IBAction func accept(_ sender: Any) {
+        
+        if type == LOGIN_TYPE.LOGIN {
+            login()
+            
+        }else if type == LOGIN_TYPE.REGISTER {
+            register()
+        }
+        viewUserInfo.dismiss()
 
-    @IBAction func selectLoginType(_ sender: UIButton) {
+    }
+    @IBAction func closeView(_ sender: Any) {
+        viewUserInfo.dismiss()
+    }
+    
+    @IBAction func searchPark(_ sender: UIButton) {
         self.performSegue(withIdentifier: segue_type.guest.rawValue, sender: self)
 
     }
@@ -51,7 +97,7 @@ class ViewController: UIViewController {
         
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-    @IBAction func login(_ sender: UIButton) {
+   func login() {
         
         if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {
             self.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", completion: {_ in })
@@ -99,18 +145,21 @@ class ViewController: UIViewController {
         })
     }
     func regTokenFunc(complete :@escaping ((Bool)->Void) ) {
-        let req = registerTokenReq()
-        req.userID = userLogin?.userID ?? ""
-        req.deviceToken = UserDefaults.standard.value(forKey: SYSTEM.TOKEN.rawValue) as! String
-        services.registerToken(request: req, success: {
-            complete(true)
-        }) { (error) in
-            self.showAlert(title: error, completion: {_ in })
-            complete(false)
+        if let token =  UserDefaults.standard.value(forKey: SYSTEM.TOKEN.rawValue) as? String {
+            let req = registerTokenReq()
+            req.userID = userLogin?.userID ?? ""
+            req.deviceToken = token
+            services.registerToken(request: req, success: {
+                complete(true)
+            }) { (error) in
+                self.showAlert(title: error, completion: {_ in })
+                complete(false)
+            }
         }
+       
     }
     
-    @IBAction func register(_ sender: Any) {
+    func register() {
         
         if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {
             self.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", completion: {_ in })
