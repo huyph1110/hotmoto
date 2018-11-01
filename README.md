@@ -127,7 +127,26 @@ Response Data:
 	  	"success": true,
 	    	"error": null
 	}
+
+PushNotification Booking Park : hotmoto.mr47.net/api/pushNotificationBookingPark
+
+	{
 	
+		"title": "Hello every body",
+      		"content": "Hello IOS push notification",
+	        "username":"user1",
+      		"phoneNumberSender":"1234"
+	}
+
+Response Data :
+
+	{
+	
+		"alert": "{\"aps\":{\"alert\":{\"title\":\"Hello every body\",\"body\":\"Hello IOS push notification\"},\"badge\":-1,\"sound\":\"bingbong.aiff\"},\"phoneNumber\":\"1234\"}",
+    		"success": true,
+    		"error": null
+	}
+
 Register Devicetoken: hotmoto.mr47.net/api/registerDeviceToken
 
 	{
