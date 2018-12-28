@@ -120,17 +120,15 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
 
     }
     
-   
-    override func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
         //let url = info[UIImagePickerControllerReferenceURL] as! String
         //let type = info[UIImagePickerControllerMediaType] as! String
         imvAvatar.image = image
-        imageData = UIImagePNGRepresentation(image)
+        imageData = image.pngData()
         picker.dismiss(animated: true, completion: nil)
-        
     }
+   
     func generateImageName(type: String) -> String? {
         if let username = UserDefaults.standard.value(forKey: LOGIN_ACCOUNT.USER.rawValue) {
             let time = Date().description
@@ -160,8 +158,7 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         
     }
     func addNewPark()  {
-      
-        App.showLoadingOnView(view: self.view)
+        self.view.showLoading()
         let request = insertParkReq()
         request.description_park = txvDescription.text
         request.location = location(coordinate: coordinate!)
@@ -179,11 +176,10 @@ class ParkViewController: UIViewController,MapSelectionViewControllerDelegate {
         request.closeTime =  timeValue[1]
         //request.email =  ""
         services.insertPark(request: request, success: {
-            App.removeLoadingOnView(view: self.view)
-            
+            self.view.removeLoading()
         }) { (error) in
-            App.removeLoadingOnView(view: self.view)
-            
+            self.view.removeLoading()
+
             self.showAlert(title: error, completion: { (_) in
                 
             })

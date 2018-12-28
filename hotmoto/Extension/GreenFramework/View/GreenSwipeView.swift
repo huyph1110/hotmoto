@@ -208,7 +208,7 @@ class GreenSwipeView: GreenView , UIScrollViewDelegate{
         index = value;
         indicator.currentPage = index
         DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 self.scrollView.contentOffset.x = unit * CGFloat(self.index)
             }, completion: nil)
         }
@@ -257,7 +257,7 @@ class GreenSwipeView: GreenView , UIScrollViewDelegate{
         let unit = witdhContraits.constant/CGFloat(labels.count);
 
         DispatchQueue.main.async {
-            UIView.animate(withDuration: 10, delay: 0, options: UIViewAnimationOptions.allowUserInteraction, animations: {
+            UIView.animate(withDuration: 10, delay: 0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
                 
                 self.scrollView.contentOffset.x = unit * CGFloat(self.labels.count - 1) - self.scrollView.contentOffset.x
             }, completion: { (completion) in

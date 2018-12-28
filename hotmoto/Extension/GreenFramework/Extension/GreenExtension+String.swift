@@ -32,7 +32,7 @@ public extension String
         let location = self.length
         let myString =  self.appending(" *")
         let attributeString = NSMutableAttributedString(string: myString)
-        attributeString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.red, range: NSRange.init(location: location, length: 2))
+        attributeString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange.init(location: location, length: 2))
         return attributeString
     }
 

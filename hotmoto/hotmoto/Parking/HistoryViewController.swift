@@ -62,7 +62,7 @@ class HistoryViewController: UIViewController , UITableViewDelegate, UITableView
         let mobi = array![indexPath.row]
         return mobi.state == Mobi_State.checkout.rawValue
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let allkey = Array(groupByDate.keys)
             let key = allkey[indexPath.section]

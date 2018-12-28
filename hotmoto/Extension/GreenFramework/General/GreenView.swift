@@ -22,7 +22,6 @@ open  class GreenView: UIView
     func xibSetup()
     {
         view = loadViewFromNib()
-        view.backgroundColor = UIColor.clear
         self.backgroundColor = UIColor.clear
         view.frame = bounds
         addSubview(view)

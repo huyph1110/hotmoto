@@ -23,11 +23,18 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
             let array = fetchMobies()
             arrayMobi = array.filter{$0.parkID == apark.id && $0.state == Mobi_State.checkin.rawValue}
             arrayMobiResult = arrayMobi
-            titileBarItem.title = apark.name
+            titileBarItem.title = apark.name + "(\(arrayMobi.count))"
         }
         
         newmobiVC.complete = {
             (mobile) -> Void in
+            
+            //check if exit
+//            if let array = self.arrayMobi.filter({$0.code == mobile.code}) {
+//
+//            }
+
+            
             mobile.parkID = self.park?.id
             mobile.save()
             self.newmobiVC.dismiss()
@@ -57,7 +64,14 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
     
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var collectionCode: UICollectionView!
-    var arrayMobi = [Mobile]()
+    var arrayMobi = [Mobile](){
+        didSet{
+            DispatchQueue.main.async {
+                self.titileBarItem.title = self.park?.name ?? "" + "(\(self.arrayMobi.count))"
+            }
+
+        }
+    }
     var arrayMobiResult = [Mobile]()
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -100,6 +114,7 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
         
         mobivc.saveComplete = {
             () -> Void in
+            
             collectionView.reloadItems(at: [indexPath])
             mobivc.dismiss()
         }

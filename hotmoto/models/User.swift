@@ -14,6 +14,8 @@ class User: Mi {
     @objc dynamic var password = ""
     @objc dynamic var userID = ""
     @objc dynamic var devicetoken = ""
+    var parkList: [Park]?
+    
     class func parseData(dic: NSDictionary) -> User {
         /*
          "id": "5afaae8ca0ccf760e2bc605c",

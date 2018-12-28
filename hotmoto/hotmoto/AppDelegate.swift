@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
         
@@ -42,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mobies2 = fetchMobies()
         */
         registerForPushNotifications()
-
 
         return true
     }
@@ -94,13 +93,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if application.applicationState == .active {
-            if let vc = self.window?.rootViewController {
-              
+            let noti = initNotification()
+            if let info = userInfo as? Dictionary<String,Any> {
+                // Check if value present before using it
+                //"alert": "{"aps":{"alert":{"title":"title","body":"content"},
+                if let aps = info["aps"] as? Dictionary<String,Any> {
+                    if let alert = aps["alert"] as? Dictionary<String,Any> {
+                         noti.title = alert["title"] as? String
+                         noti.parkid = alert["body"] as? String
+                    }
+                   
+                }
+                else {
+                   // print("no value for key\n")
+                }
             }
-     
+            else {
+                // print("wrong userInfo type")
+            }
+            noti.date = Date()
+            noti.save()
+
+            if let vc: UINavigationController = self.window?.rootViewController as? UINavigationController  {
+                application.applicationIconBadgeNumber = 0
+               
+                if vc.topViewController is RegisterNotificationViewController {
+                    vc.performSelector(onMainThread: #selector(RegisterNotificationViewController.reloadData), with: nil, waitUntilDone: true)
+                }
+                
+                if vc.topViewController is MyParkListViewController {
+                    (vc.topViewController as! MyParkListViewController).notifiBar.badgeNumber =  (vc.topViewController as! MyParkListViewController).notifiBar.badgeNumber + 1
+                }
+               
+            }
+            showNotification(self.window!, noti.title ?? "")
         }
 
     }
+    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation

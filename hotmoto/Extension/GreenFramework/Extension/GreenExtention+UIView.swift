@@ -36,7 +36,7 @@ public extension UIView
     {
         self.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height)
         view.addSubview(self)
-        self.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight,UIViewAutoresizing.flexibleLeftMargin,UIViewAutoresizing.flexibleRightMargin,UIViewAutoresizing.flexibleTopMargin,UIViewAutoresizing.flexibleBottomMargin ]
+        self.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight,UIView.AutoresizingMask.flexibleLeftMargin,UIView.AutoresizingMask.flexibleRightMargin,UIView.AutoresizingMask.flexibleTopMargin,UIView.AutoresizingMask.flexibleBottomMargin ]
     }
     
     public func removeSubsView()
@@ -204,35 +204,35 @@ public extension UIView
                 targetView = views [targtIndex]
             }
             limeUnit.translatesAutoresizingMaskIntoConstraints = false
-            self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 0))
+            self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0))
             
-            self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 0))
+            self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 0))
             if(i == 0 )
             {
-                self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: 0))
+                self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1.0, constant: 0))
             }
             else if (i == views.count - 1)
             {
-                self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: 0))
+                self.addConstraint(NSLayoutConstraint(item: limeUnit, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1.0, constant: 0))
                 
-                let verticalSpacing1 = NSLayoutConstraint(item: previousXView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: limeUnit, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+                let verticalSpacing1 = NSLayoutConstraint(item: previousXView, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: limeUnit, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0)
                 NSLayoutConstraint.activate([verticalSpacing1])
             }
                 
             else
             {
-                let verticalSpacing1 = NSLayoutConstraint(item: previousXView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: limeUnit, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+                let verticalSpacing1 = NSLayoutConstraint(item: previousXView, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: limeUnit, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0)
                 NSLayoutConstraint.activate([verticalSpacing1])
             }
             if(views.count == 1)
             {
-                let widthContrain  = NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
+                let widthContrain  = NSLayoutConstraint(item: limeUnit, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: 0)
                 NSLayoutConstraint.activate([widthContrain])
             }
             
             if(targtIndex != -1 )
             {
-                let widthContrain  = NSLayoutConstraint(item: limeUnit, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: targetView, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
+                let widthContrain  = NSLayoutConstraint(item: limeUnit, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: targetView, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: 0)
                 NSLayoutConstraint.activate([widthContrain])
                 
             }
@@ -247,31 +247,56 @@ public extension UIView
     func setLayout(_ view : UIView) // full layout for sub view
     {
         view.translatesAutoresizingMaskIntoConstraints = false
-        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0))
         
-        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 0))
         
-        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.trailing, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1.0, constant: 0))
         
-        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.leading, multiplier: 1.0, constant: 0))
+        self.addConstraint(NSLayoutConstraint(item: view, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1.0, constant: 0))
     }
     
     func present(inView: UIView)  {
         self.center = CGPoint(x: inView.frame.width/2, y: inView.frame.height/2)
         inView.addSubview(self)
         self.alpha = 0
+        
         UIView.animate(withDuration: 0.33) {
             self.alpha = 1
-            
         }
     }
     
     func dismiss() {
         UIView.animate(withDuration: 0.33, animations: {
             self.alpha = 0
-            
+
         }) { (finish) in
             self.removeFromSuperview()
+        }
+    }
+    
+    
+    func showLoading(){
+        DispatchQueue.main.async {
+            let indicator = UIActivityIndicatorView.init()
+            indicator.center = CGPoint.init(x: self.frame.width/2, y: self.frame.height/2)
+            indicator.style  = .whiteLarge
+            indicator.color = UIColor("#4AF72E")
+            
+            indicator.startAnimating()
+            self.addSubview(indicator)
+        }
+    }
+    
+    
+    func removeLoading(){
+        DispatchQueue.main.async {
+            
+            for subview in self.subviews {
+                if subview is UIActivityIndicatorView {
+                    subview.removeFromSuperview()
+                }
+            }
         }
     }
 }

@@ -35,7 +35,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func selectRefresh(_ sender: Any) {
-        loadParking(atlocation: (selectedLocat?.coordinate)!, distance: 1000)
+        loadParking(atlocation: (selectedLocat?.coordinate)!)
     }
     
     override func viewDidLoad() {
@@ -60,9 +60,9 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     }
     
     func setupSubViews()  {
-        self.view.bringSubview(toFront: btnList)
-        self.view.bringSubview(toFront: btnRefresh)
-        self.view.bringSubview(toFront: btnLogout)
+        self.view.bringSubviewToFront(btnList)
+        self.view.bringSubviewToFront(btnRefresh)
+        self.view.bringSubviewToFront(btnLogout)
         infoView.btnDetail.addTarget(self, action: #selector(GuestViewController.selectDetail), for: .touchUpInside)
         btnList.addTarget(self, action: #selector(GuestViewController.loadParkList), for: .touchUpInside)
        // infoView.removeFromSuperview()
@@ -92,7 +92,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if selectedLocat == nil {
             selectedLocat = locations.last
-            loadParking(atlocation: (selectedLocat?.coordinate)!, distance: 1000)
+            loadParking(atlocation: (selectedLocat?.coordinate)!)
 
         }else {
             selectedLocat = locations.last
@@ -132,7 +132,6 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
             infoView.dismiss()
             selectedMarker = marker
             self.showDirectsRoad(from: (mapView.myLocation?.coordinate)! , to: selectedMarker.position)
-
         }
         return false
     }
@@ -140,34 +139,50 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         infoView.showInfo(inView: self.view)
         infoView.btnBook.addTarget(self, action: #selector(GuestViewController.notification(_:)), for: .touchUpInside)
+        infoView.btnBook.isEnabled = isAvailTime(selectedPark!)
+        
         infoView.loadPark(park: selectedPark!)
       //  self.mapviewFocusToMarker(marker: marker)
 
     }
     @objc func notification(_ sender: Any) {
+        if notiAvail {
+            infoView.btnBook.isEnabled = false
+            setnotiduration {
+                self.infoView.btnBook.isEnabled = true
+            }
+            
+        }else {
+            showAlert(title: "Chờ 5s để gửi lại yêu cầu!") { (_) in
+                
+            }
+            return
+        }
+        
         //check phone
+        self.view.showLoading()
         let req = pushNotificationReq()
 
-        if let username = userLogin?.username {
-            req.content = "yêu cầu từ " + username
-
-        }else {
-            req.content = ""
-
-        }
-        
-        req.title = "Bạn nhận được một yêu cầu gửi xe"
-        req.username = selectedPark?.username ?? ""
+        req.content = selectedPark!.id ?? ""
+        req.username = selectedPark!.username
+        req.title = "Bạn nhận được một yêu cầu gửi xe tại bãi xe: " + selectedPark!.name
         
         services.pushNotification(request: req, success: {
-            
+            self.view.removeLoading()
         }) { (error) in
+            self.view.removeLoading()
             self.showAlert(title: error, completion: {_ in })
         }
+        pendingNotify(15)
     }
-    
-    
-    
+    func pendingNotify(_ sec: Int) {
+        infoView.btnBook.isEnabled = false
+        let time : DispatchTime = .now() + .seconds(sec)
+        
+        DispatchQueue.main.asyncAfter(deadline: time) {
+            self.infoView.btnBook.isEnabled = true
+        }
+    }
     /*
     func mapviewBoundAllMarker()  {
         print(mapView.padding)
@@ -203,7 +218,7 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         
         if shouldLoadParking {
             selectedLocat = CLLocation.init(latitude: position.target.latitude, longitude: position.target.longitude)
-            loadParking(atlocation: (selectedLocat?.coordinate)!, distance: 1000)
+            loadParking(atlocation: (selectedLocat?.coordinate)!)
         }
     }
     
@@ -238,17 +253,14 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
     var startMarker: GMSMarker?
     // MARK: - Services +
 
-    func loadParking(atlocation locat:CLLocationCoordinate2D, distance: Float) {
-        App.showLoadingOnView(view: self.view)
+    func loadParking(atlocation locat:CLLocationCoordinate2D) {
+        self.view.showLoading()
         let request = getParksReq()
         let lat = locat.latitude
         let long =  locat.longitude
         
         request.position = [Float( long ),Float( lat)]
-        var radius = getRadius()
-        if radius > 5000 {
-            radius = 5000 // max scope meter
-        }
+        let radius = getRadius()
         request.scope = radius
         
         services.getParks(request: request, success: { (lstPark) in
@@ -258,12 +270,12 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
                 self.mapView.clear()
                 self.startMarker?.map = self.mapView
                 self.loadArrayPark(parks: lstPark!)
-                App.removeLoadingOnView(view: self.view)
+                self.view.removeLoading()
                // self.mapviewBoundAllMarker()
             }
             
         }) { (error) in
-            App.removeLoadingOnView(view: self.view)
+            self.view.removeLoading()
 
             self.showAlert(title: error, completion: { (_) in
                 
@@ -365,21 +377,19 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
             park.marker?.map = mapView
         }
         startMarker?.map = mapView
-        var bounds = GMSCoordinateBounds()
-    
-        bounds = bounds.includingCoordinate(selectedLocat!.coordinate)
-        bounds = bounds.includingCoordinate(selectedMarker!.position)
+//        var bounds = GMSCoordinateBounds()
+//        bounds = bounds.includingCoordinate(selectedLocat!.coordinate)
+//        bounds = bounds.includingCoordinate(selectedMarker!.position)
 
         var distance = 0
         for i in 0 ..< results.count {
             polylinesOnDrawing.append ( results[i].drawOnMap(mapView, approximate: true, strokeColor: ColorsConfig.button_blue.withAlphaComponent(0.7), strokeWidth: 5.0))
-            bounds = bounds.includingBounds(results[i].bounds!)
+//            bounds = bounds.includingBounds(results[i].bounds!)
             distance += Int(results[i].totalDuration)
         }
         selectedMarker.title = "~\(stringDistance(distance))  " + (selectedPark?.name)!
-        let padding = 100
-    
-        mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: CGFloat(padding)))
+        //let padding = 100
+        //mapView.animate(with: GMSCameraUpdate.fit(bounds, withPadding: CGFloat(padding)))
         //results[routeIndex].drawOnMap(mapView, approximate: false, strokeColor: UIColor.purple, strokeWidth: 4.0)
         //results[routeIndex].drawOriginMarkerOnMap(mapView, title: "Origin", color: UIColor.green, opacity: 1.0, flat: true)
         //results[routeIndex].drawDestinationMarkerOnMap(mapView, title: "Destination", color: UIColor.red, opacity: 1.0, flat: true)

@@ -13,13 +13,15 @@ import GoogleMobileAds
 class MyParkListViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
     var arrayPark = [Park](){
         didSet{
+            userLogin?.parkList = arrayPark
             DispatchQueue.main.async {
                 self.tbvData.reloadData()
             }
         }
     }
     @IBOutlet weak var bannerView: GADBannerView!
-
+    @IBOutlet weak var notifiBar: BadgeBarButtonItem!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayPark.count
     }
@@ -56,7 +58,7 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
 
         return true
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             showConfirm(title: "Xác nhận xóa bãi đỗ", detail: "") { (accept) in
                 if accept {
@@ -81,11 +83,14 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         super.viewDidLoad()
         tbvData.register(UINib.init(nibName: "ParkCell", bundle: nil), forCellReuseIdentifier: "ParkCell")
         // Do any additional setup after loading the view.
-        tbvData.rowHeight = UITableViewAutomaticDimension
+        tbvData.rowHeight = UITableView.automaticDimension
         tbvData.estimatedRowHeight = 44
         bannerView.adUnitID = Admob_UnitID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+        let predicate = NSPredicate(format: "isread = %@", false)
+        let  notifications = fetchNotifications(predicate: predicate)
+        notifiBar.badgeNumber = notifications.count
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,18 +99,15 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-
         loadMyParks()
-
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let vc = segue.destination
         if vc is ParkManagerViewController {
             (vc as! ParkManagerViewController).park = arrayPark[(tbvData.indexPathForSelectedRow?.row)!]
         }
-        
-        
     }
     @IBOutlet weak var tbvData: UITableView!
     
@@ -116,9 +118,10 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
     // MARK: - Load data
      */
     func loadMyParks()  {
-        if let user = UserDefaults.standard.value(forKey: LOGIN_ACCOUNT.USER.rawValue) {
-            services.getParksByUser(user: user as! String, success: { (list) in
+        if let user = userLogin{
+            services.getParksByUser(user: user.username , success: { (list) in
                 self.arrayPark = list!
+                user.parkList = list
             }, failure: { (error) in
                 
             })
@@ -180,5 +183,12 @@ class MyParkListViewController: UIViewController, UITableViewDelegate,UITableVie
         }
         
     }
-
+    @IBAction func notificationList(_ sender: Any) {
+        notifiBar.badgeNumber = 0
+        let vc = RegisterNotificationViewController()
+        self.present(vc) {
+            
+        }
+    }
+    
 }

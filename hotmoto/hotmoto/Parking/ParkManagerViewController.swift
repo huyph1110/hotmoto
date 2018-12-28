@@ -147,19 +147,17 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         
     }
     
-    
-    override func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
         //let url = info[UIImagePickerControllerReferenceURL] as! String
         //let type = info[UIImagePickerControllerMediaType] as! String
-
-        imvAvatar.image = image
-        imageData = UIImagePNGRepresentation(image)
-
-        picker.dismiss(animated: true, completion: nil)
         
+        imvAvatar.image = image
+        imageData = image.pngData()
+        
+        picker.dismiss(animated: true, completion: nil)
     }
+    
     func generateImageName(type: String) -> String? {
         if let username = UserDefaults.standard.value(forKey: LOGIN_ACCOUNT.USER.rawValue) {
             let time = Date().description
@@ -189,7 +187,7 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
     
     func updatePark()  {
         
-        App.showLoadingOnView(view: self.view)
+        self.view.showLoading()
         let request = insertParkReq()
         request.location = location(coordinate: coordinate!)
         request.name = txvName.text
@@ -208,15 +206,27 @@ class ParkManagerViewController: UIViewController,MapSelectionViewControllerDele
         request.description_park = txvDescription.text
         //request.email =  ""
         services.updatePark(request: request, success: {
-            App.removeLoadingOnView(view: self.view)
+            self.view.removeLoading()
+            self.park?.name = self.txvName.text
+            self.park?.address = self.txvAddress.text
+            self.park?.phone = self.barPhone.text.text ?? ""
+            self.park?.total = self.sizeValue[0]
+            self.park?.cost = self.costValue[0]
+            self.park?.numberHours = self.costValue[1]
+            self.park?.imageUrl = self.urlImage ?? ""
+            self.park?.type = self.typeValue[0]
+            self.park?.openTime = self.timeValue[0]
+            self.park?.closeTime = self.timeValue[1]
+            self.park?.description_park = self.txvDescription.text
+            
             self.showAlert(title: "Cập nhật thành công", completion: { (_) in
                 self.dismiss(animated: true, completion: nil)
                 self.navigationController?.popViewController(animated: true)
             })
             
         }) { (error) in
-            App.removeLoadingOnView(view: self.view)
-            
+            self.view.removeLoading()
+
             self.showAlert(title: error, completion: { (_) in
                 
             })

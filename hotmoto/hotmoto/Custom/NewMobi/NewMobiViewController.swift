@@ -65,8 +65,8 @@ class NewMobiViewController: UIViewController {
            
             
             screenView.layer.addSublayer(videoPreviewLayer!)
-            screenView.bringSubview(toFront: captureButton)
-            screenView.bringSubview(toFront: btnRefresh)
+            screenView.bringSubviewToFront(captureButton)
+            screenView.bringSubviewToFront(btnRefresh)
 
             //start video capture
             captureSession?.startRunning()
@@ -77,7 +77,7 @@ class NewMobiViewController: UIViewController {
                 qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
                 qrCodeFrameView.layer.borderWidth = 2
                 view.addSubview(qrCodeFrameView)
-                view.bringSubview(toFront: qrCodeFrameView)
+                view.bringSubviewToFront(qrCodeFrameView)
             }
         } catch {
             //If any error occurs, simply print it out
@@ -106,7 +106,7 @@ class NewMobiViewController: UIViewController {
         imgData = nil
         txfCode.text = nil
         imageview.image = nil
-        
+        txfCode.becomeFirstResponder()
         if captureSession?.isRunning == false {
             captureSession?.startRunning()
         }
@@ -198,7 +198,7 @@ extension NewMobiViewController : AVCapturePhotoCaptureDelegate {
         let ratio = CGFloat(300000) / CGFloat(imageData.count)
         
         let capturedImage = UIImage(data: imageData , scale: 1)
-        let imageResult = UIImageJPEGRepresentation(capturedImage! , ratio)
+        let imageResult = capturedImage?.jpegData(compressionQuality: ratio)
         
         //let image = capturedImage.sca
         imageview.image = UIImage(data: imageResult!)

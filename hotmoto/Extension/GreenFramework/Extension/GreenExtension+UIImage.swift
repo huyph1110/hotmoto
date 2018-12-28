@@ -16,11 +16,11 @@ public extension  UIImage {
         
         if(isPNG())
         {
-            return UIImagePNGRepresentation(self)!
+            return self.pngData()!
         }
         else
         {
-            return UIImageJPEGRepresentation(self, 1)!
+            return self.jpegData(compressionQuality: 1)!
         }
     }
     public func resizeImage() -> UIImage
@@ -67,8 +67,8 @@ public extension  UIImage {
         UIGraphicsBeginImageContext(rect.size)
         self.draw(in: rect)
         
-        let img:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        let imageData:Data = UIImagePNGRepresentation(img)!
+//        let img:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let imageData:Data = self.pngData()!
         UIGraphicsEndImageContext()
         return UIImage(data: imageData)!
     }
@@ -126,7 +126,7 @@ public extension  UIImage {
     {
         
         
-        let imageData: Foundation.Data = UIImagePNGRepresentation(self)!
+        let imageData: Foundation.Data = self.pngData()!
         var c = [UInt8](repeating: 0, count: 1)
         (imageData as NSData).getBytes(&c, length: 1)
         
@@ -154,12 +154,12 @@ public extension  UIImage {
     
     public func imageData () -> Foundation.Data
     {
-        return  UIImagePNGRepresentation(self)!
+        return  self.pngData()!
     }
     
     public func imageBase64() -> String!
     {
-        let imageData : Foundation.Data = UIImagePNGRepresentation(self)!
+        let imageData : Foundation.Data = self.pngData()!
         return imageData.base64EncodedString(options: Foundation.Data.Base64EncodingOptions(rawValue: 0))
     }
     

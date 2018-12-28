@@ -39,7 +39,7 @@ public extension UILabel
         else {
             current = NSMutableAttributedString()
         }
-        let attributes = [ NSAttributedStringKey.foregroundColor: color,NSAttributedStringKey.font: font ]
+        let attributes = [ NSAttributedString.Key.foregroundColor: color,NSAttributedString.Key.font: font ]
         let newAttributeString = NSAttributedString(string: text, attributes: attributes)
         current.append(newAttributeString)
         self.attributedText = current

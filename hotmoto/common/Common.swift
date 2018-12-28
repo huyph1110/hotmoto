@@ -54,29 +54,6 @@ extension AppDelegate {
     
     
     
-    func showLoadingOnView(view: UIView){
-        DispatchQueue.main.async {
-            let indicator = UIActivityIndicatorView.init()
-            indicator.center = CGPoint.init(x: view.frame.width/2, y: view.frame.height/2)
-            indicator.activityIndicatorViewStyle  = .whiteLarge
-            indicator.color = UIColor.gray
-
-            indicator.startAnimating()
-            view.addSubview(indicator)
-        }
-    }
-    
-    func removeLoadingOnView(view: UIView){
-        DispatchQueue.main.async {
-
-            for subview in view.subviews {
-                if subview is UIActivityIndicatorView {
-                    subview.removeFromSuperview()
-                }
-            }
-        }
-    }
-    
 }
 extension UIViewController: UIPopoverPresentationControllerDelegate {
     func showAlert(title: String, completion:@escaping (Bool) -> Void)  {
@@ -146,7 +123,24 @@ extension UIImageView {
         }
     }
 }
-
+func showNotification(_ inview: UIView , _ title: String) {
+    let rect = CGRect(x: 0, y: -80, width: inview.frame.size.width, height: 70)
+    let notiview = NotificationView.init(frame: rect)
+    notiview.autoresizingMask = [.flexibleWidth]
+    notiview.lblTitle.text = title
+    inview.addSubview(notiview)
+    UIView.animate(withDuration: 1, animations: {
+        notiview.frame.origin.y = 0
+    }) { (_) in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 8.0, execute: {
+            UIView.animate(withDuration: 0.33, animations: {
+                notiview.alpha = 0
+            }, completion: { (_) in
+                notiview.removeFromSuperview()
+            })
+        })
+    }
+}
 func stringDurationTimeParking(_ mobile: Mobile) -> String {
     if let datein = mobile.timein {
         let secs = Date().timeIntervalSince(datein)
@@ -167,7 +161,7 @@ func stringCostParking(_ mobile: Mobile, _ park: Park) -> String {
     }
    return ""
 }
-func callPhone(_ phone: String) {
+func callToPhone(_ phone: String) {
     if let url = URL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url) {
         UIApplication.shared.open(url)
         
@@ -217,13 +211,13 @@ func stringForCost(_ value: Int,_ hour: Int) -> String {
 }
 func attriButestringForCost(_ value: Int,_ hour: Int) -> NSAttributedString {
     if  value == 0 {
-        return NSAttributedString(string: "Miễn phí", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_green])
+        return NSAttributedString(string: "Miễn phí", attributes: [NSAttributedString.Key.foregroundColor  : ColorsConfig.button_green])
     }
     if hour == 24 {
-        return NSAttributedString(string: "\(money(value)) đ / ngày", attributes: [NSAttributedStringKey.foregroundColor  : UIColor.black])
+        return NSAttributedString(string: "\(money(value)) đ / ngày", attributes: [NSAttributedString.Key.foregroundColor  : UIColor.black])
 
     }
-    return NSAttributedString(string: "\(money(value)) đ / \(hour) giờ", attributes: [NSAttributedStringKey.foregroundColor  : UIColor.black])
+    return NSAttributedString(string: "\(money(value)) đ / \(hour) giờ", attributes: [NSAttributedString.Key.foregroundColor  : UIColor.black])
 
 }
 
@@ -248,23 +242,23 @@ func stringForSize(_ size: Int) -> String {
 func attributeStringForCount(_ current: Int, _ total: Int) -> NSAttributedString {
     let returnStr = NSMutableAttributedString(string: "")
     if current < total {
-        let currentstr = NSAttributedString(string: "\(current)/", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_blue])
+        let currentstr =  NSAttributedString(string: "\(current)/", attributes: [NSAttributedString.Key.foregroundColor  : ColorsConfig.button_blue])
         returnStr.append(currentstr)
     }
     else {
-        let currentstr = NSAttributedString(string: "\(current)/", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_red])
+        let currentstr = NSAttributedString(string: "\(current)/", attributes: [NSAttributedString.Key.foregroundColor  : ColorsConfig.button_red])
         returnStr.append(currentstr)
     }
-    let totalStr = NSAttributedString(string: "\(total)", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_red])
+    let totalStr = NSAttributedString(string: "\(total)", attributes: [NSAttributedString.Key.foregroundColor  : ColorsConfig.button_red])
     returnStr.append(totalStr)
     return returnStr
 }
 
 func attributeStringForAvailSlot(_ avail: Int) -> NSAttributedString {
     if avail == 0 {
-        return NSAttributedString(string: "\(avail)", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_red])
+        return NSAttributedString(string: "\(avail)", attributes: [NSAttributedString.Key.foregroundColor  : ColorsConfig.button_red])
     }
-    return NSAttributedString(string: "\(avail)", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_blue])
+    return NSAttributedString(string: "\(avail)", attributes: [NSAttributedString.Key.foregroundColor  : ColorsConfig.button_blue])
 }
 
 func iconForType(_ type: Int) -> UIImage? {
@@ -295,8 +289,7 @@ func iconForTypeWhite(_ type: Int) -> UIImage? {
 }
 func stateForPark(_ park: Park) -> NSAttributedString {
     if park.status == 1 {//0: san sang ; 1: da dong
-
-        return NSAttributedString(string: "Đóng cửa", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_yellow])
+        return NSAttributedString(string: "Đóng cửa", attributes: [NSAttributedString.Key.foregroundColor  : ColorsConfig.button_yellow])
     }
     //else
     //ngoai gio lam viec
@@ -304,12 +297,45 @@ func stateForPark(_ park: Park) -> NSAttributedString {
     let currentBeginMin = now.minute() + now.hour()*60
     
     if currentBeginMin < park.openTime || currentBeginMin > park.closeTime {
-        return NSAttributedString(string: "Đóng cửa", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_yellow])
+        return NSAttributedString(string: "Đóng cửa", attributes: [NSAttributedString.Key.foregroundColor  : ColorsConfig.button_yellow])
     }
     //đã đầy
     if park.AvailableSlot == 0 {
-        return NSAttributedString(string: "Đã đầy", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_red])
+        return NSAttributedString(string: "Đã đầy", attributes: [NSAttributedString.Key.foregroundColor  : ColorsConfig.button_red])
     }
     
-    return NSAttributedString(string: "Mở cửa", attributes: [NSAttributedStringKey.foregroundColor  : ColorsConfig.button_green])
+    return NSAttributedString(string: "Mở cửa", attributes: [NSAttributedString.Key.foregroundColor  : ColorsConfig.button_green])
+}
+func isAvailTime(_ park: Park) -> Bool {
+    
+    
+    
+    if park.status == 1 {//0: san sang ; 1: da dong
+        
+        return false
+    }
+    if park.AvailableSlot == 0 {    //đã đầy
+
+        return false
+    }
+    let now = Date()
+
+    let currentBeginMin = now.minute() + now.hour()*60
+    
+    if currentBeginMin < park.openTime || currentBeginMin > park.closeTime {
+        return false
+    }
+    
+    return true
+
+}
+var notiAvail = true
+
+func setnotiduration(_ complete: @escaping(() -> Void)){
+    notiAvail = false
+    _ = Timer.scheduledTimer(withTimeInterval: 5, repeats: false,block: { (_) in
+        notiAvail = true
+        complete()
+    })
+
 }

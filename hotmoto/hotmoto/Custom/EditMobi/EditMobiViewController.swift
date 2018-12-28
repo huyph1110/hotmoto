@@ -60,13 +60,13 @@ class EditMobiViewController: UIViewController {
         if let date = mobi.timein {
             if date.isEqual(to: Date()) == false {
                 lblTimeIn.text = nil
-                let day = "(\(date.day())/\(date.month()))"
-                let hour =  "\(date.hour()):\(date.minute())"
+                let day = " (\(date.day())/\(date.month()))"
+                let hour =  "\(date.hour())h \(date.minute())"
                 lblTimeIn.addAttributeText(text: hour, font: lblTimeIn.font, color: lblTimeIn.textColor)
                 lblTimeIn.addAttributeText(text: day, font: lblTimeIn.font, color: .blue)
                 
             }else {
-                lblTimeIn.text = "\(date.hour()):\(date.minute())"
+                lblTimeIn.text = "\(date.hour())h \(date.minute())"
                 
             }
         }

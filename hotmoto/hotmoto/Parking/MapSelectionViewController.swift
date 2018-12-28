@@ -85,10 +85,10 @@ class MapSelectionViewController: UIViewController,CLLocationManagerDelegate, GM
         self.navigationController?.popViewController(animated: true)
     }
     func setupSubViews()  {
-        self.view.bringSubview(toFront: btnSelect)
-        self.view.bringSubview(toFront: btnCancel)
-        self.view.bringSubview(toFront: tbvLocate)
-        self.view.bringSubview(toFront: scrollSuggestView)
+        self.view.bringSubviewToFront(btnSelect)
+        self.view.bringSubviewToFront(btnCancel)
+        self.view.bringSubviewToFront(tbvLocate)
+        self.view.bringSubviewToFront(scrollSuggestView)
         scrollSuggestView.isHidden = true
 
         // infoView.removeFromSuperview()

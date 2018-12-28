@@ -129,9 +129,9 @@ open class GreenInfoFieldHorizontal: GreenView {
     {
         super.initStyle()
         tvRight.textContainer.lineFragmentPadding = 0;
-        tvRight.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 5);
+        tvRight.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5);
         tvLeft.textContainer.lineFragmentPadding = 0;
-        tvLeft.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        tvLeft.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0);
         tvRight.contentOffset = CGPoint.init(x: 0, y: 0)
         tvRight.layer.cornerRadius = CGFloat(greenDefine.GreenRadius)
         tvLeft.isEditable = false;
@@ -145,9 +145,9 @@ open class GreenInfoFieldHorizontal: GreenView {
     func setTopInsect(value : CGFloat)
     {
         tvRight.textContainer.lineFragmentPadding = 0;
-        tvRight.textContainerInset = UIEdgeInsetsMake(value, 0, 0, 0);
+        tvRight.textContainerInset = UIEdgeInsets(top: value, left: 0, bottom: 0, right: 0);
         tvLeft.textContainer.lineFragmentPadding = 0;
-        tvLeft.textContainerInset = UIEdgeInsetsMake(value, 0, 0, 0);
+        tvLeft.textContainerInset = UIEdgeInsets(top: value, left: 0, bottom: 0, right: 0);
     }
     
     func setEditRight(value : Bool)

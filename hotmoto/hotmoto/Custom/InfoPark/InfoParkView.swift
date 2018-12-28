@@ -95,10 +95,7 @@ class InfoParkView: GreenView, UICollectionViewDelegate, UICollectionViewDataSou
         
     }
     @IBAction func callPhone(_ sender: Any) {
-        if let url = URL(string: "tel://\(myPark?.phone ?? "")"), UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-            
-        }
+        callToPhone((myPark?.phone ?? ""))
 
     }
     

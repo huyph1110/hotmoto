@@ -28,7 +28,7 @@ class DetailParkViewController: UIViewController {
     @IBOutlet weak var imvState: UIImageView!
     @IBOutlet weak var imvMobiType: UIImageView!
     
-    @IBOutlet weak var txvName: UITextView!
+    @IBOutlet weak var naviBar: UINavigationItem!
     @IBOutlet weak var txvAddress: UITextView!
     @IBOutlet weak var btnPhone: UIButton!
     
@@ -47,7 +47,7 @@ class DetailParkViewController: UIViewController {
     */
     var myPark: Park?
     func loadPark(park: Park!)  {
-        txvName.text = park.name
+        naviBar.title = park.name
         lblTotal.text = "\(park.total)"
         btnPhone.setTitle(park.phone, for: .normal)
         txvAddress.text = park.address
@@ -62,10 +62,7 @@ class DetailParkViewController: UIViewController {
     }
     
     @IBAction func callPhone(_ sender: Any) {
-        if let url = URL(string: "tel://\(btnPhone.titleLabel?.text ?? "")"), UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-            
-        }
+        callToPhone(btnPhone.titleLabel?.text ?? "")
         
     }
 

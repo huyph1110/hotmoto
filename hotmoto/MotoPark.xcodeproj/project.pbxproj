@@ -14,6 +14,12 @@
 		E503C05D215B6E8B0003C471 /* AttendanceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E503C05B215B6E8B0003C471 /* AttendanceCollectionViewCell.xib */; };
 		E503C061215B88B40003C471 /* NewMobiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E503C05F215B88B40003C471 /* NewMobiViewController.swift */; };
 		E503C062215B88B40003C471 /* NewMobiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E503C060215B88B40003C471 /* NewMobiViewController.xib */; };
+		E522813F218C05E5007D0DD0 /* ACParallaxView.m in Sources */ = {isa = PBXBuildFile; fileRef = E522813B218C05E5007D0DD0 /* ACParallaxView.m */; };
+		E5228140218C05E5007D0DD0 /* ACAttitude.m in Sources */ = {isa = PBXBuildFile; fileRef = E522813E218C05E5007D0DD0 /* ACAttitude.m */; };
+		E5228142218C3CC4007D0DD0 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5228141218C3CC4007D0DD0 /* NotificationView.swift */; };
+		E5228144218C3CD2007D0DD0 /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5228143218C3CD2007D0DD0 /* NotificationView.xib */; };
+		E52AD3B721A6A24900BEC2CE /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52AD3B521A6A24900BEC2CE /* NotificationTableViewCell.swift */; };
+		E52AD3B821A6A24900BEC2CE /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E52AD3B621A6A24900BEC2CE /* NotificationTableViewCell.xib */; };
 		E530A8B6207760C3006D1454 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B5207760C3006D1454 /* Park.swift */; };
 		E530A8B8207766D2006D1454 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E530A8B7207766D2006D1454 /* Guest.swift */; };
 		E542786C20F0BDF300C302CE /* InputTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E542786A20F0BDF300C302CE /* InputTextCell.swift */; };
@@ -140,6 +146,10 @@
 		E59F063E20AA9FC9008E0DCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F063D20AA9FC9008E0DCC /* User.swift */; };
 		E59F83CD212C7217004BD65C /* TPKeyboardAvoidingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */; };
 		E5A4918720844AD800399F5A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A4918620844AD800399F5A /* Common.swift */; };
+		E5C9ABB0218AA97300FD89E8 /* RegisterNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C9ABAE218AA97300FD89E8 /* RegisterNotificationViewController.swift */; };
+		E5C9ABB1218AA97300FD89E8 /* RegisterNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C9ABAF218AA97300FD89E8 /* RegisterNotificationViewController.xib */; };
+		E5C9ABB3218AB6EC00FD89E8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C9ABB2218AB6EC00FD89E8 /* Notification.swift */; };
+		E5C9ABB5218AFF3F00FD89E8 /* BadgeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C9ABB4218AFF3F00FD89E8 /* BadgeBarButtonItem.swift */; };
 		E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */; };
 		E5D301C42096F7F200CBCFA5 /* MapSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */; };
 		E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DE3A472067382C007C4D1F /* AppDelegate.swift */; };
@@ -189,7 +199,15 @@
 		E503C05B215B6E8B0003C471 /* AttendanceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttendanceCollectionViewCell.xib; sourceTree = "<group>"; };
 		E503C05F215B88B40003C471 /* NewMobiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMobiViewController.swift; sourceTree = "<group>"; };
 		E503C060215B88B40003C471 /* NewMobiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewMobiViewController.xib; sourceTree = "<group>"; };
-		E5297C882154DAB3004AAA55 /* hotmoto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hotmoto.entitlements; sourceTree = "<group>"; };
+		E5228139218C03D6007D0DD0 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		E522813B218C05E5007D0DD0 /* ACParallaxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACParallaxView.m; sourceTree = "<group>"; };
+		E522813C218C05E5007D0DD0 /* ACAttitude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACAttitude.h; sourceTree = "<group>"; };
+		E522813D218C05E5007D0DD0 /* ACParallaxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACParallaxView.h; sourceTree = "<group>"; };
+		E522813E218C05E5007D0DD0 /* ACAttitude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACAttitude.m; sourceTree = "<group>"; };
+		E5228141218C3CC4007D0DD0 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		E5228143218C3CD2007D0DD0 /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
+		E52AD3B521A6A24900BEC2CE /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		E52AD3B621A6A24900BEC2CE /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		E530A8B5207760C3006D1454 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
 		E530A8B7207766D2006D1454 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
 		E542786A20F0BDF300C302CE /* InputTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextCell.swift; sourceTree = "<group>"; };
@@ -318,6 +336,10 @@
 		E59F063D20AA9FC9008E0DCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TPKeyboardAvoidingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5A4918620844AD800399F5A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E5C9ABAE218AA97300FD89E8 /* RegisterNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNotificationViewController.swift; sourceTree = "<group>"; };
+		E5C9ABAF218AA97300FD89E8 /* RegisterNotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterNotificationViewController.xib; sourceTree = "<group>"; };
+		E5C9ABB2218AB6EC00FD89E8 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		E5C9ABB4218AFF3F00FD89E8 /* BadgeBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeBarButtonItem.swift; sourceTree = "<group>"; };
 		E5D301C12096F7CE00CBCFA5 /* ParkManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkManagerViewController.swift; sourceTree = "<group>"; };
 		E5D301C32096F7F200CBCFA5 /* MapSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectionViewController.swift; sourceTree = "<group>"; };
 		E5DE3A442067382C007C4D1F /* MotoPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotoPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -388,6 +410,17 @@
 				E503C060215B88B40003C471 /* NewMobiViewController.xib */,
 			);
 			path = NewMobi;
+			sourceTree = "<group>";
+		};
+		E522813A218C05E5007D0DD0 /* Parallax */ = {
+			isa = PBXGroup;
+			children = (
+				E522813B218C05E5007D0DD0 /* ACParallaxView.m */,
+				E522813D218C05E5007D0DD0 /* ACParallaxView.h */,
+				E522813C218C05E5007D0DD0 /* ACAttitude.h */,
+				E522813E218C05E5007D0DD0 /* ACAttitude.m */,
+			);
+			path = Parallax;
 			sourceTree = "<group>";
 		};
 		E54C7E2B2126CDCF00EC5278 /* Resources */ = {
@@ -557,6 +590,7 @@
 		E570172B21045D0300A29D4B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E5C9ABB4218AFF3F00FD89E8 /* BadgeBarButtonItem.swift */,
 				E56AFEB2214658FD00247658 /* GreenFramework */,
 			);
 			path = Extension;
@@ -578,6 +612,7 @@
 		E578B0F020BAFEB100D8F0A9 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				E522813A218C05E5007D0DD0 /* Parallax */,
 				E578B0F120BAFEB100D8F0A9 /* DSCameraHandler.swift */,
 				E578B0F320BB002900D8F0A9 /* UIViewController+ImagePicker.swift */,
 			);
@@ -664,11 +699,25 @@
 			path = DetailPark;
 			sourceTree = "<group>";
 		};
+		E5C9ABAD218AA6D500FD89E8 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				E5C9ABAE218AA97300FD89E8 /* RegisterNotificationViewController.swift */,
+				E5C9ABAF218AA97300FD89E8 /* RegisterNotificationViewController.xib */,
+				E5228141218C3CC4007D0DD0 /* NotificationView.swift */,
+				E5228143218C3CD2007D0DD0 /* NotificationView.xib */,
+				E52AD3B521A6A24900BEC2CE /* NotificationTableViewCell.swift */,
+				E52AD3B621A6A24900BEC2CE /* NotificationTableViewCell.xib */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		E5DE3A3B2067382C007C4D1F = {
 			isa = PBXGroup;
 			children = (
 				E57A4EE52158987600A22D8C /* MotoPark.entitlements */,
 				E542A8D5207A194F009DF90E /* README.md */,
+				E5228139218C03D6007D0DD0 /* Bridging-Header.h */,
 				E570172B21045D0300A29D4B /* Extension */,
 				E578B0F020BAFEB100D8F0A9 /* libs */,
 				E5DE3A6720674197007C4D1F /* common */,
@@ -692,7 +741,7 @@
 		E5DE3A462067382C007C4D1F /* hotmoto */ = {
 			isa = PBXGroup;
 			children = (
-				E5297C882154DAB3004AAA55 /* hotmoto.entitlements */,
+				E5C9ABAD218AA6D500FD89E8 /* Notification */,
 				E580F3A62126C73F001EF05B /* Custom */,
 				E5DE3A6520673E0C007C4D1F /* Guest */,
 				E5DE3A6620673E0C007C4D1F /* Parking */,
@@ -726,6 +775,7 @@
 				E530A8B7207766D2006D1454 /* Guest.swift */,
 				E59F063D20AA9FC9008E0DCC /* User.swift */,
 				E58D425D2161D74200BAB26D /* Mobile.swift */,
+				E5C9ABB2218AB6EC00FD89E8 /* Notification.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -881,11 +931,14 @@
 				E5DE3A522067382C007C4D1F /* LaunchScreen.storyboard in Resources */,
 				E56AFF2B214658FE00247658 /* GHome.png in Resources */,
 				E580F3CC2126C740001EF05B /* CostPicker.xib in Resources */,
+				E5228144218C3CD2007D0DD0 /* NotificationView.xib in Resources */,
+				E5C9ABB1218AA97300FD89E8 /* RegisterNotificationViewController.xib in Resources */,
 				E54C7E2D2126CDCF00EC5278 /* GoogleMaps.bundle in Resources */,
 				E56AFF48214658FE00247658 /* GEmail.png in Resources */,
 				E56AFF58214658FE00247658 /* GreenSwipeView.xib in Resources */,
 				E56AFF38214658FE00247658 /* GNext.png in Resources */,
 				E564870E21627A5900FC378C /* EditMobiViewController.xib in Resources */,
+				E52AD3B821A6A24900BEC2CE /* NotificationTableViewCell.xib in Resources */,
 				E580F3C92126C740001EF05B /* MobileType.xib in Resources */,
 				E56AFF43214658FE00247658 /* Trash.png in Resources */,
 				E56AFF50214658FE00247658 /* GreenInfoFieldHorizontal.xib in Resources */,
@@ -985,11 +1038,14 @@
 				E56AFF1D214658FE00247658 /* GreenExtension+Array.swift in Sources */,
 				E56AFF17214658FE00247658 /* GreenExtension+UIImage.swift in Sources */,
 				E56AFF10214658FE00247658 /* DialogInfoView.swift in Sources */,
+				E52AD3B721A6A24900BEC2CE /* NotificationTableViewCell.swift in Sources */,
 				E56AFF14214658FE00247658 /* GreenExtension+String.swift in Sources */,
 				E580F3D02126C740001EF05B /* CostPicker.swift in Sources */,
 				E5713E62216715EF00EBA4C0 /* HistoryMobiViewCell.swift in Sources */,
 				E56AFF19214658FE00247658 /* GreenExtention+UIView.swift in Sources */,
 				E530A8B6207760C3006D1454 /* Park.swift in Sources */,
+				E5C9ABB0218AA97300FD89E8 /* RegisterNotificationViewController.swift in Sources */,
+				E5C9ABB3218AB6EC00FD89E8 /* Notification.swift in Sources */,
 				E56AFF55214658FE00247658 /* MIDateView.swift in Sources */,
 				E56AFF1F214658FE00247658 /* GreenDefine.swift in Sources */,
 				E56AFF13214658FE00247658 /* GreenExtention+UITextView.swift in Sources */,
@@ -1016,7 +1072,9 @@
 				E580F3CE2126C740001EF05B /* MobileType.swift in Sources */,
 				E56AFF25214658FE00247658 /* GreenTextField.swift in Sources */,
 				E56AFF5E214658FE00247658 /* GreenInfoField.swift in Sources */,
+				E522813F218C05E5007D0DD0 /* ACParallaxView.m in Sources */,
 				E542786C20F0BDF300C302CE /* InputTextCell.swift in Sources */,
+				E5228142218C3CC4007D0DD0 /* NotificationView.swift in Sources */,
 				E56AFF5A214658FE00247658 /* LandingView.swift in Sources */,
 				E5DE3A5F20673AF4007C4D1F /* ServicesFunction.swift in Sources */,
 				E580F3D32126C740001EF05B /* ParkCell.swift in Sources */,
@@ -1026,6 +1084,7 @@
 				E5D301C42096F7F200CBCFA5 /* MapSelectionViewController.swift in Sources */,
 				E56AFF11214658FE00247658 /* GreenExtension+UIColor.swift in Sources */,
 				E56AFF20214658FE00247658 /* GreenLabel.swift in Sources */,
+				E5C9ABB5218AFF3F00FD89E8 /* BadgeBarButtonItem.swift in Sources */,
 				E56AFF1B214658FE00247658 /* GreenExtention+UITextField.swift in Sources */,
 				E578B0F220BAFEB100D8F0A9 /* DSCameraHandler.swift in Sources */,
 				E56AFF1E214658FE00247658 /* GreenExtension+UITableViewCell.swift in Sources */,
@@ -1039,6 +1098,7 @@
 				E5DE3A482067382C007C4D1F /* AppDelegate.swift in Sources */,
 				E5D301C22096F7CE00CBCFA5 /* ParkManagerViewController.swift in Sources */,
 				E56AFF23214658FE00247658 /* GreenButton.swift in Sources */,
+				E5228140218C05E5007D0DD0 /* ACAttitude.m in Sources */,
 				E580F3CD2126C740001EF05B /* SizePicker.swift in Sources */,
 				E5DE3A6420673B76007C4D1F /* Mi.swift in Sources */,
 				E56AFF16214658FE00247658 /* GreenExtension+Date.swift in Sources */,
@@ -1128,7 +1188,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sip-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1180,7 +1242,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sip-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1207,7 +1271,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoquang.MotoPark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TAPI_VERIFY_MODE = ErrorsOnly;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1235,7 +1300,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hoquang.MotoPark;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TAPI_VERIFY_MODE = ErrorsOnly;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

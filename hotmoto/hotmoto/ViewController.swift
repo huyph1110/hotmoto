@@ -17,6 +17,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet  var viewUserInfo: UIView!
     @IBOutlet weak var btnAccept: UIButton!
+    @IBOutlet weak var parallaxView: ACParallaxView!
     
     
     
@@ -25,8 +26,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-      
-        
+       // parallaxView.isParallax = true
+       // parallaxView.refocusParallax = true
+       // parallaxView.referenceAttitude = ACAttitudeZero
         if let user = UserDefaults.standard.value(forKey: LOGIN_ACCOUNT.USER.rawValue) {
             txfUserName.text = user as? String
 
@@ -35,21 +37,21 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             txfPasswords.text = pass as? String
 
         }
-        txfUserName.attributedPlaceholder = NSAttributedString(string: "Tên đăng nhập", attributes: [NSAttributedStringKey.foregroundColor : UIColor("#959DAD")])
-        txfPasswords.attributedPlaceholder = NSAttributedString(string: "Mật khẩu", attributes: [NSAttributedStringKey.foregroundColor : UIColor("#959DAD")])
+        txfUserName.attributedPlaceholder = NSAttributedString(string: "Tên đăng nhập", attributes: [NSAttributedString.Key.foregroundColor : UIColor("#959DAD")])
+        txfPasswords.attributedPlaceholder = NSAttributedString(string: "Mật khẩu", attributes: [NSAttributedString.Key.foregroundColor : UIColor("#959DAD")])
         let paddingView = UIView(frame: CGRect(x:0,y: 0,width: 8,height: txfUserName.frame.height))
         let paddingView2 = UIView(frame: CGRect(x:0,y: 0,width: 8,height: txfPasswords.frame.height))
 
         txfUserName.leftView = paddingView
-        txfUserName.leftViewMode = UITextFieldViewMode.always
+        txfUserName.leftViewMode = UITextField.ViewMode.always
         txfPasswords.leftView = paddingView2
-        txfPasswords.leftViewMode = UITextFieldViewMode.always
+        txfPasswords.leftViewMode = UITextField.ViewMode.always
         
         bannerView.adUnitID = Admob_UnitID
         bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        
         bannerView.delegate = self
+        bannerView.load(GADRequest())
+
     }
     override func viewDidAppear(_ animated: Bool) {
 
@@ -94,10 +96,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
-   func login() {
+    func login() {
         
         if txfPasswords.text?.count == 0 || txfUserName.text?.count == 0 {
             self.showAlert(title: "Tài khoản hoặc mật khẩu không được để trống", completion: {_ in })
@@ -108,13 +109,11 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         }
         else {
             
-            App.showLoadingOnView(view: self.view)
-           
+            self.view.showLoading()
             loginFunc { (success) in
-                App.removeLoadingOnView(view: self.view)
                 if success {
                     self.regTokenFunc { (success) in
-                        App.removeLoadingOnView(view: self.view)
+                        self.view.removeLoading()
                         if success {
                             UserDefaults.standard.setValue(userLogin?.username, forKey: LOGIN_ACCOUNT.USER.rawValue)
                             UserDefaults.standard.setValue(userLogin?.password, forKey: LOGIN_ACCOUNT.PASS.rawValue)
@@ -123,6 +122,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
                             }
                         }
                     }
+                }else {
+                    self.view.removeLoading()
+
                 }
             }
         }
@@ -169,19 +171,17 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             
         }
         else {
-            App.showLoadingOnView(view: self.view)
+            self.view.showLoading()
 
             let req = registerReq()
             req.username = txfUserName.text!
             req.password = txfPasswords.text!
             services.userRegister(request: req, success: {
                 self.showAlert(title: "Đăng ký thành công", completion: {_ in })
-                App.removeLoadingOnView(view: self.view)
-
+                self.view.removeLoading()
             }, failure: { (error) in
                 self.showAlert(title: error, completion: {_ in })
-                App.removeLoadingOnView(view: self.view)
-
+                self.view.removeLoading()
             })
         }
     }
