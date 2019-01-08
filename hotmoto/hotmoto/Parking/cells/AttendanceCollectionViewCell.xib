@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,12 +20,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daX-TQ-gs0">
-                        <rect key="frame" x="0.0" y="94" width="130" height="26"/>
+                        <rect key="frame" x="8" y="98" width="114" height="22"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="26" id="Gvw-Fm-ih5"/>
+                            <constraint firstAttribute="height" constant="22" id="Gvw-Fm-ih5"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
+                        <color key="textColor" red="0.20731910950263224" green="0.17824429695310792" blue="0.3333333432674408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnl-MY-pWt">
@@ -35,20 +36,32 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HJU-XX-4by">
-                        <rect key="frame" x="20" y="25" width="90" height="71"/>
+                        <rect key="frame" x="16" y="25" width="98" height="69"/>
                     </imageView>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Go-IL-dfn">
+                        <rect key="frame" x="0.0" y="0.0" width="130" height="10"/>
+                        <color key="backgroundColor" red="1" green="0.57647058823529407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="sov-T1-StS"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
+            <color key="backgroundColor" red="0.87617414325842957" green="0.91825287654259091" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="daX-TQ-gs0" secondAttribute="trailing" id="1gd-Rn-RsN"/>
                 <constraint firstItem="Gnl-MY-pWt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3ze-0H-qDh"/>
                 <constraint firstAttribute="trailing" secondItem="Gnl-MY-pWt" secondAttribute="trailing" id="7TU-Ec-wWz"/>
-                <constraint firstItem="HJU-XX-4by" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="8VM-td-Ydq"/>
+                <constraint firstItem="HJU-XX-4by" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="8VM-td-Ydq"/>
+                <constraint firstItem="daX-TQ-gs0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="GDf-cV-o1N"/>
                 <constraint firstItem="HJU-XX-4by" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="NBy-gW-98d"/>
-                <constraint firstItem="daX-TQ-gs0" firstAttribute="top" secondItem="HJU-XX-4by" secondAttribute="bottom" constant="-2" id="Qpy-JY-9Vd"/>
-                <constraint firstAttribute="trailing" secondItem="HJU-XX-4by" secondAttribute="trailing" constant="20" id="T2i-Q4-mk5"/>
-                <constraint firstItem="daX-TQ-gs0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fEN-ce-lVv"/>
+                <constraint firstAttribute="trailing" secondItem="3Go-IL-dfn" secondAttribute="trailing" id="NjZ-PQ-7Zz"/>
+                <constraint firstItem="daX-TQ-gs0" firstAttribute="top" secondItem="HJU-XX-4by" secondAttribute="bottom" constant="4" id="Qpy-JY-9Vd"/>
+                <constraint firstAttribute="trailing" secondItem="HJU-XX-4by" secondAttribute="trailing" constant="16" id="T2i-Q4-mk5"/>
+                <constraint firstItem="3Go-IL-dfn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZI4-LM-3gP"/>
+                <constraint firstAttribute="trailing" secondItem="daX-TQ-gs0" secondAttribute="trailing" constant="8" id="fhp-Oi-7hG"/>
                 <constraint firstItem="Gnl-MY-pWt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="hGb-La-Ree"/>
+                <constraint firstItem="3Go-IL-dfn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hnv-S7-IUP"/>
+                <constraint firstItem="daX-TQ-gs0" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="o0z-d1-A10"/>
                 <constraint firstAttribute="bottom" secondItem="daX-TQ-gs0" secondAttribute="bottom" id="oDb-QB-q5L"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

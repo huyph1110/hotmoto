@@ -204,4 +204,14 @@ extension Date {
         let dateAtEnd = calendar.date(byAdding: components, to: self.startDateForCurrentDate()!)
         return dateAtEnd
     }
+    
+    /**
+     day with format
+     */
+    func stringDate(_ format: String) -> String? {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = format
+        return dateformat.string(from: self)
+    }
+
 }

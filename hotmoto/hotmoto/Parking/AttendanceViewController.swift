@@ -23,7 +23,6 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
             let array = fetchMobies()
             arrayMobi = array.filter{$0.parkID == apark.id && $0.state == Mobi_State.checkin.rawValue}
             arrayMobiResult = arrayMobi
-            titileBarItem.title = apark.name + "(\(arrayMobi.count))"
         }
         
         newmobiVC.complete = {
@@ -67,7 +66,8 @@ class AttendanceViewController: UIViewController, UICollectionViewDelegate,UICol
     var arrayMobi = [Mobile](){
         didSet{
             DispatchQueue.main.async {
-                self.titileBarItem.title = self.park?.name ?? "" + "(\(self.arrayMobi.count))"
+                let title = (self.park?.name ?? "") + "(\(self.arrayMobi.count))"
+                self.titileBarItem.title = title
             }
 
         }

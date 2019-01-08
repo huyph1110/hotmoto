@@ -13,6 +13,11 @@ class AttendanceCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.layer.cornerRadius = 4.0
+        self.layer.borderWidth = 3.0
+        self.layer.borderColor = UIColor.init(hexColor: "#FF9300")?.cgColor
+
+        
     }
 
     @IBOutlet weak var lblTimein: UILabel!

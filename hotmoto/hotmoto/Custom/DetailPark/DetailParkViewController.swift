@@ -13,6 +13,7 @@ class DetailParkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
         if myPark != nil {
             loadPark(park: myPark)
         }
@@ -36,6 +37,7 @@ class DetailParkViewController: UIViewController {
     @IBOutlet weak var lblTotal: UILabel!
     @IBOutlet weak var lblAvail: UILabel!
 
+    @IBOutlet weak var txvNote: UITextView!
     /*
     // MARK: - Navigation
 
@@ -55,6 +57,7 @@ class DetailParkViewController: UIViewController {
         lblTotal.text = "\(park.total)"
         lblAvail.attributedText = attributeStringForAvailSlot(park.AvailableSlot)
         imvMobiType.image = iconForType(park.type)
+        txvNote.text = park.description_park
     }
     
     @IBAction func selectBack(_ sender: Any) {

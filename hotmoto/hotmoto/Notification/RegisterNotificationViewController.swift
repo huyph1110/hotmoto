@@ -16,14 +16,15 @@ class RegisterNotificationViewController: UIViewController, UITableViewDelegate,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! NotificationTableViewCell
         let noti = notifications[indexPath.row]
+        let time =  notifications[indexPath.row].date?.stringDate("dd/MM HH:mm ")
         if let park = userLogin?.parkList?.filter({$0.id == noti.parkid}).first {
-            cell.lblTitle?.text = park.name
+            cell.lblTitle?.text =  park.name
         }
         if noti.isread == false {
             noti.isread = true
             noti.save()
         }
-        cell.lblTitle?.text = noti.title
+        cell.lblTitle?.text = (time ?? "")  + (noti.title ?? "")
         return cell
     }
     

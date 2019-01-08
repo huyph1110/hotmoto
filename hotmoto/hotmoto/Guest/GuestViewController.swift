@@ -106,12 +106,15 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         self.locationManager.stopUpdatingLocation()
     }
     
-    func insertMarkerAtPos(coordinate: CLLocationCoordinate2D, title: String?, detail: String?) -> GMSMarker {
+    func insertMarkerAtPos(coordinate: CLLocationCoordinate2D, title: String?, detail: String?, avail: Bool) -> GMSMarker {
         let marker = GMSMarker(position: coordinate)
         marker.title = title
         marker.tracksViewChanges = true
         marker.map = mapView
         marker.snippet = detail
+        if avail {
+            marker.icon = UIImage(named: "pin")
+        }
         return marker
     }
    
@@ -310,7 +313,8 @@ class GuestViewController: UIViewController,CLLocationManagerDelegate, GMSMapVie
         arrayParks = parks
         for park in arrayParks {
             //let coordinate = CLLocationCoordinate2D.init(latitude: park.position?.object(forKey: "lat") as! CLLocationDegrees, longitude: park.position?.object(forKey: "long") as! CLLocationDegrees)
-           park.marker =  insertMarkerAtPos(coordinate: park.position, title: park.name, detail: park.address)
+            let avail = isAvailTime(park)
+            park.marker =  insertMarkerAtPos(coordinate: park.position, title: park.name, detail: park.address, avail: avail)
             
         }
     }

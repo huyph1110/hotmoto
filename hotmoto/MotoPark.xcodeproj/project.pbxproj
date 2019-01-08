@@ -142,6 +142,8 @@
 		E580F3D62126C740001EF05B /* DetailParkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580F3C12126C73F001EF05B /* DetailParkViewController.xib */; };
 		E58C454120AC160500C493DA /* MyParkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C454020AC160500C493DA /* MyParkListViewController.swift */; };
 		E58D425E2161D74200BAB26D /* Mobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D425D2161D74200BAB26D /* Mobile.swift */; };
+		E5921ACE21DB6F7200C3E7B1 /* PolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5921ACC21DB6F7200C3E7B1 /* PolicyViewController.swift */; };
+		E5921ACF21DB6F7200C3E7B1 /* PolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5921ACD21DB6F7200C3E7B1 /* PolicyViewController.xib */; };
 		E5974F29215CE0D70038EBE9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5974F27215CE0D70038EBE9 /* Model.xcdatamodeld */; };
 		E59F063E20AA9FC9008E0DCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F063D20AA9FC9008E0DCC /* User.swift */; };
 		E59F83CD212C7217004BD65C /* TPKeyboardAvoidingSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */; };
@@ -332,6 +334,8 @@
 		E580F3C12126C73F001EF05B /* DetailParkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailParkViewController.xib; sourceTree = "<group>"; };
 		E58C454020AC160500C493DA /* MyParkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyParkListViewController.swift; sourceTree = "<group>"; };
 		E58D425D2161D74200BAB26D /* Mobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile.swift; sourceTree = "<group>"; };
+		E5921ACC21DB6F7200C3E7B1 /* PolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyViewController.swift; sourceTree = "<group>"; };
+		E5921ACD21DB6F7200C3E7B1 /* PolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolicyViewController.xib; sourceTree = "<group>"; };
 		E5974F28215CE0D70038EBE9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E59F063D20AA9FC9008E0DCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E59F83CC212C7217004BD65C /* TPKeyboardAvoidingSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TPKeyboardAvoidingSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -699,6 +703,15 @@
 			path = DetailPark;
 			sourceTree = "<group>";
 		};
+		E5921ACB21DB6F4900C3E7B1 /* PolicyVC */ = {
+			isa = PBXGroup;
+			children = (
+				E5921ACC21DB6F7200C3E7B1 /* PolicyViewController.swift */,
+				E5921ACD21DB6F7200C3E7B1 /* PolicyViewController.xib */,
+			);
+			path = PolicyVC;
+			sourceTree = "<group>";
+		};
 		E5C9ABAD218AA6D500FD89E8 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -741,6 +754,7 @@
 		E5DE3A462067382C007C4D1F /* hotmoto */ = {
 			isa = PBXGroup;
 			children = (
+				E5921ACB21DB6F4900C3E7B1 /* PolicyVC */,
 				E5C9ABAD218AA6D500FD89E8 /* Notification */,
 				E580F3A62126C73F001EF05B /* Custom */,
 				E5DE3A6520673E0C007C4D1F /* Guest */,
@@ -893,6 +907,7 @@
 				E56AFF46214658FE00247658 /* GClover.png in Resources */,
 				E56AFF5B214658FE00247658 /* GreenInfoField.xib in Resources */,
 				E56AFF4C214658FE00247658 /* GQRCode.png in Resources */,
+				E5921ACF21DB6F7200C3E7B1 /* PolicyViewController.xib in Resources */,
 				E56AFF51214658FE00247658 /* GreenStepField.xib in Resources */,
 				E56AFF2C214658FE00247658 /* GShop.png in Resources */,
 				E56AFF27214658FE00247658 /* GSelect.png in Resources */,
@@ -1105,6 +1120,7 @@
 				E56AFF26214658FE00247658 /* GreenTableView.swift in Sources */,
 				E56AFF5F214658FE00247658 /* GreenSwipeView.swift in Sources */,
 				E580F3C52126C740001EF05B /* InfoParkView.swift in Sources */,
+				E5921ACE21DB6F7200C3E7B1 /* PolicyViewController.swift in Sources */,
 				E56AFF12214658FE00247658 /* GreenExtention+UILabel.swift in Sources */,
 				E59F063E20AA9FC9008E0DCC /* User.swift in Sources */,
 			);
